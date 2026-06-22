@@ -3,18 +3,50 @@ on:
   schedule:
     - cron: "0 12 * * 1"  # UTC 12:00 = 北京时间 20:00
   workflow_dispatch:
+    inputs:
+      issue:
+        description: "指定期号（留空则自动推送下一期）"
 
 jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: 发送最新期到微信
-        run: |
-          LATEST=$(ls [0-9]*.html 2>/dev/null | sort -n | tail -1 | sed 's/.html//')
-          TITLE=$(grep -oP '<div class="model">\K[^<]+' "${LATEST}.html" | head -1)
-          H3=$(grep -oP '<h3>\K[^<]+' "${LATEST}.html" | head -1)
 
-          curl -s "https://sctapi.ftqq.com/${{ secrets.SERVERCHAN_SENDKEY }}.send" \
-            -d "title=芒格计划 · 第${LATEST}期" \
-            -d "desp=📐 ${TITLE}｜${H3}｜[点击阅读 →](https://zhuayuba.github.io/mungerplan/${LATEST}.html)"
+      - name: 确定本期号
+        id: num
+        run: |
+          if [ -n "${{ github.event.inputs.issue }}" ]; then
+            N="${{ github.event.inputs.issue }}"
+          else
+            N=$(cat next_issue.txt 2>/dev/null || echo "1")
+          fi
+          echo "issue=$N" >> $GITHUB_OUTPUT
+          echo "n=$N"
+
+      - name: 推送 → 微信
+        run: |
+          N=${{ steps.num.outputs.issue }}
+          FILE="${N}.html"
+          TWO=$(printf "%02d" "$N")
+
+          if [ -f "$FILE" ] || [ -f "$TWO" ]; then
+            TITLE=$(grep -oP '<div class="model">\K[^<]+' "${FILE}" 2>/dev/null | head -1 || echo "敬请期待")
+            H3=$(grep -oP '<h3>\K[^<]+' "${FILE}" 2>/dev/null | head -1 || echo "")
+
+            curl -s "https://sctapi.ftqq.com/${{ secrets.SERVERCHAN_SENDKEY }}.send" \
+              -d "title=芒格计划 · 第${N}期" \
+              -d "desp=📐 ${TITLE}｜${H3}｜[点击阅读 →](https://zhuayuba.github.io/mungerplan/${FILE})"
+          else
+            echo "文件 ${FILE} 不存在，跳过"
+          fi
+
+      - name: 计数器 +1
+        run: |
+          N=${{ steps.num.outputs.issue }}
+          echo $((N + 1)) > next_issue.txt
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions"
+          git add next_issue.txt
+          git diff --staged --quiet || git commit -m "计数器 → 下期推送 #$((N + 1))"
+          git push
