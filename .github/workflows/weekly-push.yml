@@ -29,33 +29,40 @@ jobs:
           H3=$(grep -oP '<h3>\K[^<]+' "${FILE}.html" 2>/dev/null | head -1 || echo "")
           URL="https://zhuayuba.github.io/mungerplan/${FILE}.html"
 
-          TIMESTAMP=$(date +%s)
-          SIGN=$(echo -ne "${TIMESTAMP}\n${{ secrets.LARK_SIGNING_SECRET }}" | openssl dgst -sha256 -hmac "" -binary | base64)
-
-          curl -s -X POST "${{ secrets.LARK_WEBHOOK_URL }}" \
-            -H "Content-Type: application/json" \
-            -d "{
-              \"timestamp\": \"${TIMESTAMP}\",
-              \"sign\": \"${SIGN}\",
-              \"msg_type\": \"interactive\",
-              \"card\": {
-                \"header\": {
-                  \"title\": {\"tag\": \"plain_text\", \"content\": \"芒格计划 · 第${N}期\"},
-                  \"template\": \"blue\"
-                },
-                \"elements\": [
-                  {\"tag\": \"markdown\", \"content\": \"**📐 ${TITLE}**\n${H3}\"},
-                  {\"tag\": \"hr\"},
-                  {
-                    \"tag\": \"action\",
-                    \"actions\": [
-                      {\"tag\": \"button\", \"text\": {\"tag\": \"plain_text\", \"content\": \"🧠 开始阅读 →\"}, \"type\": \"primary\", \"url\": \"${URL}\"}
-                    ]
+          python3 -c "
+          import hashlib, hmac, base64, time, json, urllib.request, os
+          ts = str(int(time.time()))
+          secret = os.environ['LARK_SECRET']
+          sign_string = ts + '\n' + secret
+          sign = base64.b64encode(hmac.new(sign_string.encode(), b'', hashlib.sha256).digest()).decode()
+          body = json.dumps({
+              'timestamp': ts,
+              'sign': sign,
+              'msg_type': 'interactive',
+              'card': {
+                  'header': {
+                      'title': {'tag': 'plain_text', 'content': '芒格计划 · 第${N}期'},
+                      'template': 'blue'
                   },
-                  {\"tag\": \"note\", \"elements\": [{\"tag\": \"text\", \"text\": \"每周一推送 · 跨学科思维模型 · 格栅理论\"}]}
-                ]
+                  'elements': [
+                      {'tag': 'markdown', 'content': '**📐 ${TITLE}**\n${H3}'},
+                      {'tag': 'hr'},
+                      {
+                          'tag': 'action',
+                          'actions': [
+                              {'tag': 'button', 'text': {'tag': 'plain_text', 'content': '🧠 开始阅读 →'}, 'type': 'primary', 'url': '${URL}'}
+                          ]
+                      }
+                  ]
               }
-            }"
+          }).encode()
+          req = urllib.request.Request(os.environ['LARK_WEBHOOK'], data=body, headers={'Content-Type': 'application/json'})
+          resp = urllib.request.urlopen(req)
+          print(resp.read().decode())
+          "
+        env:
+          LARK_WEBHOOK: ${{ secrets.LARK_WEBHOOK_URL }}
+          LARK_SECRET: ${{ secrets.LARK_SIGNING_SECRET }}
       - name: 计数器+1
         run: |
           N=${{ steps.num.outputs.issue }}
