@@ -385,6 +385,7 @@ else{html+='<div class="aichat-msg aichat-assistant"><div class="lbl">AI</div><d
 if(_aibusy){html+='<div class="aichat-loading"><span></span><span></span><span></span></div>';}
 b.innerHTML=html;
 b.scrollTop=b.scrollHeight;
+setTimeout(function(){restore();},100);
 }
 function addMsg(role,content,skipSave){
 _aichat.push({role:role,content:content,ts:new Date().toISOString()});
