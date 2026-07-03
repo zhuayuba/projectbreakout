@@ -356,8 +356,8 @@ return {n:n,title:title||("第"+n+"期"),model:model||"",text:text};
 }catch(e){return null;}
 }
 function buildSystemPrompt(){
-if(!_aictx||!_aictx.issues||!_aictx.issues.length)return "你是\"他山之石\"的AI助教。他山之石是芒格计划旗下的一套基于查理·芒格\"格栅理论\"的跨学科思维模型学习系统。你的风格：说人话、简洁、像博学的朋友。请用中文回复。";
-var p="你是\"他山之石\"的AI助教。他山之石是芒格计划旗下的一套基于查理·芒格\"格栅理论\"的跨学科思维模型学习系统，目前共10期。你的风格：说人话、简洁、像博学的朋友。以下是各期摘要：\n\n";
+if(!_aictx||!_aictx.issues||!_aictx.issues.length)return "你是\"他山之石\"的AI助教。他山之石是芒格计划的一套基于查理·芒格\"格栅理论\"的跨学科思维模型学习系统。你的风格：说人话、简洁、像博学的朋友。请用中文回复。";
+var p="你是\"他山之石\"的AI助教。他山之石是芒格计划的一套基于查理·芒格\"格栅理论\"的跨学科思维模型学习系统，目前共10期。你的风格：说人话、简洁、像博学的朋友。以下是各期摘要：\n\n";
 for(var i=0;i<_aictx.issues.length;i++){
 var iss=_aictx.issues[i];
 p+="第"+iss.n+"期《"+iss.title+"》—— "+iss.model+"\n"+iss.text+"\n\n";
