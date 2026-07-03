@@ -1,11 +1,14 @@
-name: 每周一推送
+name: 每周一三推送
 on:
   schedule:
-    - cron: "0 12 * * 1"
+    - cron: "0 12 * * 1,3"
   workflow_dispatch:
     inputs:
       issue:
         description: "指定期号（留空则自动推送下一期）"
+
+permissions:
+  contents: write
 
 jobs:
   notify:
