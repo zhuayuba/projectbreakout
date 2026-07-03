@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>芒格计划 · 04：决策的迷局</title>
+<title>他山之石 · 04：决策的迷局</title>
 <style>
 :root{--bg:#faf8f5;--text:#1a1a2e;--accent:#c8a45c;--accent-dark:#a8883a}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -43,7 +43,7 @@ footer{text-align:center;padding:60px 24px;color:#999;font-size:14px;font-family
 </head>
 <body>
 <header class="hero">
-<div class="hero-badge">芒格计划 · 第4期</div>
+<div class="hero-badge">芒格计划 · 他山之石 · 第4期</div>
 <h1>决策的<em>迷局</em></h1>
 <p class="sub">智者为何也会做出灾难性的选择？</p>
 <p class="meta">激励结构 × 损失厌恶</p>
@@ -119,7 +119,7 @@ footer{text-align:center;padding:60px 24px;color:#999;font-size:14px;font-family
 </section>
 <hr class="divider-solid">
 <footer>
-<p>芒格计划 · 第4期</p>
+<p>芒格计划 · 他山之石 · 第4期</p>
 <nav style="margin-top:12px;display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap;">
 <a href="03.html" style="color:#c8a45c;text-decoration:none;font-size:14px;">← 上一篇：隐秘的杠杆</a>
 <span style="color:#ddd;">|</span>
@@ -351,8 +351,8 @@ return {n:n,title:title||("第"+n+"期"),model:model||"",text:text};
 }catch(e){return null;}
 }
 function buildSystemPrompt(){
-if(!_aictx||!_aictx.issues||!_aictx.issues.length)return "你是\"芒格计划\"的AI助教。芒格计划是一套基于查理·芒格\"格栅理论\"的跨学科思维模型学习系统。你的风格：说人话、简洁、像博学的朋友。请用中文回复。";
-var p="你是\"芒格计划\"的AI助教。芒格计划是一套基于查理·芒格\"格栅理论\"的跨学科思维模型学习系统，目前共10期。你的风格：说人话、简洁、像博学的朋友。以下是各期摘要：\n\n";
+if(!_aictx||!_aictx.issues||!_aictx.issues.length)return "你是\"他山之石\"的AI助教。他山之石是芒格计划旗下的一套基于查理·芒格\"格栅理论\"的跨学科思维模型学习系统。你的风格：说人话、简洁、像博学的朋友。请用中文回复。";
+var p="你是\"他山之石\"的AI助教。他山之石是芒格计划旗下的一套基于查理·芒格\"格栅理论\"的跨学科思维模型学习系统，目前共10期。你的风格：说人话、简洁、像博学的朋友。以下是各期摘要：\n\n";
 for(var i=0;i<_aictx.issues.length;i++){
 var iss=_aictx.issues[i];
 p+="第"+iss.n+"期《"+iss.title+"》—— "+iss.model+"\n"+iss.text+"\n\n";
@@ -366,7 +366,7 @@ var b=document.getElementById("aimsgs");if(!b)return;
 var sc=document.getElementById("aic");if(sc)sc.textContent=_aichat.length?"("+_aichat.length+"条)":"(空)";
 var html="";
 if(!_aichat.length&&_aictx){
-var greet="你好！我是芒格计划的AI助教 🤖\n\n我已经读完了目前已发布的所有10期内容，对每个思维模型都有了解。你可以问我：\n\n• 某个模型的核心概念（比如\"什么是熵增？\"）\n• 不同模型之间的联系（比如\"熵增和复利有什么关系？\"）\n• 用模型解释现实问题（比如\"为什么大公司总会变得官僚化？\"）\n• 你正在阅读的文章里的任何问题\n\n有什么想聊的？";
+var greet="你好！我是他山之石的AI助教 🤖\n\n我已经读完了目前已发布的所有10期内容，对每个思维模型都有了解。你可以问我：\n\n• 某个模型的核心概念（比如\"什么是熵增？\"）\n• 不同模型之间的联系（比如\"熵增和复利有什么关系？\"）\n• 用模型解释现实问题（比如\"为什么大公司总会变得官僚化？\"）\n• 你正在阅读的文章里的任何问题\n\n有什么想聊的？";
 html+='<div class="aichat-msg aichat-assistant"><div class="lbl">AI</div><div class="bub">'+esc(greet).replace(/\n/g,"<br>")+'</div></div>';
 }
 for(var i=0;i<_aichat.length;i++){

@@ -44,7 +44,7 @@ jobs:
               'msg_type': 'interactive',
               'card': {
                   'header': {
-                      'title': {'tag': 'plain_text', 'content': '芒格计划 · 第${N}期'},
+                      'title': {'tag': 'plain_text', 'content': '芒格计划 · 他山之石 · 第${N}期'},
                       'template': 'blue'
                   },
                   'elements': [
