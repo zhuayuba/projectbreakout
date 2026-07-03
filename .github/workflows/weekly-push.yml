@@ -1,4 +1,4 @@
-name: 每周一三推送
+name: 每周一四推送
 on:
   schedule:
     - cron: "0 12 * * 1,4"
@@ -76,3 +76,37 @@ jobs:
           git diff --staged --quiet || git commit -m "→ 下期 #$((N + 1))"
           git pull --no-rebase
           git push
+      - name: 库存预警
+        run: |
+          TOTAL=$(ls [0-9][0-9].html 2>/dev/null | wc -l)
+          NEXT=$(cat next_issue.txt)
+          RESERVE=$((TOTAL - NEXT + 1))
+          if [ "$RESERVE" -le 2 ]; then
+            python3 -c "
+          import hashlib, hmac, base64, time, json, urllib.request, os
+          ts = str(int(time.time()))
+          secret = os.environ['LARK_SECRET']
+          sign_string = ts + '\n' + secret
+          sign = base64.b64encode(hmac.new(sign_string.encode(), b'', hashlib.sha256).digest()).decode()
+          body = json.dumps({
+              'timestamp': ts,
+              'sign': sign,
+              'msg_type': 'interactive',
+              'card': {
+                  'header': {
+                      'title': {'tag': 'plain_text', 'content': '⚠️ 他山之石 · 库存预警'},
+                      'template': 'orange'
+                  },
+                  'elements': [
+                      {'tag': 'markdown', 'content': '**剩余期数：${RESERVE} 期**\n仅够推送一周。选题池有 $(wc -l < topics_pool.md 2>/dev/null || echo "?") 个候选，请尽快补充内容。'}
+                  ]
+              }
+          }).encode()
+          req = urllib.request.Request(os.environ['LARK_WEBHOOK'], data=body, headers={'Content-Type': 'application/json'})
+          resp = urllib.request.urlopen(req)
+          print(resp.read().decode())
+            "
+          fi
+        env:
+          LARK_WEBHOOK: ${{ secrets.LARK_WEBHOOK_URL }}
+          LARK_SECRET: ${{ secrets.LARK_SIGNING_SECRET }}
