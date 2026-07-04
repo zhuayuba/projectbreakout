@@ -1,0 +1,148 @@
+name: 自动补货
+on:
+  schedule:
+    # UTC 18:00 = 北京时间 02:00 凌晨
+    # 避开 20:00 推送高峰, 凌晨 DeepSeek 负载低
+    - cron: "0 18 * * *"
+  workflow_dispatch:
+    inputs:
+      series:
+        description: "指定系列 (留空则检查全部: stones/thinking/career)"
+        type: choice
+        options:
+          - ""
+          - stones
+          - thinking
+          - career
+      count:
+        description: "每个系列生成几期 (默认6)"
+        default: "6"
+
+permissions:
+  contents: write
+
+jobs:
+  replenish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 检查库存并补货
+        id: run
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: |
+          SERIES_INPUT="${{ github.event.inputs.series }}"
+          COUNT="${{ github.event.inputs.count }}"
+
+          # 决定要处理哪些系列
+          if [ -z "$SERIES_INPUT" ]; then
+            SERIES_LIST="stones thinking career"
+          else
+            SERIES_LIST="$SERIES_INPUT"
+          fi
+
+          echo "处理系列: $SERIES_LIST"
+          echo "每系列生成: ${COUNT:-6} 期"
+
+          ANY_GENERATED=0
+          ANY_FAILED=0
+          SUMMARY=""
+
+          for s in $SERIES_LIST; do
+            echo "=========================================="
+            echo "处理系列: $s"
+            echo "=========================================="
+
+            # 先检查库存, 决定是否需要补货
+            TOTAL=$(ls $s/[0-9][0-9].html 2>/dev/null | wc -l)
+            NEXT=$(cat $s/next_issue.txt 2>/dev/null || echo "1")
+            RESERVE=$((TOTAL - NEXT + 1))
+            echo "$s 库存: $RESERVE 期 (TOTAL=$TOTAL NEXT=$NEXT)"
+
+            if [ "$RESERVE" -gt 2 ]; then
+              echo "$s 库存充足, 跳过"
+              SUMMARY="$SUMMARY\n$s: 库存 $RESERVE 期, 跳过"
+              continue
+            fi
+
+            # 库存 ≤2, 调脚本补货
+            OUTPUT=$(python3 scripts/replenish.py "$s" --count "${COUNT:-6}" 2>&1) || true
+            echo "$OUTPUT"
+
+            # 检查是否真的生成了新文件 (git status)
+            NEW_FILES=$(git status --porcelain -- "$s/[0-9][0-9].html" | grep "^??" | wc -l)
+            if [ "$NEW_FILES" -gt 0 ]; then
+              echo "$s 生成了 $NEW_FILES 个新文件"
+              ANY_GENERATED=1
+              SUMMARY="$SUMMARY\n$s: ✅ 生成 $NEW_FILES 期"
+            else
+              echo "$s 未生成新文件 (可能 AI 失败或选题池空)"
+              ANY_FAILED=1
+              SUMMARY="$SUMMARY\n$s: ❌ 未生成 (检查日志)"
+            fi
+          done
+
+          echo "=========================================="
+          echo "汇总:"
+          echo -e "$SUMMARY"
+          echo "=========================================="
+
+          # 保存汇总给后续步骤用
+          echo "any_generated=$ANY_GENERATED" >> $GITHUB_OUTPUT
+          echo "any_failed=$ANY_FAILED" >> $GITHUB_OUTPUT
+          {
+            echo "summary<<EOF"
+            echo -e "$SUMMARY"
+            echo "EOF"
+          } >> $GITHUB_OUTPUT
+
+      - name: 提交补货内容
+        if: steps.run.outputs.any_generated == '1'
+        run: |
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions"
+          git add stones/ thinking/ career/
+          git diff --staged --quiet || {
+            git commit -m "🤖 自动补货 ($(date -u '+%Y-%m-%d'))
+
+          ${{ steps.run.outputs.summary }}"
+            git push
+            echo "已提交补货内容"
+          }
+
+      - name: 失败告警 (飞书)
+        if: steps.run.outputs.any_failed == '1'
+        env:
+          LARK_WEBHOOK: ${{ secrets.LARK_WEBHOOK_URL }}
+          LARK_SECRET: ${{ secrets.LARK_SIGNING_SECRET }}
+        run: |
+          python3 -c "
+          import hashlib, hmac, base64, time, json, urllib.request, os
+          ts = str(int(time.time()))
+          secret = os.environ['LARK_SECRET']
+          sign_string = ts + '\n' + secret
+          sign = base64.b64encode(hmac.new(sign_string.encode(), b'', hashlib.sha256).digest()).decode()
+          body = json.dumps({
+              'timestamp': ts,
+              'sign': sign,
+              'msg_type': 'interactive',
+              'card': {
+                  'header': {
+                      'title': {'tag': 'plain_text', 'content': '⚠️ 芒格计划 · 自动补货告警'},
+                      'template': 'red'
+                  },
+                  'elements': [
+                      {'tag': 'markdown', 'content': '${{ steps.run.outputs.summary }}'.replace(chr(10), chr(10))}
+                  ]
+              }
+          }).encode()
+          req = urllib.request.Request(os.environ['LARK_WEBHOOK'], data=body, headers={'Content-Type': 'application/json'})
+          resp = urllib.request.urlopen(req)
+          print(resp.read().decode())
+          "
