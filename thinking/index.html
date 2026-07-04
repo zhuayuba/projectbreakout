@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>另眼相看 · 像学者一样思考</title>
+<style>
+:root{--bg:#f8f7f4;--text:#1a1a2e;--accent:#c97a5a;--accent-dark:#9a5040;--card-bg:#fff;--muted:#6b7280;--border:#e5e0d8}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Noto Sans SC",sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:16px}
+.hero{background:linear-gradient(135deg,#2d1320,#1f0d18,#140810);color:#f0ede8;padding:80px 24px 64px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 40% 30%,rgba(201,122,90,0.12),transparent 60%)}
+.hero>*{position:relative;z-index:1}
+.hero h1{font-size:clamp(36px,7vw,64px);font-weight:700;letter-spacing:4px;margin-bottom:8px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .sub{font-size:clamp(14px,2vw,18px);color:#b8b0a0;font-weight:300;max-width:560px;margin:0 auto 24px}
+.hero .badge-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.hero .badge-row span{display:inline-block;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.04);padding:4px 14px;border-radius:16px;font-size:12px;color:#999}
+.about{max-width:700px;margin:-32px auto 0;padding:0 24px;position:relative;z-index:2}
+.about-card{background:var(--card-bg);border-radius:12px;padding:32px 36px;box-shadow:0 4px 24px rgba(0,0,0,0.06);border:1px solid var(--border);text-align:center}
+.about-card p{color:#555;margin-bottom:12px}.about-card p:last-child{margin-bottom:0}
+.container{max-width:920px;margin:0 auto;padding:0 24px}
+.catalog{padding:48px 0}
+.catalog h2{font-size:22px;font-weight:700;text-align:center;margin-bottom:8px}
+.catalog .hint{text-align:center;font-size:14px;color:var(--muted);margin-bottom:36px}
+
+/* 学科分组 */
+.discipline-group{margin-bottom:40px}
+.discipline-header{display:flex;align-items:center;gap:12px;margin-bottom:12px;padding:0 4px}
+.discipline-header .disc-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0}
+.discipline-header .disc-name{font-size:20px;font-weight:700;letter-spacing:1px}
+.discipline-header .disc-sub{font-size:13px;color:var(--muted);font-weight:400}
+.discipline-header .disc-count{font-size:12px;color:var(--muted);margin-left:auto;white-space:nowrap}
+
+/* 期次卡片 */
+.issue-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.issue-card,.issue-card-future{display:flex;align-items:stretch;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:all .2s;text-decoration:none;color:inherit}
+.issue-card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.06);border-color:#d0c8b8;transform:translateY(-1px)}
+.issue-card-future{opacity:0.35;cursor:default}
+.issue-num{display:flex;align-items:center;justify-content:center;min-width:52px;font-size:18px;font-weight:800;color:#fff;font-family:monospace;flex-shrink:0}
+.issue-info{flex:1;padding:14px 18px;display:flex;flex-direction:column;justify-content:center;min-width:0}
+.issue-info .model{font-size:11px;letter-spacing:1px;color:var(--muted);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.issue-info h4{font-size:15px;font-weight:700;margin:2px 0 3px;line-height:1.3}
+.issue-info .hook{font-size:12px;color:#888;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.issue-info .status-line{font-size:11px;margin-top:4px;display:flex;align-items:center;gap:5px}
+.issue-info .status-line .dot{width:5px;height:5px;border-radius:50%;display:inline-block}
+.issue-info .status-line .dot.green{background:#27ae60}
+.issue-info .status-line .dot.gray{background:#ccc}
+
+/* 学科色 */
+.d-physics .disc-icon,.d-physics .issue-num{background:#4a7fb5}
+.d-biology .disc-icon,.d-biology .issue-num{background:#3a8a5c}
+.d-chemistry .disc-icon,.d-chemistry .issue-num{background:#7b8a4a}
+.d-psychology .disc-icon,.d-psychology .issue-num{background:#8a5c9e}
+.d-economics .disc-icon,.d-economics .issue-num{background:#c07a3a}
+.d-history .disc-icon,.d-history .issue-num{background:#b56576}
+.d-sociology .disc-icon,.d-sociology .issue-num{background:#5b8c85}
+.d-math .disc-icon,.d-math .issue-num{background:#4a8a9a}
+.d-philosophy .disc-icon,.d-philosophy .issue-num{background:#6a5a8a}
+.d-engineering .disc-icon,.d-engineering .issue-num{background:#5a7a8a}
+.d-cs .disc-icon,.d-cs .issue-num{background:#3a6a8a}
+.d-statistics .disc-icon,.d-statistics .issue-num{background:#7b6b8a}
+.issue-card-future .issue-num{background:#ccc}
+
+/* 系列关系卡片 */
+.relation-entry{background:linear-gradient(135deg,#faf5f2,#f5ece4);border:1px solid #e0d0c8;border-radius:12px;padding:28px 32px;margin:8px 0 40px;text-align:center}
+.relation-entry h3{font-size:18px;font-weight:700;color:#5a3030;margin-bottom:6px}
+.relation-entry p{font-size:14px;color:#8a6060;margin-bottom:0}
+.relation-entry a{color:#c97a5a;font-weight:600;text-decoration:none}
+.relation-entry a:hover{text-decoration:underline}
+
+footer{text-align:center;padding:40px 24px;color:var(--muted);font-size:13px}
+
+@media(max-width:768px){.issue-row{grid-template-columns:1fr}}
+
+@media(max-width:600px){
+  .hero{padding:48px 20px 40px}
+  .about-card{padding:24px 20px}
+  .issue-num{min-width:44px;font-size:15px}
+  .issue-info{padding:10px 14px}
+  .issue-info h4{font-size:14px}
+  .discipline-header{gap:8px}
+  .discipline-header .disc-name{font-size:17px}
+}
+</style>
+</head>
+<body>
+
+<!-- ====== HERO ====== -->
+<div class="hero">
+  <h1>另眼相看</h1>
+  <p class="sub">芒格计划 · 像学者一样思考，换个角度看世界</p>
+  <div class="badge-row">
+    <span>芒格计划</span>
+    <span>🧠 12个学科 · 48期</span>
+    <span>🤔 像XX家一样思考</span>
+    <span>💬 大白话讲透学科思维</span>
+  </div>
+</div>
+
+<!-- ====== ABOUT ====== -->
+<div class="about">
+  <div class="about-card">
+    <p><strong>学一个学科，不是背它的结论，而是像它一样思考。</strong></p>
+    <p>像物理学家一样追问底层逻辑，像经济学家一样权衡得失，像历史学家一样看见循环，像社会学家一样看穿结构——<strong>同一个世界，不同学科的人看到完全不同的东西。</strong>芒格说，你手里只有锤子，看什么都像钉子。这个系列的目的，就是让你拥有<strong>12种不同的"看家眼光"</strong>。</p>
+    <p style="font-size:14px;color:#999;">每学科4期，每期讲透一种底层思维 · 不讲教科书，讲思维方式 · 大白话，不学术</p>
+  </div>
+</div>
+
+<div class="container">
+<div class="catalog">
+  <h2>📚 学科目录</h2>
+  <p class="hint">点击卡片进入阅读 · 已发布的学科可以逐期学习</p>
+
+  <!-- ====== 物理学 ====== -->
+  <div class="discipline-group d-physics">
+    <div class="discipline-header">
+      <div class="disc-icon">⚛️</div>
+      <span class="disc-name">物理学</span>
+      <span class="disc-sub">· 像物理学家一样思考</span>
+      <span class="disc-count">第1季 · 4期</span>
+    </div>
+    <div class="issue-row">
+      <a href="01.html" class="issue-card"><div class="issue-num">01</div><div class="issue-info"><div class="model">底层思维①</div><h4>第一性原理</h4><p class="hook">剥掉所有假设，从最基本的真理重新推理。</p><div class="status-line"><span class="dot green"></span>已发布</div></div></a>
+      <a href="02.html" class="issue-card"><div class="issue-num">02</div><div class="issue-info"><div class="model">底层思维②</div><h4>守恒思维</h4><p class="hook">有些东西不会凭空消失，换个形式继续存在。</p><div class="status-line"><span class="dot green"></span>已发布</div></div></a>
+      <a href="03.html" class="issue-card"><div class="issue-num">03</div><div class="issue-info"><div class="model">底层思维③</div><h4>尺度思维</h4><p class="hook">从夸克到宇宙，不同尺度下规律完全不同。</p><div class="status-line"><span class="dot green"></span>已发布</div></div></a>
+      <a href="04.html" class="issue-card"><div class="issue-num">04</div><div class="issue-info"><div class="model">底层思维④</div><h4>思想实验</h4><p class="hook">在脑子里做实验，用想象力抵达实验室到不了的地方。</p><div class="status-line"><span class="dot green"></span>已发布</div></div></a>
+    </div>
+  </div>
+
+  <!-- ====== 生物学 ====== -->
+  <div class="discipline-group d-biology">
+    <div class="discipline-header">
+      <div class="disc-icon">🧬</div>
+      <span class="disc-name">生物学</span>
+      <span class="disc-sub">· 像生物学家一样思考</span>
+      <span class="disc-count">第2季 · 4期</span>
+    </div>
+    <div class="issue-row">
+      <div class="issue-card-future"><div class="issue-num">05</div><div class="issue-info"><div class="model">底层思维①</div><h4>进化思维</h4><p class="hook">变异+选择+时间=一切复杂性的来源。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">06</div><div class="issue-info"><div class="model">底层思维②</div><h4>生态位思维</h4><p class="hook">不要问"谁最强"，要问"谁在什么位置上活得最好"。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">07</div><div class="issue-info"><div class="model">底层思维③</div><h4>冗余与稳健性</h4><p class="hook">为什么大自然从来不追求"最优"，而是留足余量。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">08</div><div class="issue-info"><div class="model">底层思维④</div><h4>功能解释</h4><p class="hook">问"它为什么存在"之前，先问"它解决了什么问题"。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+    </div>
+  </div>
+
+  <!-- ====== 化学 ====== -->
+  <div class="discipline-group d-chemistry">
+    <div class="discipline-header">
+      <div class="disc-icon">⚗️</div>
+      <span class="disc-name">化学</span>
+      <span class="disc-sub">· 像化学家一样思考</span>
+      <span class="disc-count">第3季 · 4期</span>
+    </div>
+    <div class="issue-row">
+      <div class="issue-card-future"><div class="issue-num">09</div><div class="issue-info"><div class="model">底层思维①</div><h4>结构决定性质</h4><p class="hook">同样一堆碳原子，排成石墨是黑的软的，排成钻石是透明的硬的。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">10</div><div class="issue-info"><div class="model">底层思维②</div><h4>动态平衡</h4><p class="hook">静止不是终点，是正反两个方向速度相等的状态。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">11</div><div class="issue-info"><div class="model">底层思维③</div><h4>催化剂思维</h4><p class="hook">自己不消耗，但能让事情加速发生——杠杆的最高境界。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">12</div><div class="issue-info"><div class="model">底层思维④</div><h4>从定性到定量</h4><p class="hook">"有毒"还是"无毒"？离开剂量谈毒性都是耍流氓。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+    </div>
+  </div>
+
+  <!-- ====== 心理学 ====== -->
+  <div class="discipline-group d-psychology">
+    <div class="discipline-header">
+      <div class="disc-icon">🧠</div>
+      <span class="disc-name">心理学</span>
+      <span class="disc-sub">· 像心理学家一样思考</span>
+      <span class="disc-count">第4季 · 4期</span>
+    </div>
+    <div class="issue-row">
+      <div class="issue-card-future"><div class="issue-num">13</div><div class="issue-info"><div class="model">底层思维①</div><h4>人是认知吝啬鬼</h4><p class="hook">大脑能偷懒就偷懒，大多数"思考"其实是自动导航。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">14</div><div class="issue-info"><div class="model">底层思维②</div><h4>激励驱动行为</h4><p class="hook">别听人说什么，看他被什么激励。激励是行为的终极开关。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">15</div><div class="issue-info"><div class="model">底层思维③</div><h4>框架效应</h4><p class="hook">同样一件事，换个说法就能让人做出完全相反的决定。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">16</div><div class="issue-info"><div class="model">底层思维④</div><h4>社会认同的力量</h4><p class="hook">人在群体中的行为方式，和独处时判若两人。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+    </div>
+  </div>
+
+  <!-- ====== 经济学 ====== -->
+  <div class="discipline-group d-economics">
+    <div class="discipline-header">
+      <div class="disc-icon">📈</div>
+      <span class="disc-name">经济学</span>
+      <span class="disc-sub">· 像经济学家一样思考</span>
+      <span class="disc-count">第5季 · 4期</span>
+    </div>
+    <div class="issue-row">
+      <div class="issue-card-future"><div class="issue-num">17</div><div class="issue-info"><div class="model">底层思维①</div><h4>机会成本</h4><p class="hook">你每做一个选择，都在放弃其他所有可能中最好的那个。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">18</div><div class="issue-info"><div class="model">底层思维②</div><h4>边际思维</h4><p class="hook">不要问"要不要"，要问"再多一点值不值"。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">19</div><div class="issue-info"><div class="model">底层思维③</div><h4>激励分析</h4><p class="hook">改变游戏规则，行为就会变。永远先看激励结构。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">20</div><div class="issue-info"><div class="model">底层思维④</div><h4>看不见的手</h4><p class="hook">个体的自利行为，在特定条件下会产生群体层面的秩序。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+    </div>
+  </div>
+
+  <!-- ====== 历史学 ====== -->
+  <div class="discipline-group d-history">
+    <div class="discipline-header">
+      <div class="disc-icon">📜</div>
+      <span class="disc-name">历史学</span>
+      <span class="disc-sub">· 像历史学家一样思考</span>
+      <span class="disc-count">第6季 · 4期</span>
+    </div>
+    <div class="issue-row">
+      <div class="issue-card-future"><div class="issue-num">21</div><div class="issue-info"><div class="model">底层思维①</div><h4>太阳底下无新事</h4><p class="hook">要有历史感——你今天遇到的几乎所有问题，历史上都有人遇到过。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">22</div><div class="issue-info"><div class="model">底层思维②</div><h4>多重因果与路径依赖</h4><p class="hook">没有单一原因的历史事件，而一旦走上某条路就很难回头。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">23</div><div class="issue-info"><div class="model">底层思维③</div><h4>史料批判意识</h4><p class="hook">谁写的？写给谁看的？为什么留下这个而不是别的？</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">24</div><div class="issue-info"><div class="model">底层思维④</div><h4>长时段视角</h4><p class="hook">别盯着今天的新闻，去看三百年的结构变迁。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+    </div>
+  </div>
+
+  <!-- ====== 社会学 ====== -->
+  <div class="discipline-group d-sociology">
+    <div class="discipline-header">
+      <div class="disc-icon">👥</div>
+      <span class="disc-name">社会学</span>
+      <span class="disc-sub">· 像社会学家一样思考</span>
+      <span class="disc-count">第7季 · 4期</span>
+    </div>
+    <div class="issue-row">
+      <div class="issue-card-future"><div class="issue-num">25</div><div class="issue-info"><div class="model">底层思维①</div><h4>个体命运背后的社会逻辑</h4><p class="hook">你以为的"个人问题"，很可能不是个人的——是结构性的。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">26</div><div class="issue-info"><div class="model">底层思维②</div><h4>社会事实的强制力</h4><p class="hook">有些规则虽然看不见，但违反了你会被社会"惩罚"。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">27</div><div class="issue-info"><div class="model">底层思维③</div><h4>结构与能动性</h4><p class="hook">社会结构在塑造你，但你也同时在塑造社会结构。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">28</div><div class="issue-info"><div class="model">底层思维④</div><h4>比较法</h4><p class="hook">不比较不同社会，你就看不出自己社会的"特殊性"。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+    </div>
+  </div>
+
+  <!-- ====== 数学 ====== -->
+  <div class="discipline-group d-math">
+    <div class="discipline-header">
+      <div class="disc-icon">📐</div>
+      <span class="disc-name">数学</span>
+      <span class="disc-sub">· 像数学家一样思考</span>
+      <span class="disc-count">第8季 · 4期</span>
+    </div>
+    <div class="issue-row">
+      <div class="issue-card-future"><div class="issue-num">29</div><div class="issue-info"><div class="model">底层思维①</div><h4>公理化思维</h4><p class="hook">从几条最简单的假设出发，推导出整个世界。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">30</div><div class="issue-info"><div class="model">底层思维②</div><h4>概率思维</h4><p class="hook">别问"会不会发生"，问"发生的概率有多大"。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">31</div><div class="issue-info"><div class="model">底层思维③</div><h4>抽象的力量</h4><p class="hook">剥离具体细节，看到不同事物背后相同的结构。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">32</div><div class="issue-info"><div class="model">底层思维④</div><h4>对称之美</h4><p class="hook">对称性意味着不变性——找到变中的不变，就找到了规律。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+    </div>
+  </div>
+
+  <!-- ====== 哲学 ====== -->
+  <div class="discipline-group d-philosophy">
+    <div class="discipline-header">
+      <div class="disc-icon">🏛️</div>
+      <span class="disc-name">哲学</span>
+      <span class="disc-sub">· 像哲学家一样思考</span>
+      <span class="disc-count">第9季 · 4期</span>
+    </div>
+    <div class="issue-row">
+      <div class="issue-card-future"><div class="issue-num">33</div><div class="issue-info"><div class="model">底层思维①</div><h4>苏格拉底式追问</h4><p class="hook">不断问"为什么"，直到对方回答不上来——那里才是问题的起点。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">34</div><div class="issue-info"><div class="model">底层思维②</div><h4>奥卡姆剃刀</h4><p class="hook">如无必要，勿增实体。最简单的解释往往是最好的。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">35</div><div class="issue-info"><div class="model">底层思维③</div><h4>辩证思维</h4><p class="hook">正题、反题、合题——进步来自对立面的碰撞与融合。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">36</div><div class="issue-info"><div class="model">底层思维④</div><h4>休谟的叉子</h4><p class="hook">分清"事实判断"和"价值判断"，不要把"是什么"说成"应该是什么"。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+    </div>
+  </div>
+
+  <!-- ====== 工程学与系统思维 ====== -->
+  <div class="discipline-group d-engineering">
+    <div class="discipline-header">
+      <div class="disc-icon">⚙️</div>
+      <span class="disc-name">工程学与系统思维</span>
+      <span class="disc-sub">· 像工程师一样思考</span>
+      <span class="disc-count">第10季 · 4期</span>
+    </div>
+    <div class="issue-row">
+      <div class="issue-card-future"><div class="issue-num">37</div><div class="issue-info"><div class="model">底层思维①</div><h4>反馈回路</h4><p class="hook">正反馈让事情自我强化，负反馈让系统自我修正——看懂回路就看懂了系统。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">38</div><div class="issue-info"><div class="model">底层思维②</div><h4>安全边际</h4><p class="hook">永远假设事情会比预期的更糟，给自己留足余量。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">39</div><div class="issue-info"><div class="model">底层思维③</div><h4>瓶颈思维</h4><p class="hook">系统的能力不取决于最强的一环，而取决于最弱的一环。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">40</div><div class="issue-info"><div class="model">底层思维④</div><h4>试错迭代</h4><p class="hook">不求一次完美，求快速暴露问题→修正→再试。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+    </div>
+  </div>
+
+  <!-- ====== 计算机科学 ====== -->
+  <div class="discipline-group d-cs">
+    <div class="discipline-header">
+      <div class="disc-icon">💻</div>
+      <span class="disc-name">计算机科学</span>
+      <span class="disc-sub">· 像计算机科学家一样思考</span>
+      <span class="disc-count">第11季 · 4期</span>
+    </div>
+    <div class="issue-row">
+      <div class="issue-card-future"><div class="issue-num">41</div><div class="issue-info"><div class="model">底层思维①</div><h4>算法思维</h4><p class="hook">任何问题的解决方案，都可以拆解成一串精确的步骤。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">42</div><div class="issue-info"><div class="model">底层思维②</div><h4>抽象分层</h4><p class="hook">不需要理解每一层，只需要知道每一层"吃什么、吐什么"。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">43</div><div class="issue-info"><div class="model">底层思维③</div><h4>缓存与延迟</h4><p class="hook">有时候"懒"一点是好事——把常用的放在手边，不用每次都从头来。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">44</div><div class="issue-info"><div class="model">底层思维④</div><h4>分治策略</h4><p class="hook">大问题拆成小问题，小问题拆成更小的问题，直到每个都能轻松解决。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+    </div>
+  </div>
+
+  <!-- ====== 统计学 ====== -->
+  <div class="discipline-group d-statistics">
+    <div class="discipline-header">
+      <div class="disc-icon">📊</div>
+      <span class="disc-name">统计学</span>
+      <span class="disc-sub">· 像统计学家一样思考</span>
+      <span class="disc-count">第12季 · 4期</span>
+    </div>
+    <div class="issue-row">
+      <div class="issue-card-future"><div class="issue-num">45</div><div class="issue-info"><div class="model">底层思维①</div><h4>贝叶斯更新</h4><p class="hook">有了新证据就更新你的信念——别固执，也别每听到一点风声就全盘推翻。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">46</div><div class="issue-info"><div class="model">底层思维②</div><h4>回归均值</h4><p class="hook">极端的表现之后，下一次往往会向平均值靠拢——别过度解读"反弹"。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">47</div><div class="issue-info"><div class="model">底层思维③</div><h4>幸存者偏差</h4><p class="hook">你看到的"成功故事"都是活下来的——死了的不会说话。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+      <div class="issue-card-future"><div class="issue-num">48</div><div class="issue-info"><div class="model">底层思维④</div><h4>相关≠因果</h4><p class="hook">冰淇淋销量和溺水人数一起涨——不是冰淇淋害的，是夏天害的。</p><div class="status-line"><span class="dot gray"></span>待发布</div></div></div>
+    </div>
+  </div>
+
+</div><!-- /catalog -->
+
+<!-- ====== 系列关系 ====== -->
+<div class="relation-entry">
+  <h3>🔗 与芒格计划的关系</h3>
+  <p><strong>芒格计划</strong>是"横着用"——从各学科提取思维模型，一个模型看透多个领域；<strong>另眼相看</strong>是"竖着学"——钻进一个学科内部，理解它独特的思考习惯。两者合在一起，就是芒格说的"格栅理论"。</p>
+  <p style="margin-top:8px;">👉 <a href="../stones/index.html">回到芒格计划主页</a></p>
+</div>
+
+</div><!-- /container -->
+
+<footer>芒格计划 · 另眼相看 · 以查理·芒格的格栅理论为精神指引 · 持续更新中</footer>
+
+</body>
+</html>

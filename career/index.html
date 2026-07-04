@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>职人手艺 · 看懂一百种职业的思维方式</title>
+<style>
+:root{--bg:#faf8f5;--text:#1a1a2e;--accent:#e8924c;--accent-dark:#c8772e;--card-bg:#fff;--muted:#6b7280;--border:#e5e0d8}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Noto Sans SC",sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:16px}
+.hero{background:linear-gradient(135deg,#1a1d2e,#1a2744,#1a3856);color:#f0ede8;padding:80px 24px 64px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(232,146,76,0.1),transparent 60%)}
+.hero>*{position:relative;z-index:1}
+.hero h1{font-size:clamp(36px,7vw,64px);font-weight:700;letter-spacing:4px;margin-bottom:8px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .sub{font-size:clamp(14px,2vw,18px);color:#b8b0a0;font-weight:300;max-width:520px;margin:0 auto 24px}
+.hero .badge-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.hero .badge-row span{display:inline-block;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.04);padding:4px 14px;border-radius:16px;font-size:12px;color:#999}
+.about{max-width:660px;margin:-32px auto 0;padding:0 24px;position:relative;z-index:2}
+.about-card{background:var(--card-bg);border-radius:12px;padding:32px 36px;box-shadow:0 4px 24px rgba(0,0,0,0.06);border:1px solid var(--border);text-align:center}
+.about-card p{color:#555;margin-bottom:12px}.about-card p:last-child{margin-bottom:0}
+.container{max-width:860px;margin:0 auto;padding:0 24px}
+.issue-grid{padding:48px 0}
+.issue-grid h2{font-size:22px;font-weight:700;text-align:center;margin-bottom:8px}
+.issue-grid .hint{text-align:center;font-size:14px;color:var(--muted);margin-bottom:28px}
+.issue-card,.issue-card-future{display:flex;align-items:stretch;background:var(--card-bg);border:1px solid var(--border);border-radius:12px;margin-bottom:16px;overflow:hidden;transition:all .2s;text-decoration:none;color:inherit}
+.issue-card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.06);border-color:#d0c8b8;transform:translateY(-1px)}
+.issue-card-future{opacity:0.4;cursor:default}
+.issue-num{display:flex;align-items:center;justify-content:center;min-width:80px;font-size:28px;font-weight:800;color:#fff;font-family:monospace;flex-shrink:0}
+.issue-card:nth-child(3) .issue-num{background:#e8924c}
+.issue-card:nth-child(4) .issue-num{background:#4a8a9a}
+.issue-card:nth-child(5) .issue-num{background:#8a6a9a}
+.issue-card:nth-child(6) .issue-num{background:#5a8a5a}
+.issue-card:nth-child(7) .issue-num{background:#c06a5a}
+.issue-card:nth-child(8) .issue-num{background:#6a7aba}
+.issue-card:nth-child(9) .issue-num{background:#ba8a4a}
+.issue-card:nth-child(10) .issue-num{background:#4a9a8a}
+.issue-card:nth-child(11) .issue-num{background:#9a5a7a}
+.issue-card:nth-child(12) .issue-num{background:#7a8a4a}
+.issue-card:nth-child(13) .issue-num{background:#b56a6a}
+.issue-card-future .issue-num{background:#ddd}
+.issue-info{flex:1;padding:20px 24px;display:flex;flex-direction:column}
+.issue-info .job{font-size:11px;letter-spacing:2px;color:var(--muted);font-weight:600}
+.issue-info h3{font-size:18px;font-weight:700;margin:4px 0 6px;line-height:1.3}
+.issue-info p{font-size:14px;color:#666;flex:1}
+.issue-info .status{font-size:12px;margin-top:8px;display:flex;align-items:center;gap:6px}
+.issue-info .status .dot{width:6px;height:6px;border-radius:50%;display:inline-block}
+.issue-info .status .dot.green{background:#27ae60}
+.issue-info .status .dot.gray{background:#ccc}
+.guide-entry{background:linear-gradient(135deg,#fef6ee,#faf0e2);border:1px solid #e8d4b8;border-radius:12px;padding:28px 32px;margin:8px 0 40px;text-align:center}
+.guide-entry h3{font-size:18px;font-weight:700;color:#5a3a1a;margin-bottom:6px}.guide-entry p{font-size:14px;color:#8a6a4a;margin-bottom:0}
+.notebook-entry{background:linear-gradient(135deg,#f0f4ff,#e8ecf4);border:1px solid #c8d0e0;border-radius:12px;padding:28px 32px;margin:0 0 40px;text-align:center}
+.notebook-entry h3{font-size:18px;font-weight:700;color:#4a5a8a;margin-bottom:6px}.notebook-entry p{font-size:14px;color:#6a7a9a;margin-bottom:0}
+footer{text-align:center;padding:40px 24px;color:var(--muted);font-size:13px}
+@media(max-width:600px){.hero{padding:48px 20px 40px}.about-card{padding:24px 20px}.issue-num{min-width:56px;font-size:20px}.issue-info{padding:14px 16px}.issue-info h3{font-size:16px}}
+</style>
+</head>
+<body>
+<div class="hero">
+  <p style="font-size:12px;color:#777;letter-spacing:3px;margin-bottom:6px;font-family:-apple-system,'PingFang SC',sans-serif;">芒格计划</p>
+  <h1>职人<em>手艺</em></h1>
+  <p class="sub">每一份职业都是一套独特的操作系统。把它拆开看看。</p>
+  <div class="badge-row">
+    <span>🛠️ 芒格计划 · 每周三、六更新</span>
+    <span>🧠 跨职业思维模型</span>
+    <span>💬 大白话 + 真实案例</span>
+  </div>
+</div>
+<div class="about">
+  <div class="about-card">
+    <p><strong>没有什么职业是"简单"的。</strong></p>
+    <p>每一个你习以为常的职业——帮你装空调的师傅、菜市场杀鱼的摊主、凌晨扫大街的环卫工——脑子里都有一套你完全不了解的<strong>操作系统</strong>。他们看世界的方式、解决问题的本能、十年磨出来的肌肉记忆，才是这个系列真正想挖出来的东西。</p>
+    <p style="font-size:14px;color:#999;">每期解剖一个职业：真实日常 → 新人踩坑 → 老手绝活 → 底层思维 → 跨界启发</p>
+  </div>
+</div>
+<div class="container">
+  <div class="issue-grid">
+    <h2>📚 全部期次</h2>
+    <p class="hint">点击卡片进入阅读 · 选中文字右键可标记和记笔记</p>
+
+    <a href="01.html" class="issue-card"><div class="issue-num">01</div><div class="issue-info"><div class="job">空调安装师傅</div><h3>悬在30楼窗外的男人</h3><p>每年夏天，几千万台空调被装上外墙。每一台背后，都有两个人在高空作业。</p><div class="status"><span class="dot green"></span>已发布</div></div></a>
+
+    <a href="02.html" class="issue-card"><div class="issue-num">02</div><div class="issue-info"><div class="job">学术文本编辑</div><h3>一篇论文从"读不懂"到"读得懂"之间</h3><p>每一篇你读着顺畅的学术论文，背后都站着一个把混乱改写成清晰的人。</p><div class="status"><span class="dot green"></span>已发布</div></div></a>
+	    <a href="03.html" class="issue-card"><div class="issue-num">03</div><div class="issue-info"><div class="job">龙舟鼓手</div><h3>全船六十个人都在拼命划水，只有他背对终点</h3><p>龙舟鼓手的鼓点里，藏着一套看不见的领导力。</p><div class="status"><span class="dot green"></span>已发布</div></div></a>
+	    <a href="04.html" class="issue-card"><div class="issue-num">04</div><div class="issue-info"><div class="job">高空玻璃清洁工</div><h3>他脚下是300米虚空，眼里只有一块脏玻璃</h3><p>城市蜘蛛人的一天，从把命交给一根绳子开始。</p><div class="status"><span class="dot green"></span>已发布</div></div></a>
+	    <a href="05.html" class="issue-card"><div class="issue-num">05</div><div class="issue-info"><div class="job">菜市场鱼摊老板</div><h3>五秒一条鱼，三十年的刀下功夫</h3><p>一把刀、一盆水、一个砧板，藏着解剖学博士级别的精准。</p><div class="status"><span class="dot green"></span>已发布</div></div></a>
+	    <a href="06.html" class="issue-card"><div class="issue-num">06</div><div class="issue-info"><div class="job">殡仪馆化妆师</div><h3>他每天面对的人，都不会说谢谢</h3><p>遗体整容师的手，让逝者以最安详的样子跟这个世界告别。</p><div class="status"><span class="dot green"></span>已发布</div></div></a>
+	    <a href="07.html" class="issue-card"><div class="issue-num">07</div><div class="issue-info"><div class="job">塔吊司机</div><h3>坐在城市最高点的人，一天不说十句话</h3><p>2平米的驾驶舱，对讲机里一个声音，和脚下几百吨的钢铁。</p><div class="status"><span class="dot green"></span>已发布</div></div></a>
+	    <a href="08.html" class="issue-card"><div class="issue-num">08</div><div class="issue-info"><div class="job">月嫂</div><h3>别人家的孩子，她带了上百个</h3><p>26天住家，每天睡3小时。她不只带娃，还要照顾一整个家庭的情绪。</p><div class="status"><span class="dot green"></span>已发布</div></div></a>
+	    <a href="09.html" class="issue-card"><div class="issue-num">09</div><div class="issue-info"><div class="job">剧本杀主持人</div><h3>他在五个小时里操控了六个人的喜怒哀乐</h3><p>即兴导演、心理观察员、节奏控制师——DM才是剧本杀真正的主角。</p><div class="status"><span class="dot green"></span>已发布</div></div></a>
+	    <a href="10.html" class="issue-card"><div class="issue-num">10</div><div class="issue-info"><div class="job">搬家工人</div><h3>他搬过一万个家，没有一个是他自己的</h3><p>搬家工人在几个小时内，看到一个人一生的物什。</p><div class="status"><span class="dot green"></span>已发布</div></div></a>
+  </div>
+
+  <div class="guide-entry">
+    <h3>💡 阅读指南</h3>
+    <p>每期独立成篇，从哪一期开始看都行。建议挑你最好奇的职业先看。</p>
+  </div>
+  <div class="notebook-entry">
+    <h3>📒 学习笔记本</h3>
+    <p>标记和笔记保存在侧边栏里。打开任意一期，点击右下角「笔记本」按钮查看。</p>
+  </div>
+</div>
+<footer>芒格计划 · 职人手艺 · 持续更新中 · 看懂一百种职业的思维方式</footer>
+</body>
+</html>

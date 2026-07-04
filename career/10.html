@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>职人手艺 · 10：他搬过一万个家，没有一个是他自己的</title>
+<style>
+:root{--bg:#faf8f5;--text:#1a1a2e;--accent:#e8924c;--accent-dark:#c8772e;--muted:#888}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Georgia","Noto Serif SC",serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:17px}
+.hero{background:linear-gradient(135deg,#1a1d2e,#1a2744,#1a3856);color:#f0ede8;padding:100px 24px 80px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(232,146,76,0.12),transparent 60%)}
+.hero>*{position:relative;z-index:1}
+.hero-badge{display:inline-block;border:1px solid var(--accent);color:var(--accent);font-family:-apple-system,"PingFang SC",sans-serif;font-size:12px;letter-spacing:3px;padding:4px 16px;border-radius:20px;margin-bottom:32px;text-transform:uppercase}
+.hero h1{font-size:clamp(32px,6vw,56px);font-weight:700;letter-spacing:2px;margin-bottom:12px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .sub{font-size:clamp(16px,2.5vw,22px);color:#b8b0a0;font-family:-apple-system,"PingFang SC",sans-serif;font-weight:300;margin-bottom:8px}
+.hero .meta{font-family:-apple-system,"PingFang SC",sans-serif;font-size:13px;color:#888;letter-spacing:1px;margin-top:12px}
+.container{max-width:740px;margin:0 auto;padding:0 24px}
+.intro{margin-top:-40px;position:relative;z-index:2}
+.intro-card{background:#fff;border-radius:12px;padding:40px 36px;box-shadow:0 4px 24px rgba(0,0,0,0.06);border:1px solid #e5e0d8}
+.intro-card p{margin-bottom:16px;color:#444}.intro-card p:last-child{margin-bottom:0}
+section{padding:48px 0}
+.section-label{font-family:-apple-system,"PingFang SC",sans-serif;font-size:11px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;margin-bottom:20px;line-height:1.4;color:#1a1a2e}
+h3{font-size:19px;font-weight:600;margin:32px 0 12px;color:#1a1a2e}
+p{margin-bottom:16px;color:#444}
+.story-box{background:#fff;border:1px solid #e5e0d8;border-radius:10px;padding:24px 28px;margin:20px 0}
+.story-box .scene{font-size:11px;letter-spacing:2px;color:var(--accent);font-family:-apple-system,"PingFang SC",sans-serif;margin-bottom:8px;text-transform:uppercase}
+.story-box p{color:#444;margin-bottom:10px}.story-box p:last-child{margin-bottom:0}
+.highlight-box{background:linear-gradient(135deg,#fef6ee,#faf0e2);border:1px solid #e8d4b8;border-radius:10px;padding:28px 32px;margin:28px 0}
+.highlight-box .label{font-family:-apple-system,"PingFang SC",sans-serif;font-size:12px;letter-spacing:2px;color:var(--accent-dark);margin-bottom:8px}
+.highlight-box p{margin-bottom:0;color:#5a3a1a}
+.skill-card{background:#fff;border:1px solid #e5e0d8;border-radius:10px;padding:24px 28px;margin:16px 0}
+.skill-card .rank{font-family:-apple-system,"PingFang SC",sans-serif;font-size:11px;letter-spacing:2px;color:var(--accent);margin-bottom:6px}
+.skill-card h4{font-size:17px;font-weight:700;margin-bottom:8px;color:#1a1a2e}
+.skill-card p{color:#555;margin-bottom:0}
+blockquote{background:#f3f0ea;border-left:4px solid var(--accent);padding:20px 24px;margin:24px 0;border-radius:0 8px 8px 0;font-style:italic;color:#555}
+blockquote cite{display:block;margin-top:8px;font-size:14px;font-style:normal;color:var(--muted)}
+.divider-solid{border:0;height:1px;background:linear-gradient(to right,transparent,#e5e0d8,transparent);margin:40px 0}
+.next-teaser{background:#f3f0ea;border:1px solid #e5e0d8;border-radius:10px;padding:24px 28px;margin:28px 0;text-align:center}
+.next-teaser .label{font-family:-apple-system,"PingFang SC",sans-serif;font-size:11px;letter-spacing:2px;color:var(--muted);margin-bottom:6px}
+.next-teaser h4{font-size:17px;font-weight:700;color:#1a1a2e;margin-bottom:4px}
+.next-teaser p{font-size:14px;color:#888;margin-bottom:0}
+footer{text-align:center;padding:60px 24px;color:#999;font-size:14px;font-family:-apple-system,"PingFang SC",sans-serif}
+@media(max-width:600px){body{font-size:16px}.hero{padding:60px 20px 50px}.intro-card{padding:28px 20px}section{padding:36px 0}.story-box,.skill-card,.highlight-box{padding:18px 20px}}
+</style>
+</head>
+<body>
+<header class="hero">
+<div class="hero-badge">芒格计划 · 职人手艺 · 第10期</div>
+<h1>他搬过一万个家，<br>没有一个是他<em>自己</em>的</h1>
+<p class="sub">搬家工人的肩膀上，扛着别人全部的人生</p>
+<span class="job-name">搬家工人</span>
+<p class="hook">你在几个小时内就能看完一个人几十年的物什——从结婚照到离婚协议，从婴儿车到老人的遗物。你搬的不是家具，是一个人从出生到现在的全部痕迹。而做完这一切之后，你开车离开，这辈子大概率不会再见到这家人。</p>
+<p class="meta">📦 搬家工人 · 体力手艺 · 在混乱中建立秩序</p>
+</header>
+
+<div class="container">
+<div class="intro"><div class="intro-card">
+<p><strong>你搬家的时候，大概不会想"这个师傅扛过多少别人的家当"。</strong></p>
+<p>你觉得他们就是出力气的——扛箱子、搬家具、开车、卸货。有力气就行，没什么技术含量。甚至有些人在搬家当天才会临时搜一下"搬家注意事项"，全程站在旁边刷手机，等师傅们搬完了说一句"辛苦了"。</p>
+<p>但如果你跟一个干了十年的搬家师傅坐下来聊一下午，你会发现这个职业的深度远超你的想象。他们见过的"家"比你多一百倍——最乱的和最整洁的、最富的和最穷的、刚结婚的和刚离婚的、活人的和死人的。他们在一天之内搬空一个人的全部生活，然后开车离开，再去搬下一个人的全部生活。</p>
+<p>这篇文章，想让你看看搬家工人眼中的世界。</p>
+</div></div>
+
+<section>
+<span class="section-label">Part 1</span>
+<h2>他在几小时内，看完一个人的一生</h2>
+
+<div class="story-box"><div class="scene">📦 案例：5月某个周六，成都，一个老小区</div>
+<p>老李今年42岁，干搬家15年了。他搬过的家——他粗算了一下——大概有一万两千多单。你问他搬过最难忘的是什么，他会沉默一会儿，然后说不止一件。</p>
+<p>有一次搬一个老太太的家。老太太走了，女儿从外地回来收拾遗物。房子不大，两室一厅，老小区四楼，没电梯。老李和搭档开始搬的时候，女儿站在客厅中间，不知道该从哪下手。</p>
+<p>老李搬衣柜的时候，柜顶掉下来一个铁皮盒子。盒子摔开了，里面是一沓信，六十年代的信，老太太跟她丈夫年轻时候的情书。纸已经黄了，有些地方被反复折过，显然读过很多遍。旁边还有一件没织完的毛衣，两根针还插在上面，线团滚到了盒子外面。老李蹲下来把信捡回盒子里，盖上盖子，放在女儿手边说："这个你自己拿吧，不装车。"</p>
+<p>女儿拿着那个盒子，站在空荡荡的客厅里哭了很久。老李搬完那一单，在车里坐了一支烟的功夫才发动车。他说他见过太多这样的时刻——一个家从"满满当当"变成"空空荡荡"，有时候只需要一个上午。</p>
+</div>
+
+<h3>什么东西都要搬</h3>
+<p>搬家工人眼里，没有"这个东西搬不了"的说法。钢琴？搬过。一台三角钢琴，四个人，从别墅二楼用滑轮吊下来——比搬家公司老板自己结婚那天还紧张。双开门冰箱？搬过。老李说最怕的不是冰箱重，是冰箱进不了门——有些老房子的门只有七十厘米宽，冰箱八十厘米，得拆门、拆冰箱把手、侧着身子一点一点挪。鱼缸？搬过——而且是里面有活鱼的那种。客户说"这缸鱼养了三年了，不能死"，老李专门腾出一个塑料桶，把鱼捞出来，打氧泵插上，全程捧在副驾驶座上。保险柜？搬过。一个三百多斤的保险柜，从五楼扛下来，楼梯转角的时候差点连人带柜子滚下去。红木家具？搬过——一个老太太的嫁妆，红木衣柜加梳妆台，六件套，老太太站在旁边盯着老李搬，每一件都要嘱咐"轻点""别磕了""这是我妈留给我的"。</p>
+
+<div class="story-box"><div class="scene">🪜 最怕的不是重，是楼梯</div>
+<p>老李说他刚入行的时候觉得搬家最怕的是东西重。扛得动就行。干了三个月之后他明白了——最怕的不是重，是楼梯。那种老小区，六楼七楼，没电梯，楼道窄得两个人并排走都费劲。</p>
+<p>有一单他记得特别清楚：城南一个老小区的七楼，要搬一个两米长的皮沙发下来。沙发不重，但它长。楼梯拐角只有一米二的宽度，沙发两米——根本转不过弯。老李和搭档试了三种角度，最后是把沙发竖起来、贴着楼梯扶手外侧、一点一点往下蹭。七层楼梯，搬了将近一个小时。搬完之后两个人的手指都在抖——不是累的，是一直用力撑着沙发怕它滑下去。</p>
+<p>还有一次搬一个红木衣柜上六楼。衣柜净重一百八十斤，两个人扛。上到四楼转角的时候，老李脚下一滑，膝盖跪在台阶上，整个柜子的重量瞬间压在他背上。搭档大喊"稳住稳住"，老李咬住牙把膝盖从台阶上顶起来，后背抵着衣柜慢慢站直。搬完之后他的后背青了一大片，第二天照样出车。</p>
+</div>
+</section>
+
+<section>
+<span class="section-label">Part 2</span>
+<h2>入行第一年，差点把客户气疯</h2>
+
+<div class="story-box"><div class="scene">😱 案例：小张的第一单独立出车</div>
+<p>小张今年24岁，入行刚满一年。他的第一次独立出车，他这辈子都忘不了。</p>
+<p>客户是一个三口之家，电话里说"东西不多，就一些日常用的"。小张开了一辆四米二的厢式货车过去，到了一看——三室一厅，塞得满满当当。光厨房里的锅碗瓢盆就装了三个大箱子，阳台上的花盆有十几个，孩子的玩具有整整两麻袋。</p>
+<p>小张当时就傻了。但已经去了，硬着头皮搬。装车的时候他犯了几个致命的错误：第一，没按"重下轻上"的规矩来——他把一箱书放在了衣柜上面。第二，没固定——他觉得东西塞紧了就不会动。第三，没留空隙——所有东西死死地挤在一起，卸车的时候根本抽不出来。</p>
+<p>车开到半路，过一个减速带的时候，上面的箱子滑了下来，砸碎了客户的一个玻璃鱼缸。虽然鱼缸是空的，但那是客户结婚时候朋友送的礼物。客户当场脸色就变了。小张赔了八百块钱——那一单的工钱是六百，他倒贴两百。</p>
+</div>
+
+<h3>新手必踩的三个大坑</h3>
+
+<p><strong>第一个坑：客户说"东西不多"。</strong>这是搬家行业最大的谎言，没有之一。不是客户故意骗你，而是大多数人对"家里有多少东西"完全没有概念——你觉得"就几个箱子"，实际上装满了一辆货车还装不下。老手接到单子会先问：几口人、住了几年、有没有大件家具、电梯还是楼梯。新手什么都不问就开车去了，到了现场才傻眼。</p>
+
+<p><strong>第二个坑：装车不讲究顺序。</strong>搬家不是把东西塞进车里就行。重的在下面，轻的在上面，这是一个拿命换来的规矩。车身转弯的时候有离心力，上面太重车会翻——这不是开玩笑，老李说他见过一个新手装车，把实木书柜放在了双开门冰箱上面，过一个急弯的时候整个书柜滑下来，砸坏了冰箱，还把车厢侧面砸了个坑。顺序是第一原则：大件家具先上，靠车厢前部；家电中间，四周用软物垫着；零散箱子和袋子最后塞缝。每样东西的位置都是算过的。</p>
+
+<p><strong>第三个坑：搬完不给客户当面点货。</strong>老师说搬完了一句话不说就走了，客户回头打电话说"少了一箱""这个磕了""那个刮花了"。你说不清楚是不是你弄的，因为没有证据。老手搬完一定拉着客户从前到后看一遍："姐你看，柜子完好，冰箱没问题，箱子都在，你确认一下。"这一分钟的事情，能给你省下后面无教的麻烦。</p>
+</section>
+
+<section>
+<span class="section-label">Part 3</span>
+<h2>干了十年，眼睛就是一把尺</h2>
+
+<div class="highlight-box"><div class="label">🐾 老手的肌肉记忆</div>
+<p>老李说他有时候站在客户家门口往里看一眼，三秒钟，脑子里整辆车的装载方案就已经出来了。这不是天赋，是搬了一万次之后长在脑子里的"直觉"。</p></div>
+
+<div class="story-box"><div class="scene">🧩 案例：看一眼就知道"装不下"，以及怎么办</div>
+<p>有一单让老李的徒弟佩服得五体投地。一个别墅客户，东西多得离谱——光实木家具就十几件，加上家电、衣物、装饰品，徒弟看了一眼说："师傅，这得三车吧？"</p>
+<p>老李站在客厅中间转了一圈，说："一车。"</p>
+<p>徒弟不信。然后老李开始指挥：衣柜先上，靠左壁竖着放，底部垫防滑垫；床板拆下来平铺在车厢中间，上面放床垫；书桌拆了腿，桌面立起来贴着衣柜；冰箱靠右壁，洗衣机叠在上面，中间夹三层纸板减震；所有小箱子分类——软箱子（衣物被褥）塞进家具之间的缝隙当缓冲，硬箱子（碗碟厨具）平铺在空隙里，不能叠不能压；最后是编织袋和零碎，全部塞在车厢门口附近，方便到了先卸。</p>
+<p>全部装完，车厢门关上，严丝合缝，一点都不晃。徒弟说不出话。老李说了一句："你搬够一千单，也能一眼看出来。不是魔术，是你在脑子里已经模拟装过几十遍了。"</p>
+</div>
+
+<div class="story-box"><div class="scene">⚖️ 案例：转弯之前，心里已经算完了</div>
+<p>老李开车过弯的时候有一个习惯——不是看路，而是感受车身的倾斜角度。他说装车装对了，拐弯的时候车身的侧倾是均匀的、可控的；装得不对，你会感觉车像喝醉了酒一样往一边倒，方向盘都在跟你较劲。</p>
+<p>他带徒弟的时候专门教过这个：装完车，在小区里先低速转一个弯试试。如果车身倾斜超过你心里能接受的程度，说明重心偏了，回去重新调整。这不是理论课，是他见过有人翻车之后总结出来的。他说："等你感觉到不对劲的时候，可能已经来不及了。你要在装车的时候就把重心算好——重的永远在下面，左右重量要尽量平衡，前重后轻可以，但后重前轻绝对不行。"</p>
+</div>
+
+<div class="story-box"><div class="scene">⏱️ 案例：一天三单的节奏</div>
+<p>搬家工人一天通常是三单：上午一单、下午一单、晚上有时候还有一单小的。老李说他刚入行的时候不知道"省力"，第一单就用掉了七成体力，到下午第二单的时候腰已经直不起来了，咬牙硬扛，收工回家连洗澡的力气都没有。</p>
+<p>后来他摸索出一套体力分配的节奏：上午第一单（通常是最大的单），用六成力——不是偷懒，是给下午留余量。搬大件用腰和腿，不是用手臂。中午吃完饭，必须平躺二十分钟——让腰椎放松，让膝盖回血。下午第二单最难熬，体力在低谷，他会喝一罐红牛或者一瓶东鹏特饮，提前吃两片膏药贴在腰上。第三单如果还有，基本是收尾的小单，反而轻松——因为快下班了，心态不一样了。这套节奏是他花了好几年才总结出来的，听起来简单，但在体力消耗到极限的时候能不能控制住自己不要硬撑，是一种被严重低估的能力。</p>
+</div>
+</section>
+
+<section>
+<span class="section-label">Part 4</span>
+<h2>搬家工人眼中的"家"</h2>
+
+<div class="highlight-box"><div class="label">🏠 他们见过的家，比你见过的多一百倍</div>
+<p>一个搬家工人，一个月搬三四十个家，一年就是四五百个。干了十年，五千个家。每一种"家"的模样，他们都见过。以下是老李记忆里最深的几个。</p></div>
+
+<div class="story-box"><div class="scene">😶 最乱的房子：一个独居中年男人的家</div>
+<p>门一开，一股混合了烟味、泡面味和霉味的气息扑面而来。客厅的茶几上堆满了外卖盒子和空啤酒罐，沙发上扔着没叠的衣服，地上连下脚的地方都没有。厨房的灶台上落了一层灰——显然很久没开过火了。卧室的床上只有一个枕头，被子团成一团。老李说搬那个家的时候他在想：这个人不是"住"在这里，是"熬"在这里。房子是一个人住的壳，不是家。</p>
+</div>
+
+<div class="story-box"><div class="scene">🌸 最整洁的房子：一个八十岁老太太一个人的家</div>
+<p>同样是一个人住，这个老太太的家让老李印象最深。每一个角落都干干净净，衣柜里的衣服按颜色深浅排列，厨房的碗碟擦得都反光，窗台上摆着三盆花，茶几上有一本翻到一半的《红楼梦》，旁边放着一副老花镜。老李搬的时候特别小心——不是东西值钱，是他看出来老太太很在意自己的东西。每样东西都有它的位置，每样东西都被认真对待。搬完之后老太太给他们一人塞了两百块小费，说"小伙子辛苦了，买瓶水喝"。老李说这个家让他觉得一个人也可以活得很有尊严。</p>
+</div>
+
+<div class="story-box"><div class="scene">💰 最富和最穷的</div>
+<p>最富的一家：独栋别墅，东西多到老李叫了两辆车才搬完。但客户全程没露面，是保姆和管家在指挥。家具全是进口的，但老李说搬完之后他对这个"家"毫无印象——像一个酒店套房，一切都很贵，但没有人的气味。</p>
+<p>最穷的一家：城中村的出租屋，一个二十出头的小姑娘，全部家当是两个编织袋加一个行李箱。小姑娘说她刚来这个城市，这是她第一次搬家——从大学宿舍搬到第一份工作附近的出租屋。老李搬完之后没要她钱，帮她提到了公交车站。小姑娘说了句"谢谢叔叔"，老李说那天回家他抱了抱自己的女儿。</p>
+</div>
+
+<div class="story-box"><div class="scene">💍 刚结婚的和刚离婚的</div>
+<p>刚结婚的新房：所有东西都是新的，很多包装还没拆。小两口笑嘻嘻地指挥，"这个放主卧""那个放客厅""小心点那个是结婚照"。老李说搬这种家最轻松——东西新、有电梯、客户心情好，给小费也大方。</p>
+<p>刚离婚的：一个三十多岁的女人，搬出她和前夫的家。全部东西只有五个纸箱。没有家具，没有家电，她只拿走了自己的衣服、书和一些私人物品。老李帮她搬上车的时候，她站在空荡荡的客厅里环顾了一圈，说了一句"终于搬完了"。那语气老李说他永远忘不了——既不是愤怒，也不是难过，就是"完了"的那种完。像一扇门在身后关上了。</p>
+</div>
+
+<h3>"一车装完"的压力</h3>
+<p>搬家行业有一个不成文的规定：一车装完。为什么？因为叫第二辆车的成本太高了——加一辆车起码多几百块，客户不愿意出，搬家师傅也不想跑第二趟。所以一个搬家师傅最怕的事不是东西重、不是楼层高，而是——车已经装了一半，发现装不下了。</p>
+<p>这个时候挑战就来了：你必须重新组织所有东西的位置，重新算空间。把所有东西卸下来再装一遍？不可能，没有那个时间。你只能在已经装了一半的基础上调整——把三件横着放的改成竖着放、把塞在角落的袋子抽出来塞到家具之间的缝隙、把原本放在车厢中部的箱子拆成零散物品塞进每一寸空间。老李说这是整个搬家过程中压力最大的一刻——车装满了，还有一堆东西在楼下等着，客户在旁边皱着眉头看时间，你必须在五分钟内找出解决方案。</p>
+
+<h3>损坏赔偿的恐惧</h3>
+<p>搬家工人都怕一件事：客户说"你把我东西弄坏了"。有时候是真的搬坏了——搬运过程中的磕碰难免。但有时候是客户原本就坏了，搬到新家才发现的。还有一种情况是客户故意找茬，想少付钱。不管哪种情况，搬家工人往往没有还手之力——你没有证据证明搬之前那个东西是好的，客户有照片你也没有。所以老手都会在上手之前，当着客户的面把大件检查一遍："姐你看，这个柜子这里原来就有一个划痕，这个桌子腿本来就不太稳——你看一下，没问题我们就搬了。"这不是不信任客户，是保护自己。</p>
+
+<h3>给小费的潜规则</h3>
+<p>搬家行业，小费是收入里不小的一部分。但小费这个东西很有意思——它不完全取决于活干得好不好。老李说有两种客户最容易给小费：一种是家里有老人的——老人经历过苦日子，知道体力活有多累，搬完一定会塞钱，有时候还留他们吃饭。另一种是自己也吃过苦的人——你从他的房子里能看出来，家具不贵但是收拾得干净利落，这种人通常会给得大方。最不容易给小费的是什么样的？老李想了想说："住高档小区的年轻人，全程戴耳机刷手机，搬完了点个头，门一关。"他补了一句："也不是说人家不好。就是他们没有这个概念——他们觉得搬家是商品，我付了搬家费了，小费是什么？"</p>
+
+<h3>身体的代价</h3>
+<p>搬家是吃青春饭，这是最残酷的事实。身体的几个关键部位，谁干谁知道：腰椎——每一次搬重物下蹲，腰椎间盘都在被挤压，十年下来没有一个搬家师傅的腰是好的；膝盖——上楼下楼、扛重物蹲起，半月板磨损的速度是普通人的三倍以上；手腕——搬箱子不是用手掌托，是用手指扣住箱子底部，常年下来手指关节粗大变形，手腕腱鞘炎是职业病。</p>
+<p>老李今年42岁，他说自己最多再干五年。"四十岁以后体力跟不上，恢复速度也慢了。二十多岁的时候一天三单第二天照样出车，现在一天两单就差不多了。再过几年得转行——开个小超市、跑个货拉拉，反正不能再搬了。"搬家行业几乎没有五十岁以上的搬运工——不是他们不想干，是身体不允许。这个职业用身体换钱，时间是最大的敌人。</p>
+</section>
+
+<section>
+<span class="section-label">Part 5</span>
+<h2>这行最值钱的三项能力</h2>
+
+<div class="skill-card">
+<div class="rank">🥇 黄金技能 No.1</div>
+<h4>空间装载优化——三维俄罗斯方块，但每件东西都不规则</h4>
+<p>搬家工人做的不是"把东西塞进车里"，而是"用最小空间容纳最大数量的非标准化物体"。一个三室一厅的家当，理论上需要两车，但老李能一车装完。怎么做到的？核心能力是<strong>快速建立空间模型</strong>——站在客户家里看一眼，脑子里的三维装载方案就出来了：大件家具做骨架、家电做填充主体、软包物品做缓冲层、零散物件塞缝隙。每样东西的位置都是根据形状、重量、抗压性三重变量综合决定的。这不是体力活，这是<strong>连续的三维空间优化决策</strong>，只不过不写公式，全在脑子里。</p>
+</div>
+
+<div class="skill-card">
+<div class="rank">🥈 黄金技能 No.2</div>
+<h4>重心判断——不是感觉，是救命的直觉</h4>
+<p>装车的重心分布决定了一趟活的安全。重心太高，转弯容易侧翻；重心偏后，车头抓地力不够，刹车距离变长；重心偏左或偏右，车身跑偏、轮胎磨损不均。搬家老师傅有一个共同的习惯：装完车之后，在小区里先慢慢转一个弯，感受车身的倾斜角度。那一下不是"感觉"，是<strong>大脑在综合处理视觉（货物分布）、触觉（方向盘反馈）、前庭系统（身体感知的侧倾）三路信号</strong>，在零点几秒内做出判断：这个方向偏了多少，偏到什么程度有危险，能不能上路。这个判断标准不是教科书教的，是一次次差点翻车之后刻进神经里的。</p>
+</div>
+
+<div class="skill-card">
+<div class="rank">🥉 黄金技能 No.3</div>
+<h4>体力分配——一天三单的节奏控制</h4>
+<p>看起来最简单，其实最难。搬家消耗的不是"力量"，是"持续性输出"。举一个极端例子：一个健身教练能做一百公斤深蹲，但让他扛一个一百二十斤的冰箱上六楼，可能到三楼就扛不住了。为什么？因为健身的发力是"短时间爆发+休息循环"，搬家的发力是"持续性中高负载+没有休息间隔"。搬家工人必须掌握的技能是：如何把体力切成三份分配给一天三单，如何在每次搬重物的间隙利用走空趟的时间主动恢复，如何识别身体的"红线"——在受伤之前停下来而不是受伤之后才发现。这项能力在本质上是<strong>对自身生物能量的精细化管理</strong>。</p>
+</div>
+</section>
+
+<section>
+<span class="section-label">Part 6</span>
+<h2>这台"操作系统"是怎么运转的</h2>
+
+<div class="highlight-box"><div class="label">🧠 底层思维模型</div>
+<p>搬家工人没有写过方法论，但他们每天都在做一件项目管理教材里最高频的词：<strong>在混乱中建立秩序</strong>。</p></div>
+
+<h3>模型一：全局扫描 + 快速分解</h3>
+<p>一个搬家工人走进客户家，第一件事不是上手搬，是<strong>扫描</strong>。他用三到五分钟看遍每一个房间，在脑子里建立起全屋物品的"地图"：大件在哪、小件在哪、哪些东西怕压、哪些东西可以堆叠、从哪个房间开始搬路径最短。然后他把整个搬家任务分解成几个子任务：先搬哪个房间、后搬哪个房间、大件怎么下楼（楼梯还是电梯、要不要拆）、装车顺序是什么。</p>
+<p>这一步跟项目经理拿到一个新需求之后做的"工作分解结构"是完全一样的逻辑——只不过一个用甘特图，一个用脑子里的空间地图。</p>
+
+<h3>模型二：约束条件下的最优解</h3>
+<p>每一次搬家都是一道"约束优化"应用题：车厢空间是约束（长宽高固定）、时间是约束（客户通常在等着、下一单还有时间窗口）、体力是约束（你今天还有两单要搬）、物品的物理属性是约束（形状不规则、怕压、怕潮、需要特殊处理）。搬家工人在这些约束条件下，要在最短时间内找到"装得下、搬得动、不损坏"的最优方案。没有标准答案，每一单都不一样。</p>
+<p>这种"在多重约束下快速找可行解"的思维方式，本质上和程序员在内存、时间、算力约束下做架构决策没有区别——只不过搬家的约束是物理世界的，程序员的约束是数字世界的。</p>
+
+<h3>模型三：风险评估 + 预防优先</h3>
+<p>老李说他带徒弟教的第一课不是怎么搬，是<strong>怎么看风险</strong>：下楼的时候转角够不够宽？楼道里有没有凸出的消防栓会撞到家具？今天下不下雨（纸箱不能淋雨）？客户的电梯够不够大（有些老电梯连一个单人床垫都塞不进）？装车后最不稳定的那件东西是什么？如果急刹车，它会往哪个方向滑？</p>
+<p>这些不是"搬的时候再注意"，是<strong>在动手之前就已经在脑子里预演过一遍了</strong>。老手和新手的区别就在这里：新手是"遇到问题了再想办法"，老手是"把可能出问题的点提前排查完，让问题没有机会出现"。这跟医生做手术前的风险评估、飞行员起飞前的检查清单是同一种思维——只是在搬家这个行业，没有人把它叫"风险管理"。</p>
+</section>
+
+<section>
+<span class="section-label">Part 7</span>
+<h2>你能学到什么</h2>
+
+<h3>你做的事情跟搬家工人可能没有任何关系——但他们的思维方式，你可以直接平移过来</h3>
+
+<p><strong>第一，任何复杂问题本质上都是一个"搬家问题"。</strong>一堆变量要从A点到B点，中间有无数约束条件——资源有限（车只有一辆）、时间有限（今天必须搬完）、物品属性千差万别（有的怕压有的怕潮）、途中可能出意外（下雨、堵车、磕碰）。搬家工人的核心框架就是：先全局扫描（摸清所有变量）、再分解步骤（拆成可执行的子任务）、然后分配资源（每个阶段用多少体力/时间/空间）、最后执行并在中途动态调整。</p>
+<p>这个框架你用在你自己的工作上试试看：你手头那个让你头疼的项目，是不是也是一个"搬家问题"？你需要把什么从A搬到B？约束条件是什么？先搬什么后搬什么？</p>
+
+<p><strong>第二，"看一眼就知道"不是玄学，是经过上万次重复训练出来的模式识别。</strong>你让普通人看一个三室一厅的家具，他只能说"好多东西"。搬家老师傅看一眼，脑子里是一张三维装车图——不是因为他智商高，是因为同样的事情他做过一万次，大脑已经把"物品组合 → 空间分配"这个映射关系刻成了神经回路。你在你的领域也有这种能力——你看一眼代码就知道bug在哪、看一眼合同就知道风险点在哪、看一眼设计稿就知道哪里不合理。这不是天赋，是重复出来的"直觉"。每一个领域的高手都有这种直觉。</p>
+
+<p><strong>第三，体力劳动的智慧被严重低估了。</strong>这个社会有一种默认的排序——"用脑子"比"用身体"高级。但一个搬家工人在装车的时候做的空间优化和重心判断，本质上跟建筑师做荷载计算没有区别——一个用经验直觉，一个用公式，但都在解决同一个问题：怎么让一堆东西安全地从A到B。一个搬家工人一天三单的体力分配策略，跟马拉松选手的配速策略是同一种资源管理思维。区别只是——搬家工人的工作场地是楼梯间和货车厢，不是办公室和会议室。但思维的深度不比任何一个"白领职业"浅。</p>
+
+<p><strong>第四，搬家工人的底层思维——"在混乱中建立秩序"——是几乎可以通用于任何职业的核心能力。</strong>你走进一个堆满杂物的房间，在三分钟内判断出搬运方案。这跟创业者走进一个混乱的市场、程序员接手一个屎山代码库、老师走进一个闹哄哄的教室——在这些场景下你要做的都是同一件事：扫描全局、识别模式、建立秩序、分步执行。老李说的一句话让我印象很深："搬家不是把东西从一个地方弄到另一个地方。搬家的本质是——让一个家的秩序，原封不动地出现在另一个地方。"这句话，放在任何需要"从混乱到有序"的工作上，都成立。</p>
+
+<blockquote>"搬家不是把东西从一个地方弄到另一个地方。搬家的本质是——让一个家的全部秩序，原封不动地出现在另一个地方。"<cite>—— 老李，42岁，搬家15年</cite></blockquote>
+</section>
+
+<section>
+<span class="section-label">Part 8</span>
+<h2>一句话总结这个职业</h2>
+<div class="highlight-box">
+<p><strong>搬家工人的本质不是"搬东西的"，而是"秩序的搬运工"——他把一个家的全部秩序从一个空间完整迁移到另一个空间，中间不允许丢失、损坏、混乱。而他做完这一切之后，开车离开，去搬下一个家的秩序。</strong></p>
+<p style="margin-top:12px;font-size:15px;color:#8a6a4a;">三重角色合一：最精准的空间规划师（一车装完所有变量）+ 最克制的旁观者（看尽人间百态而不介入）+ 最强的自我管理者（用身体换时间，知道什么时候该停）。</p>
+</div>
+
+<p>这是职人手艺第一季的最后一期。十期，十个职业，十种不同的思维方式。从空调安装师傅到搬家工人，从学术文本编辑到龙舟鼓手——我们的初衷一直没变：每个用双手工作的人，脑子里都有一套值得被看见的"操作系统"。老李们不需要我们同情，他们需要的是被理解——被理解为一群"用身体的智慧解决复杂问题"的手艺人。</p>
+
+<div class="next-teaser">
+<div class="label">🎬 第一季收官</div>
+<h4>十期完结，但这只是开始</h4>
+<p>第一季我们解剖了十个截然不同的职业，试图从每一个职业里提炼出可以被任何领域借用的思维方式。"职人手艺"第二季正在筹备中——我们会探索更多你每天见到但从没真正了解过的职业。感谢你读到这里。下季见。</p>
+</div>
+</section>
+
+<hr class="divider-solid">
+<footer>
+<p>芒格计划 · 职人手艺 · 第10期 · 搬家工人</p>
+<nav style="margin-top:12px;display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap;">
+<a href="index.html" style="color:#e8924c;text-decoration:none;font-size:14px;">← 返回目录</a>
+<span style="color:#ddd;">|</span>
+<a href="09.html" style="color:#e8924c;text-decoration:none;font-size:14px;">← 上一篇：龙舟鼓手</a>
+<span style="color:#ddd;">|</span>
+<span style="color:#aaa;font-size:14px;">第一季完结 · 敬请期待第二季 →</span>
+</nav>
+</footer>
+</div>
+
+<script>
+(function(){
+"use strict";
+var _h=[];
+try{var r=localStorage.getItem("careerlab_backup");if(r)_h=JSON.parse(r);}catch(e){}
+function _s(){try{localStorage.setItem("careerlab_backup",JSON.stringify(_h));}catch(e){}}
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function info(){
+ var b=document.querySelector(".hero-badge");if(!b)return{n:0};
+ var t=b.textContent,m=t.match(/(\d+)/);
+ if(!m){var cn={"一":1,"二":2,"三":3,"四":4,"五":5,"六":6,"七":7,"八":8,"九":9,"十":10};var x=t.match(/[一二三四五六七八九十]/);if(x)m=[x[0],cn[x[0]]||0];}
+ return{n:m?parseInt(m[1]):0,t:(document.querySelector(".hero h1")?.textContent||""),job:(document.querySelector(".hero .meta")?.textContent||"")};
+}
+function addHl(tx,nt){
+ var i=info();if(!i.n)return null;
+ var o={id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),issue:i.n,title:i.t,job:i.job,text:tx.trim(),note:(nt||"").trim(),ts:new Date().toISOString()};
+ _h.push(o);_s();return o;
+}
+function delHl(id){_h=_h.filter(function(x){return x.id!==id;});_s();}
+function updHl(id,nt){var x=_h.find(function(y){return y.id===id;});if(x){x.note=nt.trim();x.upd=new Date().toISOString();_s();}}
+
+var tb=null,pu=null,sv="",sr=null;
+
+function mkUI(){
+ if(tb)return;
+ tb=document.createElement("div");tb.id="tb";tb.style.cssText="position:fixed;z-index:99999;display:none;background:#2d2d3f;border-radius:8px;padding:4px;box-shadow:0 4px 16px rgba(0,0,0,.25);font-family:-apple-system,PingFang SC,sans-serif;gap:4px;";
+ var bb=document.createElement("button");bb.textContent="⭐ 标记";bb.style.cssText="border:none;border-radius:6px;padding:6px 14px;font-size:13px;cursor:pointer;font-family:inherit;background:#f5d742;color:#1a1a2e;font-weight:600;";bb.onmouseover=function(){bb.style.background="#ffe066";};bb.onmouseout=function(){bb.style.background="#f5d742";};bb.onclick=function(){act(false);};
+ var nb=document.createElement("button");nb.textContent="📝 记笔记";nb.style.cssText="border:none;border-radius:6px;padding:6px 14px;font-size:13px;cursor:pointer;font-family:inherit;background:#444;color:#eee;";nb.onmouseover=function(){nb.style.background="#555";};nb.onmouseout=function(){nb.style.background="#444";};nb.onclick=function(){act(true);};
+ tb.appendChild(bb);tb.appendChild(nb);document.body.appendChild(tb);
+ pu=document.createElement("div");pu.id="pu";pu.style.cssText="position:fixed;z-index:100000;display:none;background:#fff;border-radius:12px;padding:20px;box-shadow:0 8px 32px rgba(0,0,0,.2);font-family:-apple-system,PingFang SC,sans-serif;width:340px;max-width:90vw;";
+ pu.innerHTML='<div style="font-size:14px;font-weight:600;margin-bottom:10px;color:#333;">📝 记录想法</div><div id="mq" style="font-size:13px;color:#888;margin-bottom:10px;padding:8px 12px;background:#f5f5f5;border-radius:6px;line-height:1.5;max-height:80px;overflow-y:auto;"></div><textarea id="mt" placeholder="写下你的想法……" style="width:100%;min-height:80px;border:1px solid #ddd;border-radius:6px;padding:8px;font-size:14px;font-family:inherit;resize:vertical;box-sizing:border-box;"></textarea><div style="display:flex;gap:8px;justify-content:flex-end;margin-top:10px;"><button id="mc" style="border:none;background:#f0f0f0;color:#666;padding:6px 16px;border-radius:6px;cursor:pointer;font-size:13px;">取消</button><button id="ms" style="border:none;background:#e8924c;color:#fff;padding:6px 16px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;">保存笔记</button></div>';
+ document.body.appendChild(pu);
+ document.getElementById("mc").onclick=function(){pu.style.display="none";};
+ document.getElementById("ms").onclick=function(){var n=document.getElementById("mt").value,q=document.getElementById("mq").dataset.text||"";if(q){addHl(q,n);pu.style.display="none";document.getElementById("mt").value="";toast("✅ 笔记已保存");badge();}};
+}
+
+function show(x,y){mkUI();tb.style.display="flex";tb.style.left=Math.max(8,Math.min(x,window.innerWidth-180))+"px";tb.style.top=(y+12)+"px";}
+function hide(){if(tb)tb.style.display="none";sv="";sr=null;}
+
+function act(note){
+ var t=sv;if(!t)return;
+ if(note){var q=document.getElementById("mq");if(!q)return;q.textContent="「"+t.slice(0,100)+(t.length>100?"…」":"」");q.dataset.text=t;document.getElementById("mt").value="";var tr=tb.getBoundingClientRect();pu.style.top=Math.max(20,tr.top-320)+"px";pu.style.left=Math.max(20,Math.min(tr.left,window.innerWidth-360))+"px";pu.style.display="block";document.getElementById("mt").focus();hide();return;}
+ addHl(t,"");toast("⭐ 已标记");badge();
+ if(sr){try{var m=document.createElement("mark");m.className="mh";m.style.cssText="background:#f5d742;color:inherit;border-radius:2px;padding:0 2px;cursor:pointer;";sr.surroundContents(m);m.style.background="#ffeb7a";setTimeout(function(){m.style.background="#f5d742";},300);}catch(e){sr=null;}}
+ var s=window.getSelection();if(s)s.removeAllRanges();sv="";sr=null;hide();
+}
+
+document.addEventListener("contextmenu",function(e){
+ if(pu&&pu.style.display!=="none")return;
+ var s=window.getSelection();if(!s||s.isCollapsed||!s.toString().trim())return;
+ e.preventDefault();
+ try{var r=s.getRangeAt(0);sv=s.toString().trim();sr=r.cloneRange();show(e.clientX,e.clientY);}catch(er){}
+});
+
+document.addEventListener("mousedown",function(e){
+ if(tb&&tb.contains(e.target))return;
+ if(pu&&pu.style.display!=="none"){if(pu.contains(e.target))return;pu.style.display="none";}
+ hide();
+});
+
+function restore(){
+ var i=info();if(!i.n)return;
+ var list=_h.filter(function(x){return x.issue===i.n;});if(!list.length)return;
+ setTimeout(function(){list.forEach(function(h){restoreOne(h);});},300);
+}
+
+function restoreOne(h){
+ try{
+  var c=document.querySelector(".container")||document.body;
+  var w=document.createTreeWalker(c,NodeFilter.SHOW_TEXT),ns=[];
+  while(w.nextNode())ns.push(w.currentNode);
+  for(var i=0;i<ns.length;i++){
+   var nd=ns[i],idx=nd.textContent.indexOf(h.text);if(idx<0)continue;
+   var r=document.createRange();r.setStart(nd,idx);r.setEnd(nd,idx+h.text.length);
+   var m=document.createElement("mark");m.className="mh";m.dataset.id=h.id;
+   m.style.cssText="background:#f5d742;color:inherit;border-radius:2px;padding:0 2px;cursor:pointer;";
+   if(h.note){m.title="💡 "+h.note;m.style.borderBottom="2px solid #d4a017";}
+   m.onclick=function(id,note){return function(e){e.stopPropagation();bubble(e.target,id,note);};}(h.id,h.note);
+   r.surroundContents(m);return;
+  }
+ }catch(e){}
+}
+
+function bubble(mk,id,note){
+ var e=document.querySelector(".mp-bb");if(e)e.remove();
+ var b=document.createElement("div");b.className="mp-bb";
+ b.style.cssText="position:fixed;z-index:99998;background:#fff;border-radius:10px;padding:14px 18px;box-shadow:0 4px 24px rgba(0,0,0,.15);font-family:-apple-system,PingFang SC,sans-serif;font-size:14px;max-width:320px;border:1px solid #eee;";
+ var r=mk.getBoundingClientRect();b.style.top=(r.bottom+8)+"px";b.style.left=Math.max(8,Math.min(r.left,window.innerWidth-340))+"px";
+ var h='<div style="font-size:12px;color:#999;margin-bottom:6px;">已标记'+(note?" · 有笔记":"")+'</div>';
+ if(note)h+='<div style="color:#333;line-height:1.5;margin-bottom:10px;padding:8px 10px;background:#faf0e2;border-radius:6px;">💬 '+esc(note)+'</div>';
+ h+='<div style="display:flex;gap:6px;">';
+ if(!note)h+='<button id="bb_add" style="border:none;background:#e8924c;color:#fff;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;">添加笔记</button>';
+ h+='<button id="bb_del" style="border:none;background:#f5f5f5;color:#c0392b;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;">删除标记</button></div>';
+ b.innerHTML=h;document.body.appendChild(b);
+ document.getElementById("bb_del").onclick=function(){delHl(id);mk.style.opacity="0.3";mk.style.background="#eee";b.remove();};
+ var ab=document.getElementById("bb_add");if(ab)ab.onclick=function(){
+  b.innerHTML='<div style="font-size:13px;font-weight:600;margin-bottom:8px;color:#333;">✏️ 添加笔记</div><textarea id="bb_ta" placeholder="写下你的想法……" style="width:100%;min-height:60px;border:1px solid #ddd;border-radius:6px;padding:8px;font-size:13px;font-family:inherit;resize:vertical;box-sizing:border-box;"></textarea><div style="display:flex;gap:6px;justify-content:flex-end;margin-top:8px;"><button id="bb_cancel" style="border:none;background:#f0f0f0;color:#666;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;">取消</button><button id="bb_save" style="border:none;background:#e8924c;color:#fff;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600;">保存</button></div>';
+  document.getElementById("bb_ta").focus();
+  document.getElementById("bb_cancel").onclick=function(){b.remove();};
+  document.getElementById("bb_save").onclick=function(){var n=document.getElementById("bb_ta").value;if(n){updHl(id,n);mk.title="💡 "+n;mk.style.borderBottom="2px solid #d4a017";toast("✅ 笔记已保存");}b.remove();};
+ };
+ var cl=function(ev){if(!b.contains(ev.target)&&ev.target!==mk){b.remove();document.removeEventListener("mousedown",cl);}};
+ setTimeout(function(){document.addEventListener("mousedown",cl);},0);
+}
+
+function toast(msg){
+ var t=document.createElement("div");t.textContent=msg;
+ t.style.cssText="position:fixed;bottom:40px;left:50%;transform:translateX(-50%);background:#2d2d3f;color:#fff;padding:10px 24px;border-radius:8px;font-family:-apple-system,PingFang SC,sans-serif;font-size:14px;z-index:999999;box-shadow:0 4px 20px rgba(0,0,0,.2);opacity:0;transition:opacity .3s;";
+ document.body.appendChild(t);requestAnimationFrame(function(){t.style.opacity="1";});
+ setTimeout(function(){t.style.opacity="0";setTimeout(function(){t.remove();},300);},2000);
+}
+
+var sd=null,ov=null;
+function mkSide(){
+ if(sd)return;
+ ov=document.createElement("div");ov.style.cssText="position:fixed;inset:0;z-index:99998;background:rgba(0,0,0,.3);display:none;";
+ sd=document.createElement("div");sd.style.cssText="position:fixed;top:0;right:0;bottom:0;width:380px;max-width:90vw;z-index:99999;background:#f8f7f4;box-shadow:-4px 0 24px rgba(0,0,0,.12);display:none;flex-direction:column;font-family:-apple-system,PingFang SC,sans-serif;transform:translateX(100%);transition:transform .25s ease;";
+ sd.innerHTML='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #e5e0d8;flex-shrink:0;"><div><strong style="font-size:16px;">📒 笔记本</strong><span id="sc" style="font-size:12px;color:#999;margin-left:8px;"></span></div><button id="sc_close" style="border:none;background:transparent;font-size:20px;cursor:pointer;color:#888;padding:4px 8px;border-radius:6px;">✕</button></div><div id="sb" style="flex:1;overflow-y:auto;padding:12px 16px;"></div><div style="padding:10px 16px;border-top:1px solid #e5e0d8;font-size:11px;color:#bbb;text-align:center;flex-shrink:0;">右键选中文字 → 标记或记笔记</div>';
+ document.body.appendChild(ov);document.body.appendChild(sd);
+ ov.onclick=function(){tog(false);};document.getElementById("sc_close").onclick=function(){tog(false);};
+}
+
+function tog(show){
+ mkSide();
+ var open=(show!==undefined?show:(sd.style.display==="none"||sd.style.transform==="translateX(100%)"));
+ if(open){sd.style.display="flex";ov.style.display="block";requestAnimationFrame(function(){sd.style.transform="translateX(0)";});renderSB();}
+ else{sd.style.transform="translateX(100%)";ov.style.display="none";setTimeout(function(){if(sd.style.transform==="translateX(100%)")sd.style.display="none";},260);}
+}
+
+function renderSB(){
+ var b=document.getElementById("sb");if(!b)return;
+ var hs=_h||[];document.getElementById("sc").textContent=hs.length?"("+hs.length+"条)":"(空)";
+ if(!hs.length){b.innerHTML='<div style="text-align:center;padding:60px 20px;color:#aaa;font-size:14px;">📖 还没有标记<br><span style="font-size:12px;">选中文字 → 右键 → 标记</span></div>';return;}
+ var gr={};hs.forEach(function(h){var k=h.issue||0;if(!gr[k])gr[k]={issue:k,title:h.title||("第"+k+"期"),job:h.job||"",hs:[]};gr[k].hs.push(h);});
+ var so=Object.values(gr).sort(function(a,b){return b.issue-a.issue;}),html="";
+ so.forEach(function(g){html+='<div style="margin-bottom:16px;"><div style="font-size:11px;color:#888;letter-spacing:1px;margin-bottom:6px;padding:0 4px;">第'+g.issue+"期 · "+g.job+" ("+g.hs.length+")</div>";
+ g.hs.forEach(function(h){html+='<div class="mc" data-id="'+h.id+'" style="background:#fff;border:1px solid #e5e0d8;border-radius:8px;padding:10px 12px;margin-bottom:6px;cursor:pointer;"><div style="font-size:13px;line-height:1.6;color:#3a3520;padding:4px 6px;background:#fef7e0;border-radius:4px;margin-bottom:6px;">'+esc(h.text)+'</div>';
+ if(h.note)html+='<div style="font-size:12px;color:#5a3a1a;line-height:1.5;padding:6px 8px;background:#fef6ee;border-radius:4px;margin-bottom:6px;border-left:2px solid #e8924c;">💬 '+esc(h.note)+'</div>';
+ html+='<div style="display:flex;gap:4px;justify-content:flex-end;"><button class="mcnb" style="border:none;background:transparent;color:#888;padding:2px 8px;border-radius:4px;cursor:pointer;font-size:11px;">'+(h.note?"✏️":"💬")+'</button><button class="mcdb" style="border:none;background:transparent;color:#c0392b;padding:2px 8px;border-radius:4px;cursor:pointer;font-size:11px;">🗑️</button></div></div>';});
+ html+="</div>";});b.innerHTML=html;
+ b.querySelectorAll(".mcdb").forEach(function(btn){btn.onclick=function(){var c=btn.closest(".mc"),id=c.dataset.id;delHl(id);renderSB();var mk=document.querySelector('.mh[data-id="'+id+'"]');if(mk){mk.parentNode.replaceChild(document.createTextNode(mk.textContent),mk);mk.parentNode.normalize();}toast("已删除");};});
+ b.querySelectorAll(".mcnb").forEach(function(btn){btn.onclick=function(){var c=btn.closest(".mc"),id=c.dataset.id;var h=_h.find(function(x){return x.id===id;});if(!h)return;var n=prompt("编辑笔记：",h.note||"");if(n!==null){updHl(id,n);renderSB();var mk=document.querySelector('.mh[data-id="'+id+'"]');if(mk){if(n.trim()){mk.title="💡 "+n;mk.style.borderBottom="2px solid #d4a017";}else{mk.title="";mk.style.borderBottom="";}}toast("✅ 笔记已保存");}};});
+ b.querySelectorAll(".mc").forEach(function(c){c.onclick=function(e){if(e.target.closest("button"))return;var mk=document.querySelector('.mh[data-id="'+c.dataset.id+'"]');if(mk){mk.scrollIntoView({behavior:"smooth",block:"center"});mk.style.background="#ffeb7a";setTimeout(function(){mk.style.background="#f5d742";},1500);}};});
+}
+
+function badge(){var el=document.getElementById("bdg");if(el){var c=_h.length;el.textContent=c;el.style.display=c>0?"inline":"none";}}
+function setupBtn(){if(document.getElementById("fab"))return;var b=document.createElement("button");b.id="fab";b.innerHTML='📒 笔记本 <span id="bdg" style="background:#e8924c;color:#fff;font-size:10px;padding:1px 6px;border-radius:10px;margin-left:4px;font-weight:600;display:none;">0</span>';b.style.cssText="position:fixed;bottom:24px;right:24px;z-index:99997;background:#2d2d3f;color:#f0ede8;padding:10px 18px;border-radius:24px;font-family:-apple-system,PingFang SC,sans-serif;font-size:13px;font-weight:500;box-shadow:0 4px 16px rgba(0,0,0,.15);cursor:pointer;border:1px solid rgba(255,255,255,.08);";b.onmouseover=function(){b.style.background="#3d3d55";b.style.transform="translateY(-2px)";};b.onmouseout=function(){b.style.background="#2d2d3f";b.style.transform="";};b.onclick=function(){tog();};document.body.appendChild(b);badge();}
+
+var _aichat=[],_aictx=null,_aikey="",_aibusy=false,_aipn=null,_aiov=null;
+function initAI(){
+try{_aikey=localStorage.getItem("careerlab_ai_key")||"";}catch(e){}
+try{var c=localStorage.getItem("careerlab_ai_chat");if(c)_aichat=JSON.parse(c);}catch(e){}
+try{var x=localStorage.getItem("careerlab_ai_context");if(x){_aictx=JSON.parse(x);if(Date.now()-_aictx.ts>86400000)_aictx=null;}}catch(e){}
+setupAIBtn();
+}
+function setupAIBtn(){
+if(document.getElementById("aifab"))return;
+var b=document.createElement("button");b.id="aifab";b.innerHTML='🤖 AI 助教';
+b.style.cssText="position:fixed;bottom:24px;left:24px;z-index:99994;background:#2d2d3f;color:#f0ede8;padding:10px 18px;border-radius:24px;font-family:-apple-system,PingFang SC,sans-serif;font-size:13px;font-weight:500;box-shadow:0 4px 16px rgba(0,0,0,.15);cursor:pointer;border:1px solid rgba(255,255,255,.08);";
+b.onmouseover=function(){b.style.background="#3d3d55";b.style.transform="translateY(-2px)";};
+b.onmouseout=function(){b.style.background="#2d2d3f";b.style.transform="";};
+b.onclick=function(){togAI();};
+document.body.appendChild(b);
+}
+function mkAIPanel(){
+if(_aiov)return;
+_aiov=document.createElement("div");_aiov.style.cssText="position:fixed;inset:0;z-index:99995;background:rgba(0,0,0,.3);display:none;";
+_aipn=document.createElement("div");_aipn.style.cssText="position:fixed;top:0;left:0;bottom:0;width:380px;max-width:90vw;z-index:99996;background:#f8f7f4;box-shadow:4px 0 24px rgba(0,0,0,.12);display:none;flex-direction:column;font-family:-apple-system,PingFang SC,sans-serif;transform:translateX(-100%);transition:transform .25s ease;";
+_aipn.innerHTML='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #e5e0d8;flex-shrink:0;"><div><strong style="font-size:16px;">🤖 AI 助教</strong><span id="aic" style="font-size:12px;color:#999;margin-left:8px;"></span></div><div style="display:flex;gap:6px;"><button id="ai_settings" style="border:none;background:transparent;font-size:16px;cursor:pointer;color:#999;padding:4px 8px;border-radius:6px;" title="设置API密钥">⚙️</button><button id="ai_close" style="border:none;background:transparent;font-size:20px;cursor:pointer;color:#888;padding:4px 8px;border-radius:6px;">✕</button></div></div><div id="aimsgs" style="flex:1;overflow-y:auto;padding:12px 16px;"></div><div style="padding:12px 16px;border-top:1px solid #e5e0d8;flex-shrink:0;display:flex;gap:8px;"><textarea id="ai_inp" placeholder="输入消息，Enter 发送…" style="flex:1;border:1px solid #ddd;border-radius:8px;padding:10px 12px;font-size:14px;font-family:inherit;resize:none;min-height:40px;max-height:120px;box-sizing:border-box;" rows="1"></textarea><button id="ai_send" style="border:none;background:#e8924c;color:#fff;padding:8px 16px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:600;align-self:flex-end;">发送</button></div>';
+document.body.appendChild(_aiov);document.body.appendChild(_aipn);
+_aiov.onclick=function(){togAI(false);};
+document.getElementById("ai_close").onclick=function(){togAI(false);};
+document.getElementById("ai_settings").onclick=function(){
+var k=prompt("DeepSeek API密钥（从 platform.deepseek.com 获取）：",_aikey);
+if(k!==null){_aikey=k.trim();try{localStorage.setItem("careerlab_ai_key",_aikey);}catch(e){}_aictx=null;try{localStorage.removeItem("careerlab_ai_context");}catch(e){}toast("✅ 密钥已保存");}
+};
+document.getElementById("ai_send").onclick=function(){doSend();};
+document.getElementById("ai_inp").onkeydown=function(e){
+if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();doSend();}
+};
+}
+function togAI(show){
+mkAIPanel();
+var open=(show!==undefined?show:(_aipn.style.display==="none"||_aipn.style.transform==="translateX(-100%)"));
+if(open){
+_aipn.style.display="flex";_aiov.style.display="block";
+requestAnimationFrame(function(){_aipn.style.transform="translateX(0)";});
+ensureContext(function(){renderChat();});
+}else{
+_aipn.style.transform="translateX(-100%)";_aiov.style.display="none";
+setTimeout(function(){if(_aipn.style.transform==="translateX(-100%)")_aipn.style.display="none";},260);
+}
+}
+function ensureContext(cb){
+if(_aictx){cb();return;}
+var issues=[];var done=0;var total=10;
+function checkDone(){
+done++;
+if(done>=total){
+issues.sort(function(a,b){return a.n-b.n;});
+_aictx={ts:Date.now(),issues:issues};
+try{localStorage.setItem("careerlab_ai_context",JSON.stringify(_aictx));}catch(e){}
+cb();
+}
+}
+for(var i=1;i<=total;i++){
+(function(n){
+var xhr=new XMLHttpRequest();
+xhr.open("GET",(n<10?"0":"")+n+".html",true);
+xhr.timeout=10000;
+xhr.onload=function(){
+if(xhr.status===200){var r=extractIssue(xhr.responseText,n);if(r)issues.push(r);}
+checkDone();
+};
+xhr.onerror=function(){checkDone();};
+xhr.ontimeout=function(){checkDone();};
+xhr.send();
+})(i);
+}
+}
+function extractIssue(html,n){
+try{
+var title="",job="";
+var tm=html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+if(tm){title=tm[1].replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();}
+var jm=html.match(/class="job-name"[^>]*>([^<]+)/i);
+if(!jm)jm=html.match(/class="meta"[^>]*>([\s\S]*?)<\/p>/i);
+if(jm){job=jm[1].replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();}
+var sm=html.match(/<section[^>]*>([\s\S]*?)<hr\s+class="divider-solid/i);
+var text="";
+if(sm){text=sm[1].replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();}
+if(text.length>2000)text=text.slice(0,2000)+"…";
+return {n:n,title:title||("第"+n+"期"),job:job||"",text:text};
+}catch(e){return null;}
+}
+function buildSystemPrompt(){
+if(!_aictx||!_aictx.issues||!_aictx.issues.length)return "你是\"职人手艺\"的AI助教。职人手艺是一个深度解剖不同职业思维方式的项目，每期拆解一个具体职业。你的风格：像朋友聊天一样说人话、简洁、多用大白话和具体例子。请用中文回复。";
+var p="你是\"职人手艺\"的AI助教。职人手艺是一个深度解剖不同职业思维方式的项目，每期拆解一个具体职业，包括他们的日常、挑战、黄金技能和底层思维模型。你的风格：像朋友聊天一样说人话、简洁、多用大白话和具体例子。以下是各期摘要：\n\n";
+for(var i=0;i<_aictx.issues.length;i++){
+var iss=_aictx.issues[i];
+p+="第"+iss.n+"期《"+iss.title+"》—— "+iss.job+"\n"+iss.text+"\n\n";
+}
+var cur=info();
+if(cur&&cur.n)p+="用户当前正在阅读：第"+cur.n+"期《"+cur.t+"》—— "+cur.job;
+return p;
+}
+function renderChat(){
+var b=document.getElementById("aimsgs");if(!b)return;
+var sc=document.getElementById("aic");if(sc)sc.textContent=_aichat.length?"("+_aichat.length+"条)":"(空)";
+var html="";
+if(!_aichat.length&&_aictx){
+var greet="你好！我是职人手艺的AI助教 🤖\n\n我对每一期解剖的职业都有自己的理解，可以跟你聊任何一期。你可以问我：\n\n• 某个职业的核心技能（比如\"学术编辑最厉害的能力是什么？\"）\n• 不同职业之间的联系（比如\"陈姐的编辑思维和空调安装师傅老周有什么共通之处？\"）\n• 从这个职业身上能学到什么（比如\"我能从学术编辑身上学到什么？\"）\n• 任何你在阅读中想到的问题\n\n有什么想聊的？";
+html+='<div class="aichat-msg aichat-assistant"><div class="lbl">AI</div><div class="bub">'+esc(greet).replace(/\n/g,"<br>")+'</div></div>';
+}
+for(var i=0;i<_aichat.length;i++){
+var m=_aichat[i];
+if(m.role==="system"){html+='<div class="aichat-msg aichat-sys"><div class="bub">'+esc(m.content)+'</div></div>';}
+else if(m.role==="user"){html+='<div class="aichat-msg aichat-user"><div class="lbl">你</div><div class="bub">'+esc(m.content).replace(/\n/g,"<br>")+'</div></div>';}
+else{html+='<div class="aichat-msg aichat-assistant"><div class="lbl">AI</div><div class="bub">'+esc(m.content).replace(/\n/g,"<br>")+'</div></div>';}
+}
+if(_aibusy){html+='<div class="aichat-loading"><span></span><span></span><span></span></div>';}
+b.innerHTML=html;
+b.scrollTop=b.scrollHeight;
+setTimeout(function(){restore();},100);
+}
+function addMsg(role,content,skipSave){
+_aichat.push({role:role,content:content,ts:new Date().toISOString()});
+if(!skipSave)saveChat();
+renderChat();
+}
+function saveChat(){
+if(_aichat.length>100)_aichat=_aichat.slice(-100);
+try{localStorage.setItem("careerlab_ai_chat",JSON.stringify(_aichat));}catch(e){}
+}
+function doSend(){
+if(_aibusy)return;
+var inp=document.getElementById("ai_inp"),txt=(inp.value||"").trim();
+if(!txt)return;
+if(!_aikey){
+var k=prompt("请输入你的DeepSeek API密钥（可从 platform.deepseek.com 获取）：","");
+if(!k||!k.trim())return;
+_aikey=k.trim();
+try{localStorage.setItem("careerlab_ai_key",_aikey);}catch(e){}
+addMsg("system","✅ 密钥已保存（仅保存在本地浏览器）",true);
+}
+inp.value="";inp.style.height="auto";
+addMsg("user",txt);
+_aibusy=true;renderChat();
+var msgs=[{role:"system",content:buildSystemPrompt()}];
+for(var i=0;i<_aichat.length;i++){var m=_aichat[i];if(m.role!=="system")msgs.push({role:m.role,content:m.content});}
+callDeepSeek(msgs,function(err,reply){
+_aibusy=false;
+if(err){addMsg("system","❌ "+err,true);}
+else if(reply){addMsg("assistant",reply);}
+else{addMsg("system","❌ 未知错误",true);}
+});
+}
+function callDeepSeek(messages,cb){
+var xhr=new XMLHttpRequest();
+xhr.open("POST","https://api.deepseek.com/v1/chat/completions",true);
+xhr.setRequestHeader("Content-Type","application/json");
+xhr.setRequestHeader("Authorization","Bearer "+_aikey);
+xhr.timeout=30000;
+xhr.onload=function(){
+if(xhr.status===200){
+try{var r=JSON.parse(xhr.responseText);cb(null,r.choices[0].message.content);}catch(e){cb(new Error("解析响应失败"));}
+}else if(xhr.status===401){cb(new Error("API密钥无效，请点击⚙️重新设置"));}
+else if(xhr.status===429){cb(new Error("请求过于频繁，请稍后再试"));}
+else if(xhr.status>=500){cb(new Error("服务异常（"+xhr.status+"），请稍后重试"));}
+else{cb(new Error("请求失败（"+xhr.status+"）"));}
+};
+xhr.onerror=function(){cb(new Error("网络连接失败，请检查网络"));};
+xhr.ontimeout=function(){cb(new Error("请求超时，请重试"));};
+xhr.send(JSON.stringify({model:"deepseek-chat",messages:msgs,stream:false,max_tokens:2000,temperature:0.7}));
+}
+
+var st=document.createElement("style");st.textContent=".mh{background:#f5d742;color:inherit;border-radius:2px;padding:0 2px;cursor:pointer;}.mh:hover{background:#ffeb7a;}.mc{transition:box-shadow .15s;}.mc:hover{box-shadow:0 1px 6px rgba(0,0,0,.06);}.mc button:hover{background:#eee!important;}::selection{background:#f5d742;color:#1a1a2e;}.aichat-msg{padding:2px 0;}.aichat-msg .lbl{font-size:11px;color:#999;margin-bottom:2px;}.aichat-msg .bub{padding:10px 14px;border-radius:12px;font-size:14px;line-height:1.7;word-break:break-word;}.aichat-user .bub{background:#e8f0fe;color:#1a1a2e;margin-left:40px;}.aichat-user .lbl{text-align:right;}.aichat-assistant .bub{background:#fff;border:1px solid #e5e0d8;color:#333;margin-right:40px;}.aichat-sys .bub{background:#f5f5f5;color:#888;text-align:center;font-size:13px;padding:8px 14px;border-radius:8px;margin:0 20px;}.aichat-loading{display:flex;gap:4px;padding:8px 16px;align-items:center;}.aichat-loading span{width:6px;height:6px;border-radius:50%;background:#bbb;animation:aichat-bounce 1.4s infinite;}.aichat-loading span:nth-child(2){animation-delay:.2s;}.aichat-loading span:nth-child(3){animation-delay:.4s;}@keyframes aichat-bounce{0%,80%,100%{opacity:.3;transform:scale(.8);}40%{opacity:1;transform:scale(1);}}#ai_inp:focus{outline:none;border-color:#e8924c;}";document.head.appendChild(st);
+restore();setupBtn();initAI();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+name: 推送 · 另眼相看
+on:
+  schedule:
+    - cron: "0 12 * * 2,5"
+  workflow_dispatch:
+    inputs:
+      issue:
+        description: "指定期号（留空则自动推送下一期）"
+
+permissions:
+  contents: write
+
+defaults:
+  run:
+    working-directory: ./thinking
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 确定本期号
+        id: num
+        run: |
+          if [ -n "${{ github.event.inputs.issue }}" ]; then
+            N="${{ github.event.inputs.issue }}"
+          else
+            N=$(cat next_issue.txt 2>/dev/null || echo "1")
+          fi
+          echo "issue=$N" >> $GITHUB_OUTPUT
+      - name: 推送 Lark
+        run: |
+          N=${{ steps.num.outputs.issue }}
+          FILE=$(printf "%02d" "$N")
+          # 提取 meta 行（学科·底层思维N）
+          META=$(grep -oP '<p class="meta">\K[^<]+' "${FILE}.html" 2>/dev/null | head -1 || echo "敬请期待")
+          # 提取 h1 里的纯文本（标题）
+          H1=$(grep -oP '<h1[^>]*>[\s\S]*?<\/h1>' "${FILE}.html" 2>/dev/null | head -1 | sed 's/<[^>]*>//g' | sed 's/\s\+/ /g' | xargs || echo "")
+          # 提取副标题
+          SUB=$(grep -oP '<p class="sub">\K[^<]+' "${FILE}.html" 2>/dev/null | head -1 || echo "")
+          URL="https://zhuayuba.github.io/mungerplan/thinking/${FILE}.html"
+
+          python3 -c "
+          import hashlib, hmac, base64, time, json, urllib.request, os
+          ts = str(int(time.time()))
+          secret = os.environ['LARK_SECRET']
+          sign_string = ts + '\n' + secret
+          sign = base64.b64encode(hmac.new(sign_string.encode(), b'', hashlib.sha256).digest()).decode()
+          body = json.dumps({
+              'timestamp': ts,
+              'sign': sign,
+              'msg_type': 'interactive',
+              'card': {
+                  'header': {
+                      'title': {'tag': 'plain_text', 'content': '芒格计划 · 另眼相看 · 第${N}期'},
+                      'template': 'carmine'
+                  },
+                  'elements': [
+                      {'tag': 'markdown', 'content': '**🧠 ${H1}**\n${SUB}\n*${META}*'},
+                      {'tag': 'hr'},
+                      {
+                          'tag': 'action',
+                          'actions': [
+                              {'tag': 'button', 'text': {'tag': 'plain_text', 'content': '📖 开始阅读 →'}, 'type': 'primary', 'url': '${URL}'}
+                          ]
+                      }
+                  ]
+              }
+          }).encode()
+          req = urllib.request.Request(os.environ['LARK_WEBHOOK'], data=body, headers={'Content-Type': 'application/json'})
+          resp = urllib.request.urlopen(req)
+          print(resp.read().decode())
+          "
+        env:
+          LARK_WEBHOOK: ${{ secrets.LARK_WEBHOOK_URL }}
+          LARK_SECRET: ${{ secrets.LARK_SIGNING_SECRET }}
+      - name: 计数器+1
+        run: |
+          N=${{ steps.num.outputs.issue }}
+          echo $((N + 1)) > next_issue.txt
+          cd $GITHUB_WORKSPACE
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions"
+          git add thinking/next_issue.txt
+          git diff --staged --quiet || git commit -m "另眼相看 → 下期 #$((N + 1))"
+          git pull --no-rebase
+          git push
+      - name: 库存预警
+        run: |
+          TOTAL=$(ls [0-9][0-9].html 2>/dev/null | wc -l)
+          NEXT=$(cat next_issue.txt)
+          RESERVE=$((TOTAL - NEXT + 1))
+          if [ "$RESERVE" -le 2 ]; then
+            POOL=$(cd $GITHUB_WORKSPACE && wc -l < thinking/topics_pool.md 2>/dev/null || echo "?")
+            python3 -c "
+          import hashlib, hmac, base64, time, json, urllib.request, os
+          ts = str(int(time.time()))
+          secret = os.environ['LARK_SECRET']
+          sign_string = ts + '\n' + secret
+          sign = base64.b64encode(hmac.new(sign_string.encode(), b'', hashlib.sha256).digest()).decode()
+          body = json.dumps({
+              'timestamp': ts,
+              'sign': sign,
+              'msg_type': 'interactive',
+              'card': {
+                  'header': {
+                      'title': {'tag': 'plain_text', 'content': '⚠️ 另眼相看 · 库存预警'},
+                      'template': 'orange'
+                  },
+                  'elements': [
+                      {'tag': 'markdown', 'content': '**剩余期数：${RESERVE} 期**\n仅够推送一周。选题池有 ${POOL} 个候选，请尽快补充内容。'}
+                  ]
+              }
+          }).encode()
+          req = urllib.request.Request(os.environ['LARK_WEBHOOK'], data=body, headers={'Content-Type': 'application/json'})
+          resp = urllib.request.urlopen(req)
+          print(resp.read().decode())
+            "
+          fi
+        env:
+          LARK_WEBHOOK: ${{ secrets.LARK_WEBHOOK_URL }}
+          LARK_SECRET: ${{ secrets.LARK_SIGNING_SECRET }}

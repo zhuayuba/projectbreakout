@@ -3,101 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>他山之石 · 跨学科思维模型</title>
+<title>芒格计划 · 跨学科思维模型</title>
 <style>
-:root{--bg:#f8f7f4;--text:#1a1a2e;--accent:#c8a45c;--accent-dark:#a8883a;--card-bg:#fff;--muted:#6b7280;--border:#e5e0d8}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,"PingFang SC","Noto Sans SC",sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:16px}
-.hero{background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);color:#f0ede8;padding:80px 24px 64px;text-align:center;position:relative;overflow:hidden}
-.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 40% 30%,rgba(200,164,92,0.08),transparent 60%)}
-.hero>*{position:relative;z-index:1}
-.hero h1{font-size:clamp(36px,7vw,64px);font-weight:700;letter-spacing:4px;margin-bottom:8px}
-.hero h1 em{font-style:normal;color:var(--accent)}
-.hero .sub{font-size:clamp(14px,2vw,18px);color:#b8b0a0;font-weight:300;max-width:500px;margin:0 auto 24px}
-.hero .badge-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
-.hero .badge-row span{display:inline-block;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.04);padding:4px 14px;border-radius:16px;font-size:12px;color:#999}
-.about{max-width:660px;margin:-32px auto 0;padding:0 24px;position:relative;z-index:2}
-.about-card{background:var(--card-bg);border-radius:12px;padding:32px 36px;box-shadow:0 4px 24px rgba(0,0,0,0.06);border:1px solid var(--border);text-align:center}
-.about-card p{color:#555;margin-bottom:12px}.about-card p:last-child{margin-bottom:0}
-.container{max-width:860px;margin:0 auto;padding:0 24px}
-.issue-grid{padding:48px 0}
-.issue-grid h2{font-size:22px;font-weight:700;text-align:center;margin-bottom:8px}
-.issue-grid .hint{text-align:center;font-size:14px;color:var(--muted);margin-bottom:28px}
-.issue-card,.issue-card-future{display:flex;align-items:stretch;background:var(--card-bg);border:1px solid var(--border);border-radius:12px;margin-bottom:16px;overflow:hidden;transition:all .2s;text-decoration:none;color:inherit}
-.issue-card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.06);border-color:#d0c8b8;transform:translateY(-1px)}
-.issue-card-future{opacity:0.4;cursor:default}
-.issue-num{display:flex;align-items:center;justify-content:center;min-width:80px;font-size:28px;font-weight:800;color:#fff;font-family:monospace;flex-shrink:0}
-.issue-card:nth-child(3) .issue-num{background:#c8a45c}
-.issue-card:nth-child(4) .issue-num{background:#6b8fa0}
-.issue-card:nth-child(5) .issue-num{background:#8a7aa0}
-.issue-card:nth-child(6) .issue-num{background:#c07a5c}
-.issue-card:nth-child(7) .issue-num{background:#2d8a6e}
-.issue-card:nth-child(8) .issue-num{background:#b56576}
-.issue-card:nth-child(9) .issue-num{background:#5b8c85}
-.issue-card:nth-child(10) .issue-num{background:#7b6b8a}
-.issue-card:nth-child(11) .issue-num{background:#d48c5c}
-.issue-card:nth-child(12) .issue-num{background:#4a8a9a}
-.issue-card-future .issue-num{background:#ddd}
-.issue-info{flex:1;padding:20px 24px;display:flex;flex-direction:column}
-.issue-info .model{font-size:11px;letter-spacing:2px;color:var(--muted);font-weight:600}
-.issue-info h3{font-size:18px;font-weight:700;margin:4px 0 6px;line-height:1.3}
-.issue-info p{font-size:14px;color:#666;flex:1}
-.issue-info .status{font-size:12px;margin-top:8px;display:flex;align-items:center;gap:6px}
-.issue-info .status .dot{width:6px;height:6px;border-radius:50%;display:inline-block}
-.issue-info .status .dot.green{background:#27ae60}
-.issue-info .status .dot.gray{background:#ccc}
-.notebook-entry{background:linear-gradient(135deg,#fdf8ee,#faf3e0);border:1px solid #e8dcc8;border-radius:12px;padding:28px 32px;margin:8px 0 40px;text-align:center}
-.notebook-entry h3{font-size:18px;font-weight:700;color:#5a4a2a;margin-bottom:6px}.notebook-entry p{font-size:14px;color:#8a7a5a;margin-bottom:0}.ai-entry{background:linear-gradient(135deg,#f0f4ff,#e8ecf4);border:1px solid #c8d0e0;border-radius:12px;padding:28px 32px;margin:0 0 40px;text-align:center}.ai-entry h3{font-size:18px;font-weight:700;color:#4a5a8a;margin-bottom:6px}.ai-entry p{font-size:14px;color:#6a7a9a;margin-bottom:0}
-footer{text-align:center;padding:40px 24px;color:var(--muted);font-size:13px}
-@media(max-width:600px){.hero{padding:48px 20px 40px}.about-card{padding:24px 20px}.issue-num{min-width:56px;font-size:20px}.issue-info{padding:14px 16px}.issue-info h3{font-size:16px}}
+body{font-family:-apple-system,"PingFang SC","Noto Sans SC",sans-serif;background:#0f0e0d;color:#f0ede8;line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
+.hero{padding:96px 24px 56px;text-align:center;background:radial-gradient(ellipse at 50% 0%,rgba(201,122,90,0.15),transparent 60%)}
+.hero h1{font-size:clamp(36px,7vw,60px);font-weight:700;letter-spacing:6px;margin-bottom:12px;background:linear-gradient(135deg,#e8c87a,#c97a5a);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero .sub{font-size:clamp(14px,2vw,17px);color:#9a948a;font-weight:300;max-width:540px;margin:0 auto}
+.hero .quote{margin-top:24px;font-size:13px;color:#6b6358;font-style:italic;max-width:480px;margin-left:auto;margin-right:auto}
+.series{flex:1;max-width:960px;margin:0 auto;padding:32px 24px 64px;width:100%}
+.series-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:24px}
+.card{display:block;text-decoration:none;color:inherit;background:#1a1916;border:1px solid #2a2825;border-radius:14px;overflow:hidden;transition:all .25s;position:relative}
+.card:hover{transform:translateY(-3px);border-color:#4a4540;box-shadow:0 12px 36px rgba(0,0,0,0.4)}
+.card-banner{height:120px;display:flex;align-items:center;justify-content:center;font-size:48px;position:relative;overflow:hidden}
+.card-banner::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(255,255,255,0.08),transparent 70%)}
+.card-banner.stones{background:linear-gradient(135deg,#1e3a5f,#0f1f33)}
+.card-banner.thinking{background:linear-gradient(135deg,#3a1e2f,#1f0f1a)}
+.card-banner.career{background:linear-gradient(135deg,#3a251e,#2a1810)}
+.card-body{padding:24px 26px}
+.card-body .label{font-size:11px;letter-spacing:2px;color:#7a7268;text-transform:uppercase;margin-bottom:8px}
+.card-body h2{font-size:22px;font-weight:700;margin-bottom:8px;letter-spacing:1px}
+.card-body p{font-size:14px;color:#9a948a;line-height:1.55}
+.card-body .meta{margin-top:16px;display:flex;gap:8px;flex-wrap:wrap}
+.card-body .meta span{font-size:11px;color:#6b6358;border:1px solid #2a2825;padding:3px 10px;border-radius:10px}
+.card-body .cta{margin-top:18px;font-size:13px;color:#c97a5a;font-weight:600}
+footer{text-align:center;padding:32px 24px;font-size:12px;color:#5a5248;border-top:1px solid #1f1d1a}
+footer a{color:#7a7268;text-decoration:none}
+@media(max-width:600px){.hero{padding:64px 20px 40px}.card-body{padding:20px}}
 </style>
 </head>
 <body>
-<div class="hero">
-  <h1><em>他山之</em>石</h1>
-  <p class="sub">用硬科学的手术刀，解剖历史、社会与决策</p>
-  <div class="badge-row">
-    <span>📐 芒格计划</span>
-    <span>📐 已发布 10 期 · 持续更新</span>
-    <span>🧠 查理·芒格格栅理论</span>
-    <span>🔥 每期一个核心模型</span>
-  </div>
+<section class="hero">
+<h1>芒格计划</h1>
+<p class="sub">用查理·芒格的格栅理论，把各学科最核心的思维模型装进同一个大脑。</p>
+<p class="quote">"你必须知道重要学科的重要理论，并经常使用它们——要全部都用上，而不是只用几种。" —— 查理·芒格</p>
+</section>
+<section class="series">
+<div class="series-grid">
+<a class="card" href="stones/index.html">
+<div class="card-banner stones">📐</div>
+<div class="card-body">
+<div class="label">跨学科模型</div>
+<h2>他山之石</h2>
+<p>从硬科学里摘取皇冠上的明珠——熵增、相变、反馈回路、进化论……一个模型看透多个领域。</p>
+<div class="meta"><span>周一 · 周四</span><span>硬科学</span></div>
+<div class="cta">进入系列 →</div>
 </div>
-<div class="about">
-  <div class="about-card">
-    <p><strong>从第一性原理理解世界。</strong></p>
-    <p>不按教科书顺序系统地学——而是直奔各个学科<strong>皇冠上的明珠</strong>：最核心、最有解释力的思维模型。目标是快速搭建跨学科的格栅，达到触类旁通。</p>
-    <p style="font-size:14px;color:#999;">每期包含：硬科学模型 → 明珠概念 → 人文对照 → 反向思考</p>
-  </div>
+</a>
+<a class="card" href="thinking/index.html">
+<div class="card-banner thinking">🧠</div>
+<div class="card-body">
+<div class="label">学科底层思维</div>
+<h2>另眼相看</h2>
+<p>钻进单个学科内部，理解它独特的思考习惯。像学者一样思考，换个角度看世界。</p>
+<div class="meta"><span>周二 · 周五</span><span>学科纵深</span></div>
+<div class="cta">进入系列 →</div>
 </div>
-<div class="container">
-  <div class="issue-grid">
-    <h2>📚 全部期次</h2>
-    <p class="hint">点击卡片进入阅读 · 选中文字右键可标记和记笔记</p>
-
-    <a href="01.html" class="issue-card"><div class="issue-num">01</div><div class="issue-info"><div class="model">热力学第二定律</div><h3>系统的宿命</h3><p>为什么庞然大物往往不可逆地走向崩溃？熵增——宇宙最无情的铁律。</p><div class="status"><span class="dot green"></span>已发布</div></div></a>
-    <a href="02.html" class="issue-card"><div class="issue-num">02</div><div class="issue-info"><div class="model">相变与临界现象</div><h3>历史的转折</h3><p>为什么剧变总在一夜之间暴发？水在99℃还是水，再加1℃就瞬间汽化。</p><div class="status"><span class="dot green"></span>已发布</div></div></a>
-    <a href="03.html" class="issue-card"><div class="issue-num">03</div><div class="issue-info"><div class="model">网络效应与反馈回路</div><h3>隐秘的杠杆</h3><p>谁在暗中操纵群体的行为？正反馈让系统偏离平衡，负反馈让系统回归稳态。</p><div class="status"><span class="dot green"></span>已发布</div></div></a>
-    <a href="04.html" class="issue-card"><div class="issue-num">04</div><div class="issue-info"><div class="model">激励结构与损失厌恶</div><h3>决策的迷局</h3><p>智者为何也会做出灾难性的选择？激励是行为的终极开关。</p><div class="status"><span class="dot green"></span>已发布</div></div></a>
-    <a href="05.html" class="issue-card"><div class="issue-num">05</div><div class="issue-info"><div class="model">自然选择</div><h3>进化的算法</h3><p>为什么没有"设计者"的系统也能越来越精妙？变异+选择+遗传。</p><div class="status"><span class="dot green"></span>已发布</div></div></a>
-
-    <a href="06.html" class="issue-card"><div class="issue-num">06</div><div class="issue-info"><div class="model">认知失调与确认偏误</div><h3>编辑好的世界</h3><p>为什么你看到的不等于真实？大脑不是摄像机，是一台剪辑师。</p><div class="status"><span class="dot green"></span>已发布</div></div></a>
-    <a href="07.html" class="issue-card"><div class="issue-num">07</div><div class="issue-info"><div class="model">复利效应与指数增长</div><h3>隐形的曲线</h3><p>为什么微小的优势会变成巨大的鸿沟？每天进步1%，一年后是37倍。</p><div class="status"><span class="dot green"></span>已发布</div></div></a>
-    <a href="08.html" class="issue-card"><div class="issue-num">08</div><div class="issue-info"><div class="model">第一性原理</div><h3>思想的基石</h3><p>如何像物理学家一样思考？剥掉所有假设，从基本事实重新推理。</p><div class="status"><span class="dot green"></span>已发布</div></div></a>
-    <a href="09.html" class="issue-card"><div class="issue-num">09</div><div class="issue-info"><div class="model">正态分布与黑天鹅</div><h3>失灵的预测</h3><p>为什么绝大多数预测都是错的？世界是幂律的，不是正态的。</p><div class="status"><span class="dot green"></span>已发布</div></div></a>
-    <a href="10.html" class="issue-card"><div class="issue-num">10</div><div class="issue-info"><div class="model">机会成本与比较优势</div><h3>放弃的艺术</h3><p>你每做一个选择都在放弃什么？机会成本是经济学唯一重要的概念。</p><div class="status"><span class="dot green"></span>已发布</div></div></a>
-    <div class="issue-card-future"><div class="issue-num">11</div><div class="issue-info"><div class="model">更多</div><h3>持续更新</h3><p>更多跨学科思维模型待上线。每周一晚八点微信推送。</p><div class="status"><span class="dot gray"></span>待定</div></div></div>
-  </div>
-
-  <div class="notebook-entry">
-    <h3>📒 学习笔记本</h3>
-    <p>标记和笔记保存在侧边栏里。打开任意一期，点击右下角「笔记本」按钮查看。</p>
-  </div>
-  <div class="ai-entry">
-    <h3>🤖 AI 助教（新功能）</h3>
-    <p>打开任意一期，点击左下角「AI 助教」按钮。AI 已读完所有10期内容，可回答任何关于思维模型的问题。需自备 DeepSeek API Key。</p>
-  </div>
+</a>
+<a class="card" href="career/index.html">
+<div class="card-banner career">🔧</div>
+<div class="card-body">
+<div class="label">职业与手艺</div>
+<h2>职人手艺</h2>
+<p>解剖一个具体职业的思维方式。龙舟鼓手、搬家工人、消防员……每行都有它的内功心法。</p>
+<div class="meta"><span>周三 · 周六</span><span>职业洞察</span></div>
+<div class="cta">进入系列 →</div>
 </div>
-<footer>芒格计划 · 他山之石 · 以查理·芒格的格栅理论为精神指引</footer>
+</a>
+</div>
+</section>
+<footer>芒格计划 · 以查理·芒格的格栅理论为精神指引 · 持续更新中</footer>
 </body>
 </html>

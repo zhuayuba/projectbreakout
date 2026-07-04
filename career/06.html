@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>职人手艺 · 06：他每天面对的人，都不会说谢谢</title>
+<style>
+:root{--bg:#faf8f5;--text:#1a1a2e;--accent:#e8924c;--accent-dark:#c8772e;--muted:#888}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Georgia","Noto Serif SC",serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:17px}
+.hero{background:linear-gradient(135deg,#1a1d2e,#1a2744,#1a3856);color:#f0ede8;padding:100px 24px 80px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(232,146,76,0.12),transparent 60%)}
+.hero>*{position:relative;z-index:1}
+.hero-badge{display:inline-block;border:1px solid var(--accent);color:var(--accent);font-family:-apple-system,"PingFang SC",sans-serif;font-size:12px;letter-spacing:3px;padding:4px 16px;border-radius:20px;margin-bottom:32px;text-transform:uppercase}
+.hero h1{font-size:clamp(32px,6vw,56px);font-weight:700;letter-spacing:2px;margin-bottom:12px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .sub{font-size:clamp(16px,2.5vw,22px);color:#b8b0a0;font-family:-apple-system,"PingFang SC",sans-serif;font-weight:300;margin-bottom:8px}
+.hero .meta{font-family:-apple-system,"PingFang SC",sans-serif;font-size:13px;color:#888;letter-spacing:1px;margin-top:12px}
+.container{max-width:740px;margin:0 auto;padding:0 24px}
+.intro{margin-top:-40px;position:relative;z-index:2}
+.intro-card{background:#fff;border-radius:12px;padding:40px 36px;box-shadow:0 4px 24px rgba(0,0,0,0.06);border:1px solid #e5e0d8}
+.intro-card p{margin-bottom:16px;color:#444}.intro-card p:last-child{margin-bottom:0}
+section{padding:48px 0}
+.section-label{font-family:-apple-system,"PingFang SC",sans-serif;font-size:11px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;margin-bottom:20px;line-height:1.4;color:#1a1a2e}
+h3{font-size:19px;font-weight:600;margin:32px 0 12px;color:#1a1a2e}
+p{margin-bottom:16px;color:#444}
+.story-box{background:#fff;border:1px solid #e5e0d8;border-radius:10px;padding:24px 28px;margin:20px 0}
+.story-box .scene{font-size:11px;letter-spacing:2px;color:var(--accent);font-family:-apple-system,"PingFang SC",sans-serif;margin-bottom:8px;text-transform:uppercase}
+.story-box p{color:#444;margin-bottom:10px}.story-box p:last-child{margin-bottom:0}
+.highlight-box{background:linear-gradient(135deg,#fef6ee,#faf0e2);border:1px solid #e8d4b8;border-radius:10px;padding:28px 32px;margin:28px 0}
+.highlight-box .label{font-family:-apple-system,"PingFang SC",sans-serif;font-size:12px;letter-spacing:2px;color:var(--accent-dark);margin-bottom:8px}
+.highlight-box p{margin-bottom:0;color:#5a3a1a}
+.skill-card{background:#fff;border:1px solid #e5e0d8;border-radius:10px;padding:24px 28px;margin:16px 0}
+.skill-card .rank{font-family:-apple-system,"PingFang SC",sans-serif;font-size:11px;letter-spacing:2px;color:var(--accent);margin-bottom:6px}
+.skill-card h4{font-size:17px;font-weight:700;margin-bottom:8px;color:#1a1a2e}
+.skill-card p{color:#555;margin-bottom:0}
+blockquote{background:#f3f0ea;border-left:4px solid var(--accent);padding:20px 24px;margin:24px 0;border-radius:0 8px 8px 0;font-style:italic;color:#555}
+blockquote cite{display:block;margin-top:8px;font-size:14px;font-style:normal;color:var(--muted)}
+.divider-solid{border:0;height:1px;background:linear-gradient(to right,transparent,#e5e0d8,transparent);margin:40px 0}
+.next-teaser{background:#f3f0ea;border:1px solid #e5e0d8;border-radius:10px;padding:24px 28px;margin:28px 0;text-align:center}
+.next-teaser .label{font-family:-apple-system,"PingFang SC",sans-serif;font-size:11px;letter-spacing:2px;color:var(--muted);margin-bottom:6px}
+.next-teaser h4{font-size:17px;font-weight:700;color:#1a1a2e;margin-bottom:4px}
+.next-teaser p{font-size:14px;color:#888;margin-bottom:0}
+footer{text-align:center;padding:60px 24px;color:#999;font-size:14px;font-family:-apple-system,"PingFang SC",sans-serif}
+@media(max-width:600px){body{font-size:16px}.hero{padding:60px 20px 50px}.intro-card{padding:28px 20px}section{padding:36px 0}.story-box,.skill-card,.highlight-box{padding:18px 20px}}
+</style>
+</head>
+<body>
+<header class="hero">
+<div class="hero-badge">芒格计划 · 职人手艺 · 第6期</div>
+<h1>他每天面对的人，<br>都<em>不会说谢谢</em></h1>
+<p class="sub">殡仪馆的工作间里，每一次下笔都是帮活着的人完成最后一次告别</p>
+<span class="job-name">殡仪馆化妆师</span>
+<p class="hook">这个世界上最安静的职业——服务对象不会抱怨、不会投诉、不会说谢谢。但每一个经他之手恢复的面容，都帮一个家庭完成了最重要的事：让最爱的人，体面地走完最后一程。</p>
+<p class="meta">🕯️ 殡仪馆化妆师 · 遗体整容 · 替生者完成告别</p>
+</header>
+
+<div class="container">
+<div class="intro"><div class="intro-card">
+<p><strong>你大概不会想了解这个职业。大多数人在生活中会主动避开这个话题——死亡、遗体、殡仪馆。</strong></p>
+<p>但恰恰是这个被回避的职业，承载了人类社会最古老的仪式之一：让逝者以尊严的方式离开，让生者完成最后的告别。你不一定需要知道他们在做什么，但如果你了解过，你会对这个职业产生一种复杂的情感——既有敬意，也有心疼，还有一种说不清的、关于活着本身的重新理解。</p>
+<p>这一期的主角，老韩，做了十六年遗体整容师。他经手过三千多具遗体，从自然死亡的老人到意外去世的年轻人，从完整的遗体到需要大面积修复的残损面容。他有一句话让人记了很久："<strong>我做这行最大的感受不是对死亡的恐惧，而是对活着的珍惜。你每天看到那么多人突然就没了，你就知道今天这顿饭、今天这个人，到底有多重要。</strong>"</p>
+</div></div>
+
+<section>
+<span class="section-label">Part 1</span>
+<h2>他的工作台上，放的不是化妆品</h2>
+
+<div class="story-box"><div class="scene">📅 案例：某个周四下午，南方某市殡仪馆</div>
+<p>老韩的"工作台"是一张不锈钢台面，上方有抽风系统——因为遗体防腐和修复过程中会用到一些有气味的化学材料。台面左手边放着几排工具：不同型号的镊子、手术剪、缝合针线、几种颜色的蜡、一套小型雕刻刀、医用级硅胶、调色盘、不同色号的粉底液。</p>
+<p>这些东西放在一起，你分不清这是一个化妆师的工作台，还是一个外科手术室，还是一个雕塑工作室。实际上三个都是。遗体整容师的工作就是这三件事的混合：防腐（医学）、修复（雕塑）、化妆（美容）。缺一不可。</p>
+<p>这天下午，老韩接到的是一位因交通事故去世的中年男性。面部有多处创伤，颅骨有轻度变形，左颧骨位置塌陷。家属的诉求很简单："让他看起来像睡着了一样，不要太吓人，孩子还小。"</p>
+<p>老韩先做的不是化妆。他先用填充材料把塌陷的颧骨位置撑起来，参照家属提供的生前照片一点点调整弧度。然后用医用硅胶修补面部的几处软组织缺损，等硅胶固化后再用细砂纸打磨平整。接下来才是上底妆、调肤色、画眉毛。整个过程将近三个小时。做完之后，他退后两步看了三十秒——这是他十六年来的习惯，每次做完都要用家属的眼睛审视一遍——然后叫家属进来。</p>
+<p>那位妻子进来后，站在台前很久没说话。然后说了一句："他就是这样睡觉的。"</p>
+<p>老韩说，这是他做这行听到过的最好的评价。不是"谢谢你"，不是"做得真好"，而是"他就是这样睡觉的"——<strong>就好像这个人没死，只是睡着了。</strong></p>
+</div>
+
+<h3>这个职业的日常不只是"给逝者化妆"</h3>
+<p>圈外人一听到"殡仪馆化妆师"，脑子里出现的画面是：一个人拿着一支口红，给躺在那里的人涂个嘴唇、打点腮红。但实际上，化妆是整个流程的最后一步，而且在这之前还有大量更复杂的工作。</p>
+<p><strong>第一关：遗体防腐。</strong>这是所有后续工作的前提。不同体型、不同死亡时间、不同季节，防腐处理的方案都不一样。老韩说他入行头三年最怕的是夏天——不是因为热，是因为夏天遗体变化快，有时候从接到通知到处理完，时间窗口非常短。防腐做不好，后面的修复和化妆都没有意义。</p>
+<p><strong>第二关：遗体修复。</strong>这是技术含量最高的部分。车祸、坠楼、火灾、溺水——不同原因造成的损伤，修复方式完全不同。老韩工具箱里那些雕刻刀和硅胶不是摆设：遇到颅骨变形的，要参照照片一点点塑形；遇到面部软组织缺损的，要用填充材料"重建"缺失的部分；遇到皮肤颜色不一致的，要调出完全匹配的色号。他说这活儿本质上跟雕塑家干的是一回事——只不过雕塑家用的参照是想象，他用的是家属给的一张生前照片。</p>
+<p><strong>第三关：整容还原。</strong>如果前两关做好了，这一关反而相对简单。但这里有一个容易被忽略的细节：给逝者化妆和给活人化妆，手感完全不一样。活人的皮肤有弹性、有温度，化妆品在皮肤上的延展性是均匀的；但遗体经过防腐处理后，皮肤的质感和温度都变了，化妆品的附着效果也不同。同样的粉底液，在活人脸上和在逝者脸上是两种东西。老韩有自己的配方比例——不同季节、不同皮肤状态、不同防腐方案，用的底妆调配都不一样。</p>
+</section>
+
+<section>
+<span class="section-label">Part 2</span>
+<h2>家属哭的时候，他的手不能抖</h2>
+
+<div class="story-box"><div class="scene">😢 案例：一个年轻女孩的最后一次化妆</div>
+<p>老韩记得最清楚的一个案例，是一个二十岁出头的女孩，因病去世。女孩的妈妈带来了她生前最喜欢的那支口红，还有一张她穿着白裙子在阳光下笑的照片。"她最爱美了，"妈妈说，"走的时候也想漂漂亮亮的。"</p>
+<p>老韩接过口红的时候，注意到妈妈的手在发抖——不是紧张，是那种已经哭了太久、身体已经快没力气的抖。老韩说了一句："您在外面等我，我来。"声音很平，不煽情，不刻意安慰。但他说这种时候，家属不需要听"节哀顺便"——那是最没用的话。他们需要的是一个可靠的、镇定的、能把事情做好的人。</p>
+<p>他后来跟我说，那个女孩的面容其实已经变化比较大了——长期病痛让面部瘦削了很多。他花了不少时间用填充材料把她恢复到照片里那种圆润的轮廓，然后才上妆。做完之后他破例没有退后两步看——因为他知道已经可以了。</p>
+<p>女孩的妈妈进来后，走到台前，用手摸了摸女儿的脸颊，然后回头对老韩说："谢谢你让我女儿漂亮地走了。"</p>
+<p>老韩说，在殡仪馆工作了十六年，他收到的"谢谢"加起来不超过五十句。不是家属不懂感恩，而是在那种极度悲伤的状态下，大多数人已经没有多余的情感能量去表达什么。有的人哭到说不出话，有的人站在遗体前沉默很久然后转身离开，有的人想要说点什么但张开嘴又闭上了。老韩不需要那句"谢谢"——他看家属的反应就知道了。家属能安静地看着逝者的面容，不惊恐、不崩溃、能认出"这就是他/她"——这就是对老韩工作最大的肯定。</p>
+</div>
+
+<h3>面对家属的三种情绪状态，需要三种不同的应对方式</h3>
+<p>老韩这些年总结出家属大致有三种状态，每种状态的应对策略完全不同。</p>
+<p><strong>第一种：崩溃型。</strong>这种家属情绪完全失控，大哭、瘫坐、甚至想扑到遗体上。老韩的经验是：不要拦、不要说"别哭了"，先让他们释放。但你的身体要站在一个合适的位置——不能太远（显得冷漠），不能太近（可能被情绪波及），要站在一个"你在，但你不会打扰"的距离。等第一波情绪过去后，再轻声说一句："您在外面坐一会儿，我来。""我来"这两个字在这种时候最有用——它意味着有人接过了这个担子。</p>
+<p><strong>第二种：沉默型。</strong>这种家属全程不说话，不哭，就是在旁边站着看。老韩说这种状态比崩溃型更难应对——因为他们把所有情绪都压在里面，你完全不知道他们在想什么，也不知道会不会突然爆发。他处理这种家属的方式是：正常做自己的事，不刻意打破沉默，但每隔一段时间会说一句"快了""再等一下""马上好了"。不需要对方回应，只是让空气中一直有一个声音——让家属知道有人在这个空间里跟ta在一起。</p>
+<p><strong>第三种：安排型。</strong>这种家属可能是家里比较冷静的那个人——通常是长子或长女，或者配偶中比较理智的一方。他们会很具体地交代要求，甚至会带照片来逐条说明。老韩说这类家属其实是在用"安排事务"来转移自己的悲伤——你不能戳破这个防御，你要配合他们把这件事当成一件"工作"来做。但做完之后，这类家属往往是哭得最凶的——因为事情办完了，悲伤就涌上来了。老韩会在结束之后多留一会儿，准备好纸巾，放在手边，不多说。</p>
+</section>
+
+<section>
+<span class="section-label">Part 3</span>
+<h2>不同死法，是完全不同的技术挑战</h2>
+
+<div class="highlight-box"><div class="label">👨‍🔬 外人不知道的技术壁垒</div>
+<p>普通人以为遗体整容就是一套标准流程，不管什么情况都一样。实际上不同死亡方式对遗体的影响天差地别，每一种都要求完全不同的修复方案——这行的技术壁垒就在这里。</p></div>
+
+<div class="story-box"><div class="scene">🔧 案例：自然死亡 vs 意外死亡</div>
+<p>老韩把遗体的状态分成几类，每一类的处理思路完全不同：</p>
+<p><strong>自然死亡（疾病、衰老）：</strong>这类相对最容易。遗体基本完整，主要问题是因病容消瘦导致的面部凹陷、肤色灰暗。处理重点是用填充物恢复面部饱满度，用底妆调出自然的肤色。难度在于"自然"二字——不能化得太浓，家属会感觉不像本人；不能化得太淡，掩饰不住病容。这个平衡是老韩入行前五年一直在练的东西。</p>
+<p><strong>创伤性死亡（车祸、坠落、机械事故）：</strong>这类最难。老韩遇到过最复杂的一例——一位建筑工人从高处坠落，颅骨多处骨折，面部严重变形。他花了两天时间来修复：先用医用钢丝固定颅骨的碎裂部位，然后用硅胶和蜡重建面部软组织轮廓，最后比对家属提供的照片反复调整。他说做到最后，家属看的时候认出来了——"这是他的手、他下巴那颗痣"——那一刻他觉得两天的功夫值了。</p>
+<p><strong>火灾死亡：</strong>皮肤大面积碳化，普通的化妆完全无效。这类遗体通常不开放直接瞻仰——改用不透明遮盖物覆盖身体，仅露出修复过的面部区域。而这部分修复也需要大量的重建工作。</p>
+<p><strong>溺水死亡：</strong>遗体在水中浸泡后，皮肤的状态跟正常遗体完全不同——肿胀、变色、表皮容易脱落。老韩说处理这类遗体最重要的是控制脱水——先要让皮肤回到一个相对稳定的状态，才能进行后续的修复和化妆。夏天在河里泡了一两天的遗体，跟冬天在冷水中短时间溺亡的遗体，处理方案完全不同。水温、浸泡时间、水质（淡水还是海水），每个变量都影响处理方式。</p>
+<p>老韩说他干了十六年，还是会在遇到某些极端案例的时候觉得"这个我没把握"。但他说这行的老师傅教过他一句话："你做不了一百分的时候，做八十分就是对的。家属不需要完美，他们需要的是你尽力了。"</p>
+</div>
+</section>
+
+<section>
+<span class="section-label">Part 4</span>
+<h2>一个人做了这行，社交生活就变了</h2>
+
+<div class="story-box"><div class="scene">🚫 案例：过年不能去别人家拜年</div>
+<p>老韩刚入行的时候，过年去舅舅家拜年，舅妈站在门口挡着没让他进去。不是恶意的——舅妈就是觉得"不太吉利"，嘴上没说，身体的反应很诚实。老韩说他当时站在门口，手里提着两盒点心，愣了几秒钟。后来他再也不在过年期间去别人家串门了。十六年，年年如此。</p>
+<p>这不是个例。老韩认识的所有同行几乎都有类似的经历：朋友结婚不敢请他们当伴郎伴娘，生了孩子的同事婉拒他们去看宝宝，过年聚会的时候有些人会刻意不跟你握手。不是歧视，是普通人对"死亡"这两个字有一种本能的避讳——而你的职业就是这两个字的具象化身。</p>
+</div>
+
+<h3>相亲的时候，最难说的三个字</h3>
+<p>老韩三十岁那年相过一次亲，介绍人没说他的职业，只说"在民政系统工作"。女孩问具体做什么，老韩犹豫了几秒钟，说了实话。女孩沉默了大概十秒钟，然后说了一句"挺特别的"。后来的发展老韩没说，但他说那个"十秒钟的沉默"他记了十几年——不是因为受伤了，而是因为那一刻他意识到：<strong>这个职业自带一堵透明的墙，你跟任何人之间都隔着一层东西。</strong></p>
+<p>后来他经人介绍认识了现在的妻子——一位医院护士。老韩说他妻子第一次知道他的职业时，反应是："那你每天见到的都是别人最后一面吧？"老韩说对。她说："那你要对活着的人更好一点。"就是这句话，老韩决定娶她。</p>
+<p>但即便是最理解他的妻子，也有自己的底线——从来不问"今天做了什么"，从来不问"今天来了几个"。她知道丈夫的职业值得尊重，但她不需要知道细节。老韩也从不主动说。他说这是一种默契：<strong>你做你的，我不问，但我支持你。</strong></p>
+
+<h3>孩子的家长会，他从来不去</h3>
+<p>老韩有一个上初中的儿子。孩子小的时候问过："爸，你是做什么的？"老韩说："爸爸帮人化妆。"儿子说："那不是女生做的吗？"老韩笑了笑没解释。后来孩子长大了，慢慢知道了。儿子从没在同学面前提过爸爸的工作，老韩也从不去家长会。不是儿子觉得丢人——是老韩自己不愿意给孩子添麻烦。"万一有同学问'你爸是干什么的'，孩子说出来了，第二天班里传开了，对孩子不好。"</p>
+<p>他说这不是软弱，是这行的一种自觉——你知道你的存在对某些人来说是一种不适，你主动把自己收一收，是对别人的体谅。</p>
+</section>
+
+<section>
+<span class="section-label">Part 5</span>
+<h2>做了十六年，他对生死的理解跟你不一样</h2>
+
+<div class="highlight-box"><div class="label">💭 一个天天面对死亡的人，怎么看待"活着"</div>
+<p>老韩说他不怕死。但他比绝大多数人都怕"来不及"。</p></div>
+
+<h3>"明天"这个词，在他这里不是虚的</h3>
+<p>普通人说"明天再说吧"，是一种习惯性拖延——反正还有明天。老韩说他不这么想。他见过太多"没有明天"的人：前一天晚上还在跟家人吃饭，第二天早上出门再也没回来。一个四十多岁的男人，下班路上被一辆失控的货车撞了；一个十七岁的高中生，游泳的时候出了意外；一个刚退休的阿姨，计划了半年的旅行，出发前一天晚上突发心梗。</p>
+<p>老韩说每处理完一例，他都会在心里默念一句："活着的时候，能做的事赶紧做。"听起来像鸡汤，但他说这不是鸡汤——是你每天亲眼看到生命的无常之后，产生的一种真实的紧迫感。你今天对老婆发的脾气、你跟爸妈说的那句"别烦我"、你跟朋友约了好久但一直没赴的饭局——你不知道哪一次就是最后一次。</p>
+
+<h3>他不参加葬礼，但用另一种方式跟逝者告别</h3>
+<p>老韩从业以来，从不参加任何亲朋好友的葬礼。不是冷漠——是他觉得自己的职业角色和"参加葬礼的普通人"这两个身份不能混在一起。但他有自己的告别方式：每做完一例遗体整容，在让家属进来之前，他会一个人站在工作台前停留十几秒钟。不是祈祷，不是默哀，就是安静地看着那个人——像是确认自己把这个人"完整地"交出去了。他说这是他的仪式感，不属于任何宗教，只属于这个职业。做完这一步，他告诉自己：这个人的最后一程，我送到这里了。</p>
+
+<h3>他比大多数人都更"活在当下"</h3>
+<p>老韩说他以前也是一个"为明天焦虑"的人——担心工作、担心收入、担心孩子前途。但做了这一行之后，这种焦虑越来越少了。不是因为看开了——是因为比普通人更清楚地看到：<strong>你焦虑的那个"明天"，对很多人来说根本不存在。</strong></p>
+<p>"你躺在床上担心明年的事，但今天可能就是你的最后一天。"他说这话的时候语气很平，不是恐吓，不是卖惨，就是陈述一个他见过几千次的事实。"所以把今天过好。今天跟老婆好好说话，今天把你手里这碗饭好好吃完，今天你做的每一件事，你都别后悔。这就够了。"</p>
+<p>他把这套东西叫做"临终视角"——假设你明天就不在了，你今天会怎么过？你会把时间花在什么事情上？你会对谁好一点？你会觉得什么不重要了可以放掉了？大部分人只会在人生真的走到尽头时才被迫面对这些问题，但老韩每天都面对。"天天有人替你回答这些问题，你就不用等到自己那一天才想明白。"</p>
+</section>
+
+<section>
+<span class="section-label">Part 6</span>
+<h2>这行最值钱的三项能力</h2>
+
+<div class="skill-card">
+<div class="rank">🥇 黄金技能 No.1</div>
+<h4>手的稳定性——不是不抖，是能在任何情况下都不抖</h4>
+<p>遗体修复和化妆对精细度的要求远超一般化妆。给颅骨裂缝填充、用细针缝合皮肤、在破损区域一笔一笔地调色——这些动作对精度的要求不亚于外科手术。而最大的挑战是：你不仅手要稳，你的心也要稳。家属在外面哭，你的同事在催进度，你自己的情绪也在波动——但你的手不能抖。老韩说他练手的稳定性的方法是：每天早上来上班，先不要碰遗体，先坐下来喝杯水，把呼吸调稳，然后才开始准备工作。这个习惯坚持了十六年。他说这不是技术训练，是心理训练——你必须在工作前把自己"调平"。</p>
+</div>
+
+<div class="skill-card">
+<div class="rank">🥈 黄金技能 No.2</div>
+<h4>对家属心理的把握——知道什么时候该说话，什么时候该闭嘴</h4>
+<p>这行的沟通不是销售式的沟通，不是安抚式的沟通，而是在对方处于人生最脆弱时刻时，用最少的话传递最大的安全感。老韩说他在这方面的经验是后来才总结出来的：家属不需要你话多——他们需要的是一个稳定、可靠、不慌张的人。你的声音要平静但不冷漠，你说的话要简短但不敷衍，你的动作要笃定但不急躁。这些细节比说什么内容重要得多。他说他见过太多好心但不懂行的同事，对家属说了一堆"节哀""多想开点""时间会治愈一切"——这些话本身没错，但在那一刻说出来，不是安慰，是噪音。家属在那种状态下最需要的，不是语言，是你把事做好。</p>
+</div>
+
+<div class="skill-card">
+<div class="rank">🥉 黄金技能 No.3</div>
+<h4>对死亡的平常心——既不麻木，也不恐惧</h4>
+<p>这可能是最难的一项。很多新人干不下去，不是因为技术不行，是因为心理扛不住——要么太投入（每次都为逝者伤心，自己先崩溃了），要么太抽离（把人当成"物件"处理，变得冷漠麻木）。老韩说他找到的那个平衡点是：<strong>把每一位逝者当成"某个人的亲人"而不是"一具遗体"。</strong>这个区别很微妙——"一具遗体"让你变得麻木，但"某个人的亲人"让你保持敬畏和尊重，同时又不会把逝者的故事背在自己身上。你不在情感上卷入，但你在态度上不轻慢。你做的是技术工作，但你知道你的技术服务的是一份情感。</p>
+</div>
+</section>
+
+<section>
+<span class="section-label">Part 7</span>
+<h2>这台"操作系统"是怎么长出来的</h2>
+
+<div class="highlight-box"><div class="label">🧠 底层思维模型</div>
+<p>老韩没上过大学，但他脑子里这套做事的底层逻辑，拆开来看非常扎实。</p></div>
+
+<h3>模型一："最后一次"思维——每次工作都是唯一的</h3>
+<p>普通人做事可以重来一遍——发型剪坏了可以长回来，一份报告写烂了可以改第二版。但老韩的工作没有重来的机会。每一个逝者只有一次修复的机会，每一个家庭只有一次告别的机会。他说这个认知让他形成了一个工作习惯：<strong>做完之后不看时间，不赶进度，每一例都当成唯一的、不可逆的事来做。</strong>这种"最后一次"思维其实可以被很多人用到自己的工作中——不是说要紧张到每件事都像生死攸关，而是你在做一件事的时候，问问自己"如果我只有这一次机会，我会怎么做"？那个答案往往会让你比现在更认真一些。</p>
+
+<h3>模型二："参照还原"——一切以"像本人"为唯一标准</h3>
+<p>老韩说我做这行最大的方法论就四个字："看照片做"。不管遗体状态多差，只要有一张生前的清晰照片，他就知道目标是什么。然后从这个目标倒推——现在什么状态、需要弥补什么、从哪里开始。这个思路其实跟产品研发、设计、甚至商业策略是相通的：<strong>先定义理想终态，再从现状往前推差距，缺什么补什么。</strong>家属给的照片就是他的"需求文档"。他不需要无中生有地创造什么，他只需要把现实还原到那个文档描述的状态。很多人做事的问题是：既不知道终点在哪，也不知道现在有什么——最后的结果就是随缘。</p>
+
+<h3>模型三："托底者"心态——你不是主角，但你是最后一道防线</h3>
+<p>老韩说这行的从业者有一个集体共识：我们不是殡葬仪式的主角，家属才是。家属跟逝者告别是主角——他们哭、他们说、他们最后一次触碰亲人的脸。但家属能完成这一切的前提是：你把这个"场景"搭好了。你让逝者看起来安详、体面、像活着时一样，家属才敢看、才敢靠近、才敢触碰。你做的是"托底"的工作——你不出现在前台，但如果没有你在后台做的事，前台的告别就不成立。老韩说他想通了这一点之后，就不纠结"这个职业没有社会认可度"这个问题了。"你本来就不是站在台上的，你不需要掌声。"</p>
+</section>
+
+<section>
+<span class="section-label">Part 8</span>
+<h2>一句话总结这个职业</h2>
+<div class="highlight-box">
+<p><strong>遗体整容师的本质不是"给死人化妆的"，而是"帮活着的人完成告别的最后一道工序"——你修复的不是一具遗体，是一个家庭对亲人最后的记忆。</strong></p>
+<p style="margin-top:12px;font-size:15px;color:#8a6a4a;">三重底色：外科医生一样的精细手（修复破损）+ 心理咨询师一样的沉默陪伴（面对家属）+ 僧人一样的平常心（面对死亡）。这三样东西合在一起，让一个人在殡仪馆的地下室里安静地工作了十六年。</p>
+</div>
+
+<div class="next-teaser">
+<div class="label">📣 下期预告 · 周三晚八点</div>
+<h4>塔吊司机——坐在城市最高处的人</h4>
+<p>每天爬几十米的垂直梯子上班，一个人在狭小的驾驶室里坐八小时。头顶是天，脚下是整个城市。他们的世界比绝大多数人高，但他们的孤独也比绝大多数人深。下期拆开看看一个塔吊司机的脑子里在想什么。</p>
+</div>
+</section>
+
+<hr class="divider-solid">
+<footer>
+<p>芒格计划 · 职人手艺 · 第6期 · 殡仪馆化妆师</p>
+<nav style="margin-top:12px;display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap;">
+<a href="index.html" style="color:#e8924c;text-decoration:none;font-size:14px;">← 返回目录</a>
+<span style="color:#ddd;">|</span>
+<a href="05.html" style="color:#e8924c;text-decoration:none;font-size:14px;">← 上一篇</a>
+<span style="color:#ddd;">|</span>
+<span style="color:#aaa;font-size:14px;">下一篇：周三见 →</span>
+</nav>
+</footer>
+</div>
+
+<script>
+(function(){
+"use strict";
+var _h=[];
+try{var r=localStorage.getItem("careerlab_backup");if(r)_h=JSON.parse(r);}catch(e){}
+function _s(){try{localStorage.setItem("careerlab_backup",JSON.stringify(_h));}catch(e){}}
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function info(){
+ var b=document.querySelector(".hero-badge");if(!b)return{n:0};
+ var t=b.textContent,m=t.match(/(\d+)/);
+ if(!m){var cn={"一":1,"二":2,"三":3,"四":4,"五":5,"六":6,"七":7,"八":8,"九":9,"十":10};var x=t.match(/[一二三四五六七八九十]/);if(x)m=[x[0],cn[x[0]]||0];}
+ return{n:m?parseInt(m[1]):0,t:(document.querySelector(".hero h1")?.textContent||""),job:(document.querySelector(".hero .meta")?.textContent||"")};
+}
+function addHl(tx,nt){
+ var i=info();if(!i.n)return null;
+ var o={id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),issue:i.n,title:i.t,job:i.job,text:tx.trim(),note:(nt||"").trim(),ts:new Date().toISOString()};
+ _h.push(o);_s();return o;
+}
+function delHl(id){_h=_h.filter(function(x){return x.id!==id;});_s();}
+function updHl(id,nt){var x=_h.find(function(y){return y.id===id;});if(x){x.note=nt.trim();x.upd=new Date().toISOString();_s();}}
+
+var tb=null,pu=null,sv="",sr=null;
+
+function mkUI(){
+ if(tb)return;
+ tb=document.createElement("div");tb.id="tb";tb.style.cssText="position:fixed;z-index:99999;display:none;background:#2d2d3f;border-radius:8px;padding:4px;box-shadow:0 4px 16px rgba(0,0,0,.25);font-family:-apple-system,PingFang SC,sans-serif;gap:4px;";
+ var bb=document.createElement("button");bb.textContent="⭐ 标记";bb.style.cssText="border:none;border-radius:6px;padding:6px 14px;font-size:13px;cursor:pointer;font-family:inherit;background:#f5d742;color:#1a1a2e;font-weight:600;";bb.onmouseover=function(){bb.style.background="#ffe066";};bb.onmouseout=function(){bb.style.background="#f5d742";};bb.onclick=function(){act(false);};
+ var nb=document.createElement("button");nb.textContent="📝 记笔记";nb.style.cssText="border:none;border-radius:6px;padding:6px 14px;font-size:13px;cursor:pointer;font-family:inherit;background:#444;color:#eee;";nb.onmouseover=function(){nb.style.background="#555";};nb.onmouseout=function(){nb.style.background="#444";};nb.onclick=function(){act(true);};
+ tb.appendChild(bb);tb.appendChild(nb);document.body.appendChild(tb);
+ pu=document.createElement("div");pu.id="pu";pu.style.cssText="position:fixed;z-index:100000;display:none;background:#fff;border-radius:12px;padding:20px;box-shadow:0 8px 32px rgba(0,0,0,.2);font-family:-apple-system,PingFang SC,sans-serif;width:340px;max-width:90vw;";
+ pu.innerHTML='<div style="font-size:14px;font-weight:600;margin-bottom:10px;color:#333;">📝 记录想法</div><div id="mq" style="font-size:13px;color:#888;margin-bottom:10px;padding:8px 12px;background:#f5f5f5;border-radius:6px;line-height:1.5;max-height:80px;overflow-y:auto;"></div><textarea id="mt" placeholder="写下你的想法……" style="width:100%;min-height:80px;border:1px solid #ddd;border-radius:6px;padding:8px;font-size:14px;font-family:inherit;resize:vertical;box-sizing:border-box;"></textarea><div style="display:flex;gap:8px;justify-content:flex-end;margin-top:10px;"><button id="mc" style="border:none;background:#f0f0f0;color:#666;padding:6px 16px;border-radius:6px;cursor:pointer;font-size:13px;">取消</button><button id="ms" style="border:none;background:#e8924c;color:#fff;padding:6px 16px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;">保存笔记</button></div>';
+ document.body.appendChild(pu);
+ document.getElementById("mc").onclick=function(){pu.style.display="none";};
+ document.getElementById("ms").onclick=function(){var n=document.getElementById("mt").value,q=document.getElementById("mq").dataset.text||"";if(q){addHl(q,n);pu.style.display="none";document.getElementById("mt").value="";toast("✅ 笔记已保存");badge();}};
+}
+
+function show(x,y){mkUI();tb.style.display="flex";tb.style.left=Math.max(8,Math.min(x,window.innerWidth-180))+"px";tb.style.top=(y+12)+"px";}
+function hide(){if(tb)tb.style.display="none";sv="";sr=null;}
+
+function act(note){
+ var t=sv;if(!t)return;
+ if(note){var q=document.getElementById("mq");if(!q)return;q.textContent="「"+t.slice(0,100)+(t.length>100?"…":"")+"」";q.dataset.text=t;document.getElementById("mt").value="";var tr=tb.getBoundingClientRect();pu.style.top=Math.max(20,tr.top-320)+"px";pu.style.left=Math.max(20,Math.min(tr.left,window.innerWidth-360))+"px";pu.style.display="block";document.getElementById("mt").focus();hide();return;}
+ addHl(t,"");toast("⭐ 已标记");badge();
+ if(sr){try{var m=document.createElement("mark");m.className="mh";m.style.cssText="background:#f5d742;color:inherit;border-radius:2px;padding:0 2px;cursor:pointer;";sr.surroundContents(m);m.style.background="#ffeb7a";setTimeout(function(){m.style.background="#f5d742";},300);}catch(e){sr=null;}}
+ var s=window.getSelection();if(s)s.removeAllRanges();sv="";sr=null;hide();
+}
+
+document.addEventListener("contextmenu",function(e){
+ if(pu&&pu.style.display!=="none")return;
+ var s=window.getSelection();if(!s||s.isCollapsed||!s.toString().trim())return;
+ e.preventDefault();
+ try{var r=s.getRangeAt(0);sv=s.toString().trim();sr=r.cloneRange();show(e.clientX,e.clientY);}catch(er){}
+});
+
+document.addEventListener("mousedown",function(e){
+ if(tb&&tb.contains(e.target))return;
+ if(pu&&pu.style.display!=="none"){if(pu.contains(e.target))return;pu.style.display="none";}
+ hide();
+});
+
+function restore(){
+ var i=info();if(!i.n)return;
+ var list=_h.filter(function(x){return x.issue===i.n;});if(!list.length)return;
+ setTimeout(function(){list.forEach(function(h){restoreOne(h);});},300);
+}
+
+function restoreOne(h){
+ try{
+  var c=document.querySelector(".container")||document.body;
+  var w=document.createTreeWalker(c,NodeFilter.SHOW_TEXT),ns=[];
+  while(w.nextNode())ns.push(w.currentNode);
+  for(var i=0;i<ns.length;i++){
+   var nd=ns[i],idx=nd.textContent.indexOf(h.text);if(idx<0)continue;
+   var r=document.createRange();r.setStart(nd,idx);r.setEnd(nd,idx+h.text.length);
+   var m=document.createElement("mark");m.className="mh";m.dataset.id=h.id;
+   m.style.cssText="background:#f5d742;color:inherit;border-radius:2px;padding:0 2px;cursor:pointer;";
+   if(h.note){m.title="💡 "+h.note;m.style.borderBottom="2px solid #d4a017";}
+   m.onclick=function(id,note){return function(e){e.stopPropagation();bubble(e.target,id,note);};}(h.id,h.note);
+   r.surroundContents(m);return;
+  }
+ }catch(e){}
+}
+
+function bubble(mk,id,note){
+ var e=document.querySelector(".mp-bb");if(e)e.remove();
+ var b=document.createElement("div");b.className="mp-bb";
+ b.style.cssText="position:fixed;z-index:99998;background:#fff;border-radius:10px;padding:14px 18px;box-shadow:0 4px 24px rgba(0,0,0,.15);font-family:-apple-system,PingFang SC,sans-serif;font-size:14px;max-width:320px;border:1px solid #eee;";
+ var r=mk.getBoundingClientRect();b.style.top=(r.bottom+8)+"px";b.style.left=Math.max(8,Math.min(r.left,window.innerWidth-340))+"px";
+ var h='<div style="font-size:12px;color:#999;margin-bottom:6px;">已标记'+(note?" · 有笔记":"")+'</div>';
+ if(note)h+='<div style="color:#333;line-height:1.5;margin-bottom:10px;padding:8px 10px;background:#faf0e2;border-radius:6px;">💬 '+esc(note)+'</div>';
+ h+='<div style="display:flex;gap:6px;">';
+ if(!note)h+='<button id="bb_add" style="border:none;background:#e8924c;color:#fff;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;">添加笔记</button>';
+ h+='<button id="bb_del" style="border:none;background:#f5f5f5;color:#c0392b;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;">删除标记</button></div>';
+ b.innerHTML=h;document.body.appendChild(b);
+ document.getElementById("bb_del").onclick=function(){delHl(id);mk.style.opacity="0.3";mk.style.background="#eee";b.remove();};
+ var ab=document.getElementById("bb_add");if(ab)ab.onclick=function(){
+  b.innerHTML='<div style="font-size:13px;font-weight:600;margin-bottom:8px;color:#333;">✏️ 添加笔记</div><textarea id="bb_ta" placeholder="写下你的想法……" style="width:100%;min-height:60px;border:1px solid #ddd;border-radius:6px;padding:8px;font-size:13px;font-family:inherit;resize:vertical;box-sizing:border-box;"></textarea><div style="display:flex;gap:6px;justify-content:flex-end;margin-top:8px;"><button id="bb_cancel" style="border:none;background:#f0f0f0;color:#666;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;">取消</button><button id="bb_save" style="border:none;background:#e8924c;color:#fff;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600;">保存</button></div>';
+  document.getElementById("bb_ta").focus();
+  document.getElementById("bb_cancel").onclick=function(){b.remove();};
+  document.getElementById("bb_save").onclick=function(){var n=document.getElementById("bb_ta").value;if(n){updHl(id,n);mk.title="💡 "+n;mk.style.borderBottom="2px solid #d4a017";toast("✅ 笔记已保存");}b.remove();};
+ };
+ var cl=function(ev){if(!b.contains(ev.target)&&ev.target!==mk){b.remove();document.removeEventListener("mousedown",cl);}};
+ setTimeout(function(){document.addEventListener("mousedown",cl);},0);
+}
+
+function toast(msg){
+ var t=document.createElement("div");t.textContent=msg;
+ t.style.cssText="position:fixed;bottom:40px;left:50%;transform:translateX(-50%);background:#2d2d3f;color:#fff;padding:10px 24px;border-radius:8px;font-family:-apple-system,PingFang SC,sans-serif;font-size:14px;z-index:999999;box-shadow:0 4px 20px rgba(0,0,0,.2);opacity:0;transition:opacity .3s;";
+ document.body.appendChild(t);requestAnimationFrame(function(){t.style.opacity="1";});
+ setTimeout(function(){t.style.opacity="0";setTimeout(function(){t.remove();},300);},2000);
+}
+
+var sd=null,ov=null;
+function mkSide(){
+ if(sd)return;
+ ov=document.createElement("div");ov.style.cssText="position:fixed;inset:0;z-index:99998;background:rgba(0,0,0,.3);display:none;";
+ sd=document.createElement("div");sd.style.cssText="position:fixed;top:0;right:0;bottom:0;width:380px;max-width:90vw;z-index:99999;background:#f8f7f4;box-shadow:-4px 0 24px rgba(0,0,0,.12);display:none;flex-direction:column;font-family:-apple-system,PingFang SC,sans-serif;transform:translateX(100%);transition:transform .25s ease;";
+ sd.innerHTML='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #e5e0d8;flex-shrink:0;"><div><strong style="font-size:16px;">📒 笔记本</strong><span id="sc" style="font-size:12px;color:#999;margin-left:8px;"></span></div><button id="sc_close" style="border:none;background:transparent;font-size:20px;cursor:pointer;color:#888;padding:4px 8px;border-radius:6px;">✕</button></div><div id="sb" style="flex:1;overflow-y:auto;padding:12px 16px;"></div><div style="padding:10px 16px;border-top:1px solid #e5e0d8;font-size:11px;color:#bbb;text-align:center;flex-shrink:0;">右键选中文字 → 标记或记笔记</div>';
+ document.body.appendChild(ov);document.body.appendChild(sd);
+ ov.onclick=function(){tog(false);};document.getElementById("sc_close").onclick=function(){tog(false);};
+}
+
+function tog(show){
+ mkSide();
+ var open=(show!==undefined?show:(sd.style.display==="none"||sd.style.transform==="translateX(100%)"));
+ if(open){sd.style.display="flex";ov.style.display="block";requestAnimationFrame(function(){sd.style.transform="translateX(0)";});renderSB();}
+ else{sd.style.transform="translateX(100%)";ov.style.display="none";setTimeout(function(){if(sd.style.transform==="translateX(100%)")sd.style.display="none";},260);}
+}
+
+function renderSB(){
+ var b=document.getElementById("sb");if(!b)return;
+ var hs=_h||[];document.getElementById("sc").textContent=hs.length?"("+hs.length+"条)":"(空)";
+ if(!hs.length){b.innerHTML='<div style="text-align:center;padding:60px 20px;color:#aaa;font-size:14px;">📖 还没有标记<br><span style="font-size:12px;">选中文字 → 右键 → 标记</span></div>';return;}
+ var gr={};hs.forEach(function(h){var k=h.issue||0;if(!gr[k])gr[k]={issue:k,title:h.title||("第"+k+"期"),job:h.job||"",hs:[]};gr[k].hs.push(h);});
+ var so=Object.values(gr).sort(function(a,b){return b.issue-a.issue;}),html="";
+ so.forEach(function(g){html+='<div style="margin-bottom:16px;"><div style="font-size:11px;color:#888;letter-spacing:1px;margin-bottom:6px;padding:0 4px;">第'+g.issue+"期 · "+g.job+" ("+g.hs.length+")</div>";
+ g.hs.forEach(function(h){html+='<div class="mc" data-id="'+h.id+'" style="background:#fff;border:1px solid #e5e0d8;border-radius:8px;padding:10px 12px;margin-bottom:6px;cursor:pointer;"><div style="font-size:13px;line-height:1.6;color:#3a3520;padding:4px 6px;background:#fef7e0;border-radius:4px;margin-bottom:6px;">'+esc(h.text)+'</div>';
+ if(h.note)html+='<div style="font-size:12px;color:#5a3a1a;line-height:1.5;padding:6px 8px;background:#fef6ee;border-radius:4px;margin-bottom:6px;border-left:2px solid #e8924c;">💬 '+esc(h.note)+'</div>';
+ html+='<div style="display:flex;gap:4px;justify-content:flex-end;"><button class="mcnb" style="border:none;background:transparent;color:#888;padding:2px 8px;border-radius:4px;cursor:pointer;font-size:11px;">'+(h.note?"✏️":"💬")+'</button><button class="mcdb" style="border:none;background:transparent;color:#c0392b;padding:2px 8px;border-radius:4px;cursor:pointer;font-size:11px;">🗑️</button></div></div>';});
+ html+="</div>";});b.innerHTML=html;
+ b.querySelectorAll(".mcdb").forEach(function(btn){btn.onclick=function(){var c=btn.closest(".mc"),id=c.dataset.id;delHl(id);renderSB();var mk=document.querySelector('.mh[data-id="'+id+'"]');if(mk){mk.parentNode.replaceChild(document.createTextNode(mk.textContent),mk);mk.parentNode.normalize();}toast("已删除");};});
+ b.querySelectorAll(".mcnb").forEach(function(btn){btn.onclick=function(){var c=btn.closest(".mc"),id=c.dataset.id;var h=_h.find(function(x){return x.id===id;});if(!h)return;var n=prompt("编辑笔记：",h.note||"");if(n!==null){updHl(id,n);renderSB();var mk=document.querySelector('.mh[data-id="'+id+'"]');if(mk){if(n.trim()){mk.title="💡 "+n;mk.style.borderBottom="2px solid #d4a017";}else{mk.title="";mk.style.borderBottom="";}}toast("✅ 笔记已保存");}};});
+ b.querySelectorAll(".mc").forEach(function(c){c.onclick=function(e){if(e.target.closest("button"))return;var mk=document.querySelector('.mh[data-id="'+c.dataset.id+'"]');if(mk){mk.scrollIntoView({behavior:"smooth",block:"center"});mk.style.background="#ffeb7a";setTimeout(function(){mk.style.background="#f5d742";},1500);}};});
+}
+
+function badge(){var el=document.getElementById("bdg");if(el){var c=_h.length;el.textContent=c;el.style.display=c>0?"inline":"none";}}
+function setupBtn(){if(document.getElementById("fab"))return;var b=document.createElement("button");b.id="fab";b.innerHTML='📒 笔记本 <span id="bdg" style="background:#e8924c;color:#fff;font-size:10px;padding:1px 6px;border-radius:10px;margin-left:4px;font-weight:600;display:none;">0</span>';b.style.cssText="position:fixed;bottom:24px;right:24px;z-index:99997;background:#2d2d3f;color:#f0ede8;padding:10px 18px;border-radius:24px;font-family:-apple-system,PingFang SC,sans-serif;font-size:13px;font-weight:500;box-shadow:0 4px 16px rgba(0,0,0,.15);cursor:pointer;border:1px solid rgba(255,255,255,.08);";b.onmouseover=function(){b.style.background="#3d3d55";b.style.transform="translateY(-2px)";};b.onmouseout=function(){b.style.background="#2d2d3f";b.style.transform="";};b.onclick=function(){tog();};document.body.appendChild(b);badge();}
+
+var _aichat=[],_aictx=null,_aikey="",_aibusy=false,_aipn=null,_aiov=null;
+function initAI(){
+try{_aikey=localStorage.getItem("careerlab_ai_key")||"";}catch(e){}
+try{var c=localStorage.getItem("careerlab_ai_chat");if(c)_aichat=JSON.parse(c);}catch(e){}
+try{var x=localStorage.getItem("careerlab_ai_context");if(x){_aictx=JSON.parse(x);if(Date.now()-_aictx.ts>86400000)_aictx=null;}}catch(e){}
+setupAIBtn();
+}
+function setupAIBtn(){
+if(document.getElementById("aifab"))return;
+var b=document.createElement("button");b.id="aifab";b.innerHTML='🤖 AI 助教';
+b.style.cssText="position:fixed;bottom:24px;left:24px;z-index:99994;background:#2d2d3f;color:#f0ede8;padding:10px 18px;border-radius:24px;font-family:-apple-system,PingFang SC,sans-serif;font-size:13px;font-weight:500;box-shadow:0 4px 16px rgba(0,0,0,.15);cursor:pointer;border:1px solid rgba(255,255,255,.08);";
+b.onmouseover=function(){b.style.background="#3d3d55";b.style.transform="translateY(-2px)";};
+b.onmouseout=function(){b.style.background="#2d2d3f";b.style.transform="";};
+b.onclick=function(){togAI();};
+document.body.appendChild(b);
+}
+function mkAIPanel(){
+if(_aiov)return;
+_aiov=document.createElement("div");_aiov.style.cssText="position:fixed;inset:0;z-index:99995;background:rgba(0,0,0,.3);display:none;";
+_aipn=document.createElement("div");_aipn.style.cssText="position:fixed;top:0;left:0;bottom:0;width:380px;max-width:90vw;z-index:99996;background:#f8f7f4;box-shadow:4px 0 24px rgba(0,0,0,.12);display:none;flex-direction:column;font-family:-apple-system,PingFang SC,sans-serif;transform:translateX(-100%);transition:transform .25s ease;";
+_aipn.innerHTML='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #e5e0d8;flex-shrink:0;"><div><strong style="font-size:16px;">🤖 AI 助教</strong><span id="aic" style="font-size:12px;color:#999;margin-left:8px;"></span></div><div style="display:flex;gap:6px;"><button id="ai_settings" style="border:none;background:transparent;font-size:16px;cursor:pointer;color:#999;padding:4px 8px;border-radius:6px;" title="设置API密钥">⚙️</button><button id="ai_close" style="border:none;background:transparent;font-size:20px;cursor:pointer;color:#888;padding:4px 8px;border-radius:6px;">✕</button></div></div><div id="aimsgs" style="flex:1;overflow-y:auto;padding:12px 16px;"></div><div style="padding:12px 16px;border-top:1px solid #e5e0d8;flex-shrink:0;display:flex;gap:8px;"><textarea id="ai_inp" placeholder="输入消息，Enter 发送…" style="flex:1;border:1px solid #ddd;border-radius:8px;padding:10px 12px;font-size:14px;font-family:inherit;resize:none;min-height:40px;max-height:120px;box-sizing:border-box;" rows="1"></textarea><button id="ai_send" style="border:none;background:#e8924c;color:#fff;padding:8px 16px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:600;align-self:flex-end;">发送</button></div>';
+document.body.appendChild(_aiov);document.body.appendChild(_aipn);
+_aiov.onclick=function(){togAI(false);};
+document.getElementById("ai_close").onclick=function(){togAI(false);};
+document.getElementById("ai_settings").onclick=function(){
+var k=prompt("DeepSeek API密钥（从 platform.deepseek.com 获取）：",_aikey);
+if(k!==null){_aikey=k.trim();try{localStorage.setItem("careerlab_ai_key",_aikey);}catch(e){}_aictx=null;try{localStorage.removeItem("careerlab_ai_context");}catch(e){}toast("✅ 密钥已保存");}
+};
+document.getElementById("ai_send").onclick=function(){doSend();};
+document.getElementById("ai_inp").onkeydown=function(e){
+if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();doSend();}
+};
+}
+function togAI(show){
+mkAIPanel();
+var open=(show!==undefined?show:(_aipn.style.display==="none"||_aipn.style.transform==="translateX(-100%)"));
+if(open){
+_aipn.style.display="flex";_aiov.style.display="block";
+requestAnimationFrame(function(){_aipn.style.transform="translateX(0)";});
+ensureContext(function(){renderChat();});
+}else{
+_aipn.style.transform="translateX(-100%)";_aiov.style.display="none";
+setTimeout(function(){if(_aipn.style.transform==="translateX(-100%)")_aipn.style.display="none";},260);
+}
+}
+function ensureContext(cb){
+if(_aictx){cb();return;}
+var issues=[];var done=0;var total=10;
+function checkDone(){
+done++;
+if(done>=total){
+issues.sort(function(a,b){return a.n-b.n;});
+_aictx={ts:Date.now(),issues:issues};
+try{localStorage.setItem("careerlab_ai_context",JSON.stringify(_aictx));}catch(e){}
+cb();
+}
+}
+for(var i=1;i<=total;i++){
+(function(n){
+var xhr=new XMLHttpRequest();
+xhr.open("GET",(n<10?"0":"")+n+".html",true);
+xhr.timeout=10000;
+xhr.onload=function(){
+if(xhr.status===200){var r=extractIssue(xhr.responseText,n);if(r)issues.push(r);}
+checkDone();
+};
+xhr.onerror=function(){checkDone();};
+xhr.ontimeout=function(){checkDone();};
+xhr.send();
+})(i);
+}
+}
+function extractIssue(html,n){
+try{
+var title="",job="";
+var tm=html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+if(tm){title=tm[1].replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();}
+var jm=html.match(/class="job-name"[^>]*>([^<]+)/i);
+if(!jm)jm=html.match(/class="meta"[^>]*>([\s\S]*?)<\/p>/i);
+if(jm){job=jm[1].replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();}
+var sm=html.match(/<section[^>]*>([\s\S]*?)<hr\s+class="divider-solid/i);
+var text="";
+if(sm){text=sm[1].replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();}
+if(text.length>2000)text=text.slice(0,2000)+"…";
+return {n:n,title:title||("第"+n+"期"),job:job||"",text:text};
+}catch(e){return null;}
+}
+function buildSystemPrompt(){
+if(!_aictx||!_aictx.issues||!_aictx.issues.length)return "你是\"职人手艺\"的AI助教。职人手艺是一个深度解剖不同职业思维方式的项目，每期拆解一个具体职业。你的风格：像朋友聊天一样说人话、简洁、多用大白话和具体例子。请用中文回复。";
+var p="你是\"职人手艺\"的AI助教。职人手艺是一个深度解剖不同职业思维方式的项目，每期拆解一个具体职业，包括他们的日常、挑战、黄金技能和底层思维模型。你的风格：像朋友聊天一样说人话、简洁、多用大白话和具体例子。以下是各期摘要：\n\n";
+for(var i=0;i<_aictx.issues.length;i++){
+var iss=_aictx.issues[i];
+p+="第"+iss.n+"期《"+iss.title+"》—— "+iss.job+"\n"+iss.text+"\n\n";
+}
+var cur=info();
+if(cur&&cur.n)p+="用户当前正在阅读：第"+cur.n+"期《"+cur.t+"》—— "+cur.job;
+return p;
+}
+function renderChat(){
+var b=document.getElementById("aimsgs");if(!b)return;
+var sc=document.getElementById("aic");if(sc)sc.textContent=_aichat.length?"("+_aichat.length+"条)":"(空)";
+var html="";
+if(!_aichat.length&&_aictx){
+var greet="你好！我是职人手艺的AI助教 🤖\n\n我对每一期解剖的职业都有自己的理解，可以跟你聊任何一期。你可以问我：\n\n• 某个职业的核心技能（比如\"学术编辑最厉害的能力是什么？\"）\n• 不同职业之间的联系（比如\"陈姐的编辑思维和空调安装师傅老周有什么共通之处？\"）\n• 从这个职业身上能学到什么（比如\"我能从学术编辑身上学到什么？\"）\n• 任何你在阅读中想到的问题\n\n有什么想聊的？";
+html+='<div class="aichat-msg aichat-assistant"><div class="lbl">AI</div><div class="bub">'+esc(greet).replace(/\n/g,"<br>")+'</div></div>';
+}
+for(var i=0;i<_aichat.length;i++){
+var m=_aichat[i];
+if(m.role==="system"){html+='<div class="aichat-msg aichat-sys"><div class="bub">'+esc(m.content)+'</div></div>';}
+else if(m.role==="user"){html+='<div class="aichat-msg aichat-user"><div class="lbl">你</div><div class="bub">'+esc(m.content).replace(/\n/g,"<br>")+'</div></div>';}
+else{html+='<div class="aichat-msg aichat-assistant"><div class="lbl">AI</div><div class="bub">'+esc(m.content).replace(/\n/g,"<br>")+'</div></div>';}
+}
+if(_aibusy){html+='<div class="aichat-loading"><span></span><span></span><span></span></div>';}
+b.innerHTML=html;
+b.scrollTop=b.scrollHeight;
+setTimeout(function(){restore();},100);
+}
+function addMsg(role,content,skipSave){
+_aichat.push({role:role,content:content,ts:new Date().toISOString()});
+if(!skipSave)saveChat();
+renderChat();
+}
+function saveChat(){
+if(_aichat.length>100)_aichat=_aichat.slice(-100);
+try{localStorage.setItem("careerlab_ai_chat",JSON.stringify(_aichat));}catch(e){}
+}
+function doSend(){
+if(_aibusy)return;
+var inp=document.getElementById("ai_inp"),txt=(inp.value||"").trim();
+if(!txt)return;
+if(!_aikey){
+var k=prompt("请输入你的DeepSeek API密钥（可从 platform.deepseek.com 获取）：","");
+if(!k||!k.trim())return;
+_aikey=k.trim();
+try{localStorage.setItem("careerlab_ai_key",_aikey);}catch(e){}
+addMsg("system","✅ 密钥已保存（仅保存在本地浏览器）",true);
+}
+inp.value="";inp.style.height="auto";
+addMsg("user",txt);
+_aibusy=true;renderChat();
+var msgs=[{role:"system",content:buildSystemPrompt()}];
+for(var i=0;i<_aichat.length;i++){var m=_aichat[i];if(m.role!=="system")msgs.push({role:m.role,content:m.content});}
+callDeepSeek(msgs,function(err,reply){
+_aibusy=false;
+if(err){addMsg("system","❌ "+err,true);}
+else if(reply){addMsg("assistant",reply);}
+else{addMsg("system","❌ 未知错误",true);}
+});
+}
+function callDeepSeek(messages,cb){
+var xhr=new XMLHttpRequest();
+xhr.open("POST","https://api.deepseek.com/v1/chat/completions",true);
+xhr.setRequestHeader("Content-Type","application/json");
+xhr.setRequestHeader("Authorization","Bearer "+_aikey);
+xhr.timeout=30000;
+xhr.onload=function(){
+if(xhr.status===200){
+try{var r=JSON.parse(xhr.responseText);cb(null,r.choices[0].message.content);}catch(e){cb(new Error("解析响应失败"));}
+}else if(xhr.status===401){cb(new Error("API密钥无效，请点击⚙️重新设置"));}
+else if(xhr.status===429){cb(new Error("请求过于频繁，请稍后再试"));}
+else if(xhr.status>=500){cb(new Error("服务异常（"+xhr.status+"），请稍后重试"));}
+else{cb(new Error("请求失败（"+xhr.status+"）"));}
+};
+xhr.onerror=function(){cb(new Error("网络连接失败，请检查网络"));};
+xhr.ontimeout=function(){cb(new Error("请求超时，请重试"));};
+xhr.send(JSON.stringify({model:"deepseek-chat",messages:messages,stream:false,max_tokens:2000,temperature:0.7}));
+}
+
+var st=document.createElement("style");st.textContent=".mh{background:#f5d742;color:inherit;border-radius:2px;padding:0 2px;cursor:pointer;}.mh:hover{background:#ffeb7a;}.mc{transition:box-shadow .15s;}.mc:hover{box-shadow:0 1px 6px rgba(0,0,0,.06);}.mc button:hover{background:#eee!important;}::selection{background:#f5d742;color:#1a1a2e;}.aichat-msg{padding:2px 0;}.aichat-msg .lbl{font-size:11px;color:#999;margin-bottom:2px;}.aichat-msg .bub{padding:10px 14px;border-radius:12px;font-size:14px;line-height:1.7;word-break:break-word;}.aichat-user .bub{background:#e8f0fe;color:#1a1a2e;margin-left:40px;}.aichat-user .lbl{text-align:right;}.aichat-assistant .bub{background:#fff;border:1px solid #e5e0d8;color:#333;margin-right:40px;}.aichat-sys .bub{background:#f5f5f5;color:#888;text-align:center;font-size:13px;padding:8px 14px;border-radius:8px;margin:0 20px;}.aichat-loading{display:flex;gap:4px;padding:8px 16px;align-items:center;}.aichat-loading span{width:6px;height:6px;border-radius:50%;background:#bbb;animation:aichat-bounce 1.4s infinite;}.aichat-loading span:nth-child(2){animation-delay:.2s;}.aichat-loading span:nth-child(3){animation-delay:.4s;}@keyframes aichat-bounce{0%,80%,100%{opacity:.3;transform:scale(.8);}40%{opacity:1;transform:scale(1);}}#ai_inp:focus{outline:none;border-color:#e8924c;}";document.head.appendChild(st);
+restore();setupBtn();initAI();
+})();
+</script>
+</body>
+</html>

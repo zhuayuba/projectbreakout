@@ -1,7 +1,7 @@
-name: 每周一四推送
+name: 推送 · 职人手艺
 on:
   schedule:
-    - cron: "0 12 * * 1,4"
+    - cron: "0 12 * * 3,6"
   workflow_dispatch:
     inputs:
       issue:
@@ -9,6 +9,10 @@ on:
 
 permissions:
   contents: write
+
+defaults:
+  run:
+    working-directory: ./career
 
 jobs:
   notify:
@@ -28,9 +32,9 @@ jobs:
         run: |
           N=${{ steps.num.outputs.issue }}
           FILE=$(printf "%02d" "$N")
-          TITLE=$(grep -oP '<div class="model">\K[^<]+' "${FILE}.html" 2>/dev/null | head -1 || echo "敬请期待")
-          H3=$(grep -oP '<h3>\K[^<]+' "${FILE}.html" 2>/dev/null | head -1 || echo "")
-          URL="https://zhuayuba.github.io/mungerplan/${FILE}.html"
+          JOB=$(grep -oP '<span class="job-name">\K[^<]+' "${FILE}.html" 2>/dev/null | head -1 || echo "敬请期待")
+          TITLE=$(grep -oP '<p class="hook">\K[^<]+' "${FILE}.html" 2>/dev/null | head -1 || echo "")
+          URL="https://zhuayuba.github.io/mungerplan/career/${FILE}.html"
 
           python3 -c "
           import hashlib, hmac, base64, time, json, urllib.request, os
@@ -44,16 +48,16 @@ jobs:
               'msg_type': 'interactive',
               'card': {
                   'header': {
-                      'title': {'tag': 'plain_text', 'content': '芒格计划 · 他山之石 · 第${N}期'},
+                      'title': {'tag': 'plain_text', 'content': '芒格计划 · 职人手艺 · 第${N}期'},
                       'template': 'blue'
                   },
                   'elements': [
-                      {'tag': 'markdown', 'content': '**📐 ${TITLE}**\n${H3}'},
+                      {'tag': 'markdown', 'content': '**🔧 ${JOB}**\n${TITLE}'},
                       {'tag': 'hr'},
                       {
                           'tag': 'action',
                           'actions': [
-                              {'tag': 'button', 'text': {'tag': 'plain_text', 'content': '🧠 开始阅读 →'}, 'type': 'primary', 'url': '${URL}'}
+                              {'tag': 'button', 'text': {'tag': 'plain_text', 'content': '👀 开始阅读 →'}, 'type': 'primary', 'url': '${URL}'}
                           ]
                       }
                   ]
@@ -70,10 +74,11 @@ jobs:
         run: |
           N=${{ steps.num.outputs.issue }}
           echo $((N + 1)) > next_issue.txt
+          cd $GITHUB_WORKSPACE
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
-          git add next_issue.txt
-          git diff --staged --quiet || git commit -m "→ 下期 #$((N + 1))"
+          git add career/next_issue.txt
+          git diff --staged --quiet || git commit -m "职人手艺 → 下期 #$((N + 1))"
           git pull --no-rebase
           git push
       - name: 库存预警
@@ -82,6 +87,7 @@ jobs:
           NEXT=$(cat next_issue.txt)
           RESERVE=$((TOTAL - NEXT + 1))
           if [ "$RESERVE" -le 2 ]; then
+            POOL=$(cd $GITHUB_WORKSPACE && wc -l < career/topics_pool.md 2>/dev/null || echo "?")
             python3 -c "
           import hashlib, hmac, base64, time, json, urllib.request, os
           ts = str(int(time.time()))
@@ -94,11 +100,11 @@ jobs:
               'msg_type': 'interactive',
               'card': {
                   'header': {
-                      'title': {'tag': 'plain_text', 'content': '⚠️ 他山之石 · 库存预警'},
+                      'title': {'tag': 'plain_text', 'content': '⚠️ 职人手艺 · 库存预警'},
                       'template': 'orange'
                   },
                   'elements': [
-                      {'tag': 'markdown', 'content': '**剩余期数：${RESERVE} 期**\n仅够推送一周。选题池有 $(wc -l < topics_pool.md 2>/dev/null || echo "?") 个候选，请尽快补充内容。'}
+                      {'tag': 'markdown', 'content': '**剩余期数：${RESERVE} 期**\n仅够推送一周。选题池有 ${POOL} 个候选，请尽快补充内容。'}
                   ]
               }
           }).encode()
