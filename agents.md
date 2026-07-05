@@ -1,4 +1,4 @@
-# AGENTS.md — 破茧计划（mungerplan monorepo）
+# AGENTS.md — 破茧计划（projectbreakout monorepo）
 
 > 本文件是整个仓库的总协调文档。三个系列各自的内容规范、JS 内核、配色等细节，由对应子目录下的 `agents.md` 承担，本文不重复——只在你需要快速定位"去哪儿看"时指路。
 
@@ -94,7 +94,7 @@ projectbreakout/                          ← 本仓库 (zhuayuba/mungerplan)
 
 ### 必须配置的 Secrets 与权限
 
-在 `zhuayuba/mungerplan` → Settings 里：
+在 `zhuayuba/projectbreakout` → Settings 里：
 
 | 位置 | 配置项 | 作用 |
 |------|--------|------|

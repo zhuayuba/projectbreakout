@@ -13,7 +13,7 @@
 | 结构 | 每期一个模型 | 每学科一季（4 期），每期一种底层思维 |
 | 配色 | 深海军蓝 + 金色（`#c8a45c`） | 深酒红 + 暖铜（`#c97a5a`） |
 | 推送 | 每周一 UTC 12:00 | 每周二、四 UTC 12:00 |
-| 仓库 | `zhuayuba/mungerplan` | `zhuayuba/mungerplan (thinking/ 子目录)` |
+| 仓库 | `zhuayuba/mungerplan` | `zhuayuba/projectbreakout (thinking/ 子目录)` |
 | Lark 卡片色 | blue | carmine |
 
 两个系列**互补不重复**：破茧计划是格栅的横线，另眼相看是格栅的纵线。
@@ -187,7 +187,7 @@ AI 助教启动时通过 XHR 拉取所有已发布期次的 HTML 文件，提取
 ## GitHub Pages 部署
 
 ### 仓库信息
-- **仓库**：`zhuayuba/mungerplan (thinking/ 子目录)`
+- **仓库**：`zhuayuba/projectbreakout (thinking/ 子目录)`
 - **URL**：`https://zhuayuba.github.io/projectbreakout/thinking/`
 - **分支**：`main`
 - **Pages source**：GitHub Actions（通过 `.github/workflows/deploy-pages.yml`）

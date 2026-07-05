@@ -56,7 +56,7 @@
 
 ## 部署
 
-- 仓库：`zhuayuba/mungerplan (thinking/ 子目录)`
+- 仓库：`zhuayuba/projectbreakout (thinking/ 子目录)`
 - Pages：`https://zhuayuba.github.io/projectbreakout/thinking/`
 - Lark 推送：每周二、四 UTC 12:00（北京 20:00），cron: `0 12 * * 2,4`
 - Secrets：`LARK_WEBHOOK_URL`、`LARK_SIGNING_SECRET`

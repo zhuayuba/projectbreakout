@@ -11,7 +11,7 @@
 
 ## 代码仓库
 
-- GitHub：`zhuayuba/mungerplan (career/ 子目录)`
+- GitHub：`zhuayuba/projectbreakout (career/ 子目录)`
 - 本地路径：`/Users/linxiao/Desktop/project/data_radar/职人手艺/ (合并后: projectbreakout/career/)`
 - 文件格式：每期一个自包含 HTML 文件（`01.html` ~ `NN.html`），首页 `index.html`
 - JS 内核：纯 ES5（`var`/`function`，无 `const`/`let`/箭头函数），内嵌在 HTML 中

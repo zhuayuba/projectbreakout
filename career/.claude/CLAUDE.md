@@ -6,7 +6,7 @@
 ## 网址与仓库
 - 首页: `https://zhuayuba.github.io/projectbreakout/career/`
 - 第N期: `https://zhuayuba.github.io/projectbreakout/career/NN.html`
-- GitHub: `zhuayuba/mungerplan (career/ 子目录)`
+- GitHub: `zhuayuba/projectbreakout (career/ 子目录)`
 - 本地: `/Users/linxiao/Desktop/project/data_radar/职人手艺/ (合并后: projectbreakout/career/)`
 
 ## 文件结构
