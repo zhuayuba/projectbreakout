@@ -28,7 +28,7 @@ SERIES_CONFIG = {
     "stones": {
         "dir": "stones",
         "name_cn": "他山之石",
-        "badge_prefix": "芒格计划 · 他山之石 · 第{N}期",
+        "badge_prefix": "破茧计划 · 他山之石 · 第{N}期",
         "title_pattern": "第{N}期：{TITLE}",
         "lark_template": "blue",
         "prompt_file": "stones.txt",
@@ -36,7 +36,7 @@ SERIES_CONFIG = {
     "thinking": {
         "dir": "thinking",
         "name_cn": "另眼相看",
-        "badge_prefix": "芒格计划 · 另眼相看 · 第{N}期",
+        "badge_prefix": "破茧计划 · 另眼相看 · 第{N}期",
         "title_pattern": "另眼相看 · 第{N}期：{TITLE}",
         "lark_template": "carmine",
         "prompt_file": "thinking.txt",
@@ -44,7 +44,7 @@ SERIES_CONFIG = {
     "career": {
         "dir": "career",
         "name_cn": "职人手艺",
-        "badge_prefix": "芒格计划 · 职人手艺 · 第{N}期",
+        "badge_prefix": "破茧计划 · 职人手艺 · 第{N}期",
         "title_pattern": "职人手艺 · 第{N}期：{TITLE}",
         "lark_template": "blue",
         "prompt_file": "career.txt",
