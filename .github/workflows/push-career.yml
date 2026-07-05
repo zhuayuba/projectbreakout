@@ -34,7 +34,7 @@ jobs:
           FILE=$(printf "%02d" "$N")
           JOB=$(grep -oP '<span class="job-name">\K[^<]+' "${FILE}.html" 2>/dev/null | head -1 || echo "敬请期待")
           TITLE=$(grep -oP '<p class="hook">\K[^<]+' "${FILE}.html" 2>/dev/null | head -1 || echo "")
-          URL="https://zhuayuba.github.io/mungerplan/career/${FILE}.html"
+          URL="https://zhuayuba.github.io/projectbreakout/career/${FILE}.html"
 
           python3 -c "
           import hashlib, hmac, base64, time, json, urllib.request, os
@@ -48,7 +48,7 @@ jobs:
               'msg_type': 'interactive',
               'card': {
                   'header': {
-                      'title': {'tag': 'plain_text', 'content': '芒格计划 · 职人手艺 · 第${N}期'},
+                      'title': {'tag': 'plain_text', 'content': '破茧计划 · 职人手艺 · 第${N}期'},
                       'template': 'blue'
                   },
                   'elements': [

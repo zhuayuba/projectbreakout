@@ -43,7 +43,7 @@ footer{text-align:center;padding:60px 24px;color:#999;font-size:14px;font-family
 </head>
 <body>
 <header class="hero">
-<div class="hero-badge">芒格计划 · 他山之石 · 第9期</div>
+<div class="hero-badge">破茧计划 · 他山之石 · 第9期</div>
 <h1>失灵的<em>预测</em></h1>
 <p class="sub">为什么绝大多数预测都是错的？</p>
 <p class="meta">正态分布 × 黑天鹅</p>
@@ -108,7 +108,7 @@ footer{text-align:center;padding:60px 24px;color:#999;font-size:14px;font-family
 </section>
 <hr class="divider-solid">
 <footer>
-<p>芒格计划 · 他山之石 · 第9期</p>
+<p>破茧计划 · 他山之石 · 第9期</p>
 <nav style="margin-top:12px;display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap;">
 <a href="08.html" style="color:#c8a45c;text-decoration:none;font-size:14px;">← 上一篇：思想的基石</a>
 <span style="color:#ddd;">|</span>
@@ -355,8 +355,8 @@ return {n:n,title:title||("第"+n+"期"),model:model||"",text:text};
 }catch(e){return null;}
 }
 function buildSystemPrompt(){
-if(!_aictx||!_aictx.issues||!_aictx.issues.length)return "你是\"他山之石\"的AI助教。他山之石是芒格计划的一套基于查理·芒格\"格栅理论\"的跨学科思维模型学习系统。你的风格：说人话、简洁、像博学的朋友。请用中文回复。";
-var p="你是\"他山之石\"的AI助教。他山之石是芒格计划的一套基于查理·芒格\"格栅理论\"的跨学科思维模型学习系统，目前共10期。你的风格：说人话、简洁、像博学的朋友。以下是各期摘要：\n\n";
+if(!_aictx||!_aictx.issues||!_aictx.issues.length)return "你是\"他山之石\"的AI助教。他山之石是破茧计划的跨学科思维模型系列——击破信息茧房，看到更大的世界。你的风格：说人话、简洁、像博学的朋友。请用中文回复。";
+var p="你是\"他山之石\"的AI助教。他山之石是破茧计划的跨学科思维模型系列——击破信息茧房，看到更大的世界，目前共10期。你的风格：说人话、简洁、像博学的朋友。以下是各期摘要：\n\n";
 for(var i=0;i<_aictx.issues.length;i++){
 var iss=_aictx.issues[i];
 p+="第"+iss.n+"期《"+iss.title+"》—— "+iss.model+"\n"+iss.text+"\n\n";

@@ -6,13 +6,13 @@
 
 ## 网址
 
-- 首页：`https://zhuayuba.github.io/mungerplan/career/`
-- 第 N 期：`https://zhuayuba.github.io/mungerplan/career/NN.html`（如 `01.html`）
+- 首页：`https://zhuayuba.github.io/projectbreakout/career/`
+- 第 N 期：`https://zhuayuba.github.io/projectbreakout/career/NN.html`（如 `01.html`）
 
 ## 代码仓库
 
 - GitHub：`zhuayuba/mungerplan (career/ 子目录)`
-- 本地路径：`/Users/linxiao/Desktop/project/data_radar/职人手艺/ (合并后: mungerplan/career/)`
+- 本地路径：`/Users/linxiao/Desktop/project/data_radar/职人手艺/ (合并后: projectbreakout/career/)`
 - 文件格式：每期一个自包含 HTML 文件（`01.html` ~ `NN.html`），首页 `index.html`
 - JS 内核：纯 ES5（`var`/`function`，无 `const`/`let`/箭头函数），内嵌在 HTML 中
 
@@ -63,10 +63,10 @@
 - 卡片底色：`#faf8f5`
 - 字体：正文 Georgia/Noto Serif SC，UI PingFang SC
 
-## 与芒格计划的关系
+## 与破茧计划的关系
 
-- "职人手艺"是"芒格计划"旗下的子系列
+- "职人手艺"是"破茧计划"旗下的子系列
 - 同一套技术架构（自包含 HTML + GitHub Pages + Lark 推送）
 - 独立的 GitHub 仓库和域名路径
 - 共享 Lark Webhook（推送到同一个群聊）
-- 发布节奏互补：芒格计划周一、职人手艺周三+周六
+- 发布节奏互补：破茧计划周一、职人手艺周三+周六

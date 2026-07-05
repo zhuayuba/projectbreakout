@@ -1,4 +1,4 @@
-# AGENTS.md — 芒格计划（mungerplan monorepo）
+# AGENTS.md — 破茧计划（mungerplan monorepo）
 
 > 本文件是整个仓库的总协调文档。三个系列各自的内容规范、JS 内核、配色等细节，由对应子目录下的 `agents.md` 承担，本文不重复——只在你需要快速定位"去哪儿看"时指路。
 
@@ -14,12 +14,12 @@
 | 🧠 另眼相看 | `thinking/` | 学科底层思维习惯 | **钻进**一个学科，竖着学它的思考方式 |
 | 🔧 职人手艺 | `career/` | 具体职业的思维方式 | 解剖一个**职业**的内功心法 |
 
-读者入口：`https://zhuayuba.github.io/mungerplan/`（根 `index.html` 是三系列总览）。
+读者入口：`https://zhuayuba.github.io/projectbreakout/`（根 `index.html` 是三系列总览）。
 
 ## 仓库结构
 
 ```
-mungerplan/                          ← 本仓库 (zhuayuba/mungerplan)
+projectbreakout/                          ← 本仓库 (zhuayuba/mungerplan)
 ├── index.html                       ← 三系列总入口页
 ├── .nojekyll                        ← 确保 Pages 正确发布子目录
 ├── .github/workflows/
@@ -52,7 +52,7 @@ mungerplan/                          ← 本仓库 (zhuayuba/mungerplan)
 | 标题抓取字段 | `.model` + `h3` | `h1` + `.meta` + `.sub` | `.job-name` + `.hook` |
 | 配色基调 | 深海军蓝 + 金色（冷调） | 深酒红 + 暖铜（暖调） | 琥珀橙 + 深蓝 hero |
 | localStorage 前缀 | `munger_backup` | `munger_thinking_*` | `munger_career_*`（按系列隔离） |
-| Pages URL | `…/mungerplan/stones/NN.html` | `…/mungerplan/thinking/NN.html` | `…/mungerplan/career/NN.html` |
+| Pages URL | `…/projectbreakout/stones/NN.html` | `…/projectbreakout/thinking/NN.html` | `…/projectbreakout/career/NN.html` |
 
 > 三个系列错峰推送，周一到周六每天晚上 20:00 都有一期，周日休。
 
@@ -88,7 +88,7 @@ mungerplan/                          ← 本仓库 (zhuayuba/mungerplan)
 
 1. **`defaults.run.working-directory: ./career`** — 让"确定本期号/推送 Lark/库存预警"这些步骤默认在子目录执行，能直接 `cat next_issue.txt`、`ls [0-9][0-9].html`。
 2. **"计数器+1"步骤里 `cd $GITHUB_WORKSPACE`** — 因为 `git add`/`git commit`/`git push` 必须在仓库根执行，且 `git add career/next_issue.txt` 要用仓库根的相对路径。
-3. **URL 前缀加子目录** — `https://zhuayuba.github.io/mungerplan/career/${FILE}.html`。
+3. **URL 前缀加子目录** — `https://zhuayuba.github.io/projectbreakout/career/${FILE}.html`。
 
 修改 workflow 时这三点必须保留。
 
@@ -107,7 +107,7 @@ mungerplan/                          ← 本仓库 (zhuayuba/mungerplan)
 ### 本地定时补货任务
 
 - 配置：`data_radar/.claude/scheduled_tasks.json`，cron `57 3 * * 0`（每周日 03:57）
-- 操作目标：本仓库 `mungerplan/` 工作区
+- 操作目标：本仓库 `projectbreakout/` 工作区
 - 逻辑：对每个系列算 `库存 = 已有 HTML 数 - next_issue + 1`；库存 ≤ 2 时从对应 `topics_pool.md` 取前 6 个选题，生成 6 期新 HTML + 更新 index.html + commit/push，并把用过的选题从池中移除
 - **git 操作必须在仓库根执行**，commit message 前缀标明系列（如「他山之石 → 补货 #11-16」）
 
@@ -115,12 +115,12 @@ mungerplan/                          ← 本仓库 (zhuayuba/mungerplan)
 
 ```
 data_radar/
-├── mungerplan/                    ← 本仓库的工作区（所有 git 操作在这里）
+├── projectbreakout/                    ← 本仓库的工作区（所有 git 操作在这里）
 ├── 他山之石/  另眼相看/  职人手艺/  ← 合并前的旧目录，保留作备份，勿再修改
 └── .claude/scheduled_tasks.json   ← 本地定时补货任务
 ```
 
-日常开发、补货、提交都在 `mungerplan/` 里进行。三个旧目录是合并前的历史快照，仅作回滚备份用途。
+日常开发、补货、提交都在 `projectbreakout/` 里进行。三个旧目录是合并前的历史快照，仅作回滚备份用途。
 
 ## 常见任务指引
 
@@ -130,7 +130,7 @@ data_radar/
 2. 完整复制该系列 JS 内核，一字不改
 3. 更新该子目录 `index.html`（加卡片 / 把 future 改成已发布）
 4. 更新 `next_issue.txt`？—— **不要手动改**。推送 workflow 会自动 +1。手动改会导致和 Actions 的自增冲突。
-5. 在 `mungerplan/` 根目录 `git add 对应子目录 && git commit && git push`
+5. 在 `projectbreakout/` 根目录 `git add 对应子目录 && git commit && git push`
 
 ### 修改推送时间 / 改飞书卡片样式
 
@@ -153,4 +153,4 @@ data_radar/
 
 ## 旧仓库（归档）
 
-合并前另有 `zhuayuba/mungerplan-thinking` 和 `zhuayuba/career-lab` 两个独立仓库，现已并入本仓库的 `thinking/` 和 `career/`。旧仓库保留作历史归档，旧链接（`…/mungerplan-thinking/`、`…/career-lab/`）不再维护，读者应访问 `…/mungerplan/thinking/` 和 `…/mungerplan/career/`。
+合并前另有 `zhuayuba/mungerplan-thinking` 和 `zhuayuba/career-lab` 两个独立仓库，现已并入本仓库的 `thinking/` 和 `career/`。旧仓库保留作历史归档，旧链接（`…/mungerplan-thinking/`、`…/career-lab/`）不再维护，读者应访问 `…/projectbreakout/thinking/` 和 `…/projectbreakout/career/`。

@@ -4,10 +4,10 @@
 每周两期（周三、周六晚8点），解剖一个具体职业的思维方式。大白话 + 生动案例。
 
 ## 网址与仓库
-- 首页: `https://zhuayuba.github.io/mungerplan/career/`
-- 第N期: `https://zhuayuba.github.io/mungerplan/career/NN.html`
+- 首页: `https://zhuayuba.github.io/projectbreakout/career/`
+- 第N期: `https://zhuayuba.github.io/projectbreakout/career/NN.html`
 - GitHub: `zhuayuba/mungerplan (career/ 子目录)`
-- 本地: `/Users/linxiao/Desktop/project/data_radar/职人手艺/ (合并后: mungerplan/career/)`
+- 本地: `/Users/linxiao/Desktop/project/data_radar/职人手艺/ (合并后: projectbreakout/career/)`
 
 ## 文件结构
 - `index.html` — 首页，每期一张卡片
@@ -33,6 +33,6 @@
 
 ## Lark 推送
 - Webhook 和签名密钥存在 GitHub Secrets
-- "职人手艺"是"芒格计划"旗下的子系列
-- 与芒格计划共享同一个 Lark 群聊
-- 推送时间互补：芒格计划周一、职人手艺周三+周六
+- "职人手艺"是"破茧计划"旗下的子系列
+- 与破茧计划共享同一个 Lark 群聊
+- 推送时间互补：破茧计划周一、职人手艺周三+周六

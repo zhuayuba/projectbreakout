@@ -34,7 +34,7 @@ jobs:
           FILE=$(printf "%02d" "$N")
           TITLE=$(grep -oP '<div class="model">\K[^<]+' "${FILE}.html" 2>/dev/null | head -1 || echo "敬请期待")
           H3=$(grep -oP '<h3>\K[^<]+' "${FILE}.html" 2>/dev/null | head -1 || echo "")
-          URL="https://zhuayuba.github.io/mungerplan/stones/${FILE}.html"
+          URL="https://zhuayuba.github.io/projectbreakout/stones/${FILE}.html"
 
           python3 -c "
           import hashlib, hmac, base64, time, json, urllib.request, os
@@ -48,7 +48,7 @@ jobs:
               'msg_type': 'interactive',
               'card': {
                   'header': {
-                      'title': {'tag': 'plain_text', 'content': '芒格计划 · 他山之石 · 第${N}期'},
+                      'title': {'tag': 'plain_text', 'content': '破茧计划 · 他山之石 · 第${N}期'},
                       'template': 'blue'
                   },
                   'elements': [

@@ -1,10 +1,10 @@
-# 芒格计划·思维模式篇 — Claude Code 速查
+# 破茧计划·思维模式篇 — Claude Code 速查
 
 ## 项目定位
 
-芒格计划的姊妹系列。"学科季"模式——像物理学家、经济学家、历史学家一样思考，大白话讲透每个学科的底层思维。
+破茧计划的姊妹系列。"学科季"模式——像物理学家、经济学家、历史学家一样思考，大白话讲透每个学科的底层思维。
 
-- **芒格计划**：跨学科提取模型，横着用（训练触类旁通）
+- **破茧计划**：跨学科提取模型，横着用（训练触类旁通）
 - **思维模式篇**：深入单一学科，竖着学（训练换位思考）
 - **两者互补不重复**
 
@@ -15,7 +15,7 @@
 - `file://` 协议兼容
 - 无外部依赖（no npm, CDN, external fonts/scripts）
 
-## 配色（与芒格计划刻意不同）
+## 配色（与破茧计划刻意不同）
 
 | 元素 | 值 |
 |---|---|
@@ -39,7 +39,7 @@
 - 右键标记/笔记（`mh`, `mc` class）
 - 右下笔记本侧边栏（`fab` id）
 - 左下 AI 助教（`_aipn`），DeepSeek API
-- localStorage 前缀：`munger_thinking_*`（与芒格计划 `munger_*` 隔离）
+- localStorage 前缀：`munger_thinking_*`（与破茧计划 `munger_*` 隔离）
 
 ## 创建新期次
 
@@ -57,7 +57,7 @@
 ## 部署
 
 - 仓库：`zhuayuba/mungerplan (thinking/ 子目录)`
-- Pages：`https://zhuayuba.github.io/mungerplan/thinking/`
+- Pages：`https://zhuayuba.github.io/projectbreakout/thinking/`
 - Lark 推送：每周二、四 UTC 12:00（北京 20:00），cron: `0 12 * * 2,4`
 - Secrets：`LARK_WEBHOOK_URL`、`LARK_SIGNING_SECRET`
 
@@ -67,8 +67,8 @@
 2. **git 身份必须配置**：`user.name` + `user.email`
 3. **Pages 部署卡队列**：Settings → Pages → Branch 切 None → 再切回 main
 4. **Workflow 计数器写失败**：需要 `permissions: contents: write`
-5. **配色别用深蓝/深绿**：和芒格计划太像，用深酒红
-6. **localStorage key 前缀**：`munger_thinking_*`，不能和芒格计划 `munger_*` 混用
+5. **配色别用深蓝/深绿**：和破茧计划太像，用深酒红
+6. **localStorage key 前缀**：`munger_thinking_*`，不能和破茧计划 `munger_*` 混用
 
 ## 当前进度
 

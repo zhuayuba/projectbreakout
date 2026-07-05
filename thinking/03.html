@@ -62,7 +62,7 @@ details .content{padding:0 24px 20px;color:#444}
 </head>
 <body>
 <header class="hero">
-<div class="hero-badge">芒格计划 · 另眼相看 · 第3期</div>
+<div class="hero-badge">破茧计划 · 另眼相看 · 第3期</div>
 <div class="hero-tags"><span>⚛️ 物理学 · 第1季</span><span>03/48</span></div>
 <h1>尺度<em>思维</em></h1>
 <p class="sub">像物理学家一样思考——换一个尺度，规律就变了</p>
@@ -352,8 +352,8 @@ function extractIssue(html,n){
 try{var title="",model="";var tm=html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);if(tm){title=tm[1].replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();}var mm=html.match(/class="meta"[^>]*>([^<]+)/i);if(!mm)mm=html.match(/class="sub"[^>]*>([\s\S]*?)<\/p>/i);if(mm){model=mm[1].replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();}var sm=html.match(/<section[^>]*>([\s\S]*?)<hr\s+class="divider-solid/i);var text="";if(sm){text=sm[1].replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();}if(text.length>2000)text=text.slice(0,2000)+"…";return {n:n,title:title||("第"+n+"期"),model:model||"",text:text};}catch(e){return null;}
 }
 function buildSystemPrompt(){
-if(!_aictx||!_aictx.issues||!_aictx.issues.length)return "你是\"另眼相看（芒格计划）\"的AI助教。另眼相看是一套基于查理·芒格\"格栅理论\"的跨学科技能学习系统，每季聚焦一个学科，每期讲透该学科的一种底层思维方式。你的风格：说人话、简洁、像博学的朋友。请用中文回复。";
-var p="你是\"另眼相看（芒格计划）\"的AI助教。另眼相看是一套基于查理·芒格\"格栅理论\"的跨学科技能学习系统，每季聚焦一个学科，每期讲透该学科的一种底层思维方式。目前第1季是物理学。以下是各期摘要：\n\n";
+if(!_aictx||!_aictx.issues||!_aictx.issues.length)return "你是\"另眼相看（破茧计划）\"的AI助教。另眼相看是一套跨学科技能学习系列——击破信息茧房，看到更大的世界，每季聚焦一个学科，每期讲透该学科的一种底层思维方式。你的风格：说人话、简洁、像博学的朋友。请用中文回复。";
+var p="你是\"另眼相看（破茧计划）\"的AI助教。另眼相看是一套跨学科技能学习系列——击破信息茧房，看到更大的世界，每季聚焦一个学科，每期讲透该学科的一种底层思维方式。目前第1季是物理学。以下是各期摘要：\n\n";
 for(var i=0;i<_aictx.issues.length;i++){var iss=_aictx.issues[i];p+="第"+iss.n+"期《"+iss.title+"》—— "+iss.model+"\n"+iss.text+"\n\n";}
 var cur=info();if(cur&&cur.n)p+="用户当前正在阅读：第"+cur.n+"期《"+cur.t+"》";
 return p;

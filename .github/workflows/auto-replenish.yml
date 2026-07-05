@@ -134,7 +134,7 @@ jobs:
               'msg_type': 'interactive',
               'card': {
                   'header': {
-                      'title': {'tag': 'plain_text', 'content': '⚠️ 芒格计划 · 自动补货告警'},
+                      'title': {'tag': 'plain_text', 'content': '⚠️ 破茧计划 · 自动补货告警'},
                       'template': 'red'
                   },
                   'elements': [

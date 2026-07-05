@@ -38,7 +38,7 @@ jobs:
           H1=$(grep -oP '<h1[^>]*>[\s\S]*?<\/h1>' "${FILE}.html" 2>/dev/null | head -1 | sed 's/<[^>]*>//g' | sed 's/\s\+/ /g' | xargs || echo "")
           # 提取副标题
           SUB=$(grep -oP '<p class="sub">\K[^<]+' "${FILE}.html" 2>/dev/null | head -1 || echo "")
-          URL="https://zhuayuba.github.io/mungerplan/thinking/${FILE}.html"
+          URL="https://zhuayuba.github.io/projectbreakout/thinking/${FILE}.html"
 
           python3 -c "
           import hashlib, hmac, base64, time, json, urllib.request, os
@@ -52,7 +52,7 @@ jobs:
               'msg_type': 'interactive',
               'card': {
                   'header': {
-                      'title': {'tag': 'plain_text', 'content': '芒格计划 · 另眼相看 · 第${N}期'},
+                      'title': {'tag': 'plain_text', 'content': '破茧计划 · 另眼相看 · 第${N}期'},
                       'template': 'carmine'
                   },
                   'elements': [

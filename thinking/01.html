@@ -62,7 +62,7 @@ details .content{padding:0 24px 20px;color:#444}
 </head>
 <body>
 <header class="hero">
-<div class="hero-badge">芒格计划 · 另眼相看 · 第1期</div>
+<div class="hero-badge">破茧计划 · 另眼相看 · 第1期</div>
 <div class="hero-tags"><span>⚛️ 物理学 · 第1季</span><span>01/48</span></div>
 <h1>第一性<em>原理</em></h1>
 <p class="sub">像物理学家一样思考——从最底层重新开始</p>
@@ -71,7 +71,7 @@ details .content{padding:0 24px 20px;color:#444}
 <div class="container">
 <div class="intro"><div class="intro-card">
 <p><strong>欢迎来到另眼相看。</strong></p>
-<p>如果说芒格计划是"从各学科提取思维模型横着用"，那这个系列就是"钻进每个学科的脑子里，理解他们到底怎么想问题"。我们不学物理知识，我们学物理学家的<strong>思考习惯</strong>。</p>
+<p>如果说破茧计划是"从各学科提取思维模型横着用"，那这个系列就是"钻进每个学科的脑子里，理解他们到底怎么想问题"。我们不学物理知识，我们学物理学家的<strong>思考习惯</strong>。</p>
 <p>第一期，从整个科学最底层的思维方式开始——<strong>第一性原理</strong>。</p>
 </div></div>
 
@@ -399,8 +399,8 @@ return {n:n,title:title||("第"+n+"期"),model:model||"",text:text};
 }catch(e){return null;}
 }
 function buildSystemPrompt(){
-if(!_aictx||!_aictx.issues||!_aictx.issues.length)return "你是\"另眼相看（芒格计划）\"的AI助教。另眼相看是一套基于查理·芒格\"格栅理论\"的跨学科技能学习系统，每季聚焦一个学科，每期讲透该学科的一种底层思维方式。你的风格：说人话、简洁、像博学的朋友。请用中文回复。";
-var p="你是\"另眼相看（芒格计划）\"的AI助教。另眼相看是一套基于查理·芒格\"格栅理论\"的跨学科技能学习系统，每季聚焦一个学科，每期讲透该学科的一种底层思维方式。目前第1季是物理学。以下是各期摘要：\n\n";
+if(!_aictx||!_aictx.issues||!_aictx.issues.length)return "你是\"另眼相看（破茧计划）\"的AI助教。另眼相看是一套跨学科技能学习系列——击破信息茧房，看到更大的世界，每季聚焦一个学科，每期讲透该学科的一种底层思维方式。你的风格：说人话、简洁、像博学的朋友。请用中文回复。";
+var p="你是\"另眼相看（破茧计划）\"的AI助教。另眼相看是一套跨学科技能学习系列——击破信息茧房，看到更大的世界，每季聚焦一个学科，每期讲透该学科的一种底层思维方式。目前第1季是物理学。以下是各期摘要：\n\n";
 for(var i=0;i<_aictx.issues.length;i++){
 var iss=_aictx.issues[i];
 p+="第"+iss.n+"期《"+iss.title+"》—— "+iss.model+"\n"+iss.text+"\n\n";
