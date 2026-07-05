@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>职人手艺 · 01：悬在30楼窗外的男人</title>
+<title>职人手艺 · 龙舟鼓手</title>
 <style>
 :root{--bg:#faf8f5;--text:#1a1a2e;--accent:#e8924c;--accent-dark:#c8772e;--muted:#888}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -49,7 +49,7 @@ footer{text-align:center;padding:60px 24px;color:#999;font-size:14px;font-family
 <body>
 
 <header class="hero">
-<div class="hero-badge">破茧计划 · 职人手艺 · 第龙舟鼓手期</div>
+<div class="hero-badge">破茧计划 · 职人手艺 · 龙舟鼓手</div>
 <h1>在<em>鼓点与浪</em>之间，掌控节奏</h1>
 <p class="sub">龙舟鼓手的核心不是敲鼓，而是用节奏统一全船的力量</p>
 <span class="job-name">龙舟鼓手</span>
@@ -206,7 +206,7 @@ function _s(){try{localStorage.setItem("careerlab_backup",JSON.stringify(_h));}c
 function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
 function info(){
  var b=document.querySelector(".hero-badge");if(!b)return{n:0};
- var t=b.textContent,m=t.match(/(\d+)/);
+ var fn=(window.location.pathname.match(/(\d+)\.html/)||[])[1];var m=fn?[fn,fn]:null;if(!m){var t=b.textContent;m=t.match(/(\d+)/);}
  if(!m){var cn={"一":1,"二":2,"三":3,"四":4,"五":5,"六":6,"七":7,"八":8,"九":9,"十":10};var x=t.match(/[一二三四五六七八九十]/);if(x)m=[x[0],cn[x[0]]||0];}
  return{n:m?parseInt(m[1]):0,t:(document.querySelector(".hero h1")?.textContent||""),job:(document.querySelector(".hero .meta")?.textContent||"")};
 }

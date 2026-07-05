@@ -256,12 +256,59 @@ def build_prompt(series, cfg, topic, issue_num, template_body):
     prompt_path = os.path.join(REPO_ROOT, "scripts", "prompts", cfg["prompt_file"])
     with open(prompt_path, "r", encoding="utf-8") as f:
         template = f.read()
+    # career 的 badge 用职业名, 不含「第N期」(用户要求去掉期号显示)
+    if series == "career":
+        badge_text = "破茧计划 · 职人手艺 · " + topic
+    else:
+        badge_text = cfg["badge_prefix"].format(N=issue_num)
     return template.format(
         topic=topic,
         issue_num=issue_num,
-        badge=cfg["badge_prefix"].format(N=issue_num),
+        badge=badge_text,
         ref_structure=template_body,
     )
+
+
+# ────────────────────────── 后处理 (career 专用) ──────────────────────────
+
+# info() 旧代码 → 新代码: 优先从文件名提取期号, badge 作 fallback
+INFO_OLD = 'var t=b.textContent,m=t.match(/(\\d+)/);'
+INFO_NEW = 'var fn=(window.location.pathname.match(/(\\d+)\\.html/)||[])[1];var m=fn?[fn,fn]:null;if(!m){var t=b.textContent;m=t.match(/(\\d+)/);}'
+
+
+def postprocess_career(full_html, issue_num):
+    """career 系列后处理: 修 badge 文字 + 注入 title + 升级 info().
+
+    1. badge: AI 可能输出「第XXX期」格式, 改为纯职业名
+    2. title: 从模板复制的旧 title, 改为「职人手艺 · {职业名}」
+    3. info(): 优先从文件名提取期号, 不依赖 badge 文字里的数字
+    """
+    import re as _re
+
+    # 提取 job-name (职业名)
+    m = _re.search(r'class="job-name">([^<]+)<', full_html)
+    job = m.group(1).strip() if m else "未知职业"
+
+    # 1. 修 badge: 去掉「第」「期」, 用职业名
+    full_html = _re.sub(
+        r'<div class="hero-badge">破茧计划 · 职人手艺 · 第[^<]*期</div>',
+        '<div class="hero-badge">破茧计划 · 职人手艺 · {}</div>'.format(job),
+        full_html,
+    )
+
+    # 2. 注入 title
+    full_html = _re.sub(
+        r'<title>[^<]*</title>',
+        '<title>职人手艺 · {}</title>'.format(job),
+        full_html,
+        count=1,
+    )
+
+    # 3. 升级 info() 函数
+    if INFO_OLD in full_html:
+        full_html = full_html.replace(INFO_OLD, INFO_NEW)
+
+    return full_html
 
 
 # ────────────────────────── 单期生成 ──────────────────────────
@@ -306,6 +353,10 @@ def generate_one(series, cfg, issue_num, topic, template_parts, api_key, log, dr
         + template_parts["script"] + "\n"
         + template_parts["tail"]
     )
+
+    # 4.5 career 专用后处理: badge 修正 + title 注入 + info() 升级
+    if series == "career":
+        full_html = postprocess_career(full_html, issue_num)
 
     # 5. ES5 合规校验 (只扫 script 段)
     violations = check_es5(full_html)
