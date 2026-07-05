@@ -52,7 +52,8 @@ jobs:
 
           ANY_GENERATED=0
           ANY_FAILED=0
-          SUMMARY=""
+          # 用临时文件存多行 summary, 避免多行变量在 Actions 里的坑
+          SUMMARY_FILE=$(mktemp)
 
           for s in $SERIES_LIST; do
             echo "=========================================="
@@ -67,39 +68,46 @@ jobs:
 
             if [ "$RESERVE" -gt 2 ]; then
               echo "$s 库存充足, 跳过"
-              SUMMARY="$SUMMARY\n$s: 库存 $RESERVE 期, 跳过"
+              echo "$s: 库存 $RESERVE 期, 跳过" >> "$SUMMARY_FILE"
               continue
             fi
 
-            # 库存 ≤2, 调脚本补货
-            OUTPUT=$(python3 scripts/replenish.py "$s" --count "${COUNT:-6}" 2>&1) || true
-            echo "$OUTPUT"
+            # 库存 ≤2, 调脚本补货 (脚本退出码: 0=成功或无生成, 1=有错误)
+            set +e
+            python3 scripts/replenish.py "$s" --count "${COUNT:-6}" > /tmp/replenish_$s.log 2>&1
+            SCRIPT_EXIT=$?
+            set -e
+            cat /tmp/replenish_$s.log
 
             # 检查是否真的生成了新文件 (git status)
-            NEW_FILES=$(git status --porcelain -- "$s/[0-9][0-9].html" | grep "^??" | wc -l)
+            NEW_FILES=$(git status --porcelain -- "$s/[0-9][0-9].html" | grep "^??" | wc -l | tr -d ' ')
             if [ "$NEW_FILES" -gt 0 ]; then
               echo "$s 生成了 $NEW_FILES 个新文件"
               ANY_GENERATED=1
-              SUMMARY="$SUMMARY\n$s: ✅ 生成 $NEW_FILES 期"
-            else
-              echo "$s 未生成新文件 (可能 AI 失败或选题池空)"
+              echo "$s: ✅ 生成 $NEW_FILES 期" >> "$SUMMARY_FILE"
+            elif [ "$SCRIPT_EXIT" -ne 0 ]; then
+              # 脚本报错且没生成 = 真失败
+              echo "$s: ❌ 补货失败 (脚本退出码 $SCRIPT_EXIT, 见日志)" >> "$SUMMARY_FILE"
               ANY_FAILED=1
-              SUMMARY="$SUMMARY\n$s: ❌ 未生成 (检查日志)"
+            else
+              # 脚本正常退出但没生成 (选题池空等)
+              echo "$s: ⚠️ 库存低但未生成 (选题池空?)" >> "$SUMMARY_FILE"
+              ANY_FAILED=1
             fi
           done
 
           echo "=========================================="
           echo "汇总:"
-          echo -e "$SUMMARY"
+          cat "$SUMMARY_FILE"
           echo "=========================================="
 
-          # 保存汇总给后续步骤用
+          # 保存汇总给后续步骤用 (用文件避免多行变量问题)
           echo "any_generated=$ANY_GENERATED" >> $GITHUB_OUTPUT
           echo "any_failed=$ANY_FAILED" >> $GITHUB_OUTPUT
           {
-            echo "summary<<EOF"
-            echo -e "$SUMMARY"
-            echo "EOF"
+            echo "summary<<SUMMARY_EOF"
+            cat "$SUMMARY_FILE"
+            echo "SUMMARY_EOF"
           } >> $GITHUB_OUTPUT
 
       - name: 提交补货内容
@@ -109,9 +117,7 @@ jobs:
           git config user.name "GitHub Actions"
           git add stones/ thinking/ career/
           git diff --staged --quiet || {
-            git commit -m "🤖 自动补货 ($(date -u '+%Y-%m-%d'))
-
-          ${{ steps.run.outputs.summary }}"
+            git commit -m "🤖 自动补货 ($(date -u '+%Y-%m-%d'))"
             git push
             echo "已提交补货内容"
           }
@@ -119,30 +125,10 @@ jobs:
       - name: 失败告警 (飞书)
         if: steps.run.outputs.any_failed == '1'
         env:
-          LARK_WEBHOOK: ${{ secrets.LARK_WEBHOOK_URL }}
-          LARK_SECRET: ${{ secrets.LARK_SIGNING_SECRET }}
+          LARK_WEBHOOK_URL: ${{ secrets.LARK_WEBHOOK_URL }}
+          LARK_SIGNING_SECRET: ${{ secrets.LARK_SIGNING_SECRET }}
+          ALERT_SUMMARY: ${{ steps.run.outputs.summary }}
         run: |
-          python3 -c "
-          import hashlib, hmac, base64, time, json, urllib.request, os
-          ts = str(int(time.time()))
-          secret = os.environ['LARK_SECRET']
-          sign_string = ts + '\n' + secret
-          sign = base64.b64encode(hmac.new(sign_string.encode(), b'', hashlib.sha256).digest()).decode()
-          body = json.dumps({
-              'timestamp': ts,
-              'sign': sign,
-              'msg_type': 'interactive',
-              'card': {
-                  'header': {
-                      'title': {'tag': 'plain_text', 'content': '⚠️ 破茧计划 · 自动补货告警'},
-                      'template': 'red'
-                  },
-                  'elements': [
-                      {'tag': 'markdown', 'content': '${{ steps.run.outputs.summary }}'.replace(chr(10), chr(10))}
-                  ]
-              }
-          }).encode()
-          req = urllib.request.Request(os.environ['LARK_WEBHOOK'], data=body, headers={'Content-Type': 'application/json'})
-          resp = urllib.request.urlopen(req)
-          print(resp.read().decode())
-          "
+          python3 scripts/notify_lark.py \
+            "⚠️ 破茧计划 · 自动补货告警" \
+            "$ALERT_SUMMARY"
