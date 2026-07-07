@@ -1,7 +1,5 @@
 name: 推送 · 职人手艺
 on:
-  schedule:
-    - cron: "0 12 * * 3,6"
   workflow_dispatch:
     inputs:
       issue:

@@ -1,7 +1,5 @@
 name: 推送 · 他山之石
 on:
-  schedule:
-    - cron: "0 12 * * 1,4"
   workflow_dispatch:
     inputs:
       issue:

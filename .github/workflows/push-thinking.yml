@@ -1,7 +1,5 @@
 name: 推送 · 另眼相看
 on:
-  schedule:
-    - cron: "0 12 * * 2,5"
   workflow_dispatch:
     inputs:
       issue:
