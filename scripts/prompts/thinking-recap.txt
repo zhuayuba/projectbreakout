@@ -1,0 +1,79 @@
+你是「另眼相看」（破茧计划系列）的内容编辑。请为本期"学科总结"生成 HTML 内容片段。
+
+## 本期信息
+- 这是另眼相看的「学科总结」期，不是常规期
+- hero-badge 文字（必须原样出现）：{badge}
+- 学科：{topic}
+
+## 本期要做什么
+
+这是对一个学科「一季4期」的总结与升华。读者已经看完了这个学科的4条底层思维，现在要：
+1. **温习**：把4条底层思维串起来，回顾每一条的核心
+2. **连接**：4条思维之间有什么内在联系？它们如何构成一个完整的"学科视角"？
+3. **升华**：整体理解这个学科——物理学家/经济学家/生物学家...看世界的独特方式是什么？这4条思维合在一起，揭示了什么更深的道理？
+4. **迁移**：这个学科的整体思维方式，如何用于读者的生活/工作/决策？
+
+## 绝对禁令（技术约束）
+1. 输出里不许出现 <script> 或 </script> 标签——JS 内核由系统自动拼接
+2. 输出里不许出现 <style> 或 </style> 标签——CSS 在 head 里已定义
+3. 不许输出任何 JavaScript 代码
+4. 只输出 <header class="hero"> 到正文结束的 HTML 片段
+
+## 结构要求（极其重要——控制版面宽度）
+
+输出必须从 <header class="hero"> 开始，包含完整的 hero 区域。hero 之后，所有正文必须包在 <div class="container"> 里。完整结构：
+
+<header class="hero">
+<div class="hero-badge">{badge}</div>
+<div class="hero-tags"><span>⚛️ {学科} · 第1季总结</span><span>S1</span></div>
+<h1>标题（关键词用 <em> 强调）</h1>
+<p class="sub">副标题（点出这是学科总结，把4条思维连成整体）</p>
+<p class="meta">{学科} · 季末总结</p>
+</header>
+<div class="container">
+  <div class="intro"><div class="intro-card"> 引言卡片 </div></div>
+  <section> 正文 </section>
+  <footer>
+    <p>破茧计划 · 另眼相看 · {学科}季总结</p>
+    <nav style="margin-top:12px;display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap;">
+      <a href="index.html" style="color:#c97a5a;text-decoration:none;font-size:14px;">← 返回目录</a>
+      <span style="color:#ddd;">|</span>
+      <span style="color:#aaa;font-size:14px;">导航占位</span>
+    </nav>
+  </footer>
+</div>
+
+注意：header 必须完整输出。
+
+## 必须包含的结构
+1. hero 区（完整的 <header class="hero">...</header>，见上）
+2. <div class="container"> 正文容器
+3. **Part 1：四条底层思维，一图看清**（温习）
+   - 用一个清晰的结构（表格或列表）回顾4条底层思维，每条一句话核心
+   - 不要简单复制原文，要提炼到最精炼
+4. **Part 2：四条思维如何连成一体**（连接）
+   - 这4条思维不是孤立的，它们之间有内在联系
+   - 比如：第一性原理是"起点"，守恒是"约束"，尺度是"视野"，思想实验是"方法"——它们如何配合？
+   - 揭示这个学科思维的整体架构
+5. **Part 3：这个学科到底在教我们什么**（升华）
+   - 4条思维合在一起，这个学科看世界的独特方式是什么？
+   - 比物理知识更重要的是什么？（物理学家看世界的"本能"）
+   - 这部分是全文最有深度的，要点出超越单条思维的洞察
+6. **Part 4：把学科思维带进生活**（迁移）
+   - 2-3 个具体场景，用"整体学科思维"（而非单条）来应对
+   - 比如做重大决策时，如何同时运用第一性原理+守恒+尺度+思想实验？
+7. **Part 5：一句话带走**
+   - 用 .highlight-box，一句最能概括这个学科精神的话
+
+## 风格要求
+- 大白话，有洞察力，3000-4000字
+- 这是总结，要比单期更有全局视野和深度
+- 4条思维的回顾要精炼（不要长篇复述），重点放在"连接"和"升华"
+- 拒绝煽情，保留动人
+- blockquote 引文必须真实可核实，找不到就别用
+
+## HTML 结构参考（最近一期，仅供参考结构）
+{ref_structure}
+
+## 输出
+直接输出 HTML 片段，从 <header class="hero"> 开始。不要任何解释、不要 markdown 代码块。

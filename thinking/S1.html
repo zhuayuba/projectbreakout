@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>另眼相看 · 物理学季总结</title>
+<style>
+:root{--bg:#faf8f5;--text:#1a1a2e;--accent:#c97a5a;--accent-dark:#9a5040;--disc-color:#4a7fb5;--muted:#6b7280}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Georgia","Noto Serif SC",serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:17px}
+.hero{background:linear-gradient(135deg,#2d1320,#1f0d18,#140810);color:#f0ede8;padding:100px 24px 80px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(74,127,181,0.15),transparent 60%)}
+.hero>*{position:relative;z-index:1}
+.hero-badge{display:inline-block;border:1px solid var(--accent);color:var(--accent);font-family:-apple-system,"PingFang SC",sans-serif;font-size:12px;letter-spacing:3px;padding:4px 16px;border-radius:20px;margin-bottom:16px;text-transform:uppercase}
+.hero-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:24px}
+.hero-tags span{display:inline-block;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.05);padding:3px 14px;border-radius:14px;font-size:11px;color:#999;font-family:-apple-system,"PingFang SC",sans-serif}
+.hero h1{font-size:clamp(32px,6vw,56px);font-weight:700;letter-spacing:2px;margin-bottom:12px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .sub{font-size:clamp(16px,2.5vw,22px);color:#b8b0a0;font-family:-apple-system,"PingFang SC",sans-serif;font-weight:300;margin-bottom:8px}
+.hero .meta{font-family:-apple-system,"PingFang SC",sans-serif;font-size:13px;color:#888;letter-spacing:1px}
+.container{max-width:740px;margin:0 auto;padding:0 24px}
+.intro{margin-top:-40px;position:relative;z-index:2}
+.intro-card{background:#fff;border-radius:12px;padding:40px 36px;box-shadow:0 4px 24px rgba(0,0,0,0.06);border:1px solid #e5e0d8}
+.intro-card p{margin-bottom:16px;color:#444}.intro-card p:last-child{margin-bottom:0}
+section{padding:60px 0}
+.section-label{font-family:-apple-system,"PingFang SC",sans-serif;font-size:11px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:8px}
+h2{font-size:28px;font-weight:700;margin-bottom:24px;line-height:1.4}
+h3{font-size:20px;font-weight:600;margin:32px 0 12px;color:#1a1a2e}
+p{margin-bottom:16px;color:#444}
+blockquote{background:#f3f0ea;border-left:4px solid var(--disc-color);padding:20px 24px;margin:24px 0;border-radius:0 8px 8px 0;font-style:italic;color:#555}
+blockquote cite{display:block;margin-top:8px;font-size:14px;font-style:normal;color:var(--muted)}
+.highlight-box{background:linear-gradient(135deg,#faf3f0,#f5e4d8);border:1px solid #d8c0b0;border-radius:10px;padding:28px 32px;margin:28px 0}
+.highlight-box .label{font-family:-apple-system,"PingFang SC",sans-serif;font-size:12px;letter-spacing:2px;color:var(--disc-color);margin-bottom:8px}
+.highlight-box p{margin-bottom:0;color:#5a3030}
+details{background:#fff;border:1px solid #e5e0d8;border-radius:10px;margin:16px 0;overflow:hidden}
+details summary{cursor:pointer;padding:18px 24px;font-weight:600;font-size:17px;list-style:none;display:flex;align-items:center;gap:12px;user-select:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:'+';display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--disc-color);color:#fff;font-size:16px;flex-shrink:0}
+details[open] summary::before{content:'−'}
+details .content{padding:0 24px 20px;color:#444}
+.divider-solid{border:0;height:1px;background:linear-gradient(to right,transparent,#e5e0d8,transparent);margin:48px 0}
+
+/* 底部学科导航 */
+.disc-nav{background:#fff;border:1px solid #e5e0d8;border-radius:12px;padding:24px 28px;margin:0 0 20px;text-align:center}
+.disc-nav-title{font-family:-apple-system,"PingFang SC",sans-serif;font-size:13px;color:#999;letter-spacing:2px;margin-bottom:16px}
+.disc-nav-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:16px}
+.disc-chip{display:inline-flex;align-items:center;gap:4px;padding:5px 12px;border-radius:16px;font-family:-apple-system,"PingFang SC",sans-serif;font-size:12px;text-decoration:none;color:var(--disc-color);border:1px solid var(--disc-color);background:rgba(74,127,181,0.06);transition:all .15s}
+.disc-chip:hover{background:var(--disc-color);color:#fff}
+.disc-chip.active{background:var(--disc-color);color:#fff;font-weight:600}
+.disc-chip.future{color:#ccc;border-color:#e0e0e0;background:#fafafa;cursor:default}
+.disc-chip .chip-icon{font-size:13px}
+.disc-nav-season{font-family:-apple-system,"PingFang SC",sans-serif;font-size:12px;color:#999;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.disc-nav-season a{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;text-decoration:none;font-size:12px;border:1px solid #e5e0d8;color:#888;transition:all .15s}
+.disc-nav-season a:hover{border-color:var(--disc-color);color:var(--disc-color)}
+.disc-nav-season a.active{background:var(--disc-color);color:#fff;border-color:var(--disc-color);font-weight:600}
+.disc-nav-season .sep{color:#ddd}
+.footer-back{text-align:center;margin-top:8px}
+.footer-back a{color:#c97a5a;text-decoration:none;font-size:13px;font-family:-apple-system,"PingFang SC",sans-serif}
+
+@media(max-width:600px){body{font-size:16px}.hero{padding:60px 20px}.intro-card{padding:28px 20px}section{padding:40px 0}details summary{padding:14px 18px}.disc-nav{padding:18px 16px}.disc-nav-grid{gap:5px}.disc-chip{padding:4px 10px;font-size:11px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+<div class="hero-badge">破茧计划 · 另眼相看 · 物理学季总结</div>
+<div class="hero-tags"><span>⚛️ 物理学 · 第1季总结</span><span>S1</span></div>
+<h1>物理学：从<em>拆解</em>到<em>贯通</em>的世界观</h1>
+<p class="sub">4条底层思维串起来——第一性原理、守恒、尺度、思想实验——它们如何构成物理学家看世界的完整方式？</p>
+<p class="meta">物理学 · 季末总结</p>
+</header>
+<div class="container">
+  <div class="intro"><div class="intro-card">
+    <p><strong>你已经看完了物理学第1季的4期内容。每期都给了你一条底层思维。</strong></p>
+    <p>但单条思维是碎片。真正的力量，是看它们如何<strong>连成一张网</strong>。</p>
+    <p>这一篇，我们不学新东西。我们退后一步，看全貌——物理学家到底是怎么思考的？这4条思维合在一起，揭示了什么更深的道理？以及，你如何把这些"物理学家的本能"带进你的日常决策中？</p>
+    <p>这就是学科总结的意义：<strong>把4颗珍珠串起来，变成一条项链。</strong></p>
+  </div></div>
+
+  <section>
+    <span class="section-label">Part 1 · 温习</span>
+    <h2>四条底层思维，一图看清</h2>
+    <p>先快速回顾这4条思维。每条只用一句话说清楚核心——你已经在之前的内容中深入理解了它们，这里只是唤醒记忆。</p>
+    
+    <div style="display:grid;grid-template-columns:1fr;gap:12px;margin:24px 0;">
+      <div style="background:linear-gradient(135deg,#faf3f0,#f0e0d8);border-left:4px solid #c97a5a;padding:16px 20px;border-radius:0 8px 8px 0;">
+        <div style="font-weight:700;color:#c97a5a;font-size:14px;margin-bottom:4px;">① 第一性原理</div>
+        <p style="margin:0;font-size:15px;">剥掉所有假设和惯例，找到不可再分解的基本事实，从那里重新建楼。</p>
+      </div>
+      <div style="background:linear-gradient(135deg,#f0f7fa,#d8e8f0);border-left:4px solid #5a8ca9;padding:16px 20px;border-radius:0 8px 8px 0;">
+        <div style="font-weight:700;color:#5a8ca9;font-size:14px;margin-bottom:4px;">② 守恒思维</div>
+        <p style="margin:0;font-size:15px;">没有什么真正消失，只是换了个形式存在。账永远是平的——找到那个不变量。</p>
+      </div>
+      <div style="background:linear-gradient(135deg,#f0faf0,#d8f0d8);border-left:4px solid #5a9a6a;padding:16px 20px;border-radius:0 8px 8px 0;">
+        <div style="font-weight:700;color:#5a9a6a;font-size:14px;margin-bottom:4px;">③ 尺度思维</div>
+        <p style="margin:0;font-size:15px;">不同尺度下规律不同。不要用微观的道理去解释宏观——选对镜头再看。</p>
+      </div>
+      <div style="background:linear-gradient(135deg,#faf0f8,#e8d8f0);border-left:4px solid #8a5a9a;padding:16px 20px;border-radius:0 8px 8px 0;">
+        <div style="font-weight:700;color:#8a5a9a;font-size:14px;margin-bottom:4px;">④ 思想实验</div>
+        <p style="margin:0;font-size:15px;">在脑子里构造一个严格控制的假想情境，用逻辑推演结果——不需要实验室。</p>
+      </div>
+    </div>
+
+    <p>这四条，每一条都像一种思维工具。但工具只有组合起来才能造房子。下面我们来看它们如何配合。</p>
+  </section>
+
+  <section>
+    <span class="section-label">Part 2 · 连接</span>
+    <h2>四条思维如何连成一体</h2>
+    <p>这4条思维不是随机排列的。它们有内在的逻辑顺序，构成了一个完整的<strong>物理学家解决问题的工作流</strong>。</p>
+    
+    <h3>起点：第一性原理——拆到最底层</h3>
+    <p>物理学家面对任何问题，第一反应不是翻公式，而是问："这背后最根本的东西是什么？"</p>
+    <p>就像你面对一台复杂的机器，大多数人都直接看说明书——物理学家会先拆开它，看里面的零件。第一性原理就是<strong>那个"拆解"的动作</strong>。它让你回到最基础的事实，而不是被表面的复杂性吓住。</p>
+
+    <h3>约束：守恒思维——找到那个不变量</h3>
+    <p>拆到底层之后，你需要知道"什么不能变"。守恒定律就是物理学的<strong>边界护栏</strong>。</p>
+    <p>能量不会凭空产生，也不会凭空消失——这意味着任何你提出的方案，都不能违反这个"账本"。如果你在拆解问题后提出一个方案，但它的"能量"（资源、时间、注意力）对不上账，那方案一定有问题。守恒思维让你<strong>在探索时保持诚实</strong>。</p>
+
+    <h3>视野：尺度思维——选对镜头</h3>
+    <p>有了底层事实和守恒约束，你还需要知道<strong>在哪个层次上说话</strong>。</p>
+    <p>一个物理学家不会用量子力学的方程去解释为什么茶杯碎了——那是宏观层面的断裂力学。同样，你也不会用"分子热运动"来解释为什么今天心情不好。尺度思维告诉你：<strong>不同的问题是不同镜头的画面，别拿显微镜看地图。</strong></p>
+
+    <h3>方法：思想实验——在脑子里跑一遍</h3>
+    <p>最后，当你有了底层事实、守恒约束、正确尺度——你就需要<strong>推演</strong>了。</p>
+    <p>物理学家不会"试试看"——他们在脑子里先跑一遍。思想实验就是那个"模拟器"。它让你不用真的犯错，就能看到后果。它把前三条思维整合起来：用第一性原理设定的初始条件，在守恒的约束下，在正确的尺度上，推演出结果。</p>
+
+    <div style="background:#f9f6f3;border:1px solid #e0d5cc;border-radius:12px;padding:20px;margin:24px 0;">
+      <p style="margin:0;font-weight:700;font-size:16px;">💡 一句话串联</p>
+      <p style="margin:8px 0 0 0;font-size:15px;"><strong>第一性原理拆出"零件"→ 守恒思维标出"红线" → 尺度思维选好"镜头" → 思想实验开始"模拟"。</strong></p>
+      <p style="margin:8px 0 0 0;font-size:14px;color:#777;">这四步不是线性的，而是一个循环——模拟结果可能告诉你"拆得还不够深"或"尺度选错了"，于是你回到起点，重新拆。</p>
+    </div>
+  </section>
+
+  <section>
+    <span class="section-label">Part 3 · 升华</span>
+    <h2>这个学科到底在教我们什么</h2>
+    <p>如果你只记住物理学的知识——牛顿定律、热力学方程、相对论——那你只拿到了"鱼"。但如果你理解了这4条思维合在一起意味着什么，你就拿到了"渔"。</p>
+    
+    <h3>物理学家的本能：信任规律，不信任直觉</h3>
+    <p>物理学家看世界的方式，核心只有一个信念：<strong>世界是讲道理的，但你的第一感觉经常是错的。</strong></p>
+    <p>你"感觉"重的物体下落更快——但伽利略的思想实验告诉你那是错的。<br>
+    你"感觉"时间和空间是绝对的——但爱因斯坦的思想实验告诉你它们是相对的。<br>
+    你"感觉"能量消失了——但守恒定律告诉你它只是换了形式。</p>
+    <p><strong>物理学教给你的不是"规律是什么"，而是"如何找到规律"。</strong></p>
+    <p>这4条思维合在一起，就是一套<strong>对抗直觉偏误的完整方法论</strong>：</p>
+    <ul style="line-height:2;">
+      <li><strong>第一性原理</strong>对抗"因为大家都这么说"（从众偏误）</li>
+      <li><strong>守恒思维</strong>对抗"这次不一样"（乐观偏误）</li>
+      <li><strong>尺度思维</strong>对抗"一竿子打翻一船人"（过度概括）</li>
+      <li><strong>思想实验</strong>对抗"干就完了"（行动偏误）</li>
+    </ul>
+
+    <h3>比知识更重要的：一种"不慌"的底气</h3>
+    <p>为什么物理学家面对一个完全陌生的现象，不会慌？</p>
+    <p>因为他们知道：<strong>不管多奇怪的事，背后一定有规律。</strong>他们不是知道那个规律是什么——而是知道"有规律"这件事本身。这意味着他们可以开始拆（第一性原理），可以开始找不变量（守恒），可以调整视角（尺度），可以在脑子里先跑一遍（思想实验）。</p>
+    <p>这种"不慌"不是天生的，是这4条思维训练出来的本能。</p>
+
+    <blockquote>"物理学真正的目的不是解释宇宙，而是教会你如何思考——当面对未知时，你知道该从哪里开始。"<cite>—— 理查德·费曼（改编自其演讲）</cite></blockquote>
+  </section>
+
+  <section>
+    <span class="section-label">Part 4 · 迁移</span>
+    <h2>把学科思维带进生活</h2>
+    <p>这4条思维组合起来，可以应对很多日常难题。下面是3个具体场景——注意，不是单条思维的应用，而是<strong>整套</strong>思维的应用。</p>
+
+    <h3>场景一：你面临一个重大职业选择</h3>
+    <p><strong>第一性原理</strong>：拆掉"我应该稳定""大家都觉得这工作好"这些假设。问自己：我到底需要从工作中获得什么？是安全感？成长？意义？还是自由？把这些"基本事实"列出来。</p>
+    <p><strong>守恒思维</strong>：时间、精力、注意力是守恒的。接受了这个offer，你失去了什么？不要只看"得到"，也要看"失去"——账要算平。</p>
+    <p><strong>尺度思维</strong>：别用"未来30年的职业生涯"这个尺度去衡量一个"未来2年的决定"。把问题缩小到合适的尺度：这个选择在接下来两年里，对我最重要的那个需求有多大的帮助？</p>
+    <p><strong>思想实验</strong>：闭上眼睛，想象你已经做了选择。半年后，你坐在新公司的工位上——你最开心的是什么？最沮丧的是什么？然后再想象另一个选择。把两个"思想实验"的结果对比。</p>
+    <p style="margin-top:8px;"><strong>这4步走完，你的决策不再是"感觉"，而是"推演"。</strong></p>
+
+    <h3>场景二：你陷入了一段冲突</h3>
+    <p><strong>第一性原理</strong>：抛开"他不尊重我""她太情绪化"这些表层判断。冲突背后最根本的事实是什么？是资源分配问题？是价值观差异？还是信息不对称？</p>
+    <p><strong>守恒思维</strong>：情绪和能量是守恒的。你的愤怒不会消失，只会转移。你是让它变成一场消耗战，还是转化成解决问题的动力？</p>
+    <p><strong>尺度思维</strong>：这个冲突在"人生尺度"上有多大？一年后你还记得吗？如果不会，那别用"核弹"去处理一个"鞭炮"级别的事。</p>
+    <p><strong>思想实验</strong>：如果你的好朋友处于同样的冲突中，你会给他什么建议？这个"换位思想实验"经常能让你看到盲点。</p>
+
+    <h3>场景三：你学一个新技能，但感觉太难</h3>
+    <p><strong>第一性原理</strong>：这个技能最核心的"不可再分"的基本元素是什么？学编程不是学语言，是学逻辑和抽象；学外语不是背单词，是学结构和模式。找到那个<strong>最小的学习单元</strong>。</p>
+    <p><strong>守恒思维</strong>：时间花在这里，就没有时间花在别处。这是机会成本。你愿意"支付"这个成本吗？如果愿意，那就别抱怨没时间——账是平的。</p>
+    <p><strong>尺度思维</strong>：别用"成为专家"的尺度去要求"入门阶段"的自己。把目标缩小到"今天比昨天多懂一个概念"就够了。</p>
+    <p><strong>思想实验</strong>：想象一下，如果你真的学会了这个技能，你的生活会有什么变化？这个"未来的画面"越具体，你的学习动力就越真实。</p>
+
+    <p style="margin-top:24px;"><strong>看见没有？</strong>这4条思维不是抽象的概念——它们是一套<strong>可操作的检查清单</strong>。每次遇到难题，你可以在心里过一遍这4个问题，就能从"焦虑"切换到"分析"。</p>
+  </section>
+
+  <section>
+    <span class="section-label">Part 5 · 带走</span>
+    <h2>一句话带走</h2>
+    <div class="highlight-box"><div class="label">物理学 · 第1季 · 总结</div>
+    <p><strong>世界比你想象的更讲道理，也比你想象的更反直觉。物理学家的工作不是知道答案，而是知道如何找到答案——用拆解、守恒、换尺度和推演这四把钥匙。</strong></p></div>
+
+    <p style="margin-top:24px;font-size:15px;color:#666;text-align:center;">这4条思维，你现在已经全部学过了。它们不是知识，是<strong>肌肉记忆</strong>。接下来，就是在生活中反复练习。<br>下一季，我们将进入另一个学科，看到另一种完全不同的世界。<br>但物理学的这个"框架"——拆解→约束→换视角→推演——会一直留在你的工具箱里。</p>
+  </section>
+
+  <footer>
+    <p>破茧计划 · 另眼相看 · 物理学季总结</p>
+    <nav style="margin-top:12px;display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;font-family:-apple-system,'PingFang SC',sans-serif;font-size:13px;">
+      <a href="index.html" style="color:#c97a5a;text-decoration:none;">← 返回目录</a>
+      <span style="color:#ddd;">|</span>
+      <span style="color:#999;">本季：</span>
+      <a href="01.html" style="color:#c97a5a;text-decoration:none;">①第一性原理</a>
+      <a href="02.html" style="color:#c97a5a;text-decoration:none;">②守恒思维</a>
+      <a href="03.html" style="color:#c97a5a;text-decoration:none;">③尺度思维</a>
+      <a href="04.html" style="color:#c97a5a;text-decoration:none;">④思想实验</a>
+      <span style="color:#ddd;">|</span>
+      <a href="05.html" style="color:#c97a5a;text-decoration:none;font-weight:600;">下一季：⑤经济学 →</a>
+    </nav>
+  </footer>
+</div>
+<script>
+(function(){
+"use strict";
+var _h=[];
+try{var r=localStorage.getItem("munger_thinking_backup");if(r)_h=JSON.parse(r);}catch(e){}
+function _s(){try{localStorage.setItem("munger_thinking_backup",JSON.stringify(_h));}catch(e){}}
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function info(){
+ var b=document.querySelector(".hero-badge");if(!b)return{n:0};
+ var t=b.textContent,m=t.match(/(\d+)/);
+ if(!m){var cn={"一":1,"二":2,"三":3,"四":4,"五":5,"六":6};var x=t.match(/[一二三四五六]/);if(x)m=[x[0],cn[x[0]]||0];}
+ return{n:m?parseInt(m[1]):0,t:(document.querySelector(".hero h1")?.textContent||"")};
+}
+function addHl(tx,nt){
+ var i=info();if(!i.n)return null;
+ var o={id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),issue:i.n,title:i.t,text:tx.trim(),note:(nt||"").trim(),ts:new Date().toISOString()};
+ _h.push(o);_s();return o;
+}
+function delHl(id){_h=_h.filter(function(x){return x.id!==id;});_s();}
+function updHl(id,nt){var x=_h.find(function(y){return y.id===id;});if(x){x.note=nt.trim();x.upd=new Date().toISOString();_s();}}
+var tb=null,pu=null,sv="",sr=null;
+function mkUI(){
+ if(tb)return;
+ tb=document.createElement("div");tb.id="tb";tb.style.cssText="position:fixed;z-index:99999;display:none;background:#2d2d3f;border-radius:8px;padding:4px;box-shadow:0 4px 16px rgba(0,0,0,.25);font-family:-apple-system,PingFang SC,sans-serif;gap:4px;";
+ var bb=document.createElement("button");bb.textContent="⭐ 标记";bb.style.cssText="border:none;border-radius:6px;padding:6px 14px;font-size:13px;cursor:pointer;font-family:inherit;background:#f5d742;color:#1a1a2e;font-weight:600;";bb.onmouseover=function(){bb.style.background="#ffe066";};bb.onmouseout=function(){bb.style.background="#f5d742";};bb.onclick=function(){act(false);};
+ var nb=document.createElement("button");nb.textContent="📝 记笔记";nb.style.cssText="border:none;border-radius:6px;padding:6px 14px;font-size:13px;cursor:pointer;font-family:inherit;background:#444;color:#eee;";nb.onmouseover=function(){nb.style.background="#555";};nb.onmouseout=function(){nb.style.background="#444";};nb.onclick=function(){act(true);};
+ tb.appendChild(bb);tb.appendChild(nb);document.body.appendChild(tb);
+ pu=document.createElement("div");pu.id="pu";pu.style.cssText="position:fixed;z-index:100000;display:none;background:#fff;border-radius:12px;padding:20px;box-shadow:0 8px 32px rgba(0,0,0,.2);font-family:-apple-system,PingFang SC,sans-serif;width:340px;max-width:90vw;";
+ pu.innerHTML='<div style="font-size:14px;font-weight:600;margin-bottom:10px;color:#333;">📝 记录灵感</div><div id="mq" style="font-size:13px;color:#888;margin-bottom:10px;padding:8px 12px;background:#f5f5f5;border-radius:6px;line-height:1.5;max-height:80px;overflow-y:auto;"></div><textarea id="mt" placeholder="写下你的想法……" style="width:100%;min-height:80px;border:1px solid #ddd;border-radius:6px;padding:8px;font-size:14px;font-family:inherit;resize:vertical;box-sizing:border-box;"></textarea><div style="display:flex;gap:8px;justify-content:flex-end;margin-top:10px;"><button id="mc" style="border:none;background:#f0f0f0;color:#666;padding:6px 16px;border-radius:6px;cursor:pointer;font-size:13px;">取消</button><button id="ms" style="border:none;background:#2d8a6e;color:#fff;padding:6px 16px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;">保存笔记</button></div>';
+ document.body.appendChild(pu);
+ document.getElementById("mc").onclick=function(){pu.style.display="none";};
+ document.getElementById("ms").onclick=function(){var n=document.getElementById("mt").value,q=document.getElementById("mq").dataset.text||"";if(q){addHl(q,n);pu.style.display="none";document.getElementById("mt").value="";toast("✅ 笔记已保存");badge();}};
+}
+function show(x,y){mkUI();tb.style.display="flex";tb.style.left=Math.max(8,Math.min(x,window.innerWidth-180))+"px";tb.style.top=(y+12)+"px";}
+function hide(){if(tb)tb.style.display="none";sv="";sr=null;}
+function act(note){
+ var t=sv;if(!t)return;
+ if(note){var q=document.getElementById("mq");if(!q)return;q.textContent="「"+t.slice(0,100)+(t.length>100?"…」":"」");q.dataset.text=t;document.getElementById("mt").value="";var tr=tb.getBoundingClientRect();pu.style.top=Math.max(20,tr.top-320)+"px";pu.style.left=Math.max(20,Math.min(tr.left,window.innerWidth-360))+"px";pu.style.display="block";document.getElementById("mt").focus();hide();return;}
+ var hl=addHl(t,"");toast("⭐ 已标记");badge();
+ if(hl&&sr){try{var ms=wrapRange(sr,hl.id,"");for(var k=0;k<ms.length;k++){ms[k].style.background="#ffeb7a";(function(mk){setTimeout(function(){mk.style.background="#f5d742";},300);})(ms[k]);}}catch(e){toast("刷新页面可见高亮");}}
+ var s=window.getSelection();if(s)s.removeAllRanges();sv="";sr=null;hide();
+}
+document.addEventListener("contextmenu",function(e){
+ if(pu&&pu.style.display!=="none")return;
+ var s=window.getSelection();if(!s||s.isCollapsed||!s.toString().trim())return;
+ e.preventDefault();
+ try{var r=s.getRangeAt(0);sv=s.toString().trim();sr=r.cloneRange();show(e.clientX,e.clientY);}catch(er){}
+});
+document.addEventListener("mousedown",function(e){
+ if(tb&&tb.contains(e.target))return;
+ if(pu&&pu.style.display!=="none"){if(pu.contains(e.target))return;pu.style.display="none";}
+ hide();
+});
+function restore(){
+ var i=info();if(!i.n)return;
+ var list=_h.filter(function(x){return x.issue===i.n;});if(!list.length)return;
+ setTimeout(function(){list.forEach(function(h){restoreOne(h);});},300);
+}
+function wrapRange(range,id,note){
+ var sc=range.startContainer,ec=range.endContainer,so=range.startOffset,eo=range.endOffset;
+ var root=range.commonAncestorContainer;
+ if(root.nodeType===3)root=root.parentNode;
+ var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),nodes=[],n;
+ while((n=w.nextNode()))nodes.push(n);
+ var started=false,done=false,marks=[];
+ for(var i=0;i<nodes.length&&!done;i++){
+  var node=nodes[i];
+  if(node.parentNode&&(node.parentNode.className==="mh"))continue;
+  var s=0,e=node.textContent.length;
+  var hitStart=(node===sc),hitEnd=(node===ec);
+  if(hitStart&&hitEnd){
+   s=so;e=eo;started=true;done=true;
+  }else if(hitStart){
+   s=so;started=true;
+  }else if(hitEnd){
+   e=eo;done=true;
+  }
+  if(!started)continue;
+  if(e<=s)continue;
+  try{
+   var r=document.createRange();r.setStart(node,s);r.setEnd(node,e);
+   var m=document.createElement("mark");m.className="mh";m.dataset.id=id;
+   m.style.cssText="background:#f5d742;color:inherit;border-radius:2px;padding:0 2px;cursor:pointer;";
+   if(note){m.title="💡 "+note;m.style.borderBottom="2px solid #d4a017";}
+   m.onclick=function(mid,mnote){return function(ev){ev.stopPropagation();bubble(ev.target,mid,mnote);};}(id,note);
+   r.surroundContents(m);marks.push(m);
+  }catch(ex){}
+ }
+ return marks;
+}
+function restoreOne(h){
+ try{
+  var c=document.querySelector(".container")||document.body;
+  var w=document.createTreeWalker(c,NodeFilter.SHOW_TEXT),ns=[];
+  while(w.nextNode())ns.push(w.currentNode);
+  for(var i=0;i<ns.length;i++){
+   var nd=ns[i],idx=nd.textContent.indexOf(h.text);if(idx<0)continue;
+   var r=document.createRange();r.setStart(nd,idx);r.setEnd(nd,idx+h.text.length);
+   var ms=wrapRange(r,h.id,h.note);
+   return;
+  }
+ }catch(e){}
+}
+function bubble(mk,id,note){
+ var e=document.querySelector(".mp-bb");if(e)e.remove();
+ var b=document.createElement("div");b.className="mp-bb";
+ b.style.cssText="position:fixed;z-index:99998;background:#fff;border-radius:10px;padding:14px 18px;box-shadow:0 4px 24px rgba(0,0,0,.15);font-family:-apple-system,PingFang SC,sans-serif;font-size:14px;max-width:320px;border:1px solid #eee;";
+ var r=mk.getBoundingClientRect();b.style.top=(r.bottom+8)+"px";b.style.left=Math.max(8,Math.min(r.left,window.innerWidth-340))+"px";
+ var h='<div style="font-size:12px;color:#999;margin-bottom:6px;">已标记'+(note?" · 有笔记":"")+'</div>';
+ if(note)h+='<div style="color:#333;line-height:1.5;margin-bottom:10px;padding:8px 10px;background:#faf6ee;border-radius:6px;">💬 '+esc(note)+'</div>';
+ h+='<div style="display:flex;gap:6px;">';
+ if(!note)h+='<button id="bb_add" style="border:none;background:#2d8a6e;color:#fff;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;">添加笔记</button>';
+ h+='<button id="bb_del" style="border:none;background:#f5f5f5;color:#c0392b;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;">删除标记</button></div>';
+ b.innerHTML=h;document.body.appendChild(b);
+  document.getElementById("bb_del").onclick=function(){delHl(id);var all=document.querySelectorAll('.mh[data-id="'+id+'"]');for(var k=all.length-1;k>=0;k--){var mk=all[k];var p=mk.parentNode;if(p){p.replaceChild(document.createTextNode(mk.textContent),mk);}}var cont=document.querySelector(".container");if(cont)cont.normalize();b.remove();};
+ var ab=document.getElementById("bb_add");if(ab)ab.onclick=function(){
+  b.innerHTML='<div style="font-size:13px;font-weight:600;margin-bottom:8px;color:#333;">✏️ 添加笔记</div><textarea id="bb_ta" placeholder="写下你的想法……" style="width:100%;min-height:60px;border:1px solid #ddd;border-radius:6px;padding:8px;font-size:13px;font-family:inherit;resize:vertical;box-sizing:border-box;"></textarea><div style="display:flex;gap:6px;justify-content:flex-end;margin-top:8px;"><button id="bb_cancel" style="border:none;background:#f0f0f0;color:#666;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;">取消</button><button id="bb_save" style="border:none;background:#2d8a6e;color:#fff;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600;">保存</button></div>';
+  document.getElementById("bb_ta").focus();
+  document.getElementById("bb_cancel").onclick=function(){b.remove();};
+  document.getElementById("bb_save").onclick=function(){var n=document.getElementById("bb_ta").value;if(n){updHl(id,n);mk.title="💡 "+n;mk.style.borderBottom="2px solid #d4a017";toast("✅ 笔记已保存");}b.remove();};
+ };
+ var cl=function(ev){if(!b.contains(ev.target)&&ev.target!==mk){b.remove();document.removeEventListener("mousedown",cl);}};
+ setTimeout(function(){document.addEventListener("mousedown",cl);},0);
+}
+function toast(msg){
+ var t=document.createElement("div");t.textContent=msg;
+ t.style.cssText="position:fixed;bottom:40px;left:50%;transform:translateX(-50%);background:#2d2d3f;color:#fff;padding:10px 24px;border-radius:8px;font-family:-apple-system,PingFang SC,sans-serif;font-size:14px;z-index:999999;box-shadow:0 4px 20px rgba(0,0,0,.2);opacity:0;transition:opacity .3s;";
+ document.body.appendChild(t);requestAnimationFrame(function(){t.style.opacity="1";});
+ setTimeout(function(){t.style.opacity="0";setTimeout(function(){t.remove();},300);},2000);
+}
+var sd=null,ov=null;
+function mkSide(){
+ if(sd)return;
+ ov=document.createElement("div");ov.style.cssText="position:fixed;inset:0;z-index:99998;background:rgba(0,0,0,.3);display:none;";
+ sd=document.createElement("div");sd.style.cssText="position:fixed;top:0;right:0;bottom:0;width:380px;max-width:90vw;z-index:99999;background:#f8f7f4;box-shadow:-4px 0 24px rgba(0,0,0,.12);display:none;flex-direction:column;font-family:-apple-system,PingFang SC,sans-serif;transform:translateX(100%);transition:transform .25s ease;";
+ sd.innerHTML='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #e5e0d8;flex-shrink:0;"><div><strong style="font-size:16px;">📒 学习笔记本</strong><span id="sc" style="font-size:12px;color:#999;margin-left:8px;"></span></div><button id="sc_close" style="border:none;background:transparent;font-size:20px;cursor:pointer;color:#888;padding:4px 8px;border-radius:6px;">✕</button></div><div id="sb" style="flex:1;overflow-y:auto;padding:12px 16px;"></div><div style="padding:10px 16px;border-top:1px solid #e5e0d8;font-size:11px;color:#bbb;text-align:center;flex-shrink:0;">右键选中文字 → 标记或记笔记</div>';
+ document.body.appendChild(ov);document.body.appendChild(sd);
+ ov.onclick=function(){tog(false);};document.getElementById("sc_close").onclick=function(){tog(false);};
+}
+function tog(show){
+ mkSide();
+ var open=(show!==undefined?show:(sd.style.display==="none"||sd.style.transform==="translateX(100%)"));
+ if(open){sd.style.display="flex";ov.style.display="block";requestAnimationFrame(function(){sd.style.transform="translateX(0)";});renderSB();}
+ else{sd.style.transform="translateX(100%)";ov.style.display="none";setTimeout(function(){if(sd.style.transform==="translateX(100%)")sd.style.display="none";},260);}
+}
+function renderSB(){
+ var b=document.getElementById("sb");if(!b)return;
+ var hs=_h||[];document.getElementById("sc").textContent=hs.length?"("+hs.length+"条)":"(空)";
+ if(!hs.length){b.innerHTML='<div style="text-align:center;padding:60px 20px;color:#aaa;font-size:14px;">📖 还没有标记<br><span style="font-size:12px;">选中文字 → 右键 → 标记</span></div>';return;}
+ var gr={};hs.forEach(function(h){var k=h.issue||0;if(!gr[k])gr[k]={issue:k,title:h.title||("第"+k+"期"),hs:[]};gr[k].hs.push(h);});
+ var so=Object.values(gr).sort(function(a,b){return b.issue-a.issue;}),html="";
+ so.forEach(function(g){html+='<div style="margin-bottom:16px;"><div style="font-size:11px;color:#888;letter-spacing:1px;margin-bottom:6px;padding:0 4px;">第'+g.issue+"期 · "+g.title+" ("+g.hs.length+")</div>";
+ g.hs.forEach(function(h){html+='<div class="mc" data-id="'+h.id+'" style="background:#fff;border:1px solid #e5e0d8;border-radius:8px;padding:10px 12px;margin-bottom:6px;cursor:pointer;"><div style="font-size:13px;line-height:1.6;color:#3a3520;padding:4px 6px;background:#fef7e0;border-radius:4px;margin-bottom:6px;">'+esc(h.text)+'</div>';
+ if(h.note)html+='<div style="font-size:12px;color:#2a5a48;line-height:1.5;padding:6px 8px;background:#eef7f2;border-radius:4px;margin-bottom:6px;border-left:2px solid #2d8a6e;">💬 '+esc(h.note)+'</div>';
+ html+='<div style="display:flex;gap:4px;justify-content:flex-end;"><button class="mcnb" style="border:none;background:transparent;color:#888;padding:2px 8px;border-radius:4px;cursor:pointer;font-size:11px;">'+(h.note?"✏️":"💬")+'</button><button class="mcdb" style="border:none;background:transparent;color:#c0392b;padding:2px 8px;border-radius:4px;cursor:pointer;font-size:11px;">🗑️</button></div></div>';});
+ html+="</div>";});b.innerHTML=html;
+ b.querySelectorAll(".mcdb").forEach(function(btn){btn.onclick=function(){var c=btn.closest(".mc"),id=c.dataset.id;delHl(id);renderSB();var all=document.querySelectorAll('.mh[data-id="'+id+'"]');for(var k=all.length-1;k>=0;k--){var mk=all[k];var p=mk.parentNode;if(p){p.replaceChild(document.createTextNode(mk.textContent),mk);}}var cont=document.querySelector(".container");if(cont)cont.normalize();toast("已删除");};});
+ b.querySelectorAll(".mcnb").forEach(function(btn){btn.onclick=function(){var c=btn.closest(".mc"),id=c.dataset.id;var h=_h.find(function(x){return x.id===id;});if(!h)return;var n=prompt("编辑笔记：",h.note||"");if(n!==null){updHl(id,n);renderSB();var mk=document.querySelector('.mh[data-id="'+id+'"]');if(mk){if(n.trim()){mk.title="💡 "+n;mk.style.borderBottom="2px solid #d4a017";}else{mk.title="";mk.style.borderBottom="";}}toast("✅ 笔记已保存");}};});
+ b.querySelectorAll(".mc").forEach(function(c){c.onclick=function(e){if(e.target.closest("button"))return;var mk=document.querySelector('.mh[data-id="'+c.dataset.id+'"]');if(mk){mk.scrollIntoView({behavior:"smooth",block:"center"});mk.style.background="#ffeb7a";setTimeout(function(){mk.style.background="#f5d742";},1500);}};});
+}
+function badge(){var el=document.getElementById("bdg");if(el){var c=_h.length;el.textContent=c;el.style.display=c>0?"inline":"none";}}
+function setupBtn(){if(document.getElementById("fab"))return;var b=document.createElement("button");b.id="fab";b.innerHTML='📒 笔记本 <span id="bdg" style="background:#c97a5a;color:#fff;font-size:10px;padding:1px 6px;border-radius:10px;margin-left:4px;font-weight:600;display:none;">0</span>';b.style.cssText="position:fixed;bottom:24px;right:24px;z-index:99997;background:#2d2d3f;color:#f0ede8;padding:10px 18px;border-radius:24px;font-family:-apple-system,PingFang SC,sans-serif;font-size:13px;font-weight:500;box-shadow:0 4px 16px rgba(0,0,0,.15);cursor:pointer;border:1px solid rgba(255,255,255,.08);";b.onmouseover=function(){b.style.background="#3d3d55";b.style.transform="translateY(-2px)";};b.onmouseout=function(){b.style.background="#2d2d3f";b.style.transform="";};b.onclick=function(){tog();};document.body.appendChild(b);badge();}
+var _aichat=[],_aictx=null,_aikey="",_aibusy=false,_aipn=null,_aiov=null;
+function initAI(){
+try{_aikey=localStorage.getItem("munger_thinking_ai_key")||"";}catch(e){}
+try{var c=localStorage.getItem("munger_thinking_ai_chat");if(c)_aichat=JSON.parse(c);}catch(e){}
+try{var x=localStorage.getItem("munger_thinking_ai_context");if(x){_aictx=JSON.parse(x);if(Date.now()-_aictx.ts>86400000)_aictx=null;}}catch(e){}
+setupAIBtn();
+}
+function setupAIBtn(){
+if(document.getElementById("aifab"))return;
+var b=document.createElement("button");b.id="aifab";b.innerHTML='🤖 AI 助教';
+b.style.cssText="position:fixed;bottom:24px;left:24px;z-index:99994;background:#2d2d3f;color:#f0ede8;padding:10px 18px;border-radius:24px;font-family:-apple-system,PingFang SC,sans-serif;font-size:13px;font-weight:500;box-shadow:0 4px 16px rgba(0,0,0,.15);cursor:pointer;border:1px solid rgba(255,255,255,.08);";
+b.onmouseover=function(){b.style.background="#3d3d55";b.style.transform="translateY(-2px)";};
+b.onmouseout=function(){b.style.background="#2d2d3f";b.style.transform="";};
+b.onclick=function(){togAI();};
+document.body.appendChild(b);
+}
+function mkAIPanel(){
+if(_aiov)return;
+_aiov=document.createElement("div");_aiov.style.cssText="position:fixed;inset:0;z-index:99995;background:rgba(0,0,0,.3);display:none;";
+_aipn=document.createElement("div");_aipn.style.cssText="position:fixed;top:0;left:0;bottom:0;width:380px;max-width:90vw;z-index:99996;background:#f8f7f4;box-shadow:4px 0 24px rgba(0,0,0,.12);display:none;flex-direction:column;font-family:-apple-system,PingFang SC,sans-serif;transform:translateX(-100%);transition:transform .25s ease;";
+_aipn.innerHTML='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #e5e0d8;flex-shrink:0;"><div><strong style="font-size:16px;">🤖 AI 助教</strong><span id="aic" style="font-size:12px;color:#999;margin-left:8px;"></span></div><div style="display:flex;gap:6px;"><button id="ai_settings" style="border:none;background:transparent;font-size:16px;cursor:pointer;color:#999;padding:4px 8px;border-radius:6px;" title="设置API密钥">⚙️</button><button id="ai_close" style="border:none;background:transparent;font-size:20px;cursor:pointer;color:#888;padding:4px 8px;border-radius:6px;">✕</button></div></div><div id="aimsgs" style="flex:1;overflow-y:auto;padding:12px 16px;"></div><div style="padding:12px 16px;border-top:1px solid #e5e0d8;flex-shrink:0;display:flex;gap:8px;"><textarea id="ai_inp" placeholder="输入消息，Enter 发送…" style="flex:1;border:1px solid #ddd;border-radius:8px;padding:10px 12px;font-size:14px;font-family:inherit;resize:none;min-height:40px;max-height:120px;box-sizing:border-box;" rows="1"></textarea><button id="ai_send" style="border:none;background:#2d8a6e;color:#fff;padding:8px 16px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:600;align-self:flex-end;">发送</button></div>';
+document.body.appendChild(_aiov);document.body.appendChild(_aipn);
+_aiov.onclick=function(){togAI(false);};
+document.getElementById("ai_close").onclick=function(){togAI(false);};
+document.getElementById("ai_settings").onclick=function(){
+var k=prompt("DeepSeek API密钥（从 platform.deepseek.com 获取）：",_aikey);
+if(k!==null){_aikey=k.trim();try{localStorage.setItem("munger_thinking_ai_key",_aikey);}catch(e){}_aictx=null;try{localStorage.removeItem("munger_thinking_ai_context");}catch(e){}toast("✅ 密钥已保存");}
+};
+document.getElementById("ai_send").onclick=function(){doSend();};
+document.getElementById("ai_inp").onkeydown=function(e){
+if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();doSend();}
+};
+}
+function togAI(show){
+mkAIPanel();
+var open=(show!==undefined?show:(_aipn.style.display==="none"||_aipn.style.transform==="translateX(-100%)"));
+if(open){
+_aipn.style.display="flex";_aiov.style.display="block";
+requestAnimationFrame(function(){_aipn.style.transform="translateX(0)";});
+ensureContext(function(){renderChat();});
+}else{
+_aipn.style.transform="translateX(-100%)";_aiov.style.display="none";
+setTimeout(function(){if(_aipn.style.transform==="translateX(-100%)")_aipn.style.display="none";},260);
+}
+}
+function ensureContext(cb){
+if(_aictx){cb();return;}
+var issues=[];var done=0;var total=4;
+function checkDone(){done++;if(done>=total){issues.sort(function(a,b){return a.n-b.n;});_aictx={ts:Date.now(),issues:issues};try{localStorage.setItem("munger_thinking_ai_context",JSON.stringify(_aictx));}catch(e){}cb();}}
+for(var i=1;i<=total;i++){
+(function(n){
+var xhr=new XMLHttpRequest();xhr.open("GET",(n<10?"0":"")+n+".html",true);xhr.timeout=10000;
+xhr.onload=function(){if(xhr.status===200){var r=extractIssue(xhr.responseText,n);if(r)issues.push(r);}checkDone();};
+xhr.onerror=function(){checkDone();};xhr.ontimeout=function(){checkDone();};xhr.send();
+})(i);
+}
+}
+function extractIssue(html,n){
+try{var title="",model="";var tm=html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);if(tm){title=tm[1].replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();}var mm=html.match(/class="meta"[^>]*>([^<]+)/i);if(!mm)mm=html.match(/class="sub"[^>]*>([\s\S]*?)<\/p>/i);if(mm){model=mm[1].replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();}var sm=html.match(/<section[^>]*>([\s\S]*?)<hr\s+class="divider-solid/i);var text="";if(sm){text=sm[1].replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();}if(text.length>2000)text=text.slice(0,2000)+"…";return {n:n,title:title||("第"+n+"期"),model:model||"",text:text};}catch(e){return null;}
+}
+function buildSystemPrompt(){
+if(!_aictx||!_aictx.issues||!_aictx.issues.length)return "你是\"另眼相看（破茧计划）\"的AI助教。另眼相看是一套跨学科技能学习系列——击破信息茧房，看到更大的世界，每季聚焦一个学科，每期讲透该学科的一种底层思维方式。你的风格：说人话、简洁、像博学的朋友。请用中文回复。";
+var p="你是\"另眼相看（破茧计划）\"的AI助教。另眼相看是一套跨学科技能学习系列——击破信息茧房，看到更大的世界，每季聚焦一个学科，每期讲透该学科的一种底层思维方式。目前第1季是物理学。以下是各期摘要：\n\n";
+for(var i=0;i<_aictx.issues.length;i++){var iss=_aictx.issues[i];p+="第"+iss.n+"期《"+iss.title+"》—— "+iss.model+"\n"+iss.text+"\n\n";}
+var cur=info();if(cur&&cur.n)p+="用户当前正在阅读：第"+cur.n+"期《"+cur.t+"》";
+return p;
+}
+function renderChat(){
+var b=document.getElementById("aimsgs");if(!b)return;var sc=document.getElementById("aic");if(sc)sc.textContent=_aichat.length?"("+_aichat.length+"条)":"(空)";var html="";
+if(!_aichat.length&&_aictx){var greet="你好！我是另眼相看的AI助教 🤖\n\n我已经读完了目前发布的全部4期物理学内容。你可以问我：\n\n• 某个底层思维的核心概念（比如\"什么是思想实验？\"）\n• 不同思维之间的联系（比如\"思想实验和第一性原理有什么关系？\"）\n• 用这些思维解释现实问题（比如\"如何用思想实验的方法来做人生决策？\"）\n• 你正在阅读的文章里的任何问题\n\n有什么想聊的？";html+='<div class="aichat-msg aichat-assistant"><div class="lbl">AI</div><div class="bub">'+esc(greet).replace(/\n/g,"<br>")+'</div></div>';}
+for(var i=0;i<_aichat.length;i++){var m=_aichat[i];if(m.role==="system"){html+='<div class="aichat-msg aichat-sys"><div class="bub">'+esc(m.content)+'</div></div>';}else if(m.role==="user"){html+='<div class="aichat-msg aichat-user"><div class="lbl">你</div><div class="bub">'+esc(m.content).replace(/\n/g,"<br>")+'</div></div>';}else{html+='<div class="aichat-msg aichat-assistant"><div class="lbl">AI</div><div class="bub">'+esc(m.content).replace(/\n/g,"<br>")+'</div></div>';}}
+if(_aibusy){html+='<div class="aichat-loading"><span></span><span></span><span></span></div>';}b.innerHTML=html;b.scrollTop=b.scrollHeight;
+setTimeout(function(){restore();},100);
+}
+function addMsg(role,content,skipSave){_aichat.push({role:role,content:content,ts:new Date().toISOString()});if(!skipSave)saveChat();renderChat();}
+function saveChat(){if(_aichat.length>100)_aichat=_aichat.slice(-100);try{localStorage.setItem("munger_thinking_ai_chat",JSON.stringify(_aichat));}catch(e){}}
+function doSend(){
+if(_aibusy)return;var inp=document.getElementById("ai_inp"),txt=(inp.value||"").trim();if(!txt)return;
+if(!_aikey){var k=prompt("请输入你的DeepSeek API密钥（可从 platform.deepseek.com 获取）：","");if(!k||!k.trim())return;_aikey=k.trim();try{localStorage.setItem("munger_thinking_ai_key",_aikey);}catch(e){}addMsg("system","✅ 密钥已保存（仅保存在本地浏览器）",true);}
+inp.value="";inp.style.height="auto";addMsg("user",txt);_aibusy=true;renderChat();
+var msgs=[{role:"system",content:buildSystemPrompt()}];for(var i=0;i<_aichat.length;i++){var m=_aichat[i];if(m.role!=="system")msgs.push({role:m.role,content:m.content});}
+callDeepSeek(msgs,function(err,reply){_aibusy=false;if(err){addMsg("system","❌ "+err,true);}else if(reply){addMsg("assistant",reply);}else{addMsg("system","❌ 未知错误",true);}});
+}
+function callDeepSeek(messages,cb){
+var xhr=new XMLHttpRequest();xhr.open("POST","https://api.deepseek.com/v1/chat/completions",true);xhr.setRequestHeader("Content-Type","application/json");xhr.setRequestHeader("Authorization","Bearer "+_aikey);xhr.timeout=30000;
+xhr.onload=function(){if(xhr.status===200){try{var r=JSON.parse(xhr.responseText);cb(null,r.choices[0].message.content);}catch(e){cb(new Error("解析响应失败"));}}else if(xhr.status===401){cb(new Error("API密钥无效，请点击⚙️重新设置"));}else if(xhr.status===429){cb(new Error("请求过于频繁，请稍后再试"));}else if(xhr.status>=500){cb(new Error("服务异常（"+xhr.status+"），请稍后重试"));}else{cb(new Error("请求失败（"+xhr.status+"）"));}};
+xhr.onerror=function(){cb(new Error("网络连接失败，请检查网络"));};xhr.ontimeout=function(){cb(new Error("请求超时，请重试"));};
+xhr.send(JSON.stringify({model:"deepseek-chat",messages:messages,stream:false,max_tokens:2000,temperature:0.7}));
+}
+var st=document.createElement("style");st.textContent=".mh{background:#f5d742;color:inherit;border-radius:2px;padding:0 2px;cursor:pointer;}.mh:hover{background:#ffeb7a;}.mc{transition:box-shadow .15s;}.mc:hover{box-shadow:0 1px 6px rgba(0,0,0,.06);}.mc button:hover{background:#eee!important;}::selection{background:#f5d742;color:#1a1a2e;}.aichat-msg{padding:2px 0;}.aichat-msg .lbl{font-size:11px;color:#999;margin-bottom:2px;}.aichat-msg .bub{padding:10px 14px;border-radius:12px;font-size:14px;line-height:1.7;word-break:break-word;}.aichat-user .bub{background:#e8f0fe;color:#1a1a2e;margin-left:40px;}.aichat-user .lbl{text-align:right;}.aichat-assistant .bub{background:#fff;border:1px solid #e5e0d8;color:#333;margin-right:40px;}.aichat-sys .bub{background:#f5f5f5;color:#888;text-align:center;font-size:13px;padding:8px 14px;border-radius:8px;margin:0 20px;}.aichat-loading{display:flex;gap:4px;padding:8px 16px;align-items:center;}.aichat-loading span{width:6px;height:6px;border-radius:50%;background:#bbb;animation:aichat-bounce 1.4s infinite;}.aichat-loading span:nth-child(2){animation-delay:.2s;}.aichat-loading span:nth-child(3){animation-delay:.4s;}@keyframes aichat-bounce{0%,80%,100%{opacity:.3;transform:scale(.8);}40%{opacity:1;transform:scale(1);}}#ai_inp:focus{outline:none;border-color:#6b8fa0;}";
+document.head.appendChild(st);
+restore();setupBtn();initAI();
+})();
+</script>
+
+</body>
+</html>
