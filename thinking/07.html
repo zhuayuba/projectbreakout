@@ -3,24 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>另眼相看 · 第4期：思想实验</title>
+<title>另眼相看 · 经济学7：激励思维</title>
 <style>
-:root{--bg:#faf8f5;--text:#1a1a2e;--accent:#c97a5a;--accent-dark:#9a5040;--disc-color:#4a7fb5;--muted:#6b7280}
+:root{--bg:#faf8f5;--text:#1a1a2e;--accent:#c97a5a;--accent-dark:#9a5040;--disc-color:#c07a3a;--muted:#6b7280}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:"Georgia","Noto Serif SC",serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:17px}
 .hero{background:linear-gradient(135deg,#2d1320,#1f0d18,#140810);color:#f0ede8;padding:100px 24px 80px;text-align:center;position:relative;overflow:hidden}
-.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(74,127,181,0.15),transparent 60%)}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(192,122,58,0.15),transparent 60%)}
 .hero>*{position:relative;z-index:1}
 .hero-badge{display:inline-block;border:1px solid var(--accent);color:var(--accent);font-family:-apple-system,"PingFang SC",sans-serif;font-size:12px;letter-spacing:3px;padding:4px 16px;border-radius:20px;margin-bottom:16px;text-transform:uppercase}
 .hero-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:24px}
-.hero-tags span{display:inline-block;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.05);padding:3px 14px;border-radius:14px;font-size:11px;color:#999;font-family:-apple-system,"PingFang SC",sans-serif}
+.hero-tags span{display:inline-block;border:1px solid rgba(192,122,58,0.15);background:rgba(192,122,58,0.05);padding:3px 14px;border-radius:14px;font-size:11px;color:#999;font-family:-apple-system,"PingFang SC",sans-serif}
 .hero h1{font-size:clamp(32px,6vw,56px);font-weight:700;letter-spacing:2px;margin-bottom:12px}
 .hero h1 em{font-style:normal;color:var(--accent)}
 .hero .sub{font-size:clamp(16px,2.5vw,22px);color:#b8b0a0;font-family:-apple-system,"PingFang SC",sans-serif;font-weight:300;margin-bottom:8px}
 .hero .meta{font-family:-apple-system,"PingFang SC",sans-serif;font-size:13px;color:#888;letter-spacing:1px}
 .container{max-width:740px;margin:0 auto;padding:0 24px}
 .intro{margin-top:-40px;position:relative;z-index:2}
-.intro-card{background:#fff;border-radius:12px;padding:40px 36px;box-shadow:0 4px 24px rgba(0,0,0,0.06);border:1px solid #e5e0d8}
+.intro-card{background:#fff;border-radius:12px;padding:40px 36px;box-shadow:0 4px 24px rgba(192,122,58,0.06);border:1px solid #e5e0d8}
 .intro-card p{margin-bottom:16px;color:#444}.intro-card p:last-child{margin-bottom:0}
 section{padding:60px 0}
 .section-label{font-family:-apple-system,"PingFang SC",sans-serif;font-size:11px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:8px}
@@ -44,7 +44,7 @@ details .content{padding:0 24px 20px;color:#444}
 .disc-nav{background:#fff;border:1px solid #e5e0d8;border-radius:12px;padding:24px 28px;margin:0 0 20px;text-align:center}
 .disc-nav-title{font-family:-apple-system,"PingFang SC",sans-serif;font-size:13px;color:#999;letter-spacing:2px;margin-bottom:16px}
 .disc-nav-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:16px}
-.disc-chip{display:inline-flex;align-items:center;gap:4px;padding:5px 12px;border-radius:16px;font-family:-apple-system,"PingFang SC",sans-serif;font-size:12px;text-decoration:none;color:var(--disc-color);border:1px solid var(--disc-color);background:rgba(74,127,181,0.06);transition:all .15s}
+.disc-chip{display:inline-flex;align-items:center;gap:4px;padding:5px 12px;border-radius:16px;font-family:-apple-system,"PingFang SC",sans-serif;font-size:12px;text-decoration:none;color:var(--disc-color);border:1px solid var(--disc-color);background:rgba(192,122,58,0.06);transition:all .15s}
 .disc-chip:hover{background:var(--disc-color);color:#fff}
 .disc-chip.active{background:var(--disc-color);color:#fff;font-weight:600}
 .disc-chip.future{color:#ccc;border-color:#e0e0e0;background:#fafafa;cursor:default}
@@ -64,108 +64,80 @@ details .content{padding:0 24px 20px;color:#444}
 
 <header class="hero">
 <div class="hero-badge">破茧计划 · 另眼相看 · 第7期</div>
-<div class="hero-tags"><span>📐 数学 · 第1季</span><span>07/48</span></div>
-<h1>从<em>公理</em>出发，用<em>证明</em>抵达</h1>
-<p class="sub">像数学家一样思考——公理、证明与反例的力量</p>
-<p class="meta">数学 · 底层思维⑦</p>
+<div class="hero-tags"><span>📈 经济学 · 第2季</span><span>07/48</span></div>
+<h1>像经济学家一样思考——看懂<em>激励</em>就看懂了行为</h1>
+<p class="sub">像经济学家一样思考——看懂激励就看懂了行为</p>
+<p class="meta">经济学 · 底层思维③</p>
 </header>
 <div class="container">
 <div class="intro"><div class="intro-card">
-<p><strong>像数学家一样思考——不是算得快，而是能说清“凭什么”。</strong></p>
-<p>你发现没有，数学课上学的东西，大部分人一辈子都用不上二次方程。但数学思维不一样——它每天都在用。你点外卖时比较满减方案，那是逻辑推理；你看到一条新闻说“90%的人推荐”，你问“样本量多少”，那是统计思维；你跟人吵架，对方说“你凭什么这么说”，你开始摆事实讲道理——那就是证明。</p>
-<p>数学家的核心本领是：<strong>从几条谁都同意的公理出发，通过严格的逻辑推演，得到谁也反驳不了的结论。</strong>而且，只要找到一个反例，就能把一个看起来很美的理论彻底推翻。这就是证明与反例的力量。</p>
+<p><strong>像经济学家一样思考——他们有一个其他学科少有的超能力：看到任何行为，第一反应不是评判"对不对"，而是问"背后的激励是什么"。</strong></p>
+<p>为什么油价一涨，街上开大排量SUV的人就少了？不是因为大家突然环保意识觉醒，而是因为<strong>激励变了</strong>。为什么"双十一"你明明不需要那件毛衣，还是下单了？因为满300减50的激励在"推"你。为什么有些政策初衷很好，执行起来却完全走了样？因为政策设计者忽略了执行者面对的真实激励。</p>
+<p>这就是经济学家的底层思维：<strong>人是理性的，但不是完美的；人会对激励做出反应，哪怕他们自己都没意识到。</strong></p>
 </div></div>
 
 <section>
-<span class="section-label">数学 · 底层思维⑦</span>
-<h2>公理、定理与反例：数学世界的三大柱石</h2>
+<span class="section-label">经济学 · 底层思维③</span>
+<h2>激励：让世界运转的看不见的手</h2>
+<h3>🔬 学科视角：经济学家怎么看世界？</h3>
+<p>经济学家看世界的"本能"，不是算GDP，不是画供需曲线——而是<strong>在所有人类行为背后，寻找那个"激励"</strong>。</p>
+<p>这个本能有多强？强到经济学家可以用它解释从<strong>育儿到犯罪，从恋爱到战争</strong>的一切。诺贝尔经济学奖得主加里·贝克尔就干过这种事——他用经济学的激励理论分析家庭决策、歧视现象，甚至犯罪行为。当年很多人觉得他"不务正业"，但他拿了诺奖。</p>
+<p>核心逻辑非常简单：<strong>成本上升，该行为减少；收益上升，该行为增加。</strong>就这么一句话，可以解释90%的人类行为。你加班是因为加班费这个激励；你偷懒是因为没人盯着你，偷懒的"成本"很低；你垃圾分类是因为不分类会被罚款——反过来，如果小区里没人检查，你分类的动力立刻降到零。</p>
+<p><strong>经济学家不相信"道德呼吁"能改变行为，他们只相信"重新设计激励"。</strong></p>
 
-<h3>🔬 学科视角：数学家怎么看世界？</h3>
-<p>数学家面对任何一个命题，脑子里自动弹出三个问题：</p>
-<p><strong>第一，你假设了什么？</strong>——公理是什么？我们是在同一个地基上说话吗？</p>
-<p><strong>第二，你能证明它吗？</strong>——不是“我觉得”“大家都这么认为”，而是从公理出发，一步步推出来。</p>
-<p><strong>第三，有没有反例？</strong>——哪怕只有一个反例，整个命题就垮了。一个反例比一千个正例更有力。</p>
-<p>这三句话看起来简单，但数学家把它用到了极致：从欧几里得几何到非欧几何，从微积分到集合论，从密码学到人工智能——<strong>只要你在做“从假设到结论”的推理，你就在用数学思维。</strong></p>
-
-<blockquote>"数学是科学的皇后，也是仆人；她是所有真理的守护者，也是所有谬误的揭露者。"<cite>—— 埃里克·坦普尔·贝尔，数学史家</cite></blockquote>
+<blockquote>"激励是经济学的核心。要理解任何人类行为，你得先问：他们面对什么样的激励？"<cite>—— 史蒂芬·列维特，《魔鬼经济学》作者</cite></blockquote>
 
 <h3>💎 一句话记住它</h3>
-<div class="highlight-box"><div class="label">公理思维</div>
-<p><strong>任何结论的可靠性，不取决于它听起来多合理，而取决于它是否可以从公认的公理出发，经过无漏洞的逻辑推演得到。一个反例就能摧毁一座理论大厦。</strong></p></div>
+<div class="highlight-box"><div class="label">激励思维</div>
+<p><strong>任何行为的背后，都藏着一个激励结构。改变行为最有效的方式，不是喊口号，而是重新设计这个激励结构。</strong></p></div>
 
 <h3>🌙 晚间引子</h3>
-<p><strong>你有没有遇到过这种情况：你跟人争论一件事，对方说了一大堆，听起来很有道理，但你总觉得哪里不对，又说不出来？</strong></p>
-<p>数学家会告诉你：别管他说的多漂亮，先问他的“公理”是什么。他在什么假设下说话？这些假设合理吗？他的推理每一步都站得住吗？有没有反例能一击致命？</p>
-<p>比如有人说：“努力就一定成功。” 数学家会问：什么叫“成功”？什么叫“努力”？有没有人努力了但没成功？如果有，这个命题就是假的。一个反例就够了——你不需要找一百个。</p>
+<p><strong>你有没有想过，为什么你每天刷手机的时间，比计划的多出两三个小时？</strong></p>
+<p>你告诉自己"就看10分钟"，结果一抬头两个小时过去了。是你意志力太差吗？不，是<strong>激励机制在和你作对</strong>。短视频平台的设计师比你更懂激励：每15秒给你一个新鲜刺激（正激励），刷不完就自动播放下一条（零成本继续），而你要停下来却需要主动点击退出（有成本）。</p>
+<p>当你从"激励"的角度看这个问题，你就不需要责怪自己了。你需要做的是<strong>重新设计你的激励结构</strong>：比如把手机放到另一个房间（增加刷手机的成本），或者给自己设一个"刷完就奖励自己一杯好咖啡"（增加停下来的正激励）。</p>
+<p>经济学家管这叫"助推"——小小的激励设计改变，就能带来行为的大幅扭转。</p>
 
 <h3>🏛️ 生活中的应用</h3>
-<details><summary>为什么你总是被“听起来很对”的话忽悠？——逻辑漏洞的日常版本</summary><div class="content">
-<p><strong>数学思维的第一课：区分“正确”和“显得正确”。</strong></p>
-<p>你在网上看到一篇文章，标题是“为什么90后都不愿意结婚了？”。作者列了五个原因：房价高、工作忙、彩礼贵、不想将就、一个人也挺好。你看完连连点头：“对对对！”</p>
-<p>数学家会问：这五个原因，是从什么“公理”推出来的？它们的假设是什么？有没有可能，90后结婚率下降的真正原因，是“适婚年龄人口比例下降”这种简单的统计学事实？作者有没有排除这个可能性？</p>
-<p><strong>数学思维就是：不满足于“听起来对”，而是追问“凭什么说它是原因”。</strong>相关不等于因果，个例不代表普遍，一个故事不能当证据。这些都是数学和统计学教给你的防骗指南。</p>
+<details><summary>减肥为什么那么难？——激励的"时间错配"</summary><div class="content">
+<p><strong>你不是懒，你是被激励的"时间差"坑了。</strong></p>
+<p>减肥的苦（运动、节食）是<strong>现在</strong>就要承受的，但减肥的甜（瘦了、好看了、健康了）是<strong>几个月或几年后</strong>才能兑现的。经济学里这叫"时间偏好"——人对当下的激励敏感，对未来的激励迟钝。所以健身房收了你的年费，赌的就是你坚持不了——因为"今天不去"的激励（舒舒服服躺沙发）战胜了"坚持一年变瘦"的激励（太遥远了）。</p>
+<p><strong>破局方法：把未来的大激励，拆成当下的"小甜头"。</strong>比如，每运动一次，就往一个"旅行基金"里存50块。这样每次运动都有即时正反馈，而不是光靠"一年后的马甲线"吊着。</p>
 </div></details>
-<details><summary>为什么“所有天鹅都是白的”这个结论，一只黑天鹅就能推翻？——反例的力量</summary><div class="content">
-<p>在欧洲人第一次见到澳大利亚的黑天鹅之前，“所有天鹅都是白色的”是一个被公认了上千年的“真理”。直到1697年，荷兰探险家在澳大利亚西海岸看到了黑色的天鹅。</p>
-<p><strong>一个反例，摧毁了一个千年的“定理”。</strong></p>
-<p>数学家对此毫不惊讶。因为数学里，一个命题只要有一个反例，它就错了。不管之前有多少个正例——一百万次太阳从东边升起，也不能证明它“必然”从东边升起。但只要有一次它没从东边升起，就证明它“不一定”从东边升起。</p>
-<p>这个思维在生活中有多重要？你听人说“这个药对90%的患者有效”，数学家会问：那10%呢？他们有什么共同点？是不是这10%的人恰好是某种体质？有没有可能，对那90%有效，只是因为他们的病本来就会自己好？</p>
-<p><strong>反例思维，是防止以偏概全的最强武器。</strong></p>
+<details><summary>为什么"迟到罚款"反而让更多人迟到？——激励的意外后果</summary><div class="content">
+<p>这是一个经典的真实案例。以色列一家幼儿园发现总有家长迟到接孩子，于是出台政策：迟到15分钟以上罚款10美元。你猜怎么着？<strong>迟到的人反而变多了。</strong></p>
+<p>为什么？因为罚款改变了"迟到"的激励结构。之前，迟到是"内疚"的——家长觉得不好意思。罚款之后，迟到变成了"付10块钱就能买到的服务"。10美元买15分钟的自由，对很多家长来说太划算了。更糟的是，之前那些从不迟到的家长，现在觉得"反正我付得起，迟到也无所谓"。</p>
+<p><strong>设计激励的时候，一定要小心：你给的激励，可能和预设效果完全相反。</strong></p>
 </div></details>
-<details><summary>为什么“证明”比“相信”重要一万倍？——从勾股定理到法庭证据</summary><div class="content">
-<p>勾股定理：直角三角形的两条直角边的平方和等于斜边的平方。这个定理在古埃及、巴比伦、中国和印度都被独立发现过，但只有古希腊的欧几里得给出了严格的证明。</p>
-<p>为什么证明这么重要？因为“知道”和“证明”是两回事。你知道地球是圆的，这叫“相信”。但你能证明吗？麦哲伦环球航行是一种证明，月食时地球投在月球上的弧形影子也是一种证明。没有证明，你的“知道”就只是“听说”。</p>
-<p>生活中：你相信一个朋友不会背叛你。但如果你要跟他合伙开公司，你会要求签合同。合同是什么？就是一种“证明”——把双方的承诺变成可验证、可执行的条款。你相信他的为人，但合同是证明。</p>
-<p><strong>数学思维告诉你：信任是好的，但证明更可靠。</strong>不是让你怀疑一切，而是让你知道：真正靠得住的东西，是经得起推敲的。</p>
+<details><summary>如何让员工真正"卷"起来？——从"按时间付酬"到"按结果付酬"</summary><div class="content">
+<p>很多公司抱怨员工"摸鱼"。但经济学家会说：<strong>你付钱的激励结构，就是在鼓励摸鱼。</strong></p>
+<p>如果你按小时付工资，员工的激励是"在工位上坐够时间"，而不是"做有价值的事"。如果你按项目付酬，员工的激励瞬间变成了"高效完成项目"。如果你按业绩分成，员工的激励就是"做大蛋糕"。</p>
+<p>硅谷很多公司给工程师"20%自由时间"——你可以用20%的工作时间去搞自己感兴趣的项目。这听起来像是"白给钱"，但它的激励逻辑很精妙：<strong>给了员工"创新"的激励，而不是"按部就班"的激励。</strong>Gmail、谷歌地图就是这么来的。</p>
+<p>所以，<strong>不要问员工为什么不努力，而要问：你设计的激励，是在奖励努力，还是在奖励摸鱼？</strong></p>
 </div></details>
 
 <h3>🔄 反过来想</h3>
-<div class="highlight-box" style="background:linear-gradient(135deg,#f0f4ff,#dde8f8);border-color:#a0b8d8;">
-<div class="label">🚀 思考题</div>
-<p><strong>如果“从公理出发、严格证明”是数学的黄金法则，那为什么数学史上最伟大的发现之一——非欧几何——是通过“改变公理”做到的？</strong></p>
-<p style="margin-top:12px;font-size:15px;color:#2a4060;">提示：欧几里得几何的第五条公理（平行公理）看起来有点复杂，数学家们花了上千年想证明它其实可以由其他公理推出。结果呢？罗巴切夫斯基和黎曼干脆换了一条公理，创造出了全新的几何——非欧几何。这个故事告诉你：<strong>公理本身不是绝对的。你选择的假设，决定了你会看到什么样的世界。</strong></p></div>
-
-<hr class="divider-solid">
+<div class="highlight-box" style="background:linear-gradient(135deg,#f5f0f8,#e8e0f0);border-color:#b0a0d0;">
+<div class="label">反过来想</div>
+<p><strong>激励思维的陷阱：以为所有人都是"理性经济人"。</strong></p>
+<p>经济学家也经常翻车——因为他们假设人都是"理性"的，只看成本和收益。但真实世界的人有情绪、有偏见、有社会规范。比如，你给朋友帮忙，如果事后你给朋友发个红包（按"激励"逻辑，这是鼓励他下次继续帮你），朋友反而可能生气——因为你们的互动是<strong>情感关系，不是市场交易</strong>。把"市场激励"套在"社会关系"上，往往弄巧成拙。</p>
+<p><strong>所以，激励思维的正确用法是：先问"这个人看重什么？"，再设计对应的激励。不是所有人都只在乎钱。</strong></p>
+</div>
 
 <h3>🧠 给你的启示</h3>
-<p>数学思维的真正力量，不在于让你算得更快，而在于让你想得更清楚。</p>
-<p><strong>当你听到一个观点时，先问：它的“公理”是什么？</strong>——对方是在什么假设下说话的？这些假设合理吗？比如“只要努力就能成功”，它的假设是“所有人的起点一样”“成功的定义是唯一的”“努力和回报成正比”——这些假设每一条都值得质疑。</p>
-<p><strong>当你想要说服别人时，先想：我能证明它吗？</strong>——不是举例子，不是讲故事，而是给出逻辑上环环相扣的推理。如果你的论证里有“显然”“大家都知道”“这不废话吗”这种词，那很可能是你还没想清楚。</p>
-<p><strong>当你对自己的判断很自信时，记得问：有没有反例？</strong>——哪怕只有一个反例，你的判断就需要修正。这不是让你否定自己，而是让你更严谨。</p>
-<p>数学思维不是冷冰冰的，它是对“胡说八道”的最温柔的反击。它让你不轻易相信，也不轻易否定；让你能分辨“听起来对”和“实际上对”；让你在被忽悠的时候，能轻轻问一句：“你能证明吗？”</p>
-<p>就这一句，你就赢了90%的人。</p>
-
-<blockquote>"在数学中，你并不理解什么东西，你只是习惯了它们。"<cite>—— 约翰·冯·诺伊曼，数学家</cite></blockquote>
-
-<blockquote>"数学不是关于数字的，而是关于逻辑的。它是一套思考工具，用来区分什么是必然正确的，什么是仅仅看起来正确的。"<cite>—— 凯斯·德夫林，数学普及作家</cite></blockquote>
+<p><strong>激励思维不是让你变成"冷血计算器"，而是让你多一个看世界的透镜。</strong></p>
+<p>下次你遇到"为什么这个人会做这种事"的困惑时，别急着骂人，先问自己三个问题：</p>
+<ul>
+<li>他做这件事，<strong>得到了什么</strong>（收益）？</li>
+<li>他做这件事，<strong>付出了什么</strong>（成本）？</li>
+<li>如果我改变其中一个因素，他的行为会<strong>怎么变</strong>？</li>
+</ul>
+<p>这三个问题，就能帮你理解90%的人类行为。你不需要成为经济学家，你只需要学会像经济学家一样<strong>问问题</strong>。</p>
+<p>毕竟，<strong>你看懂了激励，就看懂了行为。看懂了行为，你就有了改变世界的小杠杆。</strong></p>
 </section>
-<hr class="divider-solid">
-<!-- ====== 底部学科导航 ====== -->
-<div class="disc-nav">
-  <div class="disc-nav-title">🧭 学科导航</div>
-  <div class="disc-nav-grid">
-    <span class="disc-chip"><span class="chip-icon">⚛️</span>物理学</span>
-    <span class="disc-chip"><span class="chip-icon">🧬</span>生物学</span>
-    <span class="disc-chip"><span class="chip-icon">⚗️</span>化学</span>
-    <span class="disc-chip"><span class="chip-icon">🧠</span>心理学</span>
-    <span class="disc-chip"><span class="chip-icon">📈</span>经济学</span>
-    <span class="disc-chip"><span class="chip-icon">📜</span>历史学</span>
-    <span class="disc-chip"><span class="chip-icon">👥</span>社会学</span>
-    <span class="disc-chip active"><span class="chip-icon">📐</span>数学</span>
-    <span class="disc-chip future"><span class="chip-icon">🏛️</span>哲学</span>
-    <span class="disc-chip future"><span class="chip-icon">⚙️</span>工程学</span>
-    <span class="disc-chip future"><span class="chip-icon">💻</span>计算机</span>
-    <span class="disc-chip future"><span class="chip-icon">📊</span>统计学</span>
-  </div>
-  <div class="disc-nav-season">
-    <span>数学 · 第1季</span>
-    <span class="sep">|</span>
-    <span class="active">⑦</span>
-  </div>
-</div>
-<div class="footer-back"><a href="index.html">← 返回目录</a></div>
 
-</div><!-- /container -->
+<hr class="divider-solid">
+<div class="footer-back" style="text-align:center;margin-top:8px;font-family:-apple-system,PingFang SC,sans-serif;font-size:13px;"><a href="index.html" style="color:#c97a5a;text-decoration:none;">← 返回目录</a> <span style="color:#ddd;">|</span> <a href="06.html" style="color:#c97a5a;text-decoration:none;">上一篇 ←</a> <span style="color:#ddd;">|</span> <a href="08.html" style="color:#c97a5a;text-decoration:none;font-weight:600;">下一篇 →</a></div>
+</div>
 <script>
 (function(){
 "use strict";
@@ -189,11 +161,11 @@ function updHl(id,nt){var x=_h.find(function(y){return y.id===id;});if(x){x.note
 var tb=null,pu=null,sv="",sr=null;
 function mkUI(){
  if(tb)return;
- tb=document.createElement("div");tb.id="tb";tb.style.cssText="position:fixed;z-index:99999;display:none;background:#2d2d3f;border-radius:8px;padding:4px;box-shadow:0 4px 16px rgba(0,0,0,.25);font-family:-apple-system,PingFang SC,sans-serif;gap:4px;";
+ tb=document.createElement("div");tb.id="tb";tb.style.cssText="position:fixed;z-index:99999;display:none;background:#2d2d3f;border-radius:8px;padding:4px;box-shadow:0 4px 16px rgba(192,122,58,.25);font-family:-apple-system,PingFang SC,sans-serif;gap:4px;";
  var bb=document.createElement("button");bb.textContent="⭐ 标记";bb.style.cssText="border:none;border-radius:6px;padding:6px 14px;font-size:13px;cursor:pointer;font-family:inherit;background:#f5d742;color:#1a1a2e;font-weight:600;";bb.onmouseover=function(){bb.style.background="#ffe066";};bb.onmouseout=function(){bb.style.background="#f5d742";};bb.onclick=function(){act(false);};
  var nb=document.createElement("button");nb.textContent="📝 记笔记";nb.style.cssText="border:none;border-radius:6px;padding:6px 14px;font-size:13px;cursor:pointer;font-family:inherit;background:#444;color:#eee;";nb.onmouseover=function(){nb.style.background="#555";};nb.onmouseout=function(){nb.style.background="#444";};nb.onclick=function(){act(true);};
  tb.appendChild(bb);tb.appendChild(nb);document.body.appendChild(tb);
- pu=document.createElement("div");pu.id="pu";pu.style.cssText="position:fixed;z-index:100000;display:none;background:#fff;border-radius:12px;padding:20px;box-shadow:0 8px 32px rgba(0,0,0,.2);font-family:-apple-system,PingFang SC,sans-serif;width:340px;max-width:90vw;";
+ pu=document.createElement("div");pu.id="pu";pu.style.cssText="position:fixed;z-index:100000;display:none;background:#fff;border-radius:12px;padding:20px;box-shadow:0 8px 32px rgba(192,122,58,.2);font-family:-apple-system,PingFang SC,sans-serif;width:340px;max-width:90vw;";
  pu.innerHTML='<div style="font-size:14px;font-weight:600;margin-bottom:10px;color:#333;">📝 记录灵感</div><div id="mq" style="font-size:13px;color:#888;margin-bottom:10px;padding:8px 12px;background:#f5f5f5;border-radius:6px;line-height:1.5;max-height:80px;overflow-y:auto;"></div><textarea id="mt" placeholder="写下你的想法……" style="width:100%;min-height:80px;border:1px solid #ddd;border-radius:6px;padding:8px;font-size:14px;font-family:inherit;resize:vertical;box-sizing:border-box;"></textarea><div style="display:flex;gap:8px;justify-content:flex-end;margin-top:10px;"><button id="mc" style="border:none;background:#f0f0f0;color:#666;padding:6px 16px;border-radius:6px;cursor:pointer;font-size:13px;">取消</button><button id="ms" style="border:none;background:#2d8a6e;color:#fff;padding:6px 16px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;">保存笔记</button></div>';
  document.body.appendChild(pu);
  document.getElementById("mc").onclick=function(){pu.style.display="none";};
@@ -272,7 +244,7 @@ function restoreOne(h){
 function bubble(mk,id,note){
  var e=document.querySelector(".mp-bb");if(e)e.remove();
  var b=document.createElement("div");b.className="mp-bb";
- b.style.cssText="position:fixed;z-index:99998;background:#fff;border-radius:10px;padding:14px 18px;box-shadow:0 4px 24px rgba(0,0,0,.15);font-family:-apple-system,PingFang SC,sans-serif;font-size:14px;max-width:320px;border:1px solid #eee;";
+ b.style.cssText="position:fixed;z-index:99998;background:#fff;border-radius:10px;padding:14px 18px;box-shadow:0 4px 24px rgba(192,122,58,.15);font-family:-apple-system,PingFang SC,sans-serif;font-size:14px;max-width:320px;border:1px solid #eee;";
  var r=mk.getBoundingClientRect();b.style.top=(r.bottom+8)+"px";b.style.left=Math.max(8,Math.min(r.left,window.innerWidth-340))+"px";
  var h='<div style="font-size:12px;color:#999;margin-bottom:6px;">已标记'+(note?" · 有笔记":"")+'</div>';
  if(note)h+='<div style="color:#333;line-height:1.5;margin-bottom:10px;padding:8px 10px;background:#faf6ee;border-radius:6px;">💬 '+esc(note)+'</div>';
@@ -292,15 +264,15 @@ function bubble(mk,id,note){
 }
 function toast(msg){
  var t=document.createElement("div");t.textContent=msg;
- t.style.cssText="position:fixed;bottom:40px;left:50%;transform:translateX(-50%);background:#2d2d3f;color:#fff;padding:10px 24px;border-radius:8px;font-family:-apple-system,PingFang SC,sans-serif;font-size:14px;z-index:999999;box-shadow:0 4px 20px rgba(0,0,0,.2);opacity:0;transition:opacity .3s;";
+ t.style.cssText="position:fixed;bottom:40px;left:50%;transform:translateX(-50%);background:#2d2d3f;color:#fff;padding:10px 24px;border-radius:8px;font-family:-apple-system,PingFang SC,sans-serif;font-size:14px;z-index:999999;box-shadow:0 4px 20px rgba(192,122,58,.2);opacity:0;transition:opacity .3s;";
  document.body.appendChild(t);requestAnimationFrame(function(){t.style.opacity="1";});
  setTimeout(function(){t.style.opacity="0";setTimeout(function(){t.remove();},300);},2000);
 }
 var sd=null,ov=null;
 function mkSide(){
  if(sd)return;
- ov=document.createElement("div");ov.style.cssText="position:fixed;inset:0;z-index:99998;background:rgba(0,0,0,.3);display:none;";
- sd=document.createElement("div");sd.style.cssText="position:fixed;top:0;right:0;bottom:0;width:380px;max-width:90vw;z-index:99999;background:#f8f7f4;box-shadow:-4px 0 24px rgba(0,0,0,.12);display:none;flex-direction:column;font-family:-apple-system,PingFang SC,sans-serif;transform:translateX(100%);transition:transform .25s ease;";
+ ov=document.createElement("div");ov.style.cssText="position:fixed;inset:0;z-index:99998;background:rgba(192,122,58,.3);display:none;";
+ sd=document.createElement("div");sd.style.cssText="position:fixed;top:0;right:0;bottom:0;width:380px;max-width:90vw;z-index:99999;background:#f8f7f4;box-shadow:-4px 0 24px rgba(192,122,58,.12);display:none;flex-direction:column;font-family:-apple-system,PingFang SC,sans-serif;transform:translateX(100%);transition:transform .25s ease;";
  sd.innerHTML='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #e5e0d8;flex-shrink:0;"><div><strong style="font-size:16px;">📒 学习笔记本</strong><span id="sc" style="font-size:12px;color:#999;margin-left:8px;"></span></div><button id="sc_close" style="border:none;background:transparent;font-size:20px;cursor:pointer;color:#888;padding:4px 8px;border-radius:6px;">✕</button></div><div id="sb" style="flex:1;overflow-y:auto;padding:12px 16px;"></div><div style="padding:10px 16px;border-top:1px solid #e5e0d8;font-size:11px;color:#bbb;text-align:center;flex-shrink:0;">右键选中文字 → 标记或记笔记</div>';
  document.body.appendChild(ov);document.body.appendChild(sd);
  ov.onclick=function(){tog(false);};document.getElementById("sc_close").onclick=function(){tog(false);};
@@ -327,7 +299,7 @@ function renderSB(){
  b.querySelectorAll(".mc").forEach(function(c){c.onclick=function(e){if(e.target.closest("button"))return;var mk=document.querySelector('.mh[data-id="'+c.dataset.id+'"]');if(mk){mk.scrollIntoView({behavior:"smooth",block:"center"});mk.style.background="#ffeb7a";setTimeout(function(){mk.style.background="#f5d742";},1500);}};});
 }
 function badge(){var el=document.getElementById("bdg");if(el){var c=_h.length;el.textContent=c;el.style.display=c>0?"inline":"none";}}
-function setupBtn(){if(document.getElementById("fab"))return;var b=document.createElement("button");b.id="fab";b.innerHTML='📒 笔记本 <span id="bdg" style="background:#c97a5a;color:#fff;font-size:10px;padding:1px 6px;border-radius:10px;margin-left:4px;font-weight:600;display:none;">0</span>';b.style.cssText="position:fixed;bottom:24px;right:24px;z-index:99997;background:#2d2d3f;color:#f0ede8;padding:10px 18px;border-radius:24px;font-family:-apple-system,PingFang SC,sans-serif;font-size:13px;font-weight:500;box-shadow:0 4px 16px rgba(0,0,0,.15);cursor:pointer;border:1px solid rgba(255,255,255,.08);";b.onmouseover=function(){b.style.background="#3d3d55";b.style.transform="translateY(-2px)";};b.onmouseout=function(){b.style.background="#2d2d3f";b.style.transform="";};b.onclick=function(){tog();};document.body.appendChild(b);badge();}
+function setupBtn(){if(document.getElementById("fab"))return;var b=document.createElement("button");b.id="fab";b.innerHTML='📒 笔记本 <span id="bdg" style="background:#c97a5a;color:#fff;font-size:10px;padding:1px 6px;border-radius:10px;margin-left:4px;font-weight:600;display:none;">0</span>';b.style.cssText="position:fixed;bottom:24px;right:24px;z-index:99997;background:#2d2d3f;color:#f0ede8;padding:10px 18px;border-radius:24px;font-family:-apple-system,PingFang SC,sans-serif;font-size:13px;font-weight:500;box-shadow:0 4px 16px rgba(192,122,58,.15);cursor:pointer;border:1px solid rgba(192,122,58,.08);";b.onmouseover=function(){b.style.background="#3d3d55";b.style.transform="translateY(-2px)";};b.onmouseout=function(){b.style.background="#2d2d3f";b.style.transform="";};b.onclick=function(){tog();};document.body.appendChild(b);badge();}
 var _aichat=[],_aictx=null,_aikey="",_aibusy=false,_aipn=null,_aiov=null;
 function initAI(){
 try{_aikey=localStorage.getItem("munger_thinking_ai_key")||"";}catch(e){}
@@ -338,7 +310,7 @@ setupAIBtn();
 function setupAIBtn(){
 if(document.getElementById("aifab"))return;
 var b=document.createElement("button");b.id="aifab";b.innerHTML='🤖 AI 助教';
-b.style.cssText="position:fixed;bottom:24px;left:24px;z-index:99994;background:#2d2d3f;color:#f0ede8;padding:10px 18px;border-radius:24px;font-family:-apple-system,PingFang SC,sans-serif;font-size:13px;font-weight:500;box-shadow:0 4px 16px rgba(0,0,0,.15);cursor:pointer;border:1px solid rgba(255,255,255,.08);";
+b.style.cssText="position:fixed;bottom:24px;left:24px;z-index:99994;background:#2d2d3f;color:#f0ede8;padding:10px 18px;border-radius:24px;font-family:-apple-system,PingFang SC,sans-serif;font-size:13px;font-weight:500;box-shadow:0 4px 16px rgba(192,122,58,.15);cursor:pointer;border:1px solid rgba(192,122,58,.08);";
 b.onmouseover=function(){b.style.background="#3d3d55";b.style.transform="translateY(-2px)";};
 b.onmouseout=function(){b.style.background="#2d2d3f";b.style.transform="";};
 b.onclick=function(){togAI();};
@@ -346,8 +318,8 @@ document.body.appendChild(b);
 }
 function mkAIPanel(){
 if(_aiov)return;
-_aiov=document.createElement("div");_aiov.style.cssText="position:fixed;inset:0;z-index:99995;background:rgba(0,0,0,.3);display:none;";
-_aipn=document.createElement("div");_aipn.style.cssText="position:fixed;top:0;left:0;bottom:0;width:380px;max-width:90vw;z-index:99996;background:#f8f7f4;box-shadow:4px 0 24px rgba(0,0,0,.12);display:none;flex-direction:column;font-family:-apple-system,PingFang SC,sans-serif;transform:translateX(-100%);transition:transform .25s ease;";
+_aiov=document.createElement("div");_aiov.style.cssText="position:fixed;inset:0;z-index:99995;background:rgba(192,122,58,.3);display:none;";
+_aipn=document.createElement("div");_aipn.style.cssText="position:fixed;top:0;left:0;bottom:0;width:380px;max-width:90vw;z-index:99996;background:#f8f7f4;box-shadow:4px 0 24px rgba(192,122,58,.12);display:none;flex-direction:column;font-family:-apple-system,PingFang SC,sans-serif;transform:translateX(-100%);transition:transform .25s ease;";
 _aipn.innerHTML='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #e5e0d8;flex-shrink:0;"><div><strong style="font-size:16px;">🤖 AI 助教</strong><span id="aic" style="font-size:12px;color:#999;margin-left:8px;"></span></div><div style="display:flex;gap:6px;"><button id="ai_settings" style="border:none;background:transparent;font-size:16px;cursor:pointer;color:#999;padding:4px 8px;border-radius:6px;" title="设置API密钥">⚙️</button><button id="ai_close" style="border:none;background:transparent;font-size:20px;cursor:pointer;color:#888;padding:4px 8px;border-radius:6px;">✕</button></div></div><div id="aimsgs" style="flex:1;overflow-y:auto;padding:12px 16px;"></div><div style="padding:12px 16px;border-top:1px solid #e5e0d8;flex-shrink:0;display:flex;gap:8px;"><textarea id="ai_inp" placeholder="输入消息，Enter 发送…" style="flex:1;border:1px solid #ddd;border-radius:8px;padding:10px 12px;font-size:14px;font-family:inherit;resize:none;min-height:40px;max-height:120px;box-sizing:border-box;" rows="1"></textarea><button id="ai_send" style="border:none;background:#2d8a6e;color:#fff;padding:8px 16px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:600;align-self:flex-end;">发送</button></div>';
 document.body.appendChild(_aiov);document.body.appendChild(_aipn);
 _aiov.onclick=function(){togAI(false);};
@@ -417,7 +389,7 @@ xhr.onload=function(){if(xhr.status===200){try{var r=JSON.parse(xhr.responseText
 xhr.onerror=function(){cb(new Error("网络连接失败，请检查网络"));};xhr.ontimeout=function(){cb(new Error("请求超时，请重试"));};
 xhr.send(JSON.stringify({model:"deepseek-chat",messages:messages,stream:false,max_tokens:2000,temperature:0.7}));
 }
-var st=document.createElement("style");st.textContent=".mh{background:#f5d742;color:inherit;border-radius:2px;padding:0 2px;cursor:pointer;}.mh:hover{background:#ffeb7a;}.mc{transition:box-shadow .15s;}.mc:hover{box-shadow:0 1px 6px rgba(0,0,0,.06);}.mc button:hover{background:#eee!important;}::selection{background:#f5d742;color:#1a1a2e;}.aichat-msg{padding:2px 0;}.aichat-msg .lbl{font-size:11px;color:#999;margin-bottom:2px;}.aichat-msg .bub{padding:10px 14px;border-radius:12px;font-size:14px;line-height:1.7;word-break:break-word;}.aichat-user .bub{background:#e8f0fe;color:#1a1a2e;margin-left:40px;}.aichat-user .lbl{text-align:right;}.aichat-assistant .bub{background:#fff;border:1px solid #e5e0d8;color:#333;margin-right:40px;}.aichat-sys .bub{background:#f5f5f5;color:#888;text-align:center;font-size:13px;padding:8px 14px;border-radius:8px;margin:0 20px;}.aichat-loading{display:flex;gap:4px;padding:8px 16px;align-items:center;}.aichat-loading span{width:6px;height:6px;border-radius:50%;background:#bbb;animation:aichat-bounce 1.4s infinite;}.aichat-loading span:nth-child(2){animation-delay:.2s;}.aichat-loading span:nth-child(3){animation-delay:.4s;}@keyframes aichat-bounce{0%,80%,100%{opacity:.3;transform:scale(.8);}40%{opacity:1;transform:scale(1);}}#ai_inp:focus{outline:none;border-color:#6b8fa0;}";
+var st=document.createElement("style");st.textContent=".mh{background:#f5d742;color:inherit;border-radius:2px;padding:0 2px;cursor:pointer;}.mh:hover{background:#ffeb7a;}.mc{transition:box-shadow .15s;}.mc:hover{box-shadow:0 1px 6px rgba(192,122,58,.06);}.mc button:hover{background:#eee!important;}::selection{background:#f5d742;color:#1a1a2e;}.aichat-msg{padding:2px 0;}.aichat-msg .lbl{font-size:11px;color:#999;margin-bottom:2px;}.aichat-msg .bub{padding:10px 14px;border-radius:12px;font-size:14px;line-height:1.7;word-break:break-word;}.aichat-user .bub{background:#e8f0fe;color:#1a1a2e;margin-left:40px;}.aichat-user .lbl{text-align:right;}.aichat-assistant .bub{background:#fff;border:1px solid #e5e0d8;color:#333;margin-right:40px;}.aichat-sys .bub{background:#f5f5f5;color:#888;text-align:center;font-size:13px;padding:8px 14px;border-radius:8px;margin:0 20px;}.aichat-loading{display:flex;gap:4px;padding:8px 16px;align-items:center;}.aichat-loading span{width:6px;height:6px;border-radius:50%;background:#bbb;animation:aichat-bounce 1.4s infinite;}.aichat-loading span:nth-child(2){animation-delay:.2s;}.aichat-loading span:nth-child(3){animation-delay:.4s;}@keyframes aichat-bounce{0%,80%,100%{opacity:.3;transform:scale(.8);}40%{opacity:1;transform:scale(1);}}#ai_inp:focus{outline:none;border-color:#6b8fa0;}";
 document.head.appendChild(st);
 restore();setupBtn();initAI();
 })();
