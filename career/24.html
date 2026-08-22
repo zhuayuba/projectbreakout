@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>职人手艺 · 空中交通管制员</title>
+<style>
+:root{--bg:#faf8f5;--text:#1a1a2e;--accent:#e8924c;--accent-dark:#c8772e;--muted:#888}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Georgia","Noto Serif SC",serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:17px}
+.hero{background:linear-gradient(135deg,#1a1d2e,#1a2744,#1a3856);color:#f0ede8;padding:100px 24px 80px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(232,146,76,0.12),transparent 60%)}
+.hero>*{position:relative;z-index:1}
+.hero-badge{display:inline-block;border:1px solid var(--accent);color:var(--accent);font-family:-apple-system,"PingFang SC",sans-serif;font-size:12px;letter-spacing:3px;padding:4px 16px;border-radius:20px;margin-bottom:32px;text-transform:uppercase}
+.hero h1{font-size:clamp(32px,6vw,56px);font-weight:700;letter-spacing:2px;margin-bottom:12px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .sub{font-size:clamp(16px,2.5vw,22px);color:#b8b0a0;font-family:-apple-system,"PingFang SC",sans-serif;font-weight:300;margin-bottom:8px}
+.hero .meta{font-family:-apple-system,"PingFang SC",sans-serif;font-size:13px;color:#888;letter-spacing:1px;margin-top:12px}
+.container{max-width:740px;margin:0 auto;padding:0 24px}
+.intro{margin-top:-40px;position:relative;z-index:2}
+.intro-card{background:#fff;border-radius:12px;padding:40px 36px;box-shadow:0 4px 24px rgba(0,0,0,0.06);border:1px solid #e5e0d8}
+.intro-card p{margin-bottom:16px;color:#444}.intro-card p:last-child{margin-bottom:0}
+section{padding:48px 0}
+.section-label{font-family:-apple-system,"PingFang SC",sans-serif;font-size:11px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;margin-bottom:20px;line-height:1.4;color:#1a1a2e}
+h3{font-size:19px;font-weight:600;margin:32px 0 12px;color:#1a1a2e}
+p{margin-bottom:16px;color:#444}
+.story-box{background:#fff;border:1px solid #e5e0d8;border-radius:10px;padding:24px 28px;margin:20px 0}
+.story-box .scene{font-size:11px;letter-spacing:2px;color:var(--accent);font-family:-apple-system,"PingFang SC",sans-serif;margin-bottom:8px;text-transform:uppercase}
+.story-box p{color:#444;margin-bottom:10px}.story-box p:last-child{margin-bottom:0}
+.highlight-box{background:linear-gradient(135deg,#fef6ee,#faf0e2);border:1px solid #e8d4b8;border-radius:10px;padding:28px 32px;margin:28px 0}
+.highlight-box .label{font-family:-apple-system,"PingFang SC",sans-serif;font-size:12px;letter-spacing:2px;color:var(--accent-dark);margin-bottom:8px}
+.highlight-box p{margin-bottom:0;color:#5a3a1a}
+.skill-card{background:#fff;border:1px solid #e5e0d8;border-radius:10px;padding:24px 28px;margin:16px 0}
+.skill-card .rank{font-family:-apple-system,"PingFang SC",sans-serif;font-size:11px;letter-spacing:2px;color:var(--accent);margin-bottom:6px}
+.skill-card h4{font-size:17px;font-weight:700;margin-bottom:8px;color:#1a1a2e}
+.skill-card p{color:#555;margin-bottom:0}
+blockquote{background:#f3f0ea;border-left:4px solid var(--accent);padding:20px 24px;margin:24px 0;border-radius:0 8px 8px 0;font-style:italic;color:#555}
+blockquote cite{display:block;margin-top:8px;font-size:14px;font-style:normal;color:var(--muted)}
+.divider-solid{border:0;height:1px;background:linear-gradient(to right,transparent,#e5e0d8,transparent);margin:40px 0}
+.next-teaser{background:#f3f0ea;border:1px solid #e5e0d8;border-radius:10px;padding:24px 28px;margin:28px 0;text-align:center}
+.next-teaser .label{font-family:-apple-system,"PingFang SC",sans-serif;font-size:11px;letter-spacing:2px;color:var(--muted);margin-bottom:6px}
+.next-teaser h4{font-size:17px;font-weight:700;color:#1a1a2e;margin-bottom:4px}
+.next-teaser p{font-size:14px;color:#888;margin-bottom:0}
+footer{text-align:center;padding:60px 24px;color:#999;font-size:14px;font-family:-apple-system,"PingFang SC",sans-serif}
+@media(max-width:600px){body{font-size:16px}.hero{padding:60px 20px 50px}.intro-card{padding:28px 20px}section{padding:36px 0}.story-box,.skill-card,.highlight-box{padding:18px 20px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+<div class="hero-badge">破茧计划 · 职人手艺 · 空中交通管制员——同时盯着几十个光点，错一次就是一场空难</div>
+<h1><em>在"不能出错"的约束里</em>，学会与不确定性共处</h1>
+<p class="sub">空中交通管制员的核心能力：在信息过载、时间压力、不可逆风险的三重挤压下，建立一套"分级决策"系统，让每一次判断都有据可依</p>
+<span class="job-name">空中交通管制员</span>
+<p class="hook">你坐飞机时，不会注意到他们。他们坐在塔台或雷达屏幕前，同时盯着几十个光点，每个光点背后是几百条人命。他们说的每一句话，都可能决定两架飞机之间的距离是安全间隔还是灾难。这行最难的，不是"看屏幕"，而是在信息永远不完整、时间永远不够用的情况下，做出"当下最优"的判断。</p>
+<p class="meta">🛫 空中交通管制员 · 实时决策 · 高压环境 · 信息筛选</p>
+</header>
+
+<div class="container">
+<div class="intro"><div class="intro-card">
+<p><strong>空中交通管制员，大概是民航系统里最"隐形"的关键角色。</strong></p>
+<p>飞行员是看得见的英雄，空乘是看得见的服务。但管制员——他们坐在不见天日的房间里，盯着雷达屏幕，用无线电指挥每一架飞机的起降、巡航、避让。你每次平安落地，都有他们的一份功劳，但你永远不会见到他们。</p>
+<p>很多人以为管制员的工作就是"看着屏幕喊话"——像游戏里那样轻松。但真正的管制员听到这种话，只会摇头：<strong>"你盯的是屏幕上的光点，我盯的是几百条人命。光点不会告诉你它下一步要干嘛，你得替它想好。"</strong></p>
+<p>他们的大脑里有一套"实时决策系统"。我们把它拆开，看看里面到底装了什么东西。</p>
+</div></div>
+
+<section>
+<span class="section-label">Part 1</span>
+<h2>早上六点，雷达屏幕前的"无声战场"</h2>
+
+<div class="story-box"><div class="scene">📅 案例：一个普通的早高峰</div>
+<p>老周今年42岁，干管制这行快20年了。他通常在早上五点半到岗——不是因为他喜欢早起，而是因为<strong>早高峰的航班密度，需要管制员提前进入状态。</strong>六点整，他坐在雷达屏幕前，戴上耳机，深吸一口气。</p>
+<p>屏幕上，几十个光点正在移动。每个光点旁边，标着航班号、高度、速度。老周的任务，是确保这些光点之间，始终保持着安全的距离——纵向、横向、垂直方向，任何一个维度都不能突破安全底线。</p>
+<p>他开口了，声音平稳，没有一丝情绪："东方241，下降到高度9000，航向270。"对方复述一遍，他确认，然后立刻转向下一个航班。整个过程不到十秒。一个早高峰下来，他要发出几百条这样的指令。</p>
+<p>"有人问我，每天盯着屏幕，是不是很无聊？我说不是。恰恰相反，你永远不知道下一秒会发生什么——可能一架飞机要复飞，可能一架飞机要备降，可能天气突变。你得随时准备应对'意外'。"</p>
+</div>
+
+<h3>一天的真实面貌</h3>
+<p>空中交通管制员的一天，不是"朝九晚五"，而是"跟着航班走"。</p>
+<p><strong>班次：</strong>管制员实行轮班制，有早班、中班、夜班。夜班是最熬人的——凌晨的航班虽然少，但人的生理机能处于低谷，注意力容易下降，而出错的后果又同样严重。</p>
+<p><strong>工作内容：</strong>不是"看屏幕"那么简单。管制员要同时处理多个航班——指挥起飞、指挥降落、调配航路、处理特情。每一个指令，都要考虑高度、速度、航向、天气、燃油、机型性能等多个因素。一个决策，往往要在几秒内做出。</p>
+<p><strong>环境：</strong>管制室通常没有窗户，灯光恒定，温度恒定——一切都是为了让你"感觉不到时间流逝"，专注在屏幕上。但长时间盯着屏幕，眼睛和精神的疲劳是外人难以想象的。</p>
+<p><strong>心理状态：</strong>整个值班过程中，神经始终紧绷。不是每时每刻都有紧急情况，但你必须每时每刻准备好应对紧急情况。老周说，干这行的人，普遍睡眠不好——即使下班了，脑子里还在"过"当天的工作。</p>
+</div>
+</section>
+
+<section>
+<span class="section-label">Part 2</span>
+<h2>"我第一次独立指挥，手心全是汗"</h2>
+
+<div class="story-box"><div class="scene">😱 案例：小刘的第一次</div>
+<p>小刘是两年前入行的，跟着老周当学徒。第一次独立放单（独立指挥），是在一个工作日的下午——不是高峰时段，但航班量依然不小。</p>
+<p>他负责机场塔台，指挥飞机起降。耳机里传来机长的声音："塔台，国航123，五边进近，请求落地。"小刘的脑子"嗡"了一下——他明明在模拟机里练过无数次这个场景，但真到了实机上，感觉完全不一样。</p>
+<p>他开口了，声音有点发紧："国航123，跑道36L，可以落地。"对方复述，他确认。然后，下一架飞机又来了。他手忙脚乱地处理完三架飞机，发现额头全是汗，后背也湿了。</p>
+<p>老周在旁边看着，没说话。等高峰期过去，他才说了一句话："你刚才有三秒钟的犹豫。犹豫本身没错，但你要知道，在这三秒里，飞机是在往前飞的。你犹豫的同时，它已经飞过了几百米。"</p>
+</div>
+
+<h3>新人必踩的三个大坑</h3>
+<p><strong>第一个坑：把"模拟训练"当成"真实操作"。</strong>很多新人在模拟机上表现很好，但一到实机就"卡壳"。因为模拟机里，你知道"这只是一个练习"，错了可以重来；但实机上，你知道"这是真的"，错了不可挽回。这种心理压力，会直接影响判断力。</p>
+<p><strong>第二个坑：试图"记住一切"。</strong>新手往往想把所有信息都记在脑子里——所有航班的高度、速度、航向、目的地。结果信息太多，反而什么都记不住。老周说，<strong>管制员不是"记信息"的，是"筛信息"的。</strong>你要记住的，不是所有信息，而是"当前最重要的那几个信息"。</p>
+<p><strong>第三个坑：把"完成指令"当成"完成任务"。</strong>新手以为，把指令发出去了，任务就完成了。但老周说，指令发出去只是开始——你要持续监控，确认对方执行了，确认执行后没有新的冲突。指令发出去了，但责任还在你身上。</p>
+</div>
+</section>
+
+<section>
+<span class="section-label">Part 3</span>
+<h2>老手的"雷达眼"与"平静嗓"</h2>
+
+<div class="highlight-box"><div class="label">🐾 老手的肌肉记忆</div>
+<p>老周在屏幕前坐了近20年。他不需要刻意去"看"屏幕——他的眼睛会自动扫描关键区域，自动忽略无关信息。那种"雷达眼"，不是天生的，而是近20年、每天盯着屏幕练出来的。</p></div>
+
+<div class="story-box"><div class="scene">👂 案例：听声辨机</div>
+<p>有一次，老周正在指挥一个繁忙的进近序列，耳机里突然传来一个陌生的声音——不是他辖区内的航班，是隔壁管制区的一架飞机，偏航了。</p>
+<p>新人小刘没反应过来——这个声音不在他的"预期列表"里。但老周几乎在同一秒就捕捉到了异常，立刻联系隔壁管制区："你辖区一架飞机偏航了，航向大约270，高度9000，请核实。"隔壁管制区一查，果然有一架飞机因为机械故障偏航了。</p>
+<p>小刘后来问他："你怎么知道那个声音不是我们辖区的？"老周说："我听了20年的无线电。每个辖区的声音特征、每架飞机的呼号习惯，我都熟悉。出现一个陌生的声音，立刻就能感觉到不对劲。这不是什么超能力，就是听多了。"</p>
+</div>
+
+<div class="story-box"><div class="scene">👀 案例：一眼看出冲突</div>
+<p>老周最让同行佩服的能力是"预判冲突"。有一次，他盯着屏幕看了几秒，突然对旁边的新人说："你看，这两架飞机，如果保持现在的航向和速度，三分钟后会在那个交叉点相遇，垂直间隔不够。"新人盯着屏幕看了半天，说："我看不出来……"老周说："你现在看不出来，是因为你只看到了'现在'。你要学会在脑子里'快进'——想象三分钟、五分钟之后，这些光点会移动到什么位置。"</p>
+<p>新人这才意识到：<strong>管制员不是在看"现在"，而是在看"未来"。</strong></p>
+</div>
+
+<div class="story-box"><div class="scene">✍️ 案例：三秒平静</div>
+<p>老周有一个习惯——每次遇到突发情况，他都会先深呼吸一次，再开口说话。这个动作只需要三秒，但效果显著：他的声音永远不会因为紧张而变调，机长听到的始终是平稳、清晰的指令。</p>
+<p>"机长也是人，他也会紧张。如果我的声音听起来慌了，他只会更慌。我的声音，就是定心丸。"</p>
+</div>
+</section>
+
+<section>
+<span class="section-label">Part 4</span>
+<h2>这行最值钱的，不是眼力</h2>
+
+<div class="highlight-box"><div class="label">🧠 底层思维模型（可迁移）</div>
+<p>老周没学过"思维模型"这个词，但他脑子里装着一套"实时决策系统"。我们把它拆开，发现这些模型放在任何"高压、高信息量、不可逆"的工作里都特别好使：</p></div>
+
+<h3>模型一：预期管理 —— "永远在脑海里预演未来三分钟"</h3>
+<p>老周看屏幕，不是"看现在"，而是"看未来"。他会在脑子里不断预演：如果这两架飞机保持现在的状态，三分钟后会发生什么？如果那架飞机减速，五分钟后会怎样？他永远在脑海里"快进"时间，提前发现潜在的冲突点。</p>
+<p>这个思维的本质是：<strong>不要被动应对"已经发生的事"，而要主动预判"将要发生的事"。</strong></p>
+<div class="highlight-box" style="border-left: 3px solid #e8924c; padding: 12px; background: #fff9f0;">
+<p><strong>迁移启发：</strong>开会前，先在脑子里预演一遍：如果对方提出这个反对意见，我怎么回应？如果项目延期，我的备选方案是什么？写代码前，先想清楚：如果这个函数被并发调用，会出什么问题？"预演未来"能让你从"救火队员"变成"防火队员"。</p>
+</div>
+
+<h3>模型二：分级决策 —— "把注意力给最危险的事"</h3>
+<p>老周面对几十个光点，不可能对每一个都投入同样的注意力。他的做法是"分级"——把航班分成高关注、中等关注、低关注三个等级。高关注的是正在起降、正在穿越高度层、天气恶劣区域的航班；低关注的是在航路上平稳巡航、没有冲突的航班。</p>
+<p>他把80%的注意力，放在那20%的高关注航班上。剩下的，用余光扫着就行。</p>
+<div class="highlight-box" style="border-left: 3px solid #e8924c; padding: 12px; background: #fff9f0;">
+<p><strong>迁移启发：</strong>你的工作里，哪些是"高关注"任务——做错了后果严重、时间紧迫、信息不完整？把最好的精力留给它们。剩下的常规任务，用"自动化"或"低功耗模式"处理。别把注意力平均分配，那是最大的浪费。</p>
+</div>
+
+<h3>模型三：复述确认 —— "关键信息，必须原样传回来"</h3>
+<p>老周发完指令，一定会要求对方复述一遍。机长说"东方241，下降到高度9000"，老周确认"正确"，这次沟通才算完成。这不是形式主义——<strong>在嘈杂的无线电环境里，在双方都可能疲劳的状态下，"复述"是唯一能确认"信息没有失真"的方法。</strong></p>
+<p>老周说，他见过太多"我以为我说了""我以为他听到了"的事故。复述，就是给"我以为"画上句号。</p>
+<div class="highlight-box" style="border-left: 3px solid #e8924c; padding: 12px; background: #fff9f0;">
+<p><strong>迁移启发：</strong>重要信息传达后，让对方复述一遍——不是问"你明白了吗"（对方大概率会说"明白了"），而是"你说一遍，我听听"。邮件里确认关键时间节点，微信里让对方回一个"收到，周五下午三点"。这个动作，能消灭大部分"沟通事故"。</p>
+</div>
+</section>
+
+<section>
+<span class="section-label">Part 5</span>
+<h2>你能从这行学到什么</h2>
+
+<h3>你开会、带项目、做决策——但你跟老周做的事，本质一样</h3>
+<p>你可能觉得空中交通管制员离你很远。但你仔细想想，老周每天在做的事，跟你其实很像：</p>
+
+<p><strong>第一，在"信息过载"里筛选关键信息。</strong>老周面对几十个光点，你要面对几十封邮件、十几个群消息、无数个待办事项。老周的"分级决策"告诉你：不是所有信息都值得同样的注意力。把最好的精力，留给最重要的事。</p>
+
+<p><strong>第二，在"时间压力"下保持判断力。</strong>老周必须在几秒内做出决策，你也经常面临"今天就要""马上给答复"的 Deadline。老周的"预演未来"告诉你：提前在脑子里"快进"一遍，到了真正决策的时候，你就不会慌——因为你已经"见过了"。</p>
+
+<p><strong>第三，也是最重要的——学会"为不可见的结果负责"。</strong>老周指挥的航班，落地后乘客不会知道是谁指挥的。但他知道，每一次安全落地的背后，都有他的一份判断。你做的工作，很多结果也是"不可见"的——你协调的会议、你做的决策、你发的邮件，都很难说清"如果当时换一种做法会怎样"。但老周的"复述确认"提醒你：即使结果不可见，过程也要经得起推敲——因为安全，从来不是靠运气，而是靠每一步都确认过的流程。</p>
+
+<blockquote>"飞机落地了，乘客下机，没人知道我是谁。但我知道，这架飞机安全落地，有我的一份功劳。这份功劳没人看得见，但我知道它在。"<cite>—— 老周</cite></blockquote>
+
+<p>你做完一个项目、发完一封邮件、做完一个决策，也没人知道你花了多少心思。但你知道——那个项目顺利上线了，那封邮件没有产生误解，那个决策没有带来坏结果。它们，就是你的"航班"。</p>
+
+<hr class="divider-solid">
+
+<h2>一句话总结这个职业</h2>
+<div class="highlight-box">
+<p><strong>空中交通管制员不是"盯着屏幕喊话的人"，而是"在信息过载、时间压力、不可逆风险的三重约束下，用一套分级决策系统，做出当下最优判断"的人。</strong></p>
+<p style="margin-top:12px;font-size:15px;color:#8a6a4a;">每一次指挥都是一次"实时决策"：预演未来 → 分级分配注意力 → 发出指令 → 复述确认 → 持续监控。</p>
+</div>
+
+<hr class="divider-solid">
+<footer>
+<p>破茧计划 · 职人手艺 · 第24期 · 空中交通管制员</p>
+<nav style="margin-top:12px;display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap;">
+<a href="index.html" style="color:#e8924c;text-decoration:none;font-size:14px;">← 返回目录</a>
+<span style="color:#ddd;">|</span>
+<span style="color:#aaa;font-size:14px;">导航占位</span>
+</nav>
+</footer>
+</div>
+<script>
+(function(){
+"use strict";
+var _h=[];
+try{var r=localStorage.getItem("careerlab_backup");if(r)_h=JSON.parse(r);}catch(e){}
+function _s(){try{localStorage.setItem("careerlab_backup",JSON.stringify(_h));}catch(e){}}
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function info(){
+ var b=document.querySelector(".hero-badge");if(!b)return{n:0};
+ var fn=(window.location.pathname.match(/(\d+)\.html/)||[])[1];var m=fn?[fn,fn]:null;if(!m){var t=b.textContent;m=t.match(/(\d+)/);}
+ if(!m){var cn={"一":1,"二":2,"三":3,"四":4,"五":5,"六":6,"七":7,"八":8,"九":9,"十":10};var x=t.match(/[一二三四五六七八九十]/);if(x)m=[x[0],cn[x[0]]||0];}
+ return{n:m?parseInt(m[1]):0,t:(document.querySelector(".hero h1")?.textContent||""),job:(document.querySelector(".hero .meta")?.textContent||"")};
+}
+function addHl(tx,nt){
+ var i=info();if(!i.n)return null;
+ var o={id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),issue:i.n,title:i.t,job:i.job,text:tx.trim(),note:(nt||"").trim(),ts:new Date().toISOString()};
+ _h.push(o);_s();return o;
+}
+function delHl(id){_h=_h.filter(function(x){return x.id!==id;});_s();}
+function updHl(id,nt){var x=_h.find(function(y){return y.id===id;});if(x){x.note=nt.trim();x.upd=new Date().toISOString();_s();}}
+
+var tb=null,pu=null,sv="",sr=null;
+
+function mkUI(){
+ if(tb)return;
+ tb=document.createElement("div");tb.id="tb";tb.style.cssText="position:fixed;z-index:99999;display:none;background:#2d2d3f;border-radius:8px;padding:4px;box-shadow:0 4px 16px rgba(0,0,0,.25);font-family:-apple-system,PingFang SC,sans-serif;gap:4px;";
+ var bb=document.createElement("button");bb.textContent="⭐ 标记";bb.style.cssText="border:none;border-radius:6px;padding:6px 14px;font-size:13px;cursor:pointer;font-family:inherit;background:#f5d742;color:#1a1a2e;font-weight:600;";bb.onmouseover=function(){bb.style.background="#ffe066";};bb.onmouseout=function(){bb.style.background="#f5d742";};bb.onclick=function(){act(false);};
+ var nb=document.createElement("button");nb.textContent="📝 记笔记";nb.style.cssText="border:none;border-radius:6px;padding:6px 14px;font-size:13px;cursor:pointer;font-family:inherit;background:#444;color:#eee;";nb.onmouseover=function(){nb.style.background="#555";};nb.onmouseout=function(){nb.style.background="#444";};nb.onclick=function(){act(true);};
+ tb.appendChild(bb);tb.appendChild(nb);document.body.appendChild(tb);
+ pu=document.createElement("div");pu.id="pu";pu.style.cssText="position:fixed;z-index:100000;display:none;background:#fff;border-radius:12px;padding:20px;box-shadow:0 8px 32px rgba(0,0,0,.2);font-family:-apple-system,PingFang SC,sans-serif;width:340px;max-width:90vw;";
+ pu.innerHTML='<div style="font-size:14px;font-weight:600;margin-bottom:10px;color:#333;">📝 记录想法</div><div id="mq" style="font-size:13px;color:#888;margin-bottom:10px;padding:8px 12px;background:#f5f5f5;border-radius:6px;line-height:1.5;max-height:80px;overflow-y:auto;"></div><textarea id="mt" placeholder="写下你的想法……" style="width:100%;min-height:80px;border:1px solid #ddd;border-radius:6px;padding:8px;font-size:14px;font-family:inherit;resize:vertical;box-sizing:border-box;"></textarea><div style="display:flex;gap:8px;justify-content:flex-end;margin-top:10px;"><button id="mc" style="border:none;background:#f0f0f0;color:#666;padding:6px 16px;border-radius:6px;cursor:pointer;font-size:13px;">取消</button><button id="ms" style="border:none;background:#e8924c;color:#fff;padding:6px 16px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;">保存笔记</button></div>';
+ document.body.appendChild(pu);
+ document.getElementById("mc").onclick=function(){pu.style.display="none";};
+ document.getElementById("ms").onclick=function(){var n=document.getElementById("mt").value,q=document.getElementById("mq").dataset.text||"";if(q){addHl(q,n);pu.style.display="none";document.getElementById("mt").value="";toast("✅ 笔记已保存");badge();}};
+}
+
+function show(x,y){mkUI();tb.style.display="flex";tb.style.left=Math.max(8,Math.min(x,window.innerWidth-180))+"px";tb.style.top=(y+12)+"px";}
+function hide(){if(tb)tb.style.display="none";sv="";sr=null;}
+
+function act(note){
+ var t=sv;if(!t)return;
+ if(note){var q=document.getElementById("mq");if(!q)return;q.textContent="「"+t.slice(0,100)+(t.length>100?"…」":"」");q.dataset.text=t;document.getElementById("mt").value="";var tr=tb.getBoundingClientRect();pu.style.top=Math.max(20,tr.top-320)+"px";pu.style.left=Math.max(20,Math.min(tr.left,window.innerWidth-360))+"px";pu.style.display="block";document.getElementById("mt").focus();hide();return;}
+ var hl=addHl(t,"");toast("⭐ 已标记");badge();
+ if(hl&&sr){try{var ms=wrapRange(sr,hl.id,"");for(var k=0;k<ms.length;k++){ms[k].style.background="#ffeb7a";(function(mk){setTimeout(function(){mk.style.background="#f5d742";},300);})(ms[k]);}}catch(e){toast("刷新页面可见高亮");}}
+ var s=window.getSelection();if(s)s.removeAllRanges();sv="";sr=null;hide();
+}
+
+document.addEventListener("contextmenu",function(e){
+ if(pu&&pu.style.display!=="none")return;
+ var s=window.getSelection();if(!s||s.isCollapsed||!s.toString().trim())return;
+ e.preventDefault();
+ try{var r=s.getRangeAt(0);sv=s.toString().trim();sr=r.cloneRange();show(e.clientX,e.clientY);}catch(er){}
+});
+
+document.addEventListener("mousedown",function(e){
+ if(tb&&tb.contains(e.target))return;
+ if(pu&&pu.style.display!=="none"){if(pu.contains(e.target))return;pu.style.display="none";}
+ hide();
+});
+
+function restore(){
+ var i=info();if(!i.n)return;
+ var list=_h.filter(function(x){return x.issue===i.n;});if(!list.length)return;
+ setTimeout(function(){list.forEach(function(h){restoreOne(h);});},300);
+}
+
+function wrapRange(range,id,note){
+ var sc=range.startContainer,ec=range.endContainer,so=range.startOffset,eo=range.endOffset;
+ var root=range.commonAncestorContainer;
+ if(root.nodeType===3)root=root.parentNode;
+ var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),nodes=[],n;
+ while((n=w.nextNode()))nodes.push(n);
+ var started=false,done=false,marks=[];
+ for(var i=0;i<nodes.length&&!done;i++){
+  var node=nodes[i];
+  if(node.parentNode&&(node.parentNode.className==="mh"))continue;
+  var s=0,e=node.textContent.length;
+  var hitStart=(node===sc),hitEnd=(node===ec);
+  if(hitStart&&hitEnd){
+   s=so;e=eo;started=true;done=true;
+  }else if(hitStart){
+   s=so;started=true;
+  }else if(hitEnd){
+   e=eo;done=true;
+  }
+  if(!started)continue;
+  if(e<=s)continue;
+  try{
+   var r=document.createRange();r.setStart(node,s);r.setEnd(node,e);
+   var m=document.createElement("mark");m.className="mh";m.dataset.id=id;
+   m.style.cssText="background:#f5d742;color:inherit;border-radius:2px;padding:0 2px;cursor:pointer;";
+   if(note){m.title="💡 "+note;m.style.borderBottom="2px solid #d4a017";}
+   m.onclick=function(mid,mnote){return function(ev){ev.stopPropagation();bubble(ev.target,mid,mnote);};}(id,note);
+   r.surroundContents(m);marks.push(m);
+  }catch(ex){}
+ }
+ return marks;
+}
+function restoreOne(h){
+ try{
+  var c=document.querySelector(".container")||document.body;
+  var w=document.createTreeWalker(c,NodeFilter.SHOW_TEXT),ns=[];
+  while(w.nextNode())ns.push(w.currentNode);
+  for(var i=0;i<ns.length;i++){
+   var nd=ns[i],idx=nd.textContent.indexOf(h.text);if(idx<0)continue;
+   var r=document.createRange();r.setStart(nd,idx);r.setEnd(nd,idx+h.text.length);
+   var ms=wrapRange(r,h.id,h.note);
+   return;
+  }
+ }catch(e){}
+}
+
+function bubble(mk,id,note){
+ var e=document.querySelector(".mp-bb");if(e)e.remove();
+ var b=document.createElement("div");b.className="mp-bb";
+ b.style.cssText="position:fixed;z-index:99998;background:#fff;border-radius:10px;padding:14px 18px;box-shadow:0 4px 24px rgba(0,0,0,.15);font-family:-apple-system,PingFang SC,sans-serif;font-size:14px;max-width:320px;border:1px solid #eee;";
+ var r=mk.getBoundingClientRect();b.style.top=(r.bottom+8)+"px";b.style.left=Math.max(8,Math.min(r.left,window.innerWidth-340))+"px";
+ var h='<div style="font-size:12px;color:#999;margin-bottom:6px;">已标记'+(note?" · 有笔记":"")+'</div>';
+ if(note)h+='<div style="color:#333;line-height:1.5;margin-bottom:10px;padding:8px 10px;background:#faf0e2;border-radius:6px;">💬 '+esc(note)+'</div>';
+ h+='<div style="display:flex;gap:6px;">';
+ if(!note)h+='<button id="bb_add" style="border:none;background:#e8924c;color:#fff;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;">添加笔记</button>';
+ h+='<button id="bb_del" style="border:none;background:#f5f5f5;color:#c0392b;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;">删除标记</button></div>';
+ b.innerHTML=h;document.body.appendChild(b);
+  document.getElementById("bb_del").onclick=function(){delHl(id);var all=document.querySelectorAll('.mh[data-id="'+id+'"]');for(var k=all.length-1;k>=0;k--){var mk=all[k];var p=mk.parentNode;if(p){p.replaceChild(document.createTextNode(mk.textContent),mk);}}var cont=document.querySelector(".container");if(cont)cont.normalize();b.remove();};
+ var ab=document.getElementById("bb_add");if(ab)ab.onclick=function(){
+  b.innerHTML='<div style="font-size:13px;font-weight:600;margin-bottom:8px;color:#333;">✏️ 添加笔记</div><textarea id="bb_ta" placeholder="写下你的想法……" style="width:100%;min-height:60px;border:1px solid #ddd;border-radius:6px;padding:8px;font-size:13px;font-family:inherit;resize:vertical;box-sizing:border-box;"></textarea><div style="display:flex;gap:6px;justify-content:flex-end;margin-top:8px;"><button id="bb_cancel" style="border:none;background:#f0f0f0;color:#666;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;">取消</button><button id="bb_save" style="border:none;background:#e8924c;color:#fff;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600;">保存</button></div>';
+  document.getElementById("bb_ta").focus();
+  document.getElementById("bb_cancel").onclick=function(){b.remove();};
+  document.getElementById("bb_save").onclick=function(){var n=document.getElementById("bb_ta").value;if(n){updHl(id,n);mk.title="💡 "+n;mk.style.borderBottom="2px solid #d4a017";toast("✅ 笔记已保存");}b.remove();};
+ };
+ var cl=function(ev){if(!b.contains(ev.target)&&ev.target!==mk){b.remove();document.removeEventListener("mousedown",cl);}};
+ setTimeout(function(){document.addEventListener("mousedown",cl);},0);
+}
+
+function toast(msg){
+ var t=document.createElement("div");t.textContent=msg;
+ t.style.cssText="position:fixed;bottom:40px;left:50%;transform:translateX(-50%);background:#2d2d3f;color:#fff;padding:10px 24px;border-radius:8px;font-family:-apple-system,PingFang SC,sans-serif;font-size:14px;z-index:999999;box-shadow:0 4px 20px rgba(0,0,0,.2);opacity:0;transition:opacity .3s;";
+ document.body.appendChild(t);requestAnimationFrame(function(){t.style.opacity="1";});
+ setTimeout(function(){t.style.opacity="0";setTimeout(function(){t.remove();},300);},2000);
+}
+
+var sd=null,ov=null;
+function mkSide(){
+ if(sd)return;
+ ov=document.createElement("div");ov.style.cssText="position:fixed;inset:0;z-index:99998;background:rgba(0,0,0,.3);display:none;";
+ sd=document.createElement("div");sd.style.cssText="position:fixed;top:0;right:0;bottom:0;width:380px;max-width:90vw;z-index:99999;background:#f8f7f4;box-shadow:-4px 0 24px rgba(0,0,0,.12);display:none;flex-direction:column;font-family:-apple-system,PingFang SC,sans-serif;transform:translateX(100%);transition:transform .25s ease;";
+ sd.innerHTML='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #e5e0d8;flex-shrink:0;"><div><strong style="font-size:16px;">📒 笔记本</strong><span id="sc" style="font-size:12px;color:#999;margin-left:8px;"></span></div><button id="sc_close" style="border:none;background:transparent;font-size:20px;cursor:pointer;color:#888;padding:4px 8px;border-radius:6px;">✕</button></div><div id="sb" style="flex:1;overflow-y:auto;padding:12px 16px;"></div><div style="padding:10px 16px;border-top:1px solid #e5e0d8;font-size:11px;color:#bbb;text-align:center;flex-shrink:0;">右键选中文字 → 标记或记笔记</div>';
+ document.body.appendChild(ov);document.body.appendChild(sd);
+ ov.onclick=function(){tog(false);};document.getElementById("sc_close").onclick=function(){tog(false);};
+}
+
+function tog(show){
+ mkSide();
+ var open=(show!==undefined?show:(sd.style.display==="none"||sd.style.transform==="translateX(100%)"));
+ if(open){sd.style.display="flex";ov.style.display="block";requestAnimationFrame(function(){sd.style.transform="translateX(0)";});renderSB();}
+ else{sd.style.transform="translateX(100%)";ov.style.display="none";setTimeout(function(){if(sd.style.transform==="translateX(100%)")sd.style.display="none";},260);}
+}
+
+function renderSB(){
+ var b=document.getElementById("sb");if(!b)return;
+ var hs=_h||[];document.getElementById("sc").textContent=hs.length?"("+hs.length+"条)":"(空)";
+ if(!hs.length){b.innerHTML='<div style="text-align:center;padding:60px 20px;color:#aaa;font-size:14px;">📖 还没有标记<br><span style="font-size:12px;">选中文字 → 右键 → 标记</span></div>';return;}
+ var gr={};hs.forEach(function(h){var k=h.issue||0;if(!gr[k])gr[k]={issue:k,title:h.title||("第"+k+"期"),job:h.job||"",hs:[]};gr[k].hs.push(h);});
+ var so=Object.values(gr).sort(function(a,b){return b.issue-a.issue;}),html="";
+ so.forEach(function(g){html+='<div style="margin-bottom:16px;"><div style="font-size:11px;color:#888;letter-spacing:1px;margin-bottom:6px;padding:0 4px;">第'+g.issue+"期 · "+g.job+" ("+g.hs.length+")</div>";
+ g.hs.forEach(function(h){html+='<div class="mc" data-id="'+h.id+'" style="background:#fff;border:1px solid #e5e0d8;border-radius:8px;padding:10px 12px;margin-bottom:6px;cursor:pointer;"><div style="font-size:13px;line-height:1.6;color:#3a3520;padding:4px 6px;background:#fef7e0;border-radius:4px;margin-bottom:6px;">'+esc(h.text)+'</div>';
+ if(h.note)html+='<div style="font-size:12px;color:#5a3a1a;line-height:1.5;padding:6px 8px;background:#fef6ee;border-radius:4px;margin-bottom:6px;border-left:2px solid #e8924c;">💬 '+esc(h.note)+'</div>';
+ html+='<div style="display:flex;gap:4px;justify-content:flex-end;"><button class="mcnb" style="border:none;background:transparent;color:#888;padding:2px 8px;border-radius:4px;cursor:pointer;font-size:11px;">'+(h.note?"✏️":"💬")+'</button><button class="mcdb" style="border:none;background:transparent;color:#c0392b;padding:2px 8px;border-radius:4px;cursor:pointer;font-size:11px;">🗑️</button></div></div>';});
+ html+="</div>";});b.innerHTML=html;
+ b.querySelectorAll(".mcdb").forEach(function(btn){btn.onclick=function(){var c=btn.closest(".mc"),id=c.dataset.id;delHl(id);renderSB();var all=document.querySelectorAll('.mh[data-id="'+id+'"]');for(var k=all.length-1;k>=0;k--){var mk=all[k];var p=mk.parentNode;if(p){p.replaceChild(document.createTextNode(mk.textContent),mk);}}var cont=document.querySelector(".container");if(cont)cont.normalize();toast("已删除");};});
+ b.querySelectorAll(".mcnb").forEach(function(btn){btn.onclick=function(){var c=btn.closest(".mc"),id=c.dataset.id;var h=_h.find(function(x){return x.id===id;});if(!h)return;var n=prompt("编辑笔记：",h.note||"");if(n!==null){updHl(id,n);renderSB();var mk=document.querySelector('.mh[data-id="'+id+'"]');if(mk){if(n.trim()){mk.title="💡 "+n;mk.style.borderBottom="2px solid #d4a017";}else{mk.title="";mk.style.borderBottom="";}}toast("✅ 笔记已保存");}};});
+ b.querySelectorAll(".mc").forEach(function(c){c.onclick=function(e){if(e.target.closest("button"))return;var mk=document.querySelector('.mh[data-id="'+c.dataset.id+'"]');if(mk){mk.scrollIntoView({behavior:"smooth",block:"center"});mk.style.background="#ffeb7a";setTimeout(function(){mk.style.background="#f5d742";},1500);}};});
+}
+
+function badge(){var el=document.getElementById("bdg");if(el){var c=_h.length;el.textContent=c;el.style.display=c>0?"inline":"none";}}
+function setupBtn(){if(document.getElementById("fab"))return;var b=document.createElement("button");b.id="fab";b.innerHTML='📒 笔记本 <span id="bdg" style="background:#e8924c;color:#fff;font-size:10px;padding:1px 6px;border-radius:10px;margin-left:4px;font-weight:600;display:none;">0</span>';b.style.cssText="position:fixed;bottom:24px;right:24px;z-index:99997;background:#2d2d3f;color:#f0ede8;padding:10px 18px;border-radius:24px;font-family:-apple-system,PingFang SC,sans-serif;font-size:13px;font-weight:500;box-shadow:0 4px 16px rgba(0,0,0,.15);cursor:pointer;border:1px solid rgba(255,255,255,.08);";b.onmouseover=function(){b.style.background="#3d3d55";b.style.transform="translateY(-2px)";};b.onmouseout=function(){b.style.background="#2d2d3f";b.style.transform="";};b.onclick=function(){tog();};document.body.appendChild(b);badge();}
+
+var _aichat=[],_aictx=null,_aikey="",_aibusy=false,_aipn=null,_aiov=null;
+function initAI(){
+try{_aikey=localStorage.getItem("careerlab_ai_key")||"";}catch(e){}
+try{var c=localStorage.getItem("careerlab_ai_chat");if(c)_aichat=JSON.parse(c);}catch(e){}
+try{var x=localStorage.getItem("careerlab_ai_context");if(x){_aictx=JSON.parse(x);if(Date.now()-_aictx.ts>86400000)_aictx=null;}}catch(e){}
+setupAIBtn();
+}
+function setupAIBtn(){
+if(document.getElementById("aifab"))return;
+var b=document.createElement("button");b.id="aifab";b.innerHTML='🤖 AI 助教';
+b.style.cssText="position:fixed;bottom:24px;left:24px;z-index:99994;background:#2d2d3f;color:#f0ede8;padding:10px 18px;border-radius:24px;font-family:-apple-system,PingFang SC,sans-serif;font-size:13px;font-weight:500;box-shadow:0 4px 16px rgba(0,0,0,.15);cursor:pointer;border:1px solid rgba(255,255,255,.08);";
+b.onmouseover=function(){b.style.background="#3d3d55";b.style.transform="translateY(-2px)";};
+b.onmouseout=function(){b.style.background="#2d2d3f";b.style.transform="";};
+b.onclick=function(){togAI();};
+document.body.appendChild(b);
+}
+function mkAIPanel(){
+if(_aiov)return;
+_aiov=document.createElement("div");_aiov.style.cssText="position:fixed;inset:0;z-index:99995;background:rgba(0,0,0,.3);display:none;";
+_aipn=document.createElement("div");_aipn.style.cssText="position:fixed;top:0;left:0;bottom:0;width:380px;max-width:90vw;z-index:99996;background:#f8f7f4;box-shadow:4px 0 24px rgba(0,0,0,.12);display:none;flex-direction:column;font-family:-apple-system,PingFang SC,sans-serif;transform:translateX(-100%);transition:transform .25s ease;";
+_aipn.innerHTML='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #e5e0d8;flex-shrink:0;"><div><strong style="font-size:16px;">🤖 AI 助教</strong><span id="aic" style="font-size:12px;color:#999;margin-left:8px;"></span></div><div style="display:flex;gap:6px;"><button id="ai_settings" style="border:none;background:transparent;font-size:16px;cursor:pointer;color:#999;padding:4px 8px;border-radius:6px;" title="设置API密钥">⚙️</button><button id="ai_close" style="border:none;background:transparent;font-size:20px;cursor:pointer;color:#888;padding:4px 8px;border-radius:6px;">✕</button></div></div><div id="aimsgs" style="flex:1;overflow-y:auto;padding:12px 16px;"></div><div style="padding:12px 16px;border-top:1px solid #e5e0d8;flex-shrink:0;display:flex;gap:8px;"><textarea id="ai_inp" placeholder="输入消息，Enter 发送…" style="flex:1;border:1px solid #ddd;border-radius:8px;padding:10px 12px;font-size:14px;font-family:inherit;resize:none;min-height:40px;max-height:120px;box-sizing:border-box;" rows="1"></textarea><button id="ai_send" style="border:none;background:#e8924c;color:#fff;padding:8px 16px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:600;align-self:flex-end;">发送</button></div>';
+document.body.appendChild(_aiov);document.body.appendChild(_aipn);
+_aiov.onclick=function(){togAI(false);};
+document.getElementById("ai_close").onclick=function(){togAI(false);};
+document.getElementById("ai_settings").onclick=function(){
+var k=prompt("DeepSeek API密钥（从 platform.deepseek.com 获取）：",_aikey);
+if(k!==null){_aikey=k.trim();try{localStorage.setItem("careerlab_ai_key",_aikey);}catch(e){}_aictx=null;try{localStorage.removeItem("careerlab_ai_context");}catch(e){}toast("✅ 密钥已保存");}
+};
+document.getElementById("ai_send").onclick=function(){doSend();};
+document.getElementById("ai_inp").onkeydown=function(e){
+if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();doSend();}
+};
+}
+function togAI(show){
+mkAIPanel();
+var open=(show!==undefined?show:(_aipn.style.display==="none"||_aipn.style.transform==="translateX(-100%)"));
+if(open){
+_aipn.style.display="flex";_aiov.style.display="block";
+requestAnimationFrame(function(){_aipn.style.transform="translateX(0)";});
+ensureContext(function(){renderChat();});
+}else{
+_aipn.style.transform="translateX(-100%)";_aiov.style.display="none";
+setTimeout(function(){if(_aipn.style.transform==="translateX(-100%)")_aipn.style.display="none";},260);
+}
+}
+function ensureContext(cb){
+if(_aictx){cb();return;}
+var issues=[];var done=0;var total=10;
+function checkDone(){
+done++;
+if(done>=total){
+issues.sort(function(a,b){return a.n-b.n;});
+_aictx={ts:Date.now(),issues:issues};
+try{localStorage.setItem("careerlab_ai_context",JSON.stringify(_aictx));}catch(e){}
+cb();
+}
+}
+for(var i=1;i<=total;i++){
+(function(n){
+var xhr=new XMLHttpRequest();
+xhr.open("GET",(n<10?"0":"")+n+".html",true);
+xhr.timeout=10000;
+xhr.onload=function(){
+if(xhr.status===200){var r=extractIssue(xhr.responseText,n);if(r)issues.push(r);}
+checkDone();
+};
+xhr.onerror=function(){checkDone();};
+xhr.ontimeout=function(){checkDone();};
+xhr.send();
+})(i);
+}
+}
+function extractIssue(html,n){
+try{
+var title="",job="";
+var tm=html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+if(tm){title=tm[1].replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();}
+var jm=html.match(/class="job-name"[^>]*>([^<]+)/i);
+if(!jm)jm=html.match(/class="meta"[^>]*>([\s\S]*?)<\/p>/i);
+if(jm){job=jm[1].replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();}
+var sm=html.match(/<section[^>]*>([\s\S]*?)<hr\s+class="divider-solid/i);
+var text="";
+if(sm){text=sm[1].replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();}
+if(text.length>2000)text=text.slice(0,2000)+"…";
+return {n:n,title:title||("第"+n+"期"),job:job||"",text:text};
+}catch(e){return null;}
+}
+function buildSystemPrompt(){
+if(!_aictx||!_aictx.issues||!_aictx.issues.length)return "你是\"职人手艺\"的AI助教。职人手艺是一个深度解剖不同职业思维方式的项目，每期拆解一个具体职业。你的风格：像朋友聊天一样说人话、简洁、多用大白话和具体例子。请用中文回复。";
+var p="你是\"职人手艺\"的AI助教。职人手艺是一个深度解剖不同职业思维方式的项目，每期拆解一个具体职业，包括他们的日常、挑战、黄金技能和底层思维模型。你的风格：像朋友聊天一样说人话、简洁、多用大白话和具体例子。以下是各期摘要：\n\n";
+for(var i=0;i<_aictx.issues.length;i++){
+var iss=_aictx.issues[i];
+p+="第"+iss.n+"期《"+iss.title+"》—— "+iss.job+"\n"+iss.text+"\n\n";
+}
+var cur=info();
+if(cur&&cur.n)p+="用户当前正在阅读：第"+cur.n+"期《"+cur.t+"》—— "+cur.job;
+return p;
+}
+function renderChat(){
+var b=document.getElementById("aimsgs");if(!b)return;
+var sc=document.getElementById("aic");if(sc)sc.textContent=_aichat.length?"("+_aichat.length+"条)":"(空)";
+var html="";
+if(!_aichat.length&&_aictx){
+var greet="你好！我是职人手艺的AI助教 🤖\n\n我对每一期解剖的职业都有自己的理解，可以跟你聊任何一期。你可以问我：\n\n• 某个职业的核心技能（比如\"空调安装师傅最厉害的能力是什么？\"）\n• 不同职业之间的联系（比如\"老周的思维方式和程序员有什么共通之处？\"）\n• 从这个职业身上能学到什么（比如\"我能从杀鱼摊主身上学到什么？\"）\n• 任何你在阅读中想到的问题\n\n有什么想聊的？";
+html+='<div class="aichat-msg aichat-assistant"><div class="lbl">AI</div><div class="bub">'+esc(greet).replace(/\n/g,"<br>")+'</div></div>';
+}
+for(var i=0;i<_aichat.length;i++){
+var m=_aichat[i];
+if(m.role==="system"){html+='<div class="aichat-msg aichat-sys"><div class="bub">'+esc(m.content)+'</div></div>';}
+else if(m.role==="user"){html+='<div class="aichat-msg aichat-user"><div class="lbl">你</div><div class="bub">'+esc(m.content).replace(/\n/g,"<br>")+'</div></div>';}
+else{html+='<div class="aichat-msg aichat-assistant"><div class="lbl">AI</div><div class="bub">'+esc(m.content).replace(/\n/g,"<br>")+'</div></div>';}
+}
+if(_aibusy){html+='<div class="aichat-loading"><span></span><span></span><span></span></div>';}
+b.innerHTML=html;
+b.scrollTop=b.scrollHeight;
+setTimeout(function(){restore();},100);
+}
+function addMsg(role,content,skipSave){
+_aichat.push({role:role,content:content,ts:new Date().toISOString()});
+if(!skipSave)saveChat();
+renderChat();
+}
+function saveChat(){
+if(_aichat.length>100)_aichat=_aichat.slice(-100);
+try{localStorage.setItem("careerlab_ai_chat",JSON.stringify(_aichat));}catch(e){}
+}
+function doSend(){
+if(_aibusy)return;
+var inp=document.getElementById("ai_inp"),txt=(inp.value||"").trim();
+if(!txt)return;
+if(!_aikey){
+var k=prompt("请输入你的DeepSeek API密钥（可从 platform.deepseek.com 获取）：","");
+if(!k||!k.trim())return;
+_aikey=k.trim();
+try{localStorage.setItem("careerlab_ai_key",_aikey);}catch(e){}
+addMsg("system","✅ 密钥已保存（仅保存在本地浏览器）",true);
+}
+inp.value="";inp.style.height="auto";
+addMsg("user",txt);
+_aibusy=true;renderChat();
+var msgs=[{role:"system",content:buildSystemPrompt()}];
+for(var i=0;i<_aichat.length;i++){var m=_aichat[i];if(m.role!=="system")msgs.push({role:m.role,content:m.content});}
+callDeepSeek(msgs,function(err,reply){
+_aibusy=false;
+if(err){addMsg("system","❌ "+err,true);}
+else if(reply){addMsg("assistant",reply);}
+else{addMsg("system","❌ 未知错误",true);}
+});
+}
+function callDeepSeek(messages,cb){
+var xhr=new XMLHttpRequest();
+xhr.open("POST","https://api.deepseek.com/v1/chat/completions",true);
+xhr.setRequestHeader("Content-Type","application/json");
+xhr.setRequestHeader("Authorization","Bearer "+_aikey);
+xhr.timeout=30000;
+xhr.onload=function(){
+if(xhr.status===200){
+try{var r=JSON.parse(xhr.responseText);cb(null,r.choices[0].message.content);}catch(e){cb(new Error("解析响应失败"));}
+}else if(xhr.status===401){cb(new Error("API密钥无效，请点击⚙️重新设置"));}
+else if(xhr.status===429){cb(new Error("请求过于频繁，请稍后再试"));}
+else if(xhr.status>=500){cb(new Error("服务异常（"+xhr.status+"），请稍后重试"));}
+else{cb(new Error("请求失败（"+xhr.status+"）"));}
+};
+xhr.onerror=function(){cb(new Error("网络连接失败，请检查网络"));};
+xhr.ontimeout=function(){cb(new Error("请求超时，请重试"));};
+xhr.send(JSON.stringify({model:"deepseek-chat",messages:messages,stream:false,max_tokens:2000,temperature:0.7}));
+}
+
+var st=document.createElement("style");st.textContent=".mh{background:#f5d742;color:inherit;border-radius:2px;padding:0 2px;cursor:pointer;}.mh:hover{background:#ffeb7a;}.mc{transition:box-shadow .15s;}.mc:hover{box-shadow:0 1px 6px rgba(0,0,0,.06);}.mc button:hover{background:#eee!important;}::selection{background:#f5d742;color:#1a1a2e;}.aichat-msg{padding:2px 0;}.aichat-msg .lbl{font-size:11px;color:#999;margin-bottom:2px;}.aichat-msg .bub{padding:10px 14px;border-radius:12px;font-size:14px;line-height:1.7;word-break:break-word;}.aichat-user .bub{background:#e8f0fe;color:#1a1a2e;margin-left:40px;}.aichat-user .lbl{text-align:right;}.aichat-assistant .bub{background:#fff;border:1px solid #e5e0d8;color:#333;margin-right:40px;}.aichat-sys .bub{background:#f5f5f5;color:#888;text-align:center;font-size:13px;padding:8px 14px;border-radius:8px;margin:0 20px;}.aichat-loading{display:flex;gap:4px;padding:8px 16px;align-items:center;}.aichat-loading span{width:6px;height:6px;border-radius:50%;background:#bbb;animation:aichat-bounce 1.4s infinite;}.aichat-loading span:nth-child(2){animation-delay:.2s;}.aichat-loading span:nth-child(3){animation-delay:.4s;}@keyframes aichat-bounce{0%,80%,100%{opacity:.3;transform:scale(.8);}40%{opacity:1;transform:scale(1);}}#ai_inp:focus{outline:none;border-color:#e8924c;}";document.head.appendChild(st);
+restore();setupBtn();initAI();
+})();
+</script>
+
+</body>
+</html>
