@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>职人手艺 · 古筝制作师</title>
+<style>
+:root{--bg:#faf8f5;--text:#1a1a2e;--accent:#e8924c;--accent-dark:#c8772e;--muted:#888}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Georgia","Noto Serif SC",serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:17px}
+.hero{background:linear-gradient(135deg,#1a1d2e,#1a2744,#1a3856);color:#f0ede8;padding:100px 24px 80px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(232,146,76,0.12),transparent 60%)}
+.hero>*{position:relative;z-index:1}
+.hero-badge{display:inline-block;border:1px solid var(--accent);color:var(--accent);font-family:-apple-system,"PingFang SC",sans-serif;font-size:12px;letter-spacing:3px;padding:4px 16px;border-radius:20px;margin-bottom:32px;text-transform:uppercase}
+.hero h1{font-size:clamp(32px,6vw,56px);font-weight:700;letter-spacing:2px;margin-bottom:12px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .sub{font-size:clamp(16px,2.5vw,22px);color:#b8b0a0;font-family:-apple-system,"PingFang SC",sans-serif;font-weight:300;margin-bottom:8px}
+.hero .meta{font-family:-apple-system,"PingFang SC",sans-serif;font-size:13px;color:#888;letter-spacing:1px;margin-top:12px}
+.container{max-width:740px;margin:0 auto;padding:0 24px}
+.intro{margin-top:-40px;position:relative;z-index:2}
+.intro-card{background:#fff;border-radius:12px;padding:40px 36px;box-shadow:0 4px 24px rgba(0,0,0,0.06);border:1px solid #e5e0d8}
+.intro-card p{margin-bottom:16px;color:#444}.intro-card p:last-child{margin-bottom:0}
+section{padding:48px 0}
+.section-label{font-family:-apple-system,"PingFang SC",sans-serif;font-size:11px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;margin-bottom:20px;line-height:1.4;color:#1a1a2e}
+h3{font-size:19px;font-weight:600;margin:32px 0 12px;color:#1a1a2e}
+p{margin-bottom:16px;color:#444}
+.story-box{background:#fff;border:1px solid #e5e0d8;border-radius:10px;padding:24px 28px;margin:20px 0}
+.story-box .scene{font-size:11px;letter-spacing:2px;color:var(--accent);font-family:-apple-system,"PingFang SC",sans-serif;margin-bottom:8px;text-transform:uppercase}
+.story-box p{color:#444;margin-bottom:10px}.story-box p:last-child{margin-bottom:0}
+.highlight-box{background:linear-gradient(135deg,#fef6ee,#faf0e2);border:1px solid #e8d4b8;border-radius:10px;padding:28px 32px;margin:28px 0}
+.highlight-box .label{font-family:-apple-system,"PingFang SC",sans-serif;font-size:12px;letter-spacing:2px;color:var(--accent-dark);margin-bottom:8px}
+.highlight-box p{margin-bottom:0;color:#5a3a1a}
+.skill-card{background:#fff;border:1px solid #e5e0d8;border-radius:10px;padding:24px 28px;margin:16px 0}
+.skill-card .rank{font-family:-apple-system,"PingFang SC",sans-serif;font-size:11px;letter-spacing:2px;color:var(--accent);margin-bottom:6px}
+.skill-card h4{font-size:17px;font-weight:700;margin-bottom:8px;color:#1a1a2e}
+.skill-card p{color:#555;margin-bottom:0}
+blockquote{background:#f3f0ea;border-left:4px solid var(--accent);padding:20px 24px;margin:24px 0;border-radius:0 8px 8px 0;font-style:italic;color:#555}
+blockquote cite{display:block;margin-top:8px;font-size:14px;font-style:normal;color:var(--muted)}
+.divider-solid{border:0;height:1px;background:linear-gradient(to right,transparent,#e5e0d8,transparent);margin:40px 0}
+.next-teaser{background:#f3f0ea;border:1px solid #e5e0d8;border-radius:10px;padding:24px 28px;margin:28px 0;text-align:center}
+.next-teaser .label{font-family:-apple-system,"PingFang SC",sans-serif;font-size:11px;letter-spacing:2px;color:var(--muted);margin-bottom:6px}
+.next-teaser h4{font-size:17px;font-weight:700;color:#1a1a2e;margin-bottom:4px}
+.next-teaser p{font-size:14px;color:#888;margin-bottom:0}
+footer{text-align:center;padding:60px 24px;color:#999;font-size:14px;font-family:-apple-system,"PingFang SC",sans-serif}
+@media(max-width:600px){body{font-size:16px}.hero{padding:60px 20px 50px}.intro-card{padding:28px 20px}section{padding:36px 0}.story-box,.skill-card,.highlight-box{padding:18px 20px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+<div class="hero-badge">破茧计划 · 职人手艺 · 古筝制作师——一块木头要等十年才能变成一把琴</div>
+<h1><em>跟时间做朋友的人</em>，赢在"提前量"</h1>
+<p class="sub">古筝制作师的核心能力：在无法加速的自然规律面前，把决策提前十年做出——选料即定音，干燥即定命，调校只是收尾</p>
+<span class="job-name">古筝制作师</span>
+<p class="hook">你看到一把古筝，看到的是一块被刨光、上漆、绷上弦的木头。但制琴师看到的，是十年前那个春天砍下的那棵树——它在哪个坡向生长、年轮密不密、砍下后放了多少年。琴的声音，在木头还没进车间的时候，就已经定了大半。这行最难的，不是手艺，是"等得起"。</p>
+<p class="meta">🎵 古筝制作师 · 长期主义 · 前置决策 · 材料直觉</p>
+</header>
+
+<div class="container">
+<div class="intro"><div class="intro-card">
+<p><strong>古筝制作师，是那种"越老越值钱"的职业。</strong>不是因为年纪大，而是因为——他经手的木头多，见过的"十年后的结果"多。</p>
+<p>一把专业演奏级古筝，从选料、干燥、开料、成型、上漆、绷弦到反复调校，周期往往以年计。制作师能做的，只有"把该做的做对"，然后等时间自己完成剩下的事。</p>
+<p>很多人以为制琴是"手艺活"——手稳、眼准、刀快就行。但真正的制琴师听到这种话，只会摇头：<strong>"手艺是入门。真正决定一把琴好坏的，是十年前你选了哪块木头、怎么锯、怎么放。那时候你还没开始做琴呢。"</strong></p>
+<p>他们脑子里装着一套"与时间打交道"的决策系统。我们把它拆开，看看里面装了什么。</p>
+</div></div>
+
+<section>
+<span class="section-label">Part 1</span>
+<h2>清晨六点，车间里没有声音</h2>
+
+<div class="story-box"><div class="scene">📅 案例：一个普通的工作日</div>
+<p>老陈做琴三十多年了。他的车间在城郊，早上六点，天刚亮，他已经在里面了。但车间里没有机器的声音——他做的第一件事，是"看料"。</p>
+<p>库房里堆着一批老桐木，最老的放了快十五年。他一块一块地摸，用手指关节敲，凑近了闻。有些料他摸了半分钟就放下，有些料他会翻来覆去看很久。</p>
+<p>"这块不行，年轮太松，声音散。"他说，"这块可以，你看这个纹路，密、匀、直，敲上去声音是'脆'的，不是'闷'的。"</p>
+<p>一上午，他可能只挑出三块真正合意的料。剩下的时间，他开料、刨板、合框——动作不快，但每一步都很稳。</p>
+<p>下午，他会去调一批快要完工的琴。上弦、试音、微调弦枕的高度，一次只调零点几毫米。调完弹一段，听，再调。"这活儿急不得。你越急，手越僵，琴也跟着你僵。"</p>
+</div>
+
+<h3>一天的真实面貌</h3>
+<p><strong>节奏：</strong>制琴师的一天不是"流水线"，而是"按料的脾气走"。今天适合开料，就开料；今天适合调音，就调音。很多时候，一块料的状态不对，他会干脆停工，等它"缓过来"——木头是有情绪的，你硬来，它记仇。</p>
+<p><strong>工作内容：</strong>选料、干燥管理、开料、刨制、合框、装配、上漆、绷弦、调音。每一道工序都有讲究，但真正的功夫藏在"看不见的地方"——比如干燥时怎么码放，比如每块面板刨到多厚。</p>
+<p><strong>环境：</strong>车间温湿度需要相对稳定。太干，木头开裂；太潮，声音发闷。所以制琴师对"天气"特别敏感——比气象台还敏感。</p>
+<p><strong>心理状态：</strong>这行最磨人的不是手艺，是"等待"。你做了所有该做的事，还是要等。等木头干，等漆固化，等琴"开声"——也就是弹一段时间后声音逐渐稳定、变好。老陈说，做这行的人，普遍不急——不是天生不急，是急也没用，慢慢就把急给磨掉了。</p>
+</div>
+</section>
+
+<section>
+<span class="section-label">Part 2</span>
+<h2>"我第一把琴，被师傅当场砸了"</h2>
+
+<div class="story-box"><div class="scene">😱 案例：小林的第一次独立开料</div>
+<p>小林跟着老陈学了几年，觉得自己差不多了。有一次老陈让他独立开一批面板料——这是个信任的活儿，因为面板的厚薄直接决定音色。</p>
+<p>小林觉得料看着挺好，就按"标准厚度"刨了。刨完还挺得意——快、齐、漂亮。</p>
+<p>老陈过来看了一眼，没说话，拿起一块面板，用手掌托着，另一只手的手指弹了一下。声音出来的时候，老陈皱了皱眉。</p>
+<p>"厚了。"他说，"这批料密度偏大，你得刨薄一点，不然声音出不来。"</p>
+<p>小林不服："可是标准厚度就是这样的啊。"</p>
+<p>老陈把面板翻过来，指着年轮："标准是给'标准料'定的。这块料不是标准料。你刨的是厚度，我刨的是声音。"</p>
+<p>那批料最后返工了大半。小林后来才明白——<strong>书本上的参数是起点，不是答案。真正的答案，在每一块具体的木头里。</strong></p>
+</div>
+
+<h3>新人必踩的三个坑</h3>
+<p><strong>第一个坑：把"参数"当"标准"。</strong>新手最爱问"面板多厚""弦距多少毫米"。这些数字有用，但它们是"平均值"。每块木头的密度、弹性、含水率都不同，照搬参数，做出来的琴"都对，但都不好听"。</p>
+<p><strong>第二个坑：想"快点看到成品"。</strong>新手总想赶紧把琴做出来，所以干燥期想缩短、漆想快点干、调音想一步到位。老陈说，<strong>这行所有"加速"的念头，最后都会以"返工"或"次品"的形式还给你。</strong>木头不会因为你着急就干得快。</p>
+<p><strong>第三个坑：把"做完"当成"做好"。</strong>新手以为琴绷上弦、能弹响，就算完成了。但老陈说，琴做出来只是开始——它要"开声"，要弹几个月甚至几年，声音才会稳定下来。制琴师要做的，是把琴"送上一个正确的起点"，而不是"一步到位"。</p>
+</div>
+</section>
+
+<section>
+<span class="section-label">Part 3</span>
+<h2>老手的"手耳"与"料感"</h2>
+
+<div class="highlight-box"><div class="label">🐾 老手的肌肉记忆</div>
+<p>老陈挑料，很少用工具。他用手掌托起一块面板，另一只手的手指关节轻轻一敲，听那一声——脆、亮、有余韵的，是好料；闷、短、发死音的，再好看也不要。这个动作他做了三十多年，快到别人看不出他在"判断"，以为他只是随手一摸。</p></div>
+
+<div class="story-box"><div class="scene">👂 案例：听音辨料</div>
+<p>有一次，一批新料进库，小林觉得都差不多，就让老陈"随便挑挑"。老陈一块一块敲过去，挑出三块，说："这三块可以做演奏级，其余做练习琴。"</p>
+<p>小林不服气，拿同样的料去问另一位师傅，结果那位师傅挑出来的，和老陈挑的几乎一样。</p>
+<p>"你们怎么听出来的？"小林问。</p>
+<p>老陈说："不是'听'出来的，是'比'出来的。我这三十年，敲过几万块木头。好料的声音，和我脑子里存的那个'标准音'，一对就出来了。你敲得少，脑子里还没存够样本。"</p>
+</div>
+
+<div class="story-box"><div class="scene">👀 案例：摸一遍就知道干了没</div>
+<p>干燥是制琴最关键的环节之一，但也是最"看不见"的。老陈判断一批料干没干，不只看含水率仪——他还会用手掌贴着木料，感受它的"凉意"和"重量"。</p>
+<p>"没干透的料，摸上去是'沉'的，凉意也重。干透的料，轻，摸着'活'。"小林一开始完全感觉不出来，老陈就让他每天摸同一批料，摸三个月。"三个月后你就懂了。"</p>
+<p>这背后的道理是：<strong>有些判断，仪器能给数字，但手感能给"信任"。数字告诉你'达标了'，手感告诉你'可以用了'。两者都到位，才敢动刀。</strong></p>
+</div>
+
+<div class="story-box"><div class="scene">✍️ 案例：手停半秒</div>
+<p>老陈做面板的时候，刨刀推到接近标记线的位置，手会停半秒，再继续。小林问他为什么停。</p>
+<p>"这半秒，我在'听'刀走的声音，也在'想'这一刀下去之后，音色会往哪走。"他说，"急这一刀，可能就刨过了一毫米。一毫米，对一块面板就是天壤之别。"</p>
+</div>
+</section>
+
+<section>
+<span class="section-label">Part 4</span>
+<h2>这行最值钱的，不是手艺</h2>
+
+<div class="highlight-box"><div class="label">🧠 底层思维模型（可迁移）</div>
+<p>老陈没学过"思维模型"这个词，但他脑子里装着一套"跟时间打交道"的决策系统。拆开看，这几个模型放在任何"结果滞后、无法加速"的事情上都特别好使：</p></div>
+
+<h3>模型一：前置决策 —— "最重要的一步，往往在最早的时候"</h3>
+<p>一把琴的声音，七成在"选料"那一刻就定了。选什么树、什么坡向、什么时候砍、砍完怎么放——这些决策发生在做琴之前，却决定了做琴之后的一切。</p>
+<p>老陈带徒弟，第一课永远是"看料"，不是"开料"。因为在他看来，<strong>后面所有的努力，都是在"兑现"前面那个决策。前面选错了，后面再努力，也只是把错误做得更精致。</strong></p>
+<div class="highlight-box" style="border-left: 3px solid #e8924c; padding: 12px; background: #fff9f0;">
+<p><strong>迁移启发：</strong>一个项目成败，往往在"立项"那一刻就定了大半——选什么人、定什么目标、给多少资源。一段关系好不好，往往在"最初几次相处"就露了底。别把精力全花在"执行"上，回头看看：你最早的几个决策，做对了吗？</p>
+</div>
+
+<h3>模型二：容错余量 —— "给'不可控'留出空间"</h3>
+<p>老陈刨面板，从不刨到"理论厚度"，而是留一点余量。因为木头会随环境继续变化，会把余量"吃掉"。留余量，不是手艺不精，恰恰是"懂行"——他知道有些东西不由他控制，所以要提前给它们留位置。</p>
+<p>同样，他做框架会留"活动缝"，上弦会留"调音空间"。整个做琴过程，处处是"余量"。</p>
+<div class="highlight-box" style="border-left: 3px solid #e8924c; padding: 12px; background: #fff9f0;">
+<p><strong>迁移启发：</strong>给项目排期，别排到满，留缓冲；给预算，别算到极限，留应急；跟人合作，别把话说死，留转圜。你留的不是"浪费"，是"应对变化的余地"。真正成熟的计划，一定包含"不确定"。</p>
+</div>
+
+<h3>模型三：反馈延迟 —— "别用短期结果，判断长期对错"</h3>
+<p>一把琴刚做出来，声音往往是"紧"的、"生"的。有些新手会因此慌，觉得做坏了，赶紧改。但老陈说，别急——琴要"开声"，弹上几个月，声音才会慢慢松开、变润。</p>
+<p>"你今天听到的声音，不代表这把琴的声音。你要听的是'它往哪个方向走'。"</p>
+<div class="highlight-box" style="border-left: 3px solid #e8924c; padding: 12px; background: #fff9f0;">
+<p><strong>迁移启发：</strong>很多事情的结果是滞后的——健身、读书、攒人脉、做品牌。别因为"今天没看到效果"就放弃或乱改。你要判断的不是"现在好不好"，而是"它是不是在往好的方向走"。短期波动不是信号，方向才是。</p>
+</div>
+</section>
+
+<section>
+<span class="section-label">Part 5</span>
+<h2>你能从这行学到什么</h2>
+
+<h3>你做产品、带团队、规划职业——但你跟老陈做的事，本质一样</h3>
+<p>你可能觉得古筝制作师离你很远。但老陈每天在做的事，跟你其实很像：</p>
+
+<p><strong>第一，在"无法加速"的事情面前，学会"提前布局"。</strong>老陈的声音在选料时就定了，你的很多结果，也在"最开始"就定了。老陈的"前置决策"告诉你：与其在后期拼命补救，不如在早期多想一步。</p>
+
+<p><strong>第二，在"不可控"面前，学会"留余量"。</strong>老陈给木头留余量，你也要给你的计划留余量。这不是保守，是尊重现实——现实永远比计划复杂。</p>
+
+<p><strong>第三，也是最重要的——学会用"长期视角"判断对错。</strong>老陈不因为"今天声音紧"就否定一把琴，你也不该因为"这个月没起色"就否定一个方向。真正重要的东西，都需要时间发酵。</p>
+
+<blockquote>"琴不是做出来的，是'养'出来的。我做的所有事，都是给它一个'能养好'的底子。剩下的，交给时间。"<cite>—— 老陈</cite></blockquote>
+
+<p>你做的很多事也一样——你能做的，是"打好底子"，然后就该耐心等它长。急，是这行最大的敌人，也是你这行最大的敌人。</p>
+
+<hr class="divider-solid">
+
+<h2>一句话总结这个职业</h2>
+<div class="highlight-box">
+<p><strong>古筝制作师不是"做琴的人"，而是"跟时间做朋友的人"——在无法加速的自然规律面前，把最重要的决策提前十年做出，然后耐心兑现。</strong></p>
+<p style="margin-top:12px;font-size:15px;color:#8a6a4a;">每一把琴都是一次"长期决策"：选料定音 → 留足余量 → 慢慢等待 → 判断方向 → 交给时间。</p>
+</div>
+
+<hr class="divider-solid">
+<footer>
+<p>破茧计划 · 职人手艺 · 第30期 · 古筝制作师</p>
+<nav style="margin-top:12px;display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap;">
+<a href="index.html" style="color:#e8924c;text-decoration:none;font-size:14px;">← 返回目录</a>
+<span style="color:#ddd;">|</span>
+<span style="color:#aaa;font-size:14px;">导航占位</span>
+</nav>
+</footer>
+</div>
+<script>
+(function(){
+"use strict";
+var _h=[];
+try{var r=localStorage.getItem("careerlab_backup");if(r)_h=JSON.parse(r);}catch(e){}
+function _s(){try{localStorage.setItem("careerlab_backup",JSON.stringify(_h));}catch(e){}}
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function info(){
+ var b=document.querySelector(".hero-badge");if(!b)return{n:0};
+ var fn=(window.location.pathname.match(/(\d+)\.html/)||[])[1];var m=fn?[fn,fn]:null;if(!m){var t=b.textContent;m=t.match(/(\d+)/);}
+ if(!m){var cn={"一":1,"二":2,"三":3,"四":4,"五":5,"六":6,"七":7,"八":8,"九":9,"十":10};var x=t.match(/[一二三四五六七八九十]/);if(x)m=[x[0],cn[x[0]]||0];}
+ return{n:m?parseInt(m[1]):0,t:(document.querySelector(".hero h1")?.textContent||""),job:(document.querySelector(".hero .meta")?.textContent||"")};
+}
+function addHl(tx,nt){
+ var i=info();if(!i.n)return null;
+ var o={id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),issue:i.n,title:i.t,job:i.job,text:tx.trim(),note:(nt||"").trim(),ts:new Date().toISOString()};
+ _h.push(o);_s();return o;
+}
+function delHl(id){_h=_h.filter(function(x){return x.id!==id;});_s();}
+function updHl(id,nt){var x=_h.find(function(y){return y.id===id;});if(x){x.note=nt.trim();x.upd=new Date().toISOString();_s();}}
+
+var tb=null,pu=null,sv="",sr=null;
+
+function mkUI(){
+ if(tb)return;
+ tb=document.createElement("div");tb.id="tb";tb.style.cssText="position:fixed;z-index:99999;display:none;background:#2d2d3f;border-radius:8px;padding:4px;box-shadow:0 4px 16px rgba(0,0,0,.25);font-family:-apple-system,PingFang SC,sans-serif;gap:4px;";
+ var bb=document.createElement("button");bb.textContent="⭐ 标记";bb.style.cssText="border:none;border-radius:6px;padding:6px 14px;font-size:13px;cursor:pointer;font-family:inherit;background:#f5d742;color:#1a1a2e;font-weight:600;";bb.onmouseover=function(){bb.style.background="#ffe066";};bb.onmouseout=function(){bb.style.background="#f5d742";};bb.onclick=function(){act(false);};
+ var nb=document.createElement("button");nb.textContent="📝 记笔记";nb.style.cssText="border:none;border-radius:6px;padding:6px 14px;font-size:13px;cursor:pointer;font-family:inherit;background:#444;color:#eee;";nb.onmouseover=function(){nb.style.background="#555";};nb.onmouseout=function(){nb.style.background="#444";};nb.onclick=function(){act(true);};
+ tb.appendChild(bb);tb.appendChild(nb);document.body.appendChild(tb);
+ pu=document.createElement("div");pu.id="pu";pu.style.cssText="position:fixed;z-index:100000;display:none;background:#fff;border-radius:12px;padding:20px;box-shadow:0 8px 32px rgba(0,0,0,.2);font-family:-apple-system,PingFang SC,sans-serif;width:340px;max-width:90vw;";
+ pu.innerHTML='<div style="font-size:14px;font-weight:600;margin-bottom:10px;color:#333;">📝 记录想法</div><div id="mq" style="font-size:13px;color:#888;margin-bottom:10px;padding:8px 12px;background:#f5f5f5;border-radius:6px;line-height:1.5;max-height:80px;overflow-y:auto;"></div><textarea id="mt" placeholder="写下你的想法……" style="width:100%;min-height:80px;border:1px solid #ddd;border-radius:6px;padding:8px;font-size:14px;font-family:inherit;resize:vertical;box-sizing:border-box;"></textarea><div style="display:flex;gap:8px;justify-content:flex-end;margin-top:10px;"><button id="mc" style="border:none;background:#f0f0f0;color:#666;padding:6px 16px;border-radius:6px;cursor:pointer;font-size:13px;">取消</button><button id="ms" style="border:none;background:#e8924c;color:#fff;padding:6px 16px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;">保存笔记</button></div>';
+ document.body.appendChild(pu);
+ document.getElementById("mc").onclick=function(){pu.style.display="none";};
+ document.getElementById("ms").onclick=function(){var n=document.getElementById("mt").value,q=document.getElementById("mq").dataset.text||"";if(q){addHl(q,n);pu.style.display="none";document.getElementById("mt").value="";toast("✅ 笔记已保存");badge();}};
+}
+
+function show(x,y){mkUI();tb.style.display="flex";tb.style.left=Math.max(8,Math.min(x,window.innerWidth-180))+"px";tb.style.top=(y+12)+"px";}
+function hide(){if(tb)tb.style.display="none";sv="";sr=null;}
+
+function act(note){
+ var t=sv;if(!t)return;
+ if(note){var q=document.getElementById("mq");if(!q)return;q.textContent="「"+t.slice(0,100)+(t.length>100?"…」":"」");q.dataset.text=t;document.getElementById("mt").value="";var tr=tb.getBoundingClientRect();pu.style.top=Math.max(20,tr.top-320)+"px";pu.style.left=Math.max(20,Math.min(tr.left,window.innerWidth-360))+"px";pu.style.display="block";document.getElementById("mt").focus();hide();return;}
+ var hl=addHl(t,"");toast("⭐ 已标记");badge();
+ if(hl&&sr){try{var ms=wrapRange(sr,hl.id,"");for(var k=0;k<ms.length;k++){ms[k].style.background="#ffeb7a";(function(mk){setTimeout(function(){mk.style.background="#f5d742";},300);})(ms[k]);}}catch(e){toast("刷新页面可见高亮");}}
+ var s=window.getSelection();if(s)s.removeAllRanges();sv="";sr=null;hide();
+}
+
+document.addEventListener("contextmenu",function(e){
+ if(pu&&pu.style.display!=="none")return;
+ var s=window.getSelection();if(!s||s.isCollapsed||!s.toString().trim())return;
+ e.preventDefault();
+ try{var r=s.getRangeAt(0);sv=s.toString().trim();sr=r.cloneRange();show(e.clientX,e.clientY);}catch(er){}
+});
+
+document.addEventListener("mousedown",function(e){
+ if(tb&&tb.contains(e.target))return;
+ if(pu&&pu.style.display!=="none"){if(pu.contains(e.target))return;pu.style.display="none";}
+ hide();
+});
+
+function restore(){
+ var i=info();if(!i.n)return;
+ var list=_h.filter(function(x){return x.issue===i.n;});if(!list.length)return;
+ setTimeout(function(){list.forEach(function(h){restoreOne(h);});},300);
+}
+
+function wrapRange(range,id,note){
+ var sc=range.startContainer,ec=range.endContainer,so=range.startOffset,eo=range.endOffset;
+ var root=range.commonAncestorContainer;
+ if(root.nodeType===3)root=root.parentNode;
+ var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),nodes=[],n;
+ while((n=w.nextNode()))nodes.push(n);
+ var started=false,done=false,marks=[];
+ for(var i=0;i<nodes.length&&!done;i++){
+  var node=nodes[i];
+  if(node.parentNode&&(node.parentNode.className==="mh"))continue;
+  var s=0,e=node.textContent.length;
+  var hitStart=(node===sc),hitEnd=(node===ec);
+  if(hitStart&&hitEnd){
+   s=so;e=eo;started=true;done=true;
+  }else if(hitStart){
+   s=so;started=true;
+  }else if(hitEnd){
+   e=eo;done=true;
+  }
+  if(!started)continue;
+  if(e<=s)continue;
+  try{
+   var r=document.createRange();r.setStart(node,s);r.setEnd(node,e);
+   var m=document.createElement("mark");m.className="mh";m.dataset.id=id;
+   m.style.cssText="background:#f5d742;color:inherit;border-radius:2px;padding:0 2px;cursor:pointer;";
+   if(note){m.title="💡 "+note;m.style.borderBottom="2px solid #d4a017";}
+   m.onclick=function(mid,mnote){return function(ev){ev.stopPropagation();bubble(ev.target,mid,mnote);};}(id,note);
+   r.surroundContents(m);marks.push(m);
+  }catch(ex){}
+ }
+ return marks;
+}
+function restoreOne(h){
+ try{
+  var c=document.querySelector(".container")||document.body;
+  var w=document.createTreeWalker(c,NodeFilter.SHOW_TEXT),ns=[];
+  while(w.nextNode())ns.push(w.currentNode);
+  for(var i=0;i<ns.length;i++){
+   var nd=ns[i],idx=nd.textContent.indexOf(h.text);if(idx<0)continue;
+   var r=document.createRange();r.setStart(nd,idx);r.setEnd(nd,idx+h.text.length);
+   var ms=wrapRange(r,h.id,h.note);
+   return;
+  }
+ }catch(e){}
+}
+
+function bubble(mk,id,note){
+ var e=document.querySelector(".mp-bb");if(e)e.remove();
+ var b=document.createElement("div");b.className="mp-bb";
+ b.style.cssText="position:fixed;z-index:99998;background:#fff;border-radius:10px;padding:14px 18px;box-shadow:0 4px 24px rgba(0,0,0,.15);font-family:-apple-system,PingFang SC,sans-serif;font-size:14px;max-width:320px;border:1px solid #eee;";
+ var r=mk.getBoundingClientRect();b.style.top=(r.bottom+8)+"px";b.style.left=Math.max(8,Math.min(r.left,window.innerWidth-340))+"px";
+ var h='<div style="font-size:12px;color:#999;margin-bottom:6px;">已标记'+(note?" · 有笔记":"")+'</div>';
+ if(note)h+='<div style="color:#333;line-height:1.5;margin-bottom:10px;padding:8px 10px;background:#faf0e2;border-radius:6px;">💬 '+esc(note)+'</div>';
+ h+='<div style="display:flex;gap:6px;">';
+ if(!note)h+='<button id="bb_add" style="border:none;background:#e8924c;color:#fff;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;">添加笔记</button>';
+ h+='<button id="bb_del" style="border:none;background:#f5f5f5;color:#c0392b;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;">删除标记</button></div>';
+ b.innerHTML=h;document.body.appendChild(b);
+  document.getElementById("bb_del").onclick=function(){delHl(id);var all=document.querySelectorAll('.mh[data-id="'+id+'"]');for(var k=all.length-1;k>=0;k--){var mk=all[k];var p=mk.parentNode;if(p){p.replaceChild(document.createTextNode(mk.textContent),mk);}}var cont=document.querySelector(".container");if(cont)cont.normalize();b.remove();};
+ var ab=document.getElementById("bb_add");if(ab)ab.onclick=function(){
+  b.innerHTML='<div style="font-size:13px;font-weight:600;margin-bottom:8px;color:#333;">✏️ 添加笔记</div><textarea id="bb_ta" placeholder="写下你的想法……" style="width:100%;min-height:60px;border:1px solid #ddd;border-radius:6px;padding:8px;font-size:13px;font-family:inherit;resize:vertical;box-sizing:border-box;"></textarea><div style="display:flex;gap:6px;justify-content:flex-end;margin-top:8px;"><button id="bb_cancel" style="border:none;background:#f0f0f0;color:#666;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;">取消</button><button id="bb_save" style="border:none;background:#e8924c;color:#fff;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600;">保存</button></div>';
+  document.getElementById("bb_ta").focus();
+  document.getElementById("bb_cancel").onclick=function(){b.remove();};
+  document.getElementById("bb_save").onclick=function(){var n=document.getElementById("bb_ta").value;if(n){updHl(id,n);mk.title="💡 "+n;mk.style.borderBottom="2px solid #d4a017";toast("✅ 笔记已保存");}b.remove();};
+ };
+ var cl=function(ev){if(!b.contains(ev.target)&&ev.target!==mk){b.remove();document.removeEventListener("mousedown",cl);}};
+ setTimeout(function(){document.addEventListener("mousedown",cl);},0);
+}
+
+function toast(msg){
+ var t=document.createElement("div");t.textContent=msg;
+ t.style.cssText="position:fixed;bottom:40px;left:50%;transform:translateX(-50%);background:#2d2d3f;color:#fff;padding:10px 24px;border-radius:8px;font-family:-apple-system,PingFang SC,sans-serif;font-size:14px;z-index:999999;box-shadow:0 4px 20px rgba(0,0,0,.2);opacity:0;transition:opacity .3s;";
+ document.body.appendChild(t);requestAnimationFrame(function(){t.style.opacity="1";});
+ setTimeout(function(){t.style.opacity="0";setTimeout(function(){t.remove();},300);},2000);
+}
+
+var sd=null,ov=null;
+function mkSide(){
+ if(sd)return;
+ ov=document.createElement("div");ov.style.cssText="position:fixed;inset:0;z-index:99998;background:rgba(0,0,0,.3);display:none;";
+ sd=document.createElement("div");sd.style.cssText="position:fixed;top:0;right:0;bottom:0;width:380px;max-width:90vw;z-index:99999;background:#f8f7f4;box-shadow:-4px 0 24px rgba(0,0,0,.12);display:none;flex-direction:column;font-family:-apple-system,PingFang SC,sans-serif;transform:translateX(100%);transition:transform .25s ease;";
+ sd.innerHTML='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #e5e0d8;flex-shrink:0;"><div><strong style="font-size:16px;">📒 笔记本</strong><span id="sc" style="font-size:12px;color:#999;margin-left:8px;"></span></div><button id="sc_close" style="border:none;background:transparent;font-size:20px;cursor:pointer;color:#888;padding:4px 8px;border-radius:6px;">✕</button></div><div id="sb" style="flex:1;overflow-y:auto;padding:12px 16px;"></div><div style="padding:10px 16px;border-top:1px solid #e5e0d8;font-size:11px;color:#bbb;text-align:center;flex-shrink:0;">右键选中文字 → 标记或记笔记</div>';
+ document.body.appendChild(ov);document.body.appendChild(sd);
+ ov.onclick=function(){tog(false);};document.getElementById("sc_close").onclick=function(){tog(false);};
+}
+
+function tog(show){
+ mkSide();
+ var open=(show!==undefined?show:(sd.style.display==="none"||sd.style.transform==="translateX(100%)"));
+ if(open){sd.style.display="flex";ov.style.display="block";requestAnimationFrame(function(){sd.style.transform="translateX(0)";});renderSB();}
+ else{sd.style.transform="translateX(100%)";ov.style.display="none";setTimeout(function(){if(sd.style.transform==="translateX(100%)")sd.style.display="none";},260);}
+}
+
+function renderSB(){
+ var b=document.getElementById("sb");if(!b)return;
+ var hs=_h||[];document.getElementById("sc").textContent=hs.length?"("+hs.length+"条)":"(空)";
+ if(!hs.length){b.innerHTML='<div style="text-align:center;padding:60px 20px;color:#aaa;font-size:14px;">📖 还没有标记<br><span style="font-size:12px;">选中文字 → 右键 → 标记</span></div>';return;}
+ var gr={};hs.forEach(function(h){var k=h.issue||0;if(!gr[k])gr[k]={issue:k,title:h.title||("第"+k+"期"),job:h.job||"",hs:[]};gr[k].hs.push(h);});
+ var so=Object.values(gr).sort(function(a,b){return b.issue-a.issue;}),html="";
+ so.forEach(function(g){html+='<div style="margin-bottom:16px;"><div style="font-size:11px;color:#888;letter-spacing:1px;margin-bottom:6px;padding:0 4px;">第'+g.issue+"期 · "+g.job+" ("+g.hs.length+")</div>";
+ g.hs.forEach(function(h){html+='<div class="mc" data-id="'+h.id+'" style="background:#fff;border:1px solid #e5e0d8;border-radius:8px;padding:10px 12px;margin-bottom:6px;cursor:pointer;"><div style="font-size:13px;line-height:1.6;color:#3a3520;padding:4px 6px;background:#fef7e0;border-radius:4px;margin-bottom:6px;">'+esc(h.text)+'</div>';
+ if(h.note)html+='<div style="font-size:12px;color:#5a3a1a;line-height:1.5;padding:6px 8px;background:#fef6ee;border-radius:4px;margin-bottom:6px;border-left:2px solid #e8924c;">💬 '+esc(h.note)+'</div>';
+ html+='<div style="display:flex;gap:4px;justify-content:flex-end;"><button class="mcnb" style="border:none;background:transparent;color:#888;padding:2px 8px;border-radius:4px;cursor:pointer;font-size:11px;">'+(h.note?"✏️":"💬")+'</button><button class="mcdb" style="border:none;background:transparent;color:#c0392b;padding:2px 8px;border-radius:4px;cursor:pointer;font-size:11px;">🗑️</button></div></div>';});
+ html+="</div>";});b.innerHTML=html;
+ b.querySelectorAll(".mcdb").forEach(function(btn){btn.onclick=function(){var c=btn.closest(".mc"),id=c.dataset.id;delHl(id);renderSB();var all=document.querySelectorAll('.mh[data-id="'+id+'"]');for(var k=all.length-1;k>=0;k--){var mk=all[k];var p=mk.parentNode;if(p){p.replaceChild(document.createTextNode(mk.textContent),mk);}}var cont=document.querySelector(".container");if(cont)cont.normalize();toast("已删除");};});
+ b.querySelectorAll(".mcnb").forEach(function(btn){btn.onclick=function(){var c=btn.closest(".mc"),id=c.dataset.id;var h=_h.find(function(x){return x.id===id;});if(!h)return;var n=prompt("编辑笔记：",h.note||"");if(n!==null){updHl(id,n);renderSB();var mk=document.querySelector('.mh[data-id="'+id+'"]');if(mk){if(n.trim()){mk.title="💡 "+n;mk.style.borderBottom="2px solid #d4a017";}else{mk.title="";mk.style.borderBottom="";}}toast("✅ 笔记已保存");}};});
+ b.querySelectorAll(".mc").forEach(function(c){c.onclick=function(e){if(e.target.closest("button"))return;var mk=document.querySelector('.mh[data-id="'+c.dataset.id+'"]');if(mk){mk.scrollIntoView({behavior:"smooth",block:"center"});mk.style.background="#ffeb7a";setTimeout(function(){mk.style.background="#f5d742";},1500);}};});
+}
+
+function badge(){var el=document.getElementById("bdg");if(el){var c=_h.length;el.textContent=c;el.style.display=c>0?"inline":"none";}}
+function setupBtn(){if(document.getElementById("fab"))return;var b=document.createElement("button");b.id="fab";b.innerHTML='📒 笔记本 <span id="bdg" style="background:#e8924c;color:#fff;font-size:10px;padding:1px 6px;border-radius:10px;margin-left:4px;font-weight:600;display:none;">0</span>';b.style.cssText="position:fixed;bottom:24px;right:24px;z-index:99997;background:#2d2d3f;color:#f0ede8;padding:10px 18px;border-radius:24px;font-family:-apple-system,PingFang SC,sans-serif;font-size:13px;font-weight:500;box-shadow:0 4px 16px rgba(0,0,0,.15);cursor:pointer;border:1px solid rgba(255,255,255,.08);";b.onmouseover=function(){b.style.background="#3d3d55";b.style.transform="translateY(-2px)";};b.onmouseout=function(){b.style.background="#2d2d3f";b.style.transform="";};b.onclick=function(){tog();};document.body.appendChild(b);badge();}
+
+var _aichat=[],_aictx=null,_aikey="",_aibusy=false,_aipn=null,_aiov=null;
+function initAI(){
+try{_aikey=localStorage.getItem("careerlab_ai_key")||"";}catch(e){}
+try{var c=localStorage.getItem("careerlab_ai_chat");if(c)_aichat=JSON.parse(c);}catch(e){}
+try{var x=localStorage.getItem("careerlab_ai_context");if(x){_aictx=JSON.parse(x);if(Date.now()-_aictx.ts>86400000)_aictx=null;}}catch(e){}
+setupAIBtn();
+}
+function setupAIBtn(){
+if(document.getElementById("aifab"))return;
+var b=document.createElement("button");b.id="aifab";b.innerHTML='🤖 AI 助教';
+b.style.cssText="position:fixed;bottom:24px;left:24px;z-index:99994;background:#2d2d3f;color:#f0ede8;padding:10px 18px;border-radius:24px;font-family:-apple-system,PingFang SC,sans-serif;font-size:13px;font-weight:500;box-shadow:0 4px 16px rgba(0,0,0,.15);cursor:pointer;border:1px solid rgba(255,255,255,.08);";
+b.onmouseover=function(){b.style.background="#3d3d55";b.style.transform="translateY(-2px)";};
+b.onmouseout=function(){b.style.background="#2d2d3f";b.style.transform="";};
+b.onclick=function(){togAI();};
+document.body.appendChild(b);
+}
+function mkAIPanel(){
+if(_aiov)return;
+_aiov=document.createElement("div");_aiov.style.cssText="position:fixed;inset:0;z-index:99995;background:rgba(0,0,0,.3);display:none;";
+_aipn=document.createElement("div");_aipn.style.cssText="position:fixed;top:0;left:0;bottom:0;width:380px;max-width:90vw;z-index:99996;background:#f8f7f4;box-shadow:4px 0 24px rgba(0,0,0,.12);display:none;flex-direction:column;font-family:-apple-system,PingFang SC,sans-serif;transform:translateX(-100%);transition:transform .25s ease;";
+_aipn.innerHTML='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #e5e0d8;flex-shrink:0;"><div><strong style="font-size:16px;">🤖 AI 助教</strong><span id="aic" style="font-size:12px;color:#999;margin-left:8px;"></span></div><div style="display:flex;gap:6px;"><button id="ai_settings" style="border:none;background:transparent;font-size:16px;cursor:pointer;color:#999;padding:4px 8px;border-radius:6px;" title="设置API密钥">⚙️</button><button id="ai_close" style="border:none;background:transparent;font-size:20px;cursor:pointer;color:#888;padding:4px 8px;border-radius:6px;">✕</button></div></div><div id="aimsgs" style="flex:1;overflow-y:auto;padding:12px 16px;"></div><div style="padding:12px 16px;border-top:1px solid #e5e0d8;flex-shrink:0;display:flex;gap:8px;"><textarea id="ai_inp" placeholder="输入消息，Enter 发送…" style="flex:1;border:1px solid #ddd;border-radius:8px;padding:10px 12px;font-size:14px;font-family:inherit;resize:none;min-height:40px;max-height:120px;box-sizing:border-box;" rows="1"></textarea><button id="ai_send" style="border:none;background:#e8924c;color:#fff;padding:8px 16px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:600;align-self:flex-end;">发送</button></div>';
+document.body.appendChild(_aiov);document.body.appendChild(_aipn);
+_aiov.onclick=function(){togAI(false);};
+document.getElementById("ai_close").onclick=function(){togAI(false);};
+document.getElementById("ai_settings").onclick=function(){
+var k=prompt("DeepSeek API密钥（从 platform.deepseek.com 获取）：",_aikey);
+if(k!==null){_aikey=k.trim();try{localStorage.setItem("careerlab_ai_key",_aikey);}catch(e){}_aictx=null;try{localStorage.removeItem("careerlab_ai_context");}catch(e){}toast("✅ 密钥已保存");}
+};
+document.getElementById("ai_send").onclick=function(){doSend();};
+document.getElementById("ai_inp").onkeydown=function(e){
+if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();doSend();}
+};
+}
+function togAI(show){
+mkAIPanel();
+var open=(show!==undefined?show:(_aipn.style.display==="none"||_aipn.style.transform==="translateX(-100%)"));
+if(open){
+_aipn.style.display="flex";_aiov.style.display="block";
+requestAnimationFrame(function(){_aipn.style.transform="translateX(0)";});
+ensureContext(function(){renderChat();});
+}else{
+_aipn.style.transform="translateX(-100%)";_aiov.style.display="none";
+setTimeout(function(){if(_aipn.style.transform==="translateX(-100%)")_aipn.style.display="none";},260);
+}
+}
+function ensureContext(cb){
+if(_aictx){cb();return;}
+var issues=[];var done=0;var total=10;
+function checkDone(){
+done++;
+if(done>=total){
+issues.sort(function(a,b){return a.n-b.n;});
+_aictx={ts:Date.now(),issues:issues};
+try{localStorage.setItem("careerlab_ai_context",JSON.stringify(_aictx));}catch(e){}
+cb();
+}
+}
+for(var i=1;i<=total;i++){
+(function(n){
+var xhr=new XMLHttpRequest();
+xhr.open("GET",(n<10?"0":"")+n+".html",true);
+xhr.timeout=10000;
+xhr.onload=function(){
+if(xhr.status===200){var r=extractIssue(xhr.responseText,n);if(r)issues.push(r);}
+checkDone();
+};
+xhr.onerror=function(){checkDone();};
+xhr.ontimeout=function(){checkDone();};
+xhr.send();
+})(i);
+}
+}
+function extractIssue(html,n){
+try{
+var title="",job="";
+var tm=html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+if(tm){title=tm[1].replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();}
+var jm=html.match(/class="job-name"[^>]*>([^<]+)/i);
+if(!jm)jm=html.match(/class="meta"[^>]*>([\s\S]*?)<\/p>/i);
+if(jm){job=jm[1].replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();}
+var sm=html.match(/<section[^>]*>([\s\S]*?)<hr\s+class="divider-solid/i);
+var text="";
+if(sm){text=sm[1].replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();}
+if(text.length>2000)text=text.slice(0,2000)+"…";
+return {n:n,title:title||("第"+n+"期"),job:job||"",text:text};
+}catch(e){return null;}
+}
+function buildSystemPrompt(){
+if(!_aictx||!_aictx.issues||!_aictx.issues.length)return "你是\"职人手艺\"的AI助教。职人手艺是一个深度解剖不同职业思维方式的项目，每期拆解一个具体职业。你的风格：像朋友聊天一样说人话、简洁、多用大白话和具体例子。请用中文回复。";
+var p="你是\"职人手艺\"的AI助教。职人手艺是一个深度解剖不同职业思维方式的项目，每期拆解一个具体职业，包括他们的日常、挑战、黄金技能和底层思维模型。你的风格：像朋友聊天一样说人话、简洁、多用大白话和具体例子。以下是各期摘要：\n\n";
+for(var i=0;i<_aictx.issues.length;i++){
+var iss=_aictx.issues[i];
+p+="第"+iss.n+"期《"+iss.title+"》—— "+iss.job+"\n"+iss.text+"\n\n";
+}
+var cur=info();
+if(cur&&cur.n)p+="用户当前正在阅读：第"+cur.n+"期《"+cur.t+"》—— "+cur.job;
+return p;
+}
+function renderChat(){
+var b=document.getElementById("aimsgs");if(!b)return;
+var sc=document.getElementById("aic");if(sc)sc.textContent=_aichat.length?"("+_aichat.length+"条)":"(空)";
+var html="";
+if(!_aichat.length&&_aictx){
+var greet="你好！我是职人手艺的AI助教 🤖\n\n我对每一期解剖的职业都有自己的理解，可以跟你聊任何一期。你可以问我：\n\n• 某个职业的核心技能（比如\"空调安装师傅最厉害的能力是什么？\"）\n• 不同职业之间的联系（比如\"老周的思维方式和程序员有什么共通之处？\"）\n• 从这个职业身上能学到什么（比如\"我能从杀鱼摊主身上学到什么？\"）\n• 任何你在阅读中想到的问题\n\n有什么想聊的？";
+html+='<div class="aichat-msg aichat-assistant"><div class="lbl">AI</div><div class="bub">'+esc(greet).replace(/\n/g,"<br>")+'</div></div>';
+}
+for(var i=0;i<_aichat.length;i++){
+var m=_aichat[i];
+if(m.role==="system"){html+='<div class="aichat-msg aichat-sys"><div class="bub">'+esc(m.content)+'</div></div>';}
+else if(m.role==="user"){html+='<div class="aichat-msg aichat-user"><div class="lbl">你</div><div class="bub">'+esc(m.content).replace(/\n/g,"<br>")+'</div></div>';}
+else{html+='<div class="aichat-msg aichat-assistant"><div class="lbl">AI</div><div class="bub">'+esc(m.content).replace(/\n/g,"<br>")+'</div></div>';}
+}
+if(_aibusy){html+='<div class="aichat-loading"><span></span><span></span><span></span></div>';}
+b.innerHTML=html;
+b.scrollTop=b.scrollHeight;
+setTimeout(function(){restore();},100);
+}
+function addMsg(role,content,skipSave){
+_aichat.push({role:role,content:content,ts:new Date().toISOString()});
+if(!skipSave)saveChat();
+renderChat();
+}
+function saveChat(){
+if(_aichat.length>100)_aichat=_aichat.slice(-100);
+try{localStorage.setItem("careerlab_ai_chat",JSON.stringify(_aichat));}catch(e){}
+}
+function doSend(){
+if(_aibusy)return;
+var inp=document.getElementById("ai_inp"),txt=(inp.value||"").trim();
+if(!txt)return;
+if(!_aikey){
+var k=prompt("请输入你的DeepSeek API密钥（可从 platform.deepseek.com 获取）：","");
+if(!k||!k.trim())return;
+_aikey=k.trim();
+try{localStorage.setItem("careerlab_ai_key",_aikey);}catch(e){}
+addMsg("system","✅ 密钥已保存（仅保存在本地浏览器）",true);
+}
+inp.value="";inp.style.height="auto";
+addMsg("user",txt);
+_aibusy=true;renderChat();
+var msgs=[{role:"system",content:buildSystemPrompt()}];
+for(var i=0;i<_aichat.length;i++){var m=_aichat[i];if(m.role!=="system")msgs.push({role:m.role,content:m.content});}
+callDeepSeek(msgs,function(err,reply){
+_aibusy=false;
+if(err){addMsg("system","❌ "+err,true);}
+else if(reply){addMsg("assistant",reply);}
+else{addMsg("system","❌ 未知错误",true);}
+});
+}
+function callDeepSeek(messages,cb){
+var xhr=new XMLHttpRequest();
+xhr.open("POST","https://api.deepseek.com/v1/chat/completions",true);
+xhr.setRequestHeader("Content-Type","application/json");
+xhr.setRequestHeader("Authorization","Bearer "+_aikey);
+xhr.timeout=30000;
+xhr.onload=function(){
+if(xhr.status===200){
+try{var r=JSON.parse(xhr.responseText);cb(null,r.choices[0].message.content);}catch(e){cb(new Error("解析响应失败"));}
+}else if(xhr.status===401){cb(new Error("API密钥无效，请点击⚙️重新设置"));}
+else if(xhr.status===429){cb(new Error("请求过于频繁，请稍后再试"));}
+else if(xhr.status>=500){cb(new Error("服务异常（"+xhr.status+"），请稍后重试"));}
+else{cb(new Error("请求失败（"+xhr.status+"）"));}
+};
+xhr.onerror=function(){cb(new Error("网络连接失败，请检查网络"));};
+xhr.ontimeout=function(){cb(new Error("请求超时，请重试"));};
+xhr.send(JSON.stringify({model:"deepseek-chat",messages:messages,stream:false,max_tokens:2000,temperature:0.7}));
+}
+
+var st=document.createElement("style");st.textContent=".mh{background:#f5d742;color:inherit;border-radius:2px;padding:0 2px;cursor:pointer;}.mh:hover{background:#ffeb7a;}.mc{transition:box-shadow .15s;}.mc:hover{box-shadow:0 1px 6px rgba(0,0,0,.06);}.mc button:hover{background:#eee!important;}::selection{background:#f5d742;color:#1a1a2e;}.aichat-msg{padding:2px 0;}.aichat-msg .lbl{font-size:11px;color:#999;margin-bottom:2px;}.aichat-msg .bub{padding:10px 14px;border-radius:12px;font-size:14px;line-height:1.7;word-break:break-word;}.aichat-user .bub{background:#e8f0fe;color:#1a1a2e;margin-left:40px;}.aichat-user .lbl{text-align:right;}.aichat-assistant .bub{background:#fff;border:1px solid #e5e0d8;color:#333;margin-right:40px;}.aichat-sys .bub{background:#f5f5f5;color:#888;text-align:center;font-size:13px;padding:8px 14px;border-radius:8px;margin:0 20px;}.aichat-loading{display:flex;gap:4px;padding:8px 16px;align-items:center;}.aichat-loading span{width:6px;height:6px;border-radius:50%;background:#bbb;animation:aichat-bounce 1.4s infinite;}.aichat-loading span:nth-child(2){animation-delay:.2s;}.aichat-loading span:nth-child(3){animation-delay:.4s;}@keyframes aichat-bounce{0%,80%,100%{opacity:.3;transform:scale(.8);}40%{opacity:1;transform:scale(1);}}#ai_inp:focus{outline:none;border-color:#e8924c;}";document.head.appendChild(st);
+restore();setupBtn();initAI();
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>职人手艺 · 警犬训练员</title>
+<style>
+:root{--bg:#faf8f5;--text:#1a1a2e;--accent:#e8924c;--accent-dark:#c8772e;--muted:#888}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Georgia","Noto Serif SC",serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:17px}
+.hero{background:linear-gradient(135deg,#1a1d2e,#1a2744,#1a3856);color:#f0ede8;padding:100px 24px 80px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(232,146,76,0.12),transparent 60%)}
+.hero>*{position:relative;z-index:1}
+.hero-badge{display:inline-block;border:1px solid var(--accent);color:var(--accent);font-family:-apple-system,"PingFang SC",sans-serif;font-size:12px;letter-spacing:3px;padding:4px 16px;border-radius:20px;margin-bottom:32px;text-transform:uppercase}
+.hero h1{font-size:clamp(32px,6vw,56px);font-weight:700;letter-spacing:2px;margin-bottom:12px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .sub{font-size:clamp(16px,2.5vw,22px);color:#b8b0a0;font-family:-apple-system,"PingFang SC",sans-serif;font-weight:300;margin-bottom:8px}
+.hero .meta{font-family:-apple-system,"PingFang SC",sans-serif;font-size:13px;color:#888;letter-spacing:1px;margin-top:12px}
+.container{max-width:740px;margin:0 auto;padding:0 24px}
+.intro{margin-top:-40px;position:relative;z-index:2}
+.intro-card{background:#fff;border-radius:12px;padding:40px 36px;box-shadow:0 4px 24px rgba(0,0,0,0.06);border:1px solid #e5e0d8}
+.intro-card p{margin-bottom:16px;color:#444}.intro-card p:last-child{margin-bottom:0}
+section{padding:48px 0}
+.section-label{font-family:-apple-system,"PingFang SC",sans-serif;font-size:11px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:8px}
+h2{font-size:26px;font-weight:700;margin-bottom:20px;line-height:1.4;color:#1a1a2e}
+h3{font-size:19px;font-weight:600;margin:32px 0 12px;color:#1a1a2e}
+p{margin-bottom:16px;color:#444}
+.story-box{background:#fff;border:1px solid #e5e0d8;border-radius:10px;padding:24px 28px;margin:20px 0}
+.story-box .scene{font-size:11px;letter-spacing:2px;color:var(--accent);font-family:-apple-system,"PingFang SC",sans-serif;margin-bottom:8px;text-transform:uppercase}
+.story-box p{color:#444;margin-bottom:10px}.story-box p:last-child{margin-bottom:0}
+.highlight-box{background:linear-gradient(135deg,#fef6ee,#faf0e2);border:1px solid #e8d4b8;border-radius:10px;padding:28px 32px;margin:28px 0}
+.highlight-box .label{font-family:-apple-system,"PingFang SC",sans-serif;font-size:12px;letter-spacing:2px;color:var(--accent-dark);margin-bottom:8px}
+.highlight-box p{margin-bottom:0;color:#5a3a1a}
+.skill-card{background:#fff;border:1px solid #e5e0d8;border-radius:10px;padding:24px 28px;margin:16px 0}
+.skill-card .rank{font-family:-apple-system,"PingFang SC",sans-serif;font-size:11px;letter-spacing:2px;color:var(--accent);margin-bottom:6px}
+.skill-card h4{font-size:17px;font-weight:700;margin-bottom:8px;color:#1a1a2e}
+.skill-card p{color:#555;margin-bottom:0}
+blockquote{background:#f3f0ea;border-left:4px solid var(--accent);padding:20px 24px;margin:24px 0;border-radius:0 8px 8px 0;font-style:italic;color:#555}
+blockquote cite{display:block;margin-top:8px;font-size:14px;font-style:normal;color:var(--muted)}
+.divider-solid{border:0;height:1px;background:linear-gradient(to right,transparent,#e5e0d8,transparent);margin:40px 0}
+.next-teaser{background:#f3f0ea;border:1px solid #e5e0d8;border-radius:10px;padding:24px 28px;margin:28px 0;text-align:center}
+.next-teaser .label{font-family:-apple-system,"PingFang SC",sans-serif;font-size:11px;letter-spacing:2px;color:var(--muted);margin-bottom:6px}
+.next-teaser h4{font-size:17px;font-weight:700;color:#1a1a2e;margin-bottom:4px}
+.next-teaser p{font-size:14px;color:#888;margin-bottom:0}
+footer{text-align:center;padding:60px 24px;color:#999;font-size:14px;font-family:-apple-system,"PingFang SC",sans-serif}
+@media(max-width:600px){body{font-size:16px}.hero{padding:60px 20px 50px}.intro-card{padding:28px 20px}section{padding:36px 0}.story-box,.skill-card,.highlight-box{padding:18px 20px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+<div class="hero-badge">破茧计划 · 职人手艺 · 警犬训练员——和一只狗建立比人类更深的信任</div>
+<h1><em>你没法命令一条狗信任你</em>，只能一步步让它选择你</h1>
+<p class="sub">警犬训练员的核心能力：在不靠语言、不靠权力的前提下，用"一致性"和"延迟满足"建立一套可复利的信任系统——这套方法，同样适用于带团队、谈客户、养孩子</p>
+<span class="job-name">警犬训练员</span>
+<p class="hook">你看到的是一条威风凛凛的警犬，扑咬、搜毒、追踪，动作干脆利落。你看不到的是，为了让它在一个指令下做出正确反应，训导员可能重复了上千次，并且在它做错时忍住不发火、在它做对时第一时间兑现奖励。这行最难的不是"训狗"，而是——你没法解释，也没法讲道理，你只能靠自己的每一个动作，让对方一点点相信你。</p>
+<p class="meta">🐕 警犬训练员 · 信任建立 · 非语言沟通 · 延迟满足</p>
+</header>
+<div class="container">
+<div class="intro"><div class="intro-card">
+<p><strong>警犬训练员，大概是所有"带人"的职业里，最没有权力可用的一种。</strong></p>
+<p>带员工，你可以讲道理、可以定KPI、可以用升职加薪。带孩子，你可以解释、可以立规矩。但训一条狗——你没法跟它开会，没法跟它签合同，没法跟它说"这个做好了年底给你加鸡腿"。它听不懂你的语言，看不懂你的表情背后的逻辑，它只认一件事：<strong>你过去做的每一个动作，是不是和你说的一致。</strong></p>
+<p>很多人以为警犬训练就是"教狗做动作"——坐下、趴下、扑咬，像训练马戏团一样。但真正的训导员听到这种话只会摇头："动作是最容易的部分。难的是让它在你不在场的时候、在它害怕的时候、在它兴奋到失控的时候，依然愿意听你的。这不是服从，是信任。"</p>
+<p>他们脑子里有一套"信任工程学"。我们把它拆开，看看这套东西到底是怎么建起来的。</p>
+</div></div>
+
+<section>
+<span class="section-label">Part 1</span>
+<h2>清晨五点，训练场上的"无声对话"</h2>
+
+<div class="story-box"><div class="scene">📅 案例：一个普通的训练日</div>
+<p>老陈带犬十几年了。他的训练日通常从早上五点多开始——不是因为要抢时间，而是因为<strong>清晨是犬注意力最集中、环境干扰最少的时候。</strong>天还没大亮，训练场上只有他、一条叫"黑子"的德牧，和几个训练器材。</p>
+<p>黑子今年三岁，是老陈带的第三条工作犬。它蹲在老陈脚边，耳朵竖着，眼睛盯着老陈的手——不是盯着脸，是盯着手。因为对犬来说，人的手才是"指令发射器"。</p>
+<p>老陈不说话。他抬手，掌心向下，黑子立刻趴下。他换了个手势，黑子起身。整个过程中，老陈几乎不发出声音，偶尔用短促的口令配合。这种"无声对话"，外人看着像变魔术，其实是几百个清晨磨出来的默契。</p>
+<p>"很多人以为要靠喊、靠凶。其实你越喊，它越慌。真正管用的指令，是它不用看你的脸，只看你的手，就知道你要它干什么。"</p>
+</div>
+
+<h3>一天的真实面貌</h3>
+<p>警犬训练员的一天，不是"遛狗"，而是"上工"。</p>
+<p><strong>体能训练：</strong>训导员本身要有体能。一条成年工作犬的冲刺速度、爆发力、耐力，都不是普通人能跟得上的。你要跟它一起跑、一起爬、一起在复杂地形里作业。犬跑不动了你可以等它，你跑不动了，训练就断了。</p>
+<p><strong>科目训练：</strong>警犬分很多专业方向——追踪、搜毒、搜爆、扑咬、搜救。每个方向都要长期反复训练。一个搜索科目，可能要在不同场地、不同干扰条件下重复成百上千次，直到犬形成稳定的条件反射。</p>
+<p><strong>感情时间：</strong>这部分外人最不理解——训练之外，训导员要花大量时间和犬"相处"，喂食、梳毛、散步、玩耍。不是任务，是纯粹的相处。老陈说，这条时间不能省，省了，训练就变成了"交易"，而不是"合作"。</p>
+<p><strong>心理状态：</strong>训导员普遍有一种"压着的耐心"。犬会犯错，会走神，会突然被别的东西吸引。你不能发火——发火只会让它把你和"不舒服"联系起来。你得等，得重复，得在它做对的那一瞬间，立刻给出反馈。</p>
+</div>
+</section>
+
+<section>
+<span class="section-label">Part 2</span>
+<h2>"我第一次带犬搜到东西，手抖得握不住牵引绳"</h2>
+
+<div class="story-box"><div class="scene">😱 案例：小林的第一次实战</div>
+<p>小林入行三年，跟着老陈学。真正带犬独立执行任务，是在一次联合演练里——模拟在废弃仓库里搜索违禁品。</p>
+<p>他牵着犬进去，脑子里一片空白。平时训练时，老陈在旁边盯着，错了可以重来；现在只有他和犬，还有外面等着看结果的同事。他的手心开始出汗，牵引绳攥得死死的。</p>
+<p>犬走了一段，突然停住，回头看他。小林愣了一下——他不知道这个"回头"是什么意思。是犬发现了什么？还是它只是累了？还是它想玩？他一犹豫，犬就自己往前走了，错过了那个点位。</p>
+<p>演练结束后，老陈只说了一句："犬回头看你的那一眼，是在问你'是这样吗'。你当时没回答它，它就只能自己猜。你猜错一次没关系，它猜错一次，可能就再也不问你了。"</p>
+</div>
+
+<h3>新人必踩的三个大坑</h3>
+<p><strong>第一个坑：把"训练"当成"命令"。</strong>新人往往觉得，我是人，它是狗，我说什么它就得做什么。结果一遇到犬不配合，就上火、就加大音量、就用力拉绳。老陈说，<strong>你越用力，它越不信你。因为它感受到的不是指令，是情绪。</strong>而犬对情绪极其敏感——它分不清你是在"训练"还是在"发飙"。</p>
+<p><strong>第二个坑：奖励给得太晚。</strong>犬做对了一个动作，新人往往过几秒才反应过来去摸它、夸它。但对犬来说，几秒钟后的事情，和刚才那个动作已经没关系了。它不明白你在奖励什么。<strong>奖励必须发生在"对的那一瞬间"，晚了就是无效反馈。</strong></p>
+<p><strong>第三个坑：把"一次成功"当成"学会了"。</strong>新人训出一个动作，就以为犬"会了"。但老陈说，犬学会一个动作，要在不同环境、不同干扰、不同状态下都能稳定做出，才算真的会。会一次是运气，会一百次才是本事。</p>
+</div>
+</section>
+
+<section>
+<span class="section-label">Part 3</span>
+<h2>老手的"读犬眼"与"稳如老狗"</h2>
+
+<div class="highlight-box"><div class="label">🐾 老手的肌肉记忆</div>
+<p>老陈站在训练场上，几乎不用低头看犬。他的余光能捕捉到犬的每一个微小变化——耳朵的角度、尾巴的幅度、步频的快慢、呼吸的深浅。这些细节，对他来说不是"信息"，而是"语言"。犬还没做出动作，他就知道它下一步要干嘛。</p></div>
+
+<div class="story-box"><div class="scene">👂 案例：听呼吸辨状态</div>
+<p>有一次，老陈带黑子做搜索训练。黑子跑了一段，老陈突然叫停，把它拉到一边休息。旁边的助手不解："它跑得挺好啊，怎么停了？"</p>
+<p>老陈说："你听它的呼吸——刚才开始有点急了。它急，说明它在'应付任务'，不是在'认真找'。这时候再训，它学不到东西，还会把'搜索'和'累'联系起来。宁可停，也不能让它带着负面感受练。"</p>
+<p>助手后来才意识到：<strong>老陈不是在训犬的动作，是在训犬的状态。</strong>动作错了可以改，状态坏了就难办了。</p>
+</div>
+
+<div class="story-box"><div class="scene">👀 案例：一眼看出"假反应"</div>
+<p>训练中，犬有时会做出"假反应"——比如明明没闻到目标物，却做出示警动作，因为它知道这样能得到奖励。新人往往分辨不出来，一看犬有反应就高兴地给奖励。</p>
+<p>老陈不会。他盯着犬的整个身体：如果是真的发现目标，犬的呼吸会变浅、身体会绷紧、尾巴会有特定的小幅摆动；如果是假反应，犬会先偷偷瞄他一眼，看他的反应。<strong>那个"偷瞄"，就是破绽。</strong></p>
+<p>"犬比人诚实，但它也会'骗'——不是坏，是它发现骗有用。你要做的，不是骂它，是让'骗'得不到奖励。一次两次，它自己就不骗了。"</p>
+</div>
+
+<div class="story-box"><div class="scene">✍️ 案例：三秒不动</div>
+<p>老陈有个习惯——每次犬犯错，他会先停三秒，什么都不做，什么都不说。这三秒不是发呆，是给自己一个"缓冲"，避免下意识地发火或纠正。</p>
+<p>"犬犯错的时候，你第一个反应往往是错的。停三秒，等那个反应过去，再决定怎么做。这三秒，就是你比犬高明的地方。"</p>
+</div>
+</section>
+
+<section>
+<span class="section-label">Part 4</span>
+<h2>这行最值钱的，不是训犬技巧</h2>
+
+<div class="highlight-box"><div class="label">🧠 底层思维模型（可迁移）</div>
+<p>老陈没学过"信任工程"这个词，但他每天在做的事，本质就是一套建立信任的系统。我们把它拆开，发现这些模型放在任何"需要让别人长期配合你"的场景里都特别好使：</p></div>
+
+<h3>模型一：一致性账户 —— "你说的和做的，必须是同一件事"</h3>
+<p>犬不会听你解释，它只会观察。你今天用手势A表示"坐下"，明天用手势B表示"坐下"，它就会困惑——到底哪个算数？一旦困惑，它就会开始"猜"，而不是"信"。</p>
+<p>老陈训练时，手势、口令、奖励标准，从头到尾完全一致。不是因为死板，而是因为<strong>信任是靠"可预测性"一点点攒起来的。</strong>犬每一次做出正确反应，都得到同样的反馈，它就会慢慢形成一种认知：这个人说的，是算数的。</p>
+<div class="highlight-box" style="border-left: 3px solid #e8924c; padding: 12px; background: #fff9f0;">
+<p><strong>迁移启发：</strong>带团队、谈客户、养孩子，本质都是一样的。你答应的事，做到了几次，对方就开始信你；你答应的事，变了几次，对方就开始"防"你。信任不是靠一次大的承诺建立的，是靠一百次小的"说到做到"攒起来的。<strong>想让别人信你，先让自己变得可预测。</strong></p>
+</div>
+
+<h3>模型二：即时反馈 —— "对的那一秒，必须立刻兑现"</h3>
+<p>犬做对一个动作，老陈的奖励——一个抚摸、一句夸奖、一小块食物——必须在"那一秒"给出。晚几秒，犬就不知道你在奖励什么了。这不是苛刻，这是犬的认知规律。</p>
+<p>这个思维的本质是：<strong>反馈的价值，和它的及时性成正比。</strong>再好的反馈，如果晚了，就变成了噪音。</p>
+<div class="highlight-box" style="border-left: 3px solid #e8924c; padding: 12px; background: #fff9f0;">
+<p><strong>迁移启发：</strong>下属做得好，你拖到季度总结才表扬，效果已经大打折扣了。孩子在餐桌上说了一句体贴的话，你当时点头微笑，比晚上睡前再提一句要管用得多。反馈这件事，及时性比"分量"更重要。<strong>别攒着夸人，攒着就馊了。</strong></p>
+</div>
+
+<h3>模型三：延迟满足 —— "忍住不发火，比发火难得多，也有用得多"</h3>
+<p>犬做错了，你的第一反应是想纠正、想制止、想发火。但老陈的做法是"停三秒"，然后选择"不动"，等犬自己回到正确状态，再给反馈。</p>
+<p>为什么？因为<strong>发火是一种"短期有效、长期有毒"的行为。</strong>你发火，犬可能当下就老实了，但它学到的是"这个人会突然变凶"，而不是"这个动作我做错了"。前者会让它变得畏缩、不敢尝试，后者才是真正的学习。</p>
+<div class="highlight-box" style="border-left: 3px solid #e8924c; padding: 12px; background: #fff9f0;">
+<p><strong>迁移启发：</strong>带人最难的不是"教方法"，是"忍住不发火"。你一发火，对方就关闭了学习通道，只剩下"怎么让你别生气"这一个目标。真正有效的纠错，是在对方做对的那一瞬间给出肯定，而不是在做错的那一瞬间给出怒火。<strong>延迟满足，不只是对别人，也是对自己情绪的管理。</strong></p>
+</div>
+</section>
+
+<section>
+<span class="section-label">Part 5</span>
+<h2>你能从这行学到什么</h2>
+
+<h3>你带团队、谈客户、养孩子——但你跟老陈做的事，本质一样</h3>
+<p>你可能觉得警犬训练员离你很远。但你仔细想想，老陈每天在做的事，跟你其实很像——都是在"没法讲道理"的前提下，建立信任。</p>
+
+<p><strong>第一，在没有权力的时候，靠什么让别人配合你？</strong>老陈没有权力，他不能开除一条狗，也不能给狗升职。他能用的，只有"一致性"和"即时反馈"。你带团队时，如果下属不配合，你先别急着用权力压——想想你的"一致性账户"里，还有多少余额。</p>
+
+<p><strong>第二，在对方"听不懂你"的时候，怎么沟通？</strong>老陈和犬之间没有共同语言，他靠的是手势、节奏、身体的姿态。你面对一个和你背景完全不同的客户、同事、孩子时，语言也常常是失效的——这时候，你的行为、你的节奏、你的"说到做到"，比任何话术都管用。</p>
+
+<p><strong>第三，也是最重要的——学会"忍住"。</strong>老陈最值钱的能力，不是他会训犬，而是他能在犬犯错的时候忍住不发火。你能忍住不在下属犯错时立刻发飙、不在孩子闹脾气时立刻吼回去、不在客户刁难时立刻翻脸——这份"忍住"，才是你比对方高明的地方。</p>
+
+<blockquote>"犬不会因为你凶就信你，也不会因为你给吃的就信你。它信你，是因为你过去做的每一件事，都和你说的一样。就这么简单，也就这么难。"<cite>—— 老陈</cite></blockquote>
+
+<p>你带的团队、你谈的客户、你养的孩子，都不是"犬"。但信任建立的底层逻辑，是一样的——<strong>不是靠一次大的承诺，而是靠一百次小的"说到做到"。</strong></p>
+
+<hr class="divider-solid">
+
+<h2>一句话总结这个职业</h2>
+<div class="highlight-box">
+<p><strong>警犬训练员不是"训狗的人"，而是"在不靠语言、不靠权力的前提下，用一致性和即时反馈，一点点建立信任系统"的人。</strong></p>
+<p style="margin-top:12px;font-size:15px;color:#8a6a4a;">每一次训练都是一次"信任存款"：保持一致 → 即时反馈 → 忍住情绪 → 重复积累。</p>
+</div>
+
+<hr class="divider-solid">
+<footer>
+<p>破茧计划 · 职人手艺 · 第26期 · 警犬训练员</p>
+<nav style="margin-top:12px;display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap;">
+<a href="index.html" style="color:#e8924c;text-decoration:none;font-size:14px;">← 返回目录</a>
+<span style="color:#ddd;">|</span>
+<span style="color:#aaa;font-size:14px;">导航占位</span>
+</nav>
+</footer>
+</div>
+<script>
+(function(){
+"use strict";
+var _h=[];
+try{var r=localStorage.getItem("careerlab_backup");if(r)_h=JSON.parse(r);}catch(e){}
+function _s(){try{localStorage.setItem("careerlab_backup",JSON.stringify(_h));}catch(e){}}
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function info(){
+ var b=document.querySelector(".hero-badge");if(!b)return{n:0};
+ var fn=(window.location.pathname.match(/(\d+)\.html/)||[])[1];var m=fn?[fn,fn]:null;if(!m){var t=b.textContent;m=t.match(/(\d+)/);}
+ if(!m){var cn={"一":1,"二":2,"三":3,"四":4,"五":5,"六":6,"七":7,"八":8,"九":9,"十":10};var x=t.match(/[一二三四五六七八九十]/);if(x)m=[x[0],cn[x[0]]||0];}
+ return{n:m?parseInt(m[1]):0,t:(document.querySelector(".hero h1")?.textContent||""),job:(document.querySelector(".hero .meta")?.textContent||"")};
+}
+function addHl(tx,nt){
+ var i=info();if(!i.n)return null;
+ var o={id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),issue:i.n,title:i.t,job:i.job,text:tx.trim(),note:(nt||"").trim(),ts:new Date().toISOString()};
+ _h.push(o);_s();return o;
+}
+function delHl(id){_h=_h.filter(function(x){return x.id!==id;});_s();}
+function updHl(id,nt){var x=_h.find(function(y){return y.id===id;});if(x){x.note=nt.trim();x.upd=new Date().toISOString();_s();}}
+
+var tb=null,pu=null,sv="",sr=null;
+
+function mkUI(){
+ if(tb)return;
+ tb=document.createElement("div");tb.id="tb";tb.style.cssText="position:fixed;z-index:99999;display:none;background:#2d2d3f;border-radius:8px;padding:4px;box-shadow:0 4px 16px rgba(0,0,0,.25);font-family:-apple-system,PingFang SC,sans-serif;gap:4px;";
+ var bb=document.createElement("button");bb.textContent="⭐ 标记";bb.style.cssText="border:none;border-radius:6px;padding:6px 14px;font-size:13px;cursor:pointer;font-family:inherit;background:#f5d742;color:#1a1a2e;font-weight:600;";bb.onmouseover=function(){bb.style.background="#ffe066";};bb.onmouseout=function(){bb.style.background="#f5d742";};bb.onclick=function(){act(false);};
+ var nb=document.createElement("button");nb.textContent="📝 记笔记";nb.style.cssText="border:none;border-radius:6px;padding:6px 14px;font-size:13px;cursor:pointer;font-family:inherit;background:#444;color:#eee;";nb.onmouseover=function(){nb.style.background="#555";};nb.onmouseout=function(){nb.style.background="#444";};nb.onclick=function(){act(true);};
+ tb.appendChild(bb);tb.appendChild(nb);document.body.appendChild(tb);
+ pu=document.createElement("div");pu.id="pu";pu.style.cssText="position:fixed;z-index:100000;display:none;background:#fff;border-radius:12px;padding:20px;box-shadow:0 8px 32px rgba(0,0,0,.2);font-family:-apple-system,PingFang SC,sans-serif;width:340px;max-width:90vw;";
+ pu.innerHTML='<div style="font-size:14px;font-weight:600;margin-bottom:10px;color:#333;">📝 记录想法</div><div id="mq" style="font-size:13px;color:#888;margin-bottom:10px;padding:8px 12px;background:#f5f5f5;border-radius:6px;line-height:1.5;max-height:80px;overflow-y:auto;"></div><textarea id="mt" placeholder="写下你的想法……" style="width:100%;min-height:80px;border:1px solid #ddd;border-radius:6px;padding:8px;font-size:14px;font-family:inherit;resize:vertical;box-sizing:border-box;"></textarea><div style="display:flex;gap:8px;justify-content:flex-end;margin-top:10px;"><button id="mc" style="border:none;background:#f0f0f0;color:#666;padding:6px 16px;border-radius:6px;cursor:pointer;font-size:13px;">取消</button><button id="ms" style="border:none;background:#e8924c;color:#fff;padding:6px 16px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;">保存笔记</button></div>';
+ document.body.appendChild(pu);
+ document.getElementById("mc").onclick=function(){pu.style.display="none";};
+ document.getElementById("ms").onclick=function(){var n=document.getElementById("mt").value,q=document.getElementById("mq").dataset.text||"";if(q){addHl(q,n);pu.style.display="none";document.getElementById("mt").value="";toast("✅ 笔记已保存");badge();}};
+}
+
+function show(x,y){mkUI();tb.style.display="flex";tb.style.left=Math.max(8,Math.min(x,window.innerWidth-180))+"px";tb.style.top=(y+12)+"px";}
+function hide(){if(tb)tb.style.display="none";sv="";sr=null;}
+
+function act(note){
+ var t=sv;if(!t)return;
+ if(note){var q=document.getElementById("mq");if(!q)return;q.textContent="「"+t.slice(0,100)+(t.length>100?"…」":"」");q.dataset.text=t;document.getElementById("mt").value="";var tr=tb.getBoundingClientRect();pu.style.top=Math.max(20,tr.top-320)+"px";pu.style.left=Math.max(20,Math.min(tr.left,window.innerWidth-360))+"px";pu.style.display="block";document.getElementById("mt").focus();hide();return;}
+ var hl=addHl(t,"");toast("⭐ 已标记");badge();
+ if(hl&&sr){try{var ms=wrapRange(sr,hl.id,"");for(var k=0;k<ms.length;k++){ms[k].style.background="#ffeb7a";(function(mk){setTimeout(function(){mk.style.background="#f5d742";},300);})(ms[k]);}}catch(e){toast("刷新页面可见高亮");}}
+ var s=window.getSelection();if(s)s.removeAllRanges();sv="";sr=null;hide();
+}
+
+document.addEventListener("contextmenu",function(e){
+ if(pu&&pu.style.display!=="none")return;
+ var s=window.getSelection();if(!s||s.isCollapsed||!s.toString().trim())return;
+ e.preventDefault();
+ try{var r=s.getRangeAt(0);sv=s.toString().trim();sr=r.cloneRange();show(e.clientX,e.clientY);}catch(er){}
+});
+
+document.addEventListener("mousedown",function(e){
+ if(tb&&tb.contains(e.target))return;
+ if(pu&&pu.style.display!=="none"){if(pu.contains(e.target))return;pu.style.display="none";}
+ hide();
+});
+
+function restore(){
+ var i=info();if(!i.n)return;
+ var list=_h.filter(function(x){return x.issue===i.n;});if(!list.length)return;
+ setTimeout(function(){list.forEach(function(h){restoreOne(h);});},300);
+}
+
+function wrapRange(range,id,note){
+ var sc=range.startContainer,ec=range.endContainer,so=range.startOffset,eo=range.endOffset;
+ var root=range.commonAncestorContainer;
+ if(root.nodeType===3)root=root.parentNode;
+ var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),nodes=[],n;
+ while((n=w.nextNode()))nodes.push(n);
+ var started=false,done=false,marks=[];
+ for(var i=0;i<nodes.length&&!done;i++){
+  var node=nodes[i];
+  if(node.parentNode&&(node.parentNode.className==="mh"))continue;
+  var s=0,e=node.textContent.length;
+  var hitStart=(node===sc),hitEnd=(node===ec);
+  if(hitStart&&hitEnd){
+   s=so;e=eo;started=true;done=true;
+  }else if(hitStart){
+   s=so;started=true;
+  }else if(hitEnd){
+   e=eo;done=true;
+  }
+  if(!started)continue;
+  if(e<=s)continue;
+  try{
+   var r=document.createRange();r.setStart(node,s);r.setEnd(node,e);
+   var m=document.createElement("mark");m.className="mh";m.dataset.id=id;
+   m.style.cssText="background:#f5d742;color:inherit;border-radius:2px;padding:0 2px;cursor:pointer;";
+   if(note){m.title="💡 "+note;m.style.borderBottom="2px solid #d4a017";}
+   m.onclick=function(mid,mnote){return function(ev){ev.stopPropagation();bubble(ev.target,mid,mnote);};}(id,note);
+   r.surroundContents(m);marks.push(m);
+  }catch(ex){}
+ }
+ return marks;
+}
+function restoreOne(h){
+ try{
+  var c=document.querySelector(".container")||document.body;
+  var w=document.createTreeWalker(c,NodeFilter.SHOW_TEXT),ns=[];
+  while(w.nextNode())ns.push(w.currentNode);
+  for(var i=0;i<ns.length;i++){
+   var nd=ns[i],idx=nd.textContent.indexOf(h.text);if(idx<0)continue;
+   var r=document.createRange();r.setStart(nd,idx);r.setEnd(nd,idx+h.text.length);
+   var ms=wrapRange(r,h.id,h.note);
+   return;
+  }
+ }catch(e){}
+}
+
+function bubble(mk,id,note){
+ var e=document.querySelector(".mp-bb");if(e)e.remove();
+ var b=document.createElement("div");b.className="mp-bb";
+ b.style.cssText="position:fixed;z-index:99998;background:#fff;border-radius:10px;padding:14px 18px;box-shadow:0 4px 24px rgba(0,0,0,.15);font-family:-apple-system,PingFang SC,sans-serif;font-size:14px;max-width:320px;border:1px solid #eee;";
+ var r=mk.getBoundingClientRect();b.style.top=(r.bottom+8)+"px";b.style.left=Math.max(8,Math.min(r.left,window.innerWidth-340))+"px";
+ var h='<div style="font-size:12px;color:#999;margin-bottom:6px;">已标记'+(note?" · 有笔记":"")+'</div>';
+ if(note)h+='<div style="color:#333;line-height:1.5;margin-bottom:10px;padding:8px 10px;background:#faf0e2;border-radius:6px;">💬 '+esc(note)+'</div>';
+ h+='<div style="display:flex;gap:6px;">';
+ if(!note)h+='<button id="bb_add" style="border:none;background:#e8924c;color:#fff;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;">添加笔记</button>';
+ h+='<button id="bb_del" style="border:none;background:#f5f5f5;color:#c0392b;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;">删除标记</button></div>';
+ b.innerHTML=h;document.body.appendChild(b);
+  document.getElementById("bb_del").onclick=function(){delHl(id);var all=document.querySelectorAll('.mh[data-id="'+id+'"]');for(var k=all.length-1;k>=0;k--){var mk=all[k];var p=mk.parentNode;if(p){p.replaceChild(document.createTextNode(mk.textContent),mk);}}var cont=document.querySelector(".container");if(cont)cont.normalize();b.remove();};
+ var ab=document.getElementById("bb_add");if(ab)ab.onclick=function(){
+  b.innerHTML='<div style="font-size:13px;font-weight:600;margin-bottom:8px;color:#333;">✏️ 添加笔记</div><textarea id="bb_ta" placeholder="写下你的想法……" style="width:100%;min-height:60px;border:1px solid #ddd;border-radius:6px;padding:8px;font-size:13px;font-family:inherit;resize:vertical;box-sizing:border-box;"></textarea><div style="display:flex;gap:6px;justify-content:flex-end;margin-top:8px;"><button id="bb_cancel" style="border:none;background:#f0f0f0;color:#666;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;">取消</button><button id="bb_save" style="border:none;background:#e8924c;color:#fff;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600;">保存</button></div>';
+  document.getElementById("bb_ta").focus();
+  document.getElementById("bb_cancel").onclick=function(){b.remove();};
+  document.getElementById("bb_save").onclick=function(){var n=document.getElementById("bb_ta").value;if(n){updHl(id,n);mk.title="💡 "+n;mk.style.borderBottom="2px solid #d4a017";toast("✅ 笔记已保存");}b.remove();};
+ };
+ var cl=function(ev){if(!b.contains(ev.target)&&ev.target!==mk){b.remove();document.removeEventListener("mousedown",cl);}};
+ setTimeout(function(){document.addEventListener("mousedown",cl);},0);
+}
+
+function toast(msg){
+ var t=document.createElement("div");t.textContent=msg;
+ t.style.cssText="position:fixed;bottom:40px;left:50%;transform:translateX(-50%);background:#2d2d3f;color:#fff;padding:10px 24px;border-radius:8px;font-family:-apple-system,PingFang SC,sans-serif;font-size:14px;z-index:999999;box-shadow:0 4px 20px rgba(0,0,0,.2);opacity:0;transition:opacity .3s;";
+ document.body.appendChild(t);requestAnimationFrame(function(){t.style.opacity="1";});
+ setTimeout(function(){t.style.opacity="0";setTimeout(function(){t.remove();},300);},2000);
+}
+
+var sd=null,ov=null;
+function mkSide(){
+ if(sd)return;
+ ov=document.createElement("div");ov.style.cssText="position:fixed;inset:0;z-index:99998;background:rgba(0,0,0,.3);display:none;";
+ sd=document.createElement("div");sd.style.cssText="position:fixed;top:0;right:0;bottom:0;width:380px;max-width:90vw;z-index:99999;background:#f8f7f4;box-shadow:-4px 0 24px rgba(0,0,0,.12);display:none;flex-direction:column;font-family:-apple-system,PingFang SC,sans-serif;transform:translateX(100%);transition:transform .25s ease;";
+ sd.innerHTML='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #e5e0d8;flex-shrink:0;"><div><strong style="font-size:16px;">📒 笔记本</strong><span id="sc" style="font-size:12px;color:#999;margin-left:8px;"></span></div><button id="sc_close" style="border:none;background:transparent;font-size:20px;cursor:pointer;color:#888;padding:4px 8px;border-radius:6px;">✕</button></div><div id="sb" style="flex:1;overflow-y:auto;padding:12px 16px;"></div><div style="padding:10px 16px;border-top:1px solid #e5e0d8;font-size:11px;color:#bbb;text-align:center;flex-shrink:0;">右键选中文字 → 标记或记笔记</div>';
+ document.body.appendChild(ov);document.body.appendChild(sd);
+ ov.onclick=function(){tog(false);};document.getElementById("sc_close").onclick=function(){tog(false);};
+}
+
+function tog(show){
+ mkSide();
+ var open=(show!==undefined?show:(sd.style.display==="none"||sd.style.transform==="translateX(100%)"));
+ if(open){sd.style.display="flex";ov.style.display="block";requestAnimationFrame(function(){sd.style.transform="translateX(0)";});renderSB();}
+ else{sd.style.transform="translateX(100%)";ov.style.display="none";setTimeout(function(){if(sd.style.transform==="translateX(100%)")sd.style.display="none";},260);}
+}
+
+function renderSB(){
+ var b=document.getElementById("sb");if(!b)return;
+ var hs=_h||[];document.getElementById("sc").textContent=hs.length?"("+hs.length+"条)":"(空)";
+ if(!hs.length){b.innerHTML='<div style="text-align:center;padding:60px 20px;color:#aaa;font-size:14px;">📖 还没有标记<br><span style="font-size:12px;">选中文字 → 右键 → 标记</span></div>';return;}
+ var gr={};hs.forEach(function(h){var k=h.issue||0;if(!gr[k])gr[k]={issue:k,title:h.title||("第"+k+"期"),job:h.job||"",hs:[]};gr[k].hs.push(h);});
+ var so=Object.values(gr).sort(function(a,b){return b.issue-a.issue;}),html="";
+ so.forEach(function(g){html+='<div style="margin-bottom:16px;"><div style="font-size:11px;color:#888;letter-spacing:1px;margin-bottom:6px;padding:0 4px;">第'+g.issue+"期 · "+g.job+" ("+g.hs.length+")</div>";
+ g.hs.forEach(function(h){html+='<div class="mc" data-id="'+h.id+'" style="background:#fff;border:1px solid #e5e0d8;border-radius:8px;padding:10px 12px;margin-bottom:6px;cursor:pointer;"><div style="font-size:13px;line-height:1.6;color:#3a3520;padding:4px 6px;background:#fef7e0;border-radius:4px;margin-bottom:6px;">'+esc(h.text)+'</div>';
+ if(h.note)html+='<div style="font-size:12px;color:#5a3a1a;line-height:1.5;padding:6px 8px;background:#fef6ee;border-radius:4px;margin-bottom:6px;border-left:2px solid #e8924c;">💬 '+esc(h.note)+'</div>';
+ html+='<div style="display:flex;gap:4px;justify-content:flex-end;"><button class="mcnb" style="border:none;background:transparent;color:#888;padding:2px 8px;border-radius:4px;cursor:pointer;font-size:11px;">'+(h.note?"✏️":"💬")+'</button><button class="mcdb" style="border:none;background:transparent;color:#c0392b;padding:2px 8px;border-radius:4px;cursor:pointer;font-size:11px;">🗑️</button></div></div>';});
+ html+="</div>";});b.innerHTML=html;
+ b.querySelectorAll(".mcdb").forEach(function(btn){btn.onclick=function(){var c=btn.closest(".mc"),id=c.dataset.id;delHl(id);renderSB();var all=document.querySelectorAll('.mh[data-id="'+id+'"]');for(var k=all.length-1;k>=0;k--){var mk=all[k];var p=mk.parentNode;if(p){p.replaceChild(document.createTextNode(mk.textContent),mk);}}var cont=document.querySelector(".container");if(cont)cont.normalize();toast("已删除");};});
+ b.querySelectorAll(".mcnb").forEach(function(btn){btn.onclick=function(){var c=btn.closest(".mc"),id=c.dataset.id;var h=_h.find(function(x){return x.id===id;});if(!h)return;var n=prompt("编辑笔记：",h.note||"");if(n!==null){updHl(id,n);renderSB();var mk=document.querySelector('.mh[data-id="'+id+'"]');if(mk){if(n.trim()){mk.title="💡 "+n;mk.style.borderBottom="2px solid #d4a017";}else{mk.title="";mk.style.borderBottom="";}}toast("✅ 笔记已保存");}};});
+ b.querySelectorAll(".mc").forEach(function(c){c.onclick=function(e){if(e.target.closest("button"))return;var mk=document.querySelector('.mh[data-id="'+c.dataset.id+'"]');if(mk){mk.scrollIntoView({behavior:"smooth",block:"center"});mk.style.background="#ffeb7a";setTimeout(function(){mk.style.background="#f5d742";},1500);}};});
+}
+
+function badge(){var el=document.getElementById("bdg");if(el){var c=_h.length;el.textContent=c;el.style.display=c>0?"inline":"none";}}
+function setupBtn(){if(document.getElementById("fab"))return;var b=document.createElement("button");b.id="fab";b.innerHTML='📒 笔记本 <span id="bdg" style="background:#e8924c;color:#fff;font-size:10px;padding:1px 6px;border-radius:10px;margin-left:4px;font-weight:600;display:none;">0</span>';b.style.cssText="position:fixed;bottom:24px;right:24px;z-index:99997;background:#2d2d3f;color:#f0ede8;padding:10px 18px;border-radius:24px;font-family:-apple-system,PingFang SC,sans-serif;font-size:13px;font-weight:500;box-shadow:0 4px 16px rgba(0,0,0,.15);cursor:pointer;border:1px solid rgba(255,255,255,.08);";b.onmouseover=function(){b.style.background="#3d3d55";b.style.transform="translateY(-2px)";};b.onmouseout=function(){b.style.background="#2d2d3f";b.style.transform="";};b.onclick=function(){tog();};document.body.appendChild(b);badge();}
+
+var _aichat=[],_aictx=null,_aikey="",_aibusy=false,_aipn=null,_aiov=null;
+function initAI(){
+try{_aikey=localStorage.getItem("careerlab_ai_key")||"";}catch(e){}
+try{var c=localStorage.getItem("careerlab_ai_chat");if(c)_aichat=JSON.parse(c);}catch(e){}
+try{var x=localStorage.getItem("careerlab_ai_context");if(x){_aictx=JSON.parse(x);if(Date.now()-_aictx.ts>86400000)_aictx=null;}}catch(e){}
+setupAIBtn();
+}
+function setupAIBtn(){
+if(document.getElementById("aifab"))return;
+var b=document.createElement("button");b.id="aifab";b.innerHTML='🤖 AI 助教';
+b.style.cssText="position:fixed;bottom:24px;left:24px;z-index:99994;background:#2d2d3f;color:#f0ede8;padding:10px 18px;border-radius:24px;font-family:-apple-system,PingFang SC,sans-serif;font-size:13px;font-weight:500;box-shadow:0 4px 16px rgba(0,0,0,.15);cursor:pointer;border:1px solid rgba(255,255,255,.08);";
+b.onmouseover=function(){b.style.background="#3d3d55";b.style.transform="translateY(-2px)";};
+b.onmouseout=function(){b.style.background="#2d2d3f";b.style.transform="";};
+b.onclick=function(){togAI();};
+document.body.appendChild(b);
+}
+function mkAIPanel(){
+if(_aiov)return;
+_aiov=document.createElement("div");_aiov.style.cssText="position:fixed;inset:0;z-index:99995;background:rgba(0,0,0,.3);display:none;";
+_aipn=document.createElement("div");_aipn.style.cssText="position:fixed;top:0;left:0;bottom:0;width:380px;max-width:90vw;z-index:99996;background:#f8f7f4;box-shadow:4px 0 24px rgba(0,0,0,.12);display:none;flex-direction:column;font-family:-apple-system,PingFang SC,sans-serif;transform:translateX(-100%);transition:transform .25s ease;";
+_aipn.innerHTML='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #e5e0d8;flex-shrink:0;"><div><strong style="font-size:16px;">🤖 AI 助教</strong><span id="aic" style="font-size:12px;color:#999;margin-left:8px;"></span></div><div style="display:flex;gap:6px;"><button id="ai_settings" style="border:none;background:transparent;font-size:16px;cursor:pointer;color:#999;padding:4px 8px;border-radius:6px;" title="设置API密钥">⚙️</button><button id="ai_close" style="border:none;background:transparent;font-size:20px;cursor:pointer;color:#888;padding:4px 8px;border-radius:6px;">✕</button></div></div><div id="aimsgs" style="flex:1;overflow-y:auto;padding:12px 16px;"></div><div style="padding:12px 16px;border-top:1px solid #e5e0d8;flex-shrink:0;display:flex;gap:8px;"><textarea id="ai_inp" placeholder="输入消息，Enter 发送…" style="flex:1;border:1px solid #ddd;border-radius:8px;padding:10px 12px;font-size:14px;font-family:inherit;resize:none;min-height:40px;max-height:120px;box-sizing:border-box;" rows="1"></textarea><button id="ai_send" style="border:none;background:#e8924c;color:#fff;padding:8px 16px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:600;align-self:flex-end;">发送</button></div>';
+document.body.appendChild(_aiov);document.body.appendChild(_aipn);
+_aiov.onclick=function(){togAI(false);};
+document.getElementById("ai_close").onclick=function(){togAI(false);};
+document.getElementById("ai_settings").onclick=function(){
+var k=prompt("DeepSeek API密钥（从 platform.deepseek.com 获取）：",_aikey);
+if(k!==null){_aikey=k.trim();try{localStorage.setItem("careerlab_ai_key",_aikey);}catch(e){}_aictx=null;try{localStorage.removeItem("careerlab_ai_context");}catch(e){}toast("✅ 密钥已保存");}
+};
+document.getElementById("ai_send").onclick=function(){doSend();};
+document.getElementById("ai_inp").onkeydown=function(e){
+if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();doSend();}
+};
+}
+function togAI(show){
+mkAIPanel();
+var open=(show!==undefined?show:(_aipn.style.display==="none"||_aipn.style.transform==="translateX(-100%)"));
+if(open){
+_aipn.style.display="flex";_aiov.style.display="block";
+requestAnimationFrame(function(){_aipn.style.transform="translateX(0)";});
+ensureContext(function(){renderChat();});
+}else{
+_aipn.style.transform="translateX(-100%)";_aiov.style.display="none";
+setTimeout(function(){if(_aipn.style.transform==="translateX(-100%)")_aipn.style.display="none";},260);
+}
+}
+function ensureContext(cb){
+if(_aictx){cb();return;}
+var issues=[];var done=0;var total=10;
+function checkDone(){
+done++;
+if(done>=total){
+issues.sort(function(a,b){return a.n-b.n;});
+_aictx={ts:Date.now(),issues:issues};
+try{localStorage.setItem("careerlab_ai_context",JSON.stringify(_aictx));}catch(e){}
+cb();
+}
+}
+for(var i=1;i<=total;i++){
+(function(n){
+var xhr=new XMLHttpRequest();
+xhr.open("GET",(n<10?"0":"")+n+".html",true);
+xhr.timeout=10000;
+xhr.onload=function(){
+if(xhr.status===200){var r=extractIssue(xhr.responseText,n);if(r)issues.push(r);}
+checkDone();
+};
+xhr.onerror=function(){checkDone();};
+xhr.ontimeout=function(){checkDone();};
+xhr.send();
+})(i);
+}
+}
+function extractIssue(html,n){
+try{
+var title="",job="";
+var tm=html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+if(tm){title=tm[1].replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();}
+var jm=html.match(/class="job-name"[^>]*>([^<]+)/i);
+if(!jm)jm=html.match(/class="meta"[^>]*>([\s\S]*?)<\/p>/i);
+if(jm){job=jm[1].replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();}
+var sm=html.match(/<section[^>]*>([\s\S]*?)<hr\s+class="divider-solid/i);
+var text="";
+if(sm){text=sm[1].replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();}
+if(text.length>2000)text=text.slice(0,2000)+"…";
+return {n:n,title:title||("第"+n+"期"),job:job||"",text:text};
+}catch(e){return null;}
+}
+function buildSystemPrompt(){
+if(!_aictx||!_aictx.issues||!_aictx.issues.length)return "你是\"职人手艺\"的AI助教。职人手艺是一个深度解剖不同职业思维方式的项目，每期拆解一个具体职业。你的风格：像朋友聊天一样说人话、简洁、多用大白话和具体例子。请用中文回复。";
+var p="你是\"职人手艺\"的AI助教。职人手艺是一个深度解剖不同职业思维方式的项目，每期拆解一个具体职业，包括他们的日常、挑战、黄金技能和底层思维模型。你的风格：像朋友聊天一样说人话、简洁、多用大白话和具体例子。以下是各期摘要：\n\n";
+for(var i=0;i<_aictx.issues.length;i++){
+var iss=_aictx.issues[i];
+p+="第"+iss.n+"期《"+iss.title+"》—— "+iss.job+"\n"+iss.text+"\n\n";
+}
+var cur=info();
+if(cur&&cur.n)p+="用户当前正在阅读：第"+cur.n+"期《"+cur.t+"》—— "+cur.job;
+return p;
+}
+function renderChat(){
+var b=document.getElementById("aimsgs");if(!b)return;
+var sc=document.getElementById("aic");if(sc)sc.textContent=_aichat.length?"("+_aichat.length+"条)":"(空)";
+var html="";
+if(!_aichat.length&&_aictx){
+var greet="你好！我是职人手艺的AI助教 🤖\n\n我对每一期解剖的职业都有自己的理解，可以跟你聊任何一期。你可以问我：\n\n• 某个职业的核心技能（比如\"空调安装师傅最厉害的能力是什么？\"）\n• 不同职业之间的联系（比如\"老周的思维方式和程序员有什么共通之处？\"）\n• 从这个职业身上能学到什么（比如\"我能从杀鱼摊主身上学到什么？\"）\n• 任何你在阅读中想到的问题\n\n有什么想聊的？";
+html+='<div class="aichat-msg aichat-assistant"><div class="lbl">AI</div><div class="bub">'+esc(greet).replace(/\n/g,"<br>")+'</div></div>';
+}
+for(var i=0;i<_aichat.length;i++){
+var m=_aichat[i];
+if(m.role==="system"){html+='<div class="aichat-msg aichat-sys"><div class="bub">'+esc(m.content)+'</div></div>';}
+else if(m.role==="user"){html+='<div class="aichat-msg aichat-user"><div class="lbl">你</div><div class="bub">'+esc(m.content).replace(/\n/g,"<br>")+'</div></div>';}
+else{html+='<div class="aichat-msg aichat-assistant"><div class="lbl">AI</div><div class="bub">'+esc(m.content).replace(/\n/g,"<br>")+'</div></div>';}
+}
+if(_aibusy){html+='<div class="aichat-loading"><span></span><span></span><span></span></div>';}
+b.innerHTML=html;
+b.scrollTop=b.scrollHeight;
+setTimeout(function(){restore();},100);
+}
+function addMsg(role,content,skipSave){
+_aichat.push({role:role,content:content,ts:new Date().toISOString()});
+if(!skipSave)saveChat();
+renderChat();
+}
+function saveChat(){
+if(_aichat.length>100)_aichat=_aichat.slice(-100);
+try{localStorage.setItem("careerlab_ai_chat",JSON.stringify(_aichat));}catch(e){}
+}
+function doSend(){
+if(_aibusy)return;
+var inp=document.getElementById("ai_inp"),txt=(inp.value||"").trim();
+if(!txt)return;
+if(!_aikey){
+var k=prompt("请输入你的DeepSeek API密钥（可从 platform.deepseek.com 获取）：","");
+if(!k||!k.trim())return;
+_aikey=k.trim();
+try{localStorage.setItem("careerlab_ai_key",_aikey);}catch(e){}
+addMsg("system","✅ 密钥已保存（仅保存在本地浏览器）",true);
+}
+inp.value="";inp.style.height="auto";
+addMsg("user",txt);
+_aibusy=true;renderChat();
+var msgs=[{role:"system",content:buildSystemPrompt()}];
+for(var i=0;i<_aichat.length;i++){var m=_aichat[i];if(m.role!=="system")msgs.push({role:m.role,content:m.content});}
+callDeepSeek(msgs,function(err,reply){
+_aibusy=false;
+if(err){addMsg("system","❌ "+err,true);}
+else if(reply){addMsg("assistant",reply);}
+else{addMsg("system","❌ 未知错误",true);}
+});
+}
+function callDeepSeek(messages,cb){
+var xhr=new XMLHttpRequest();
+xhr.open("POST","https://api.deepseek.com/v1/chat/completions",true);
+xhr.setRequestHeader("Content-Type","application/json");
+xhr.setRequestHeader("Authorization","Bearer "+_aikey);
+xhr.timeout=30000;
+xhr.onload=function(){
+if(xhr.status===200){
+try{var r=JSON.parse(xhr.responseText);cb(null,r.choices[0].message.content);}catch(e){cb(new Error("解析响应失败"));}
+}else if(xhr.status===401){cb(new Error("API密钥无效，请点击⚙️重新设置"));}
+else if(xhr.status===429){cb(new Error("请求过于频繁，请稍后再试"));}
+else if(xhr.status>=500){cb(new Error("服务异常（"+xhr.status+"），请稍后重试"));}
+else{cb(new Error("请求失败（"+xhr.status+"）"));}
+};
+xhr.onerror=function(){cb(new Error("网络连接失败，请检查网络"));};
+xhr.ontimeout=function(){cb(new Error("请求超时，请重试"));};
+xhr.send(JSON.stringify({model:"deepseek-chat",messages:messages,stream:false,max_tokens:2000,temperature:0.7}));
+}
+
+var st=document.createElement("style");st.textContent=".mh{background:#f5d742;color:inherit;border-radius:2px;padding:0 2px;cursor:pointer;}.mh:hover{background:#ffeb7a;}.mc{transition:box-shadow .15s;}.mc:hover{box-shadow:0 1px 6px rgba(0,0,0,.06);}.mc button:hover{background:#eee!important;}::selection{background:#f5d742;color:#1a1a2e;}.aichat-msg{padding:2px 0;}.aichat-msg .lbl{font-size:11px;color:#999;margin-bottom:2px;}.aichat-msg .bub{padding:10px 14px;border-radius:12px;font-size:14px;line-height:1.7;word-break:break-word;}.aichat-user .bub{background:#e8f0fe;color:#1a1a2e;margin-left:40px;}.aichat-user .lbl{text-align:right;}.aichat-assistant .bub{background:#fff;border:1px solid #e5e0d8;color:#333;margin-right:40px;}.aichat-sys .bub{background:#f5f5f5;color:#888;text-align:center;font-size:13px;padding:8px 14px;border-radius:8px;margin:0 20px;}.aichat-loading{display:flex;gap:4px;padding:8px 16px;align-items:center;}.aichat-loading span{width:6px;height:6px;border-radius:50%;background:#bbb;animation:aichat-bounce 1.4s infinite;}.aichat-loading span:nth-child(2){animation-delay:.2s;}.aichat-loading span:nth-child(3){animation-delay:.4s;}@keyframes aichat-bounce{0%,80%,100%{opacity:.3;transform:scale(.8);}40%{opacity:1;transform:scale(1);}}#ai_inp:focus{outline:none;border-color:#e8924c;}";document.head.appendChild(st);
+restore();setupBtn();initAI();
+})();
+</script>
+
+</body>
+</html>
